@@ -1,0 +1,84 @@
+# Lenovo LOQ 15AHP10 (tipo 83JG). Una fila por pieza. Misma convencion que Legion Pro 7i Gen 10.
+# u,v: centro de la pieza como fraccion de full.jpg (foto cenital DESDE ABAJO de LaptopMedia, bisagra arriba; recortada al contorno del chasis).
+# Medidas w,d en mm medidas sobre la foto (escala 0.2313 mm/px en X; 0.2302 mm/px en Z); h y z0 ESTIMADAS (cavidad interior de 9.3 mm: suelo 3.6, techo 12.9).
+# Confirmado por el HMM: parches de pasta termica a=14.1x14.0 mm y b=17.91x13.11 mm (LOQ 15AHP10). La asignacion CPU/GPU de a/b NO esta confirmada.
+id,tipo,tier,u,v,w,d,h,z0,rot,soporte,confianza,fuente,extra
+pcb_main,pcb,2.8,0.5190,0.3630,157.5,171.2,1.6,11.3,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708 + HMM fig 23,
+pcb_izq,pcb,2.8,0.1597,0.5850,101.1,56.4,1.6,11.3,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+pcb_der,pcb,2.8,0.8188,0.5783,58.3,59.8,1.6,11.3,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+pcb_borde,pcb,2.8,0.0402,0.2825,15.0,100.1,1.6,11.3,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+battery,battery,1.0,0.5029,0.8323,318.0,69.7,7.0,3.6,0,base,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + etiqueta L24B4PK4 + FRU oficial 5B11X79417,
+spk_a,speaker,1.0,0.0418,0.8167,12.5,25.8,7.0,3.6,0,base,pos:media dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + FRU oficial de altavoces (compatible 83DV),
+spk_b,speaker,1.0,0.9659,0.8158,11.6,26.2,7.0,3.6,0,base,pos:media dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + FRU oficial de altavoces (compatible 83DV),
+fan_a,fan,2.0,0.1799,0.3136,85.6,81.7,7.5,3.6,0,base,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + FRU oficial 5F10S14352/53 (modulo termico con ventilador),iu=0.1575|iv=0.289|R=26
+fan_b,fan,2.0,0.8573,0.3136,86.0,81.7,7.5,3.6,0,base,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + FRU oficial 5F10S14352/53 (modulo termico con ventilador),iu=0.890|iv=0.2936|R=26
+fins_a,fins,2.0,0.1799,0.1045,85.6,26.5,7.5,3.6,0,fan_a,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708,
+fins_b,fins,2.0,0.8573,0.1045,86.0,26.5,7.5,3.6,0,fan_b,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708,
+plate_1,plate,2.0,0.3445,0.1673,31.9,51.6,1.8,8.3,0,plate_5,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+plate_2,plate,2.0,0.4306,0.1713,30.1,49.5,1.8,8.3,0,plate_5,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+plate_3,plate,2.0,0.6234,0.1713,60.1,49.5,1.8,8.3,0,cpu,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+plate_5,plate,2.0,0.3853,0.3870,61.3,62.1,1.8,8.3,0,gpu,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia LOQ15AHP10 IMG_7708,
+gpu,gpu,2.4,0.3952,0.3826,17.9,13.1,1.2,10.1,0,pcb_main,pos:baja dim:ALTA(HMM pag 25 area b) alt:estimada asignacion:NO CONFIRMADA,HMM pag 25-26 (areas a y b),
+cpu,cpu,2.4,0.6234,0.1690,14.1,14.0,1.2,10.1,0,pcb_main,pos:baja dim:ALTA(HMM pag 25 area a) alt:estimada asignacion:NO CONFIRMADA,HMM pag 25-26 (areas a y b),
+hp1_1,pipe,2.0,0.3194,0.1029,7.0,7.0,2.2,8.2,-40.4,plate_1,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_2,pipe,2.0,0.3335,0.1197,9.4,7.0,2.2,8.2,-40.5,hp1_1,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_3,pipe,2.0,0.3509,0.1404,10.1,7.0,2.2,8.2,-40.8,hp1_2,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_4,pipe,2.0,0.3669,0.1599,8.2,7.0,2.2,8.2,-41.7,hp1_3,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_5,pipe,2.0,0.3814,0.1780,8.8,7.0,2.2,8.2,-42.2,hp1_4,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_6,pipe,2.0,0.3964,0.1968,8.7,7.0,2.2,8.2,-41.7,hp1_5,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_7,pipe,2.0,0.4108,0.2143,8.0,7.0,2.2,8.2,-40.3,hp1_6,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_8,pipe,2.0,0.4256,0.2313,8.8,7.0,2.2,8.2,-39.1,hp1_7,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_9,pipe,2.0,0.4406,0.2475,7.9,7.0,2.2,8.2,-36.6,hp1_8,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_10,pipe,2.0,0.4552,0.2609,7.7,7.0,2.2,8.2,-29.9,hp1_9,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_11,pipe,2.0,0.4708,0.2714,7.8,7.0,2.2,8.2,-21.7,hp1_10,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_12,pipe,2.0,0.4874,0.2790,7.8,7.0,2.2,8.2,-14.8,hp1_11,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_13,pipe,2.0,0.5050,0.2843,8.2,7.0,2.2,8.2,-9.8,hp1_12,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_14,pipe,2.0,0.5244,0.2879,8.9,7.0,2.2,8.2,-5.7,hp1_13,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_15,pipe,2.0,0.5456,0.2898,9.4,7.0,2.2,8.2,-2.0,hp1_14,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_16,pipe,2.0,0.5675,0.2902,9.4,7.0,2.2,8.2,0.6,hp1_15,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_17,pipe,2.0,0.5895,0.2894,9.5,7.0,2.2,8.2,2.3,hp1_16,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_18,pipe,2.0,0.6116,0.2875,9.5,7.0,2.2,8.2,4.9,hp1_17,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_19,pipe,2.0,0.6327,0.2836,8.8,7.0,2.2,8.2,10.2,hp1_18,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_20,pipe,2.0,0.6553,0.2749,11.2,7.0,2.2,8.2,19.6,hp1_19,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_21,pipe,2.0,0.6778,0.2598,9.9,7.0,2.2,8.2,32.9,hp1_20,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_22,pipe,2.0,0.6931,0.2407,8.1,7.0,2.2,8.2,53.2,hp1_21,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_23,pipe,2.0,0.7028,0.2154,9.9,7.0,2.2,8.2,69.1,hp1_22,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_24,pipe,2.0,0.7094,0.1901,7.0,7.0,2.2,8.2,71.1,hp1_23,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_25,pipe,2.0,0.7147,0.1674,8.4,7.0,2.2,8.2,72.8,hp1_24,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_26,pipe,2.0,0.7203,0.1415,8.6,7.0,2.2,8.2,73.6,hp1_25,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_27,pipe,2.0,0.7255,0.1167,7.8,7.0,2.2,8.2,73.8,hp1_26,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp1_28,pipe,2.0,0.7297,0.0970,5.8,7.0,2.2,8.2,73.6,fins_b,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_1,pipe,2.0,0.3194,0.1689,7.6,7.0,2.2,8.2,-47.3,plate_1,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_2,pipe,2.0,0.3335,0.1900,10.3,7.0,2.2,8.2,-46.9,hp2_1,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_3,pipe,2.0,0.3509,0.2147,10.5,7.0,2.2,8.2,-44.2,hp2_2,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_4,pipe,2.0,0.3669,0.2353,8.1,7.0,2.2,8.2,-40.9,hp2_3,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_5,pipe,2.0,0.3814,0.2522,8.5,7.0,2.2,8.2,-39.2,hp2_4,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_6,pipe,2.0,0.3964,0.2686,8.3,7.0,2.2,8.2,-37.0,hp2_5,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_7,pipe,2.0,0.4108,0.2828,7.5,7.0,2.2,8.2,-33.3,hp2_6,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_8,pipe,2.0,0.4292,0.2960,10.5,7.0,2.2,8.2,-23.4,hp2_7,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_9,pipe,2.0,0.4517,0.3072,9.7,7.0,2.2,8.2,-15.4,hp2_8,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_10,pipe,2.0,0.4702,0.3150,7.2,7.0,2.2,8.2,-19.3,hp2_9,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_11,pipe,2.0,0.4856,0.3222,7.4,7.0,2.2,8.2,-17.8,hp2_10,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_12,pipe,2.0,0.5038,0.3283,9.1,7.0,2.2,8.2,-10.3,hp2_11,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_13,pipe,2.0,0.5226,0.3320,7.6,7.0,2.2,8.2,-4.9,hp2_12,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_14,pipe,2.0,0.5410,0.3337,8.7,7.0,2.2,8.2,-2.9,hp2_13,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_15,pipe,2.0,0.5616,0.3348,9.1,7.0,2.2,8.2,-1.5,hp2_14,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_16,pipe,2.0,0.5824,0.3352,8.9,7.0,2.2,8.2,-0.1,hp2_15,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_17,pipe,2.0,0.6016,0.3349,8.0,7.0,2.2,8.2,1.6,hp2_16,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_18,pipe,2.0,0.6232,0.3332,10.6,7.0,2.2,8.2,4.2,hp2_17,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_19,pipe,2.0,0.6466,0.3297,9.4,7.0,2.2,8.2,8.6,hp2_18,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_20,pipe,2.0,0.6661,0.3238,8.0,7.0,2.2,8.2,16.4,hp2_19,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_21,pipe,2.0,0.6828,0.3121,8.7,7.0,2.2,8.2,36.5,hp2_20,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_22,pipe,2.0,0.6957,0.2934,7.9,7.0,2.2,8.2,57.1,hp2_21,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_23,pipe,2.0,0.7047,0.2709,8.4,7.0,2.2,8.2,64.4,hp2_22,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_24,pipe,2.0,0.7117,0.2460,8.5,7.0,2.2,8.2,72.4,hp2_23,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_25,pipe,2.0,0.7163,0.2204,8.2,7.0,2.2,8.2,79.5,hp2_24,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_26,pipe,2.0,0.7196,0.1950,8.1,7.0,2.2,8.2,80.5,hp2_25,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_27,pipe,2.0,0.7242,0.1686,9.0,7.0,2.2,8.2,72.7,hp2_26,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+hp2_28,pipe,2.0,0.7300,0.1441,7.3,7.0,2.2,8.2,70.6,fins_b,pos:media dim:baja alt:estimada recorrido:aproximado,LaptopMedia LOQ15AHP10 IMG_7708,dark=1
+ssd_1,ssd,2.4,0.8082,0.5632,40.5,22.6,2.3,9.0,0,pcb_der,pos:alta dim:alta(M.2 2242) alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + etiqueta FRU 5SS1Q31261 (lista oficial),
+wifi,wifi,2.4,0.1623,0.6375,32.1,19.1,2.2,9.1,0,pcb_izq,pos:alta dim:alta(M.2 2230) alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708,
+ram_1,ram,2.4,0.5868,0.5836,67.6,30.0,3.8,7.5,0,pcb_main,pos:media(bajo blindaje) dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia LOQ15AHP10 foto 6 (RAMAXEL 16GB) + blindaje IMG_7708,nochips=1
+ram_2,ram,2.4,0.5868,0.4226,67.6,30.0,3.8,7.5,0,pcb_main,pos:media(bajo blindaje) dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia LOQ15AHP10 foto 6 (RAMAXEL 16GB) + blindaje IMG_7708,nochips=1
+shield,shield,2.4,0.5868,0.5836,87.9,50.6,0.8,6.7,0,ram_1,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708 + HMM DIMM shielding,
+shield_foam,foam,2.4,0.5852,0.4226,79.8,32.7,0.8,6.7,0,ram_2,pos:alta dim:media alt:estimada,LaptopMedia LOQ15AHP10 IMG_7708,

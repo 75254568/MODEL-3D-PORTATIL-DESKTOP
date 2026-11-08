@@ -1,0 +1,8 @@
+# Material for cpu
+newmtl mat_cpu_die
+Ka 0.1200 0.1300 0.1400
+Kd 0.6000 0.6500 0.7000
+Ks 0.9000 0.9000 0.9000
+Ns 20.0
+d 1.00
+illum 2

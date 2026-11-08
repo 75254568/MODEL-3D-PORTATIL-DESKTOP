@@ -1,0 +1,27 @@
+# HyperX OMEN MAX 16 (Intel, 16-ah). Una fila por pieza. Misma convencion que el resto de modelos.
+# u,v: centro como fraccion de full.jpg (foto cenital DESDE ABAJO de LaptopMedia, bisagra arriba; recortada al chasis, 1400x1053 px).
+# Medidas w,d en mm medidas sobre la foto (0.2546 mm/px en X, 0.2555 mm/px en Z). h y z0 ESTIMADAS (cavidad 3.0-14.0 mm).
+# 'plate' = cubierta interna GPU/CPU (lamina azul clara de la foto, item 14 del manual). CPU y GPU quedan bajo ella: sus ventanas estan impresas en la lamina, NO se modelan.
+id,tipo,tier,u,v,w,d,h,z0,rot,soporte,confianza,fuente,extra
+pcb_c,pcb,2.8,0.5054,0.3514,154.1,174.7,1.6,12.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+pcb_l,pcb,2.8,0.1525,0.5731,97.5,55.4,1.6,12.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+pcb_r,pcb,2.8,0.8554,0.5731,95.5,55.4,1.6,12.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+usb_l,pcb,2.8,0.0343,0.1007,17.3,27.6,1.6,12.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (placa USB izquierda),LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP item 21,
+battery,battery,1.0,0.4993,0.7944,316.3,60.5,8.0,3.0,0,base,pos:alta dim:media(foto) alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + etiqueta FZ06XL / HP M47636-2D1 (manual HP: bateria Q14802-001/002),
+speaker_a,speaker,1.0,0.0321,0.7882,13.8,28.1,8.0,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+speaker_b,speaker,1.0,0.9661,0.7882,14.0,28.1,8.0,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+fan_a,fan,2.0,0.1679,0.3148,88.1,85.1,7.4,3.0,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP items 16-17,iu=0.1464|iv=0.3419|R=23.0
+fan_b,fan,2.0,0.8321,0.3158,81.5,80.5,7.4,3.0,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP items 16-17,iu=0.8357|iv=0.3466|R=23.0
+fins_a,fins,2.0,0.0300,0.3015,12.2,62.6,7.4,3.0,0,fan_a,pos:media dim:baja alt:estimada (aletas junto al ventilador izquierdo),LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+fins_b,fins,2.0,0.9618,0.2991,13.0,63.9,7.4,3.0,0,fan_b,pos:media dim:baja alt:estimada (aletas junto al ventilador derecho),LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+cover_1,plate,2.0,0.3929,0.2778,71.3,83.0,1.8,10.6,0,pcb_c,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (cubierta GPU/CPU),LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+cover_2,plate,2.0,0.6071,0.2241,81.5,69.5,1.8,10.6,0,pcb_c,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (cubierta GPU/CPU),LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+cover_3,plate,2.0,0.1893,0.1073,73.8,28.1,1.8,10.6,0,pcb_c,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (camara de vapor VAPOR CHAMBER),LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+cover_4,plate,2.0,0.3096,0.5375,121.5,23.5,1.8,10.6,0,pcb_l,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (cubierta inferior izquierda),LaptopMedia OMEN MAX 16 foto cenital (full.jpg),
+hp_a1,pipe,2.0,0.2107,0.4710,65.2,7.0,1.9,10.4,0.5,fan_a,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),dark=1
+hp_a2,pipe,2.0,0.3804,0.4710,58.8,7.0,1.9,10.4,-0.5,hp_a1,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),dark=1
+hp_b1,pipe,2.0,0.6107,0.2873,44.8,7.0,1.9,10.4,-1.7,cover_2,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg),dark=1
+ram_1,ram,2.4,0.5964,0.4416,67.6,30.0,3.8,8.6,0,pcb_c,pos:media(bajo cubierta DDR) dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP item 7 memory DDR5,nochips=1
+ram_2,ram,2.4,0.5929,0.5651,67.6,30.0,3.8,8.6,0,pcb_c,pos:media(bajo cubierta DDR) dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP item 7 memory DDR5,nochips=1
+ssd_1,ssd,2.4,0.8268,0.5043,87.9,15.8,2.3,10.1,0,pcb_r,pos:alta dim:media(con cubierta) alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP item 6 SSD PCIe,
+ssd_2,ssd,2.4,0.8143,0.5992,78.9,20.9,2.3,10.1,0,pcb_r,pos:alta dim:media(con cubierta) alt:estimada,LaptopMedia OMEN MAX 16 foto cenital (full.jpg) + manual HP item 6 SSD PCIe,

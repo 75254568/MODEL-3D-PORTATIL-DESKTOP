@@ -1,0 +1,27 @@
+# ASUS ROG Strix SCAR 18 (G835). Una fila por pieza. Misma convencion que Legion Pro 7i Gen 10 y LOQ 15AHP10.
+# u,v: centro como fraccion de full.jpg (foto cenital DESDE ABAJO de LaptopMedia G835, bisagra arriba; recortada al contorno del chasis, 1400x1042 px).
+# Medidas w,d en mm medidas sobre la foto (0.285 mm/px en X y 0.286 mm/px en Z); h y z0 ESTIMADAS (cavidad 3.0-14.0 mm). rot = giro en planta (grados).
+# NO hay datos de dimensiones ni de pasta termica en el manual ASUS: CPU, GPU, heatpipes, tornillos y tweeters NO se modelan.
+id,tipo,tier,u,v,w,d,h,z0,rot,soporte,confianza,fuente,extra
+pcb_c,pcb,2.8,0.5250,0.3767,179.5,167.3,1.6,12.4,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+pcb_bl,pcb,2.8,0.2339,0.5182,52.7,82.9,1.6,12.4,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+pcb_br,pcb,2.8,0.8411,0.5182,72.7,82.9,1.6,12.4,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+pcb_r,pcb,2.8,0.9618,0.3863,23.7,161.6,1.6,12.4,0,deck,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+io_l,pcb,2.8,0.0400,0.2711,25.1,92.9,1.6,12.4,0,deck,pos:media dim:baja alt:estimada (placa de E/S izquierda DB-USB),LaptopMedia G835 foto cenital (full.jpg),
+battery,battery,1.0,0.5393,0.8325,307.8,55.8,8.0,3.0,0,base,pos:alta dim:media alt:estimada,LaptopMedia G835 foto cenital (full.jpg) (etiqueta 15.52 V 90 Wh; modelo ilegible),
+woofer_a,speaker,1.0,0.0554,0.8133,27.1,47.2,8.0,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia G835 foto cenital (full.jpg),
+woofer_b,speaker,1.0,0.9554,0.8133,21.4,47.2,8.0,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia G835 foto cenital (full.jpg),
+fan_a,fan,2.0,0.1929,0.2399,96.9,82.9,9.0,3.0,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA (etiqueta ilegible; posible 13NR0LF0P01011 = VGA fan G835LX segun tienda),iu=0.161|iv=0.2255|R=26,
+fan_b,fan,2.0,0.8321,0.2399,79.8,82.9,9.0,3.0,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,iu=0.8536|iv=0.2495|R=26,
+fan_c,fan,2.0,0.4689,0.5398,61.8,52.9,7.0,3.0,0,base,pos:media dim:media alt:estimada funcion:NO CONFIRMADA (el manual lista GPU fan CPU fan y VRAM fan),iu=0.4357|iv=0.523|R=17,
+fins_a,fins,2.0,0.1821,0.0576,85.5,25.7,9.0,3.0,0,fan_a,pos:alta dim:media alt:estimada,LaptopMedia G835 foto cenital (full.jpg),
+fins_c,fins,2.0,0.5143,0.0552,176.7,24.3,9.0,3.0,0,plate_vc1,pos:alta dim:media alt:estimada,LaptopMedia G835 foto cenital (full.jpg),
+fins_b,fins,2.0,0.8321,0.0600,76.9,27.2,9.0,3.0,0,fan_b,pos:alta dim:media alt:estimada,LaptopMedia G835 foto cenital (full.jpg),
+plate_vc1,plate,2.0,0.5250,0.2087,165.3,67.2,1.8,10.6,0,pcb_c,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+plate_vc2,plate,2.0,0.4518,0.3767,86.9,32.9,1.8,10.6,0,plate_vc1,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+plate_vc3,plate,2.0,0.6446,0.3551,67.0,20.0,1.8,10.6,0,plate_vc1,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia G835 foto cenital (full.jpg),
+ram_1,ram,2.4,0.6536,0.5230,67.6,30.0,3.8,8.6,0,pcb_c,pos:media dim:alta(JEDEC SO-DIMM) alt:estimada apilado:estimado,LaptopMedia G835 foto cenital (full.jpg) (SK hynix 32GB PC5-5600B),nochips=1
+ram_2,ram,2.4,0.6536,0.4626,67.6,30.0,3.8,4.8,0,ram_1,pos:media dim:alta(JEDEC SO-DIMM) alt:estimada apilado:estimado,LaptopMedia G835 foto cenital (full.jpg) (SK hynix 32GB PC5-5600B),nochips=1
+ssd_1,ssd,2.4,0.2821,0.4962,80.0,22.0,2.3,10.1,-23.5,pcb_bl,pos:alta dim:alta(M.2 2280) alt:estimada giro:medido en foto,LaptopMedia G835 foto cenital (full.jpg) (etiqueta WD 2TB),
+ssd_2,ssd,2.4,0.8393,0.5259,80.0,22.0,2.3,10.1,-145.9,pcb_br,pos:alta dim:alta(M.2 2280) alt:estimada giro:medido en foto,LaptopMedia G835 foto cenital (full.jpg) (etiqueta 1TB),
+wifi,wifi,2.4,0.2107,0.5835,34.2,22.9,2.2,10.2,0,pcb_bl,pos:alta dim:alta(M.2 2230) alt:estimada,LaptopMedia G835 foto cenital (full.jpg),

@@ -1,0 +1,11 @@
+# Acer Predator Helios 16 AI PH16-73: foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.095,0.703,0.91,0.935
+fan,0.150,0.311,0.058
+fan,0.805,0.311,0.058
+zone,cooling,0.09,0.12,0.91,0.39
+zone,cpu,0.30,0.14,0.50,0.36
+zone,gpu,0.50,0.14,0.70,0.36
+zone,ram,0.486,0.40,0.723,0.65
+zone,ssd,0.727,0.52,0.936,0.61
+zone,ssd,0.205,0.552,0.37,0.61
+zone,pcb,0.064,0.535,0.114,0.65

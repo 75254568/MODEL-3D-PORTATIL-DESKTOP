@@ -1,0 +1,8 @@
+# Dell XPS 16 9640: foto cenital con la tapa inferior retirada (LaptopMedia). RAM soldada.
+battery,0.086,0.609,0.918,0.972
+fan,0.186,0.368,0.068
+fan,0.805,0.368,0.068
+zone,cooling,0.31,0.05,0.686,0.415
+zone,cpu,0.36,0.12,0.50,0.40
+zone,gpu,0.50,0.12,0.66,0.40
+zone,ssd,0.31,0.46,0.58,0.545

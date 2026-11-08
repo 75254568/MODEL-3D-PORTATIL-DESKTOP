@@ -1,0 +1,29 @@
+# HP Victus 16 (16-r0xxx). Una fila por pieza. Misma convencion que el resto de modelos.
+# u,v: centro como fraccion de full.jpg (foto cenital DESDE ABAJO de LaptopMedia, bisagra arriba; 1400x970 px).
+# Medidas w,d en mm medidas sobre la foto (0.2636 mm/px en X, 0.2674 mm/px en Z). h y z0 ESTIMADAS (cavidad 3.0-15.4 mm).
+# La bateria de la foto es WK04XL de 70,07 Wh, pero la ficha de la app dice 83 Wh: DISCREPANCIA sin resolver (ver FUENTES.md).
+id,tipo,tier,u,v,w,d,h,z0,rot,soporte,confianza,fuente,extra
+pcb_t,pcb,2.8,0.5018,0.0799,143.6,17.4,1.6,13.8,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+pcb_m,pcb,2.8,0.5000,0.4820,137.1,94.9,1.6,13.8,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+pcb_l,pcb,2.8,0.1714,0.4871,105.4,92.3,1.6,13.8,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+pcb_r,pcb,2.8,0.8071,0.5799,89.6,44.1,1.6,13.8,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+usb_l,pcb,2.8,0.0518,0.1830,17.1,65.5,1.6,13.8,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (placa USB izquierda),LaptopMedia Victus 16 foto cenital (full.jpg),
+usb_r,pcb,2.8,0.9407,0.1675,29.0,57.5,1.6,13.8,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (placa derecha),LaptopMedia Victus 16 foto cenital (full.jpg),
+battery,battery,1.0,0.5036,0.7809,316.3,57.5,8.0,3.0,0,base,pos:alta dim:media(foto) alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg) + etiqueta WK04XL / HP M38822-171,
+speaker_a,speaker,1.0,0.0382,0.7835,16.6,42.8,8.0,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+speaker_b,speaker,1.0,0.9607,0.7629,15.8,48.1,8.0,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+fan_a,fan,2.0,0.1893,0.3273,80.7,81.6,7.6,3.0,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,LaptopMedia Victus 16 foto cenital (full.jpg),iu=0.1500|iv=0.3196|R=21.0
+fan_b,fan,2.0,0.8161,0.3428,96.2,84.2,7.6,3.0,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,LaptopMedia Victus 16 foto cenital (full.jpg),iu=0.8214|iv=0.3402|R=21.0
+fins_ta,fins,2.0,0.1975,0.1098,74.6,32.9,7.6,3.0,0,fan_a,pos:alta dim:media alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+fins_tb,fins,2.0,0.7925,0.1149,80.4,35.6,7.6,3.0,0,fan_b,pos:alta dim:media alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+fins_sb,fins,2.0,0.9621,0.3840,13.2,46.8,7.6,3.0,0,fan_b,pos:alta dim:media alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+plate_1,plate,2.0,0.5000,0.2077,147.6,50.0,1.8,12.0,0,pcb_t,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+plate_2,plate,2.0,0.6036,0.3737,60.6,36.1,1.8,12.0,0,pcb_m,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+hp_a1,pipe,2.0,0.3993,0.2216,75.8,7.0,1.9,10.6,-0.0,fan_a,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),dark=1
+hp_a2,pipe,2.0,0.5982,0.2216,74.0,7.0,1.9,10.6,-0.0,hp_a1,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),dark=1
+hp_b1,pipe,2.0,0.3993,0.2629,75.8,7.0,1.9,10.6,-0.0,fan_a,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),dark=1
+hp_b2,pipe,2.0,0.5929,0.2629,70.0,7.0,1.9,10.6,-0.0,hp_b1,pos:media dim:baja recorrido:aproximado alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),dark=1
+ram_1,ram,2.4,0.4157,0.3856,67.6,30.0,3.8,10.0,0,pcb_m,pos:alta dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg) (etiqueta SPS N38627-001, 16 GB),nochips=1
+ram_2,ram,2.4,0.4179,0.5278,67.6,30.0,3.8,10.0,0,pcb_m,pos:alta dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg) (etiqueta SPS N38627-001, 16 GB),nochips=1
+ssd_1,ssd,2.4,0.8000,0.5876,87.0,27.0,2.3,11.5,0,pcb_r,pos:alta dim:media(con cubierta) alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),
+wifi,wifi,2.4,0.6286,0.5309,30.0,22.0,2.2,11.6,34,pcb_m,pos:alta dim:alta(M.2 2230) giro:medido en foto alt:estimada,LaptopMedia Victus 16 foto cenital (full.jpg),

@@ -1,0 +1,8 @@
+# Lenovo ThinkPad X1 Carbon Gen 11 (chasis hermano de la Gen 12): foto cenital con la tapa inferior retirada (LaptopMedia). RAM soldada.
+battery,0.127,0.453,0.918,0.90
+fan,0.364,0.198,0.036
+fan,0.503,0.198,0.036
+zone,cooling,0.30,0.05,0.87,0.31
+zone,cpu,0.71,0.13,0.87,0.29
+zone,ssd,0.28,0.325,0.545,0.43
+zone,pcb,0.155,0.21,0.27,0.35

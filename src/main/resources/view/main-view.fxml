@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.laptopstudio.controller.MainController"
+            styleClass="root-pane">
+
+    <left>
+        <VBox styleClass="rail" spacing="4.0" prefWidth="80.0" minWidth="80.0" maxWidth="80.0">
+            <padding><Insets top="10.0" right="6.0" bottom="10.0" left="6.0"/></padding>
+            <ToggleButton fx:id="btnCatalogo" text="Catálogo" onAction="#onCatalogo" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="btnComparar" text="Comparar" onAction="#onComparar" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="btnVisor" text="Visor 3D" onAction="#onVisor" maxWidth="Infinity" styleClass="rail-btn"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <ToggleButton fx:id="btnAjustes" text="Ajustes" onAction="#onAjustes" maxWidth="Infinity" styleClass="rail-btn"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="content" styleClass="content-pane"/>
+    </center>
+
+    <bottom>
+        <HBox styleClass="statusbar" spacing="22.0" alignment="CENTER_LEFT" prefHeight="26.0" minHeight="26.0">
+            <padding><Insets top="0.0" right="14.0" bottom="0.0" left="14.0"/></padding>
+            <Label fx:id="lblDb"/>
+            <Label fx:id="lblSel"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblMsg" styleClass="status-message"/>
+        </HBox>
+    </bottom>
+</BorderPane>

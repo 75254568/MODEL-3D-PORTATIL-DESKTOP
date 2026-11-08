@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.laptopstudio.controller.SettingsController">
+    <top>
+        <HBox styleClass="page-head" alignment="CENTER_LEFT">
+            <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+            <Label text="Ajustes" styleClass="page-title"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="22.0" maxWidth="640.0" BorderPane.alignment="TOP_LEFT">
+            <padding><Insets top="18.0" right="16.0" bottom="16.0" left="16.0"/></padding>
+            <VBox spacing="8.0">
+                <Label text="BASE DE DATOS" styleClass="section-label"/>
+                <GridPane hgap="14.0" vgap="6.0">
+                    <Label text="Ubicación" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblRuta" wrapText="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="Laptops registrados" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblTotal" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                </GridPane>
+                <Label text="Los cambios del catálogo se guardan aquí y se conservan al cerrar la aplicación." styleClass="muted small"/>
+            </VBox>
+            <VBox spacing="8.0">
+                <Label text="APLICACIÓN" styleClass="section-label"/>
+                <GridPane hgap="14.0" vgap="6.0">
+                    <Label text="Java" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblJava" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="JavaFX" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblFx" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Memoria en uso" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblMem" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

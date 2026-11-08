@@ -1,0 +1,9 @@
+# Material for battery
+newmtl mat_battery_pack
+Ka 0.0300 0.0320 0.0360
+Kd 0.1500 0.1600 0.1800
+Ks 0.2000 0.2000 0.2000
+Ns 20.0
+d 1.00
+illum 2
+map_Kd ../textures/tex_battery.png

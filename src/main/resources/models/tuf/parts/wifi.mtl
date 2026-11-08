@@ -1,0 +1,9 @@
+# Material for wifi
+newmtl mat_wifi_card
+Ka 0.1400 0.1440 0.1500
+Kd 0.7000 0.7200 0.7500
+Ks 0.2000 0.2000 0.2000
+Ns 20.0
+d 1.00
+illum 2
+map_Kd ../textures/tex_wifi_card.png

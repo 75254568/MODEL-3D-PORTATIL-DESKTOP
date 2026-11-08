@@ -1,0 +1,12 @@
+# ASUS ROG Strix SCAR 18 G835: foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.155,0.735,0.915,0.935
+fan,0.173,0.263,0.073
+fan,0.850,0.245,0.073
+fan,0.445,0.513,0.041
+zone,cooling,0.30,0.02,0.755,0.49
+zone,cpu,0.40,0.12,0.56,0.33
+zone,gpu,0.56,0.12,0.72,0.33
+zone,ram,0.556,0.41,0.738,0.568
+zone,ssd,0.745,0.43,0.918,0.62
+zone,ssd,0.18,0.44,0.36,0.59
+zone,pcb,0.17,0.55,0.22,0.64

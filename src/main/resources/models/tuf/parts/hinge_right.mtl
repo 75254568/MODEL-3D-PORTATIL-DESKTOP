@@ -1,0 +1,8 @@
+# Material for hinge_right
+newmtl mat_hinge_metal
+Ka 0.0400 0.0400 0.0440
+Kd 0.2000 0.2000 0.2200
+Ks 0.8000 0.8000 0.8000
+Ns 20.0
+d 1.00
+illum 2

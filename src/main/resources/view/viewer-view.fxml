@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.laptopstudio.controller.ViewerController">
+
+    <top>
+        <VBox>
+            <HBox styleClass="page-head" spacing="12.0" alignment="CENTER_LEFT">
+                <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+                <Label text="Visor 3D" styleClass="page-title"/>
+                <Label fx:id="lblModelos" styleClass="muted"/>
+            </HBox>
+            <VBox styleClass="filter-bar" spacing="8.0">
+                <padding><Insets top="8.0" right="16.0" bottom="8.0" left="16.0"/></padding>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <HBox alignment="CENTER_LEFT" spacing="0.0">
+                        <ToggleButton fx:id="tbSplit" text="Lado a lado" selected="true" styleClass="seg-first"/>
+                        <ToggleButton fx:id="tbGhost" text="Superpuestos" styleClass="seg-last"/>
+                    </HBox>
+                    <Label text="CÁMARA" styleClass="tool-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="0.0" fx:id="boxCam"/>
+                    <Label text="CAPA" styleClass="tool-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="0.0">
+                        <ToggleButton fx:id="tbEstudio" text="Exterior" selected="true" styleClass="seg-first"/>
+                        <ToggleButton fx:id="tbXray" text="Transparente" styleClass="seg-mid"/>
+                        <ToggleButton fx:id="tbTermico" text="Térmica" styleClass="seg-last"/>
+                    </HBox>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <Label text="CARGA" styleClass="tool-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="0.0">
+                        <ToggleButton fx:id="tbReposo" text="Reposo" selected="true" styleClass="seg-first"/>
+                        <ToggleButton fx:id="tbCarga" text="100 %" styleClass="seg-last"/>
+                    </HBox>
+                    <Label text="DESPIECE" styleClass="tool-label"/>
+                    <Slider fx:id="slExplode" min="0" max="100" value="0" prefWidth="140.0"/>
+                    <Label fx:id="lblExplode" styleClass="muted" minWidth="38.0"/>
+                    <Label text="TAPA" styleClass="tool-label"/>
+                    <Slider fx:id="slLid" min="0" max="180" value="105" prefWidth="140.0"/>
+                    <Label fx:id="lblLid" styleClass="muted" minWidth="38.0"/>
+                    <CheckBox fx:id="chkSync" text="Enlazar cámaras"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </top>
+
+    <left>
+        <VBox styleClass="part-list" prefWidth="220.0" minWidth="220.0" maxWidth="220.0">
+            <Label text="COMPONENTES" styleClass="section-label">
+                <padding><Insets top="10.0" right="12.0" bottom="6.0" left="12.0"/></padding>
+            </Label>
+            <ListView fx:id="lstPartes" VBox.vgrow="ALWAYS"/>
+            <VBox spacing="5.0" styleClass="side-foot">
+                <padding><Insets top="9.0" right="12.0" bottom="9.0" left="12.0"/></padding>
+                <HBox spacing="7.0" alignment="CENTER_LEFT"><Region styleClass="dot, ok"/><Label text="Modelado con fuente" styleClass="muted small"/></HBox>
+                <HBox spacing="7.0" alignment="CENTER_LEFT"><Region styleClass="dot, warn"/><Label text="Solo en uno de los dos" styleClass="muted small"/></HBox>
+                <HBox spacing="7.0" alignment="CENTER_LEFT"><Region styleClass="dot"/><Label text="Aproximado o sin datos" styleClass="muted small"/></HBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <HBox fx:id="viewers" spacing="2.0">
+            <VBox fx:id="boxA" HBox.hgrow="ALWAYS" prefWidth="10.0" minWidth="0.0">
+                <HBox styleClass="viewer-head" alignment="CENTER_LEFT" spacing="8.0">
+                    <padding><Insets top="6.0" right="10.0" bottom="6.0" left="10.0"/></padding>
+                    <Label text="A" styleClass="viewer-tag-a"/>
+                    <Label fx:id="lblNameA"/>
+                </HBox>
+                <StackPane fx:id="holderA" VBox.vgrow="ALWAYS" minWidth="0.0" minHeight="0.0"/>
+            </VBox>
+            <VBox fx:id="boxB" HBox.hgrow="ALWAYS" prefWidth="10.0" minWidth="0.0">
+                <HBox styleClass="viewer-head" alignment="CENTER_LEFT" spacing="8.0">
+                    <padding><Insets top="6.0" right="10.0" bottom="6.0" left="10.0"/></padding>
+                    <Label text="B" styleClass="viewer-tag-b"/>
+                    <Label fx:id="lblNameB"/>
+                </HBox>
+                <StackPane fx:id="holderB" VBox.vgrow="ALWAYS" minWidth="0.0" minHeight="0.0"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <right>
+        <VBox styleClass="inspect-panel" prefWidth="290.0" minWidth="290.0" maxWidth="290.0">
+            <VBox spacing="3.0" styleClass="side-head">
+                <padding><Insets top="12.0" right="12.0" bottom="12.0" left="12.0"/></padding>
+                <Label text="COMPONENTE" styleClass="section-label"/>
+                <Label fx:id="lblPieza" styleClass="model-name" wrapText="true"/>
+            </VBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                <VBox fx:id="boxDetalle"/>
+            </ScrollPane>
+        </VBox>
+    </right>
+
+    <bottom>
+        <HBox styleClass="action-bar" alignment="CENTER_LEFT" minHeight="36.0">
+            <padding><Insets top="6.0" right="16.0" bottom="6.0" left="16.0"/></padding>
+            <Label text="Arrastra para girar. Rueda para acercar. Clic en una pieza para ver su ficha." styleClass="muted small"/>
+        </HBox>
+    </bottom>
+</BorderPane>

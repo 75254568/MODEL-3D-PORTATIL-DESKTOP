@@ -1,0 +1,21 @@
+# HP ZBook Fury 16 G11 (foto del G10/G11, mismo chasis segun LaptopMedia). Una fila por pieza. Misma convencion que el resto de modelos.
+# u,v: centro como fraccion de full.jpg (foto cenital DESDE ABAJO de LaptopMedia, bisagra arriba; 1400x977 px, la franja superior es la repisa trasera sobre las bisagras).
+# Medidas w,d en mm medidas sobre la foto (0.2593 mm/px en X, 0.2569 mm/px en Z). h y z0 ESTIMADAS (cavidad 3.2-19.0 mm).
+# Las cubiertas de metal de la foto ocultan los 4 DIMM, los 4 SSD y la CPU/GPU: solo se modela lo visible (ver FUENTES.md).
+id,tipo,tier,u,v,w,d,h,z0,rot,soporte,confianza,fuente,extra
+pcb_c,pcb,2.8,0.4304,0.5834,206.1,66.8,1.6,17.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg),
+pcb_l,pcb,2.8,0.0768,0.6218,50.6,50.1,1.6,17.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg),
+pcb_r,pcb,2.8,0.8375,0.6116,89.5,52.7,1.6,17.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg),
+pcb_t,pcb,2.8,0.3761,0.3941,71.8,28.3,1.6,17.4,0,deck,pos:media dim:baja forma:NO CONFIRMADA alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg),
+battery,battery,1.0,0.3750,0.8240,238.5,41.1,10.0,3.2,0,base,pos:alta dim:media(foto) alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + etiqueta HP M85951-271 / repuesto M86087-001,
+speaker_a,speaker,1.0,0.1411,0.9417,53.2,12.8,10.0,3.2,0,base,pos:media dim:media alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg),
+speaker_b,speaker,1.0,0.8643,0.9417,51.9,12.8,10.0,3.2,0,base,pos:media dim:media alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg),
+fan_a,fan,2.0,0.1518,0.3367,81.7,77.6,8.0,3.2,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 11 (Fans 2),iu=0.1357|iv=0.3173|R=19.5
+fan_b,fan,2.0,0.8304,0.3531,68.7,74.5,8.0,3.2,0,base,pos:alta dim:media alt:estimada funcion:NO CONFIRMADA,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 11 (Fans 2),iu=0.8393|iv=0.3173|R=19.5
+plate_hs,plate,2.0,0.3761,0.3071,71.8,59.1,1.8,15.6,0,pcb_t,pos:media dim:baja forma:NO CONFIRMADA alt:estimada (bloque del disipador, item 16),LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 16,
+shield_mem,shield,2.4,0.6036,0.5067,80.4,102.8,0.8,12.8,0,ram_1,pos:alta dim:media alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 17b (Bracket Kit N50688-001),
+ram_1,ram,2.4,0.6036,0.4350,67.6,30.0,3.8,13.6,0,pcb_c,pos:media(bajo cubierta) dim:alta(JEDEC SO-DIMM) alt:estimada solo 2 de 4 DIMM,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 17a (DDR5-5600),nochips=1
+ram_2,ram,2.4,0.6036,0.5578,67.6,30.0,3.8,13.6,0,pcb_c,pos:media(bajo cubierta) dim:alta(JEDEC SO-DIMM) alt:estimada solo 2 de 4 DIMM,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 17a (DDR5-5600),nochips=1
+shield_ssd,shield,2.4,0.3161,0.5568,110.2,33.9,0.8,11.7,0,ssd_1,pos:alta dim:media alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 18 (SSD slots 1-4),
+ssd_1,ssd,2.4,0.3143,0.5568,80.0,22.0,4.9,12.5,0,pcb_c,pos:media(bajo cubierta) dim:alta(M.2 2280) alt:estimada solo 1 de 4 SSD,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP item 18a (PCIe-4x4),
+wifi,wifi,2.4,0.1000,0.6039,30.0,22.0,2.2,16.8,0,pcb_l,pos:alta dim:alta(M.2 2230) alt:estimada,LaptopMedia ZBook Fury G10/G11 foto cenital (full.jpg) + manual HP (WLAN),

@@ -1,0 +1,7 @@
+# Microsoft Surface Laptop 7 (guia de servicio de Microsoft, version de 13,8 pulgadas, baja resolucion): foto cenital con la tapa inferior retirada. Memoria soldada.
+battery,0.045,0.465,0.955,0.935
+fan,0.215,0.355,0.085
+zone,cooling,0.10,0.07,0.40,0.46
+zone,cpu,0.40,0.15,0.72,0.40
+zone,ssd,0.74,0.25,0.88,0.36
+zone,pcb,0.74,0.10,0.96,0.42

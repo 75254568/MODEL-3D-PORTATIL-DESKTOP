@@ -1,0 +1,10 @@
+# HP OMEN Transcend 16 (u1000): foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.055,0.645,0.955,0.934
+fan,0.156,0.319,0.062
+fan,0.809,0.319,0.062
+zone,cooling,0.04,0.07,0.96,0.45
+zone,cpu,0.33,0.14,0.50,0.36
+zone,gpu,0.50,0.12,0.70,0.30
+zone,ram,0.498,0.355,0.69,0.615
+zone,ssd,0.714,0.488,0.955,0.566
+zone,pcb,0.07,0.506,0.17,0.59

@@ -1,0 +1,9 @@
+# Lenovo Legion Pro 7i Gen 9: foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.064,0.703,0.945,0.955
+fan,0.173,0.314,0.062
+fan,0.827,0.314,0.065
+zone,cooling,0.05,0.08,0.95,0.45
+zone,cpu,0.33,0.20,0.50,0.43
+zone,gpu,0.50,0.20,0.67,0.43
+zone,ram,0.30,0.47,0.48,0.64
+zone,ssd,0.50,0.38,0.74,0.68

@@ -1,0 +1,10 @@
+# HP OMEN MAX 16 (Intel, 16-ah0000): foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.09,0.683,0.945,0.91
+fan,0.155,0.333,0.077
+fan,0.800,0.333,0.077
+zone,cooling,0.10,0.07,0.70,0.57
+zone,cpu,0.59,0.13,0.69,0.22
+zone,gpu,0.33,0.19,0.47,0.42
+zone,ram,0.505,0.40,0.682,0.665
+zone,ssd,0.71,0.485,0.91,0.677
+zone,pcb,0.04,0.62,0.10,0.69

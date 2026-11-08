@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.laptopstudio.controller.CompareController">
+
+    <top>
+        <VBox>
+            <HBox styleClass="page-head" spacing="12.0" alignment="CENTER_LEFT">
+                <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+                <Label text="Comparación técnica" styleClass="page-title"/>
+                <Label fx:id="lblCount" styleClass="muted"/>
+            </HBox>
+            <FlowPane fx:id="chips" styleClass="filter-bar" hgap="8.0" vgap="6.0" alignment="CENTER_LEFT">
+                <padding><Insets top="9.0" right="16.0" bottom="9.0" left="16.0"/></padding>
+            </FlowPane>
+            <HBox styleClass="filter-bar" spacing="18.0" alignment="CENTER_LEFT">
+                <padding><Insets top="8.0" right="16.0" bottom="8.0" left="16.0"/></padding>
+                <CheckBox fx:id="chkDiff" text="Mostrar solo diferencias"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="El punto verde marca el mejor valor, solo donde un valor mayor o menor es objetivamente mejor." styleClass="muted small"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane>
+            <TableView fx:id="tabla"/>
+            <Label fx:id="lblVacio" styleClass="muted" wrapText="true" maxWidth="420.0" textAlignment="CENTER"/>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox styleClass="action-bar" spacing="12.0" alignment="CENTER_LEFT" minHeight="44.0">
+            <padding><Insets top="6.0" right="16.0" bottom="6.0" left="16.0"/></padding>
+            <Label text="Se comparan los datos registrados en el catálogo. No se calculan puntuaciones." styleClass="muted"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Cambiar selección" onAction="#onCatalogo"/>
+            <Button fx:id="btnVisor" text="Ver en 3D" onAction="#onVisor" styleClass="primary"/>
+        </HBox>
+    </bottom>
+</BorderPane>

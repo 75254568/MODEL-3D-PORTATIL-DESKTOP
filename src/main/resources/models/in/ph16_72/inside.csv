@@ -1,0 +1,11 @@
+# Acer Predator Helios 16 PH16-72: foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.095,0.69,0.918,0.945
+fan,0.162,0.286,0.068
+fan,0.814,0.286,0.068
+zone,cooling,0.05,0.05,0.95,0.40
+zone,cpu,0.29,0.11,0.43,0.41
+zone,gpu,0.43,0.10,0.64,0.32
+zone,ram,0.436,0.32,0.636,0.545
+zone,ssd,0.11,0.50,0.30,0.55
+zone,ssd,0.636,0.45,0.82,0.50
+zone,pcb,0.036,0.668,0.10,0.728

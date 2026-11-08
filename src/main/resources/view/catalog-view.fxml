@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.laptopstudio.controller.CatalogController">
+
+    <top>
+        <VBox>
+            <HBox styleClass="page-head" spacing="12.0" alignment="CENTER_LEFT">
+                <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+                <Label text="Catálogo de laptops" styleClass="page-title"/>
+                <Label fx:id="lblCount" styleClass="muted"/>
+            </HBox>
+            <HBox styleClass="filter-bar" spacing="8.0" alignment="CENTER_LEFT">
+                <padding><Insets top="9.0" right="16.0" bottom="9.0" left="16.0"/></padding>
+                <HBox fx:id="searchBox" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="300.0" minWidth="220.0">
+                    <padding><Insets left="9.0"/></padding>
+                    <TextField fx:id="txtBuscar" promptText="Buscar por marca, modelo, CPU o GPU" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <ComboBox fx:id="cmbMarca" prefWidth="160.0"/>
+                <ComboBox fx:id="cmbCategoria" prefWidth="170.0"/>
+                <ToggleButton fx:id="tgRtx50" text="GPU RTX 50" styleClass="chip"/>
+                <ToggleButton fx:id="tgRtx40" text="GPU RTX 40" styleClass="chip"/>
+                <ToggleButton fx:id="tgRecon" text="Interior 3D reconstruido" styleClass="chip"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Quitar filtros" onAction="#onQuitarFiltros" styleClass="quiet"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tabla"/>
+    </center>
+
+    <right>
+        <VBox styleClass="side-panel" prefWidth="330.0" minWidth="330.0" maxWidth="330.0">
+            <VBox styleClass="side-head" spacing="3.0">
+                <padding><Insets top="12.0" right="14.0" bottom="12.0" left="14.0"/></padding>
+                <Label fx:id="lblMarca" styleClass="muted small"/>
+                <Label fx:id="lblModelo" styleClass="model-name" wrapText="true"/>
+                <HBox fx:id="boxEstado3d" spacing="6.0"/>
+            </VBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                <VBox fx:id="ficha"/>
+            </ScrollPane>
+            <HBox styleClass="side-foot" spacing="8.0">
+                <padding><Insets top="10.0" right="14.0" bottom="10.0" left="14.0"/></padding>
+                <Button fx:id="btnGuardar" minWidth="-Infinity" text="Guardar cambios" onAction="#onGuardar" styleClass="primary"/>
+                <Button fx:id="btnDescartar" minWidth="-Infinity" text="Descartar" onAction="#onDescartar"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnEliminar" minWidth="-Infinity" text="Eliminar" onAction="#onEliminar" styleClass="danger"/>
+            </HBox>
+        </VBox>
+    </right>
+
+    <bottom>
+        <HBox styleClass="action-bar" spacing="12.0" alignment="CENTER_LEFT" minHeight="44.0">
+            <padding><Insets top="6.0" right="16.0" bottom="6.0" left="16.0"/></padding>
+            <Label fx:id="lblSeleccion" styleClass="muted"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnVisor" text="Abrir en visor 3D" onAction="#onVisor"/>
+            <Button fx:id="btnComparar" text="Comparar" onAction="#onComparar" styleClass="primary"/>
+        </HBox>
+    </bottom>
+</BorderPane>

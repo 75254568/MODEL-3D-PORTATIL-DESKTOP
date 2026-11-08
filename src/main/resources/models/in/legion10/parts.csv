@@ -1,0 +1,39 @@
+# Lenovo Legion Pro 7i Gen 10 (Legion Pro 7 16IAX10H, tipo 83F5). Una fila por pieza.
+# u,v: centro de la pieza como fraccion de la foto cenital DESDE ABAJO (v=0 es la bisagra; izquierda/derecha invertidas respecto a la vista superior).
+# w,d,h: medidas en mm (w a lo largo de X, d a lo largo de Z). z0: altura de la cara inferior sobre la cara inferior del equipo (suelo del interior = 3,0; techo = 14,0).
+# La altura (h, z0) de TODAS las piezas es ESTIMADA por la cavidad de 11 mm: no hay dato oficial. u,v,w,d vienen de medir sobre la foto salvo donde se indica estandar JEDEC/M.2.
+# tier: capa del despiece (0 base ... 4 teclado). Las piezas de una misma capa se mueven juntas y conservan su posicion relativa.
+# extra: R = radio del rodete (mm); iu,iv = centro del rodete (fraccion de la foto).
+id,tipo,tier,u,v,w,d,h,z0,rot,soporte,confianza,fuente,extra
+pcb_main,pcb,2.8,0.505,0.39,171.3,187.6,1.6,12.4,0,deck,pos:media dim:baja alt:estimada,LaptopMedia DSC09703 + HMM fig 35,
+pcb_izq,pcb,2.8,0.1575,0.59,82.0,77.3,1.6,12.4,0,deck,pos:media dim:baja alt:estimada,LaptopMedia DSC09703,
+pcb_der,pcb,2.8,0.85,0.615,80.2,63.5,1.6,12.4,0,deck,pos:media dim:baja alt:estimada,LaptopMedia DSC09703,
+battery,battery,1.0,0.5045,0.8475,311.6,57.7,8.2,3.0,0,base,pos:alta dim:media alt:estimada,LaptopMedia DSC09701 + HMM pag 29 + FRU oficial 5B11X79503 = L24D4PC1 (modelo leido en la etiqueta de la foto),
+spk_a,speaker,1.0,0.0455,0.84,16.4,56.6,8.4,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia DSC09703 + FRU oficial 5SB0S32094 (altavoces: un solo FRU),
+spk_b,speaker,1.0,0.957,0.84,16.4,56.6,8.4,3.0,0,base,pos:media dim:media alt:estimada,LaptopMedia DSC09703 + FRU oficial 5SB0S32094 (altavoces: un solo FRU),
+fan_a,fan,2.0,0.1675,0.2925,85.6,114.5,8.2,3.0,0,base,pos:alta dim:media alt:estimada,LaptopMedia DSC09703 + modulo 5F10S14278 + HMM pag 38 + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),iu=0.138|iv=0.352|R=24.8
+fan_b,fan,2.0,0.8325,0.2925,82.0,114.5,8.2,3.0,0,base,pos:alta dim:media alt:estimada,LaptopMedia DSC09703 + modulo 5F10S14278 + HMM pag 38 + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),iu=0.85|iv=0.352|R=23.7
+fins_a,fins,2.0,0.1625,0.06,78.3,13.8,8.2,3.0,0,fan_a,pos:media dim:baja alt:estimada,LaptopMedia DSC09703 + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+fins_b,fins,2.0,0.8375,0.06,78.3,13.8,8.2,3.0,0,fan_b,pos:media dim:baja alt:estimada,LaptopMedia DSC09703 + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+pipe_a1,pipe,2.0,0.294,0.23,93.8,6.5,2.2,9.0,90,plate_tm1,pos:media dim:baja alt:estimada,LaptopMedia DSC09703 (tira de cobre visible) + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+pipe_a2,pipe,2.0,0.1775,0.06,78.3,6.5,2.2,9.0,0,fins_a,pos:media dim:baja alt:estimada,LaptopMedia DSC09701 (punta de cobre visible) + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+pipe_b1,pipe,2.0,0.711,0.23,93.8,6.5,2.2,9.0,90,plate_tm1,pos:media dim:baja alt:estimada,LaptopMedia DSC09703 (tira de cobre visible) + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+pipe_b2,pipe,2.0,0.825,0.06,76.4,6.5,2.2,9.0,0,fins_b,pos:media dim:baja alt:estimada,LaptopMedia DSC09701 (punta de cobre visible) + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+plate_tm1,plate,2.0,0.503,0.235,158.1,107.6,1.8,9.4,0,cpu,pos:alta dim:media alt:estimada,LaptopMedia DSC09703 + modulo 5F10S14278 + HMM tabla 7 + FRU oficial 5F10S14278/5F10S14279 (modulo termico 1 con ventilador),
+plate_tm2,plate,2.0,0.3725,0.5975,60.0,70.4,1.8,9.4,0,fan_c,pos:media dim:baja alt:estimada forma:NO CONFIRMADA,LaptopMedia DSC09703 + HMM pag 34 + FRU oficial 5F10S14280/5F10S14281 (modulo termico 2 con ventilador),
+fan_c,fan,2.0,0.3775,0.56,56.5,44.2,6.4,3.0,0,base,pos:media dim:baja alt:estimada,LaptopMedia DSC09703 + HMM pag 34 + FRU oficial 5F10S14280/5F10S14281 (modulo termico 2 con ventilador),iu=0.373|iv=0.557|R=20.0
+cpu,cpu,2.4,0.61,0.365,45.0,37.5,1.2,11.2,0,pcb_main,pos:baja(HMM fig 5) dim:NO CONFIRMADA alt:estimada,HMM fig 5 (zonas de pasta termica),
+gpu,gpu,2.4,0.48,0.28,35.0,35.0,1.2,11.2,0,pcb_main,pos:baja(HMM fig 5) dim:NO CONFIRMADA alt:estimada,HMM fig 5 (zonas de pasta termica),
+ram_1,ram,2.4,0.6095,0.488,67.6,30.0,3.8,8.6,0,pcb_main,pos:alta dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia DSC09706 + HMM pag 38 + FRU oficial SO-DIMM DDR5-6400 5M31N...,
+ram_2,ram,2.4,0.6095,0.625,67.6,30.0,3.8,8.6,0,pcb_main,pos:alta dim:alta(JEDEC SO-DIMM) alt:estimada,LaptopMedia DSC09706 + HMM pag 38 + FRU oficial SO-DIMM DDR5-6400 5M31N...,
+ssd_1,ssd,2.4,0.845,0.568,80.0,22.0,2.3,10.1,0,pcb_der,pos:alta dim:alta(M.2 2280) alt:estimada,LaptopMedia DSC09705 + HMM pag 36,
+wifi,wifi,2.4,0.186,0.545,30.0,22.0,2.2,10.2,0,pcb_izq,pos:alta dim:alta(M.2 2230) alt:estimada,LaptopMedia DSC09705 + HMM pag 37 + FRU oficial BE200 5W11H85441 o MT7927 5W11H85406,
+tm1_s1,screw,2.0,0.675,0.376,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_s2,screw,2.0,0.359,0.23,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_s3,screw,2.0,0.327,0.388,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_s4,screw,2.0,0.623,0.161,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_s5,screw,2.0,0.473,0.388,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_s6,screw,2.0,0.505,0.236,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_s7,screw,2.0,0.544,0.398,3.4,3.4,1.2,8.2,0,plate_tm1,pos:baja,HMM fig 26 + numeracion de la pieza 5F10S14278,
+tm1_m2x7_a,screw,2.0,0.268,0.475,3.4,3.4,1.2,8.2,0,fan_a,pos:baja,HMM tabla 15 (M2x7 x2),
+tm1_m2x7_b,screw,2.0,0.735,0.46,3.4,3.4,1.2,8.2,0,fan_b,pos:baja,HMM tabla 15 (M2x7 x2),

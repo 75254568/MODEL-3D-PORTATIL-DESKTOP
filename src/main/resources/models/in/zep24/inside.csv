@@ -1,0 +1,10 @@
+# ASUS ROG Zephyrus G16 GU605: foto cenital con la tapa inferior retirada (LaptopMedia). RAM soldada.
+battery,0.068,0.62,0.945,0.945
+fan,0.173,0.337,0.065
+fan,0.814,0.337,0.065
+fan,0.605,0.522,0.035
+zone,cooling,0.31,0.05,0.69,0.44
+zone,cpu,0.34,0.17,0.50,0.34
+zone,gpu,0.50,0.17,0.68,0.34
+zone,ssd,0.71,0.49,0.936,0.588
+zone,pcb,0.314,0.52,0.39,0.62

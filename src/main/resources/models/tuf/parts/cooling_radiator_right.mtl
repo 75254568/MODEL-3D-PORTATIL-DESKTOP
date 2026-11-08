@@ -1,0 +1,9 @@
+# Material for cooling_radiator_right
+newmtl mat_radiator_fins
+Ka 0.1500 0.0900 0.0500
+Kd 0.7500 0.4500 0.2500
+Ks 0.2000 0.2000 0.2000
+Ns 20.0
+d 1.00
+illum 2
+map_Kd ../textures/tex_radiator_fins.png

@@ -1,0 +1,11 @@
+# Alienware m18 R2: foto cenital con la tapa inferior retirada y sin bateria (LaptopMedia); bateria de 97 Wh en batt.jpg
+battery,0.07,0.70,0.93,0.915
+fan,0.150,0.326,0.066
+fan,0.840,0.326,0.070
+fan,0.486,0.218,0.038
+fan,0.150,0.550,0.050
+zone,cooling,0.30,0.10,0.655,0.355
+zone,cpu,0.34,0.12,0.46,0.30
+zone,gpu,0.56,0.14,0.66,0.34
+zone,ram,0.355,0.35,0.53,0.60
+zone,ssd,0.65,0.49,0.786,0.625

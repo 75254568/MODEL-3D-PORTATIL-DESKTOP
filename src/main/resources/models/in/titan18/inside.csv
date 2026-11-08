@@ -1,0 +1,11 @@
+# MSI Titan 18 HX: foto cenital con la tapa inferior retirada y sin bateria (LaptopMedia, guia del A2XW, mismo chasis); bateria en batt.jpg
+battery,0.10,0.70,0.89,0.955
+fan,0.164,0.269,0.075
+fan,0.832,0.269,0.075
+zone,cooling,0.29,0.03,0.70,0.36
+zone,cpu,0.33,0.08,0.50,0.33
+zone,gpu,0.50,0.08,0.69,0.33
+zone,ram,0.527,0.365,0.70,0.60
+zone,ssd,0.75,0.51,0.91,0.575
+zone,ssd,0.17,0.55,0.32,0.645
+zone,pcb,0.81,0.60,0.90,0.67

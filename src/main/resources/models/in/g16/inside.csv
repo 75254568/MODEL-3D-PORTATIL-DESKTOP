@@ -1,0 +1,10 @@
+# Dell G16 7630: foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.086,0.658,0.91,0.92
+fan,0.155,0.292,0.091
+fan,0.855,0.280,0.091
+zone,cooling,0.55,0.10,0.70,0.33
+zone,cpu,0.31,0.15,0.42,0.31
+zone,gpu,0.42,0.15,0.54,0.31
+zone,ram,0.327,0.33,0.527,0.585
+zone,ssd,0.20,0.41,0.31,0.54
+zone,pcb,0.82,0.54,0.905,0.62

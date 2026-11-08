@@ -1,0 +1,144 @@
+/*
+ * Laptop Studio 3D. Sistema visual.
+ * Superficies grafito neutras, un unico acento azul para seleccion y accion principal.
+ * Verde, ambar y rojo solo comunican estado. Radio de 3 px, sin sombras ni degradados.
+ */
+.root {
+    -color-bg-default: #12151a;
+    -color-bg-subtle: #181c22;
+    -color-bg-inset: #0e1115;
+    -color-bg-overlay: #1f242b;
+    -color-border-default: #363d48;
+    -color-border-muted: #2a3039;
+    -color-border-subtle: #22272e;
+    -color-fg-default: #dde2e9;
+    -color-fg-muted: #97a0ad;
+    -color-fg-subtle: #6a7381;
+    -color-accent-fg: #4f9bd9;
+    -color-accent-emphasis: #4f9bd9;
+    -color-accent-muted: rgba(79, 155, 217, 0.45);
+    -color-accent-subtle: rgba(79, 155, 217, 0.14);
+    -color-success-fg: #5bb283;
+    -color-danger-fg: #d46a6a;
+    -color-warning-fg: #d6a24f;
+    -color-hover: #252b33;
+    -fx-font-family: "Segoe UI Variable Text", "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-background-color: -color-bg-default;
+}
+
+/* ---------------------------------------------------------------- estructura */
+.root-pane, .content-pane { -fx-background-color: -color-bg-default; }
+.rail { -fx-background-color: -color-bg-inset; -fx-border-color: -color-border-muted; -fx-border-width: 0 1 0 0; }
+.statusbar { -fx-background-color: -color-bg-inset; -fx-border-color: -color-border-muted; -fx-border-width: 1 0 0 0; }
+.statusbar .label { -fx-text-fill: -color-fg-muted; -fx-font-size: 12px; }
+.statusbar .status-message { -fx-text-fill: -color-fg-default; }
+.page-head { -fx-border-color: -color-border-muted; -fx-border-width: 0 0 1 0; }
+.filter-bar { -fx-border-color: -color-border-muted; -fx-border-width: 0 0 1 0; }
+.action-bar { -fx-background-color: -color-bg-subtle; -fx-border-color: -color-border-muted; -fx-border-width: 1 0 0 0; }
+.side-panel { -fx-background-color: -color-bg-subtle; -fx-border-color: -color-border-muted; -fx-border-width: 0 0 0 1; }
+.side-head { -fx-border-color: -color-border-muted; -fx-border-width: 0 0 1 0; }
+.side-foot { -fx-border-color: -color-border-muted; -fx-border-width: 1 0 0 0; }
+
+/* ---------------------------------------------------------------- texto */
+.page-title { -fx-font-size: 17px; -fx-font-weight: bold; -fx-text-fill: -color-fg-default; }
+.muted { -fx-text-fill: -color-fg-muted; }
+.faint { -fx-text-fill: -color-fg-subtle; }
+.small { -fx-font-size: 12px; }
+.section-label { -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: -color-fg-muted; }
+.field-label { -fx-font-size: 12px; -fx-text-fill: -color-fg-muted; }
+.model-name { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -color-fg-default; }
+.value-strong { -fx-text-fill: -color-fg-default; -fx-font-weight: bold; }
+
+/* ---------------------------------------------------------------- iconos */
+.icon { -fx-fill: transparent; -fx-stroke: -color-fg-muted; -fx-stroke-width: 1.7; -fx-stroke-line-cap: round; -fx-stroke-line-join: round; }
+.button:hover .icon, .toggle-button:hover .icon { -fx-stroke: -color-fg-default; }
+.rail-btn:selected .icon { -fx-stroke: -color-accent-fg; }
+.button.primary .icon { -fx-stroke: #06121c; }
+
+/* ---------------------------------------------------------------- botones y campos */
+.button, .toggle-button { -fx-background-color: #1f242b; -fx-border-color: -color-border-default; -fx-border-width: 1; -fx-border-radius: 3; -fx-background-radius: 3; -fx-background-insets: 0; -fx-text-fill: -color-fg-default; -fx-padding: 5 12 5 12; -fx-cursor: hand; }
+.button:hover, .toggle-button:hover { -fx-background-color: -color-hover; }
+.button:focused, .toggle-button:focused, .text-field:focused, .combo-box-base:focused { -fx-background-insets: 0; }
+.button:disabled, .toggle-button:disabled { -fx-opacity: 0.4; }
+.button.primary { -fx-background-color: -color-accent-fg; -fx-border-color: -color-accent-fg; -fx-text-fill: #06121c; -fx-font-weight: bold; }
+.button.primary:hover { -fx-background-color: #6aaee4; }
+.button.danger { -fx-background-color: transparent; -fx-text-fill: -color-danger-fg; -fx-border-color: rgba(212, 106, 106, 0.5); }
+.button.danger:hover { -fx-background-color: rgba(212, 106, 106, 0.12); }
+.button.quiet { -fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: -color-fg-muted; }
+.button.quiet:hover { -fx-text-fill: -color-fg-default; }
+.button.icon-only { -fx-padding: 3; -fx-background-color: transparent; -fx-border-color: transparent; }
+.chip { -fx-background-color: transparent; -fx-border-color: -color-border-default; -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: -color-fg-muted; -fx-padding: 3 11 3 11; }
+.chip:selected { -fx-background-color: -color-accent-subtle; -fx-border-color: -color-accent-muted; -fx-text-fill: -color-fg-default; }
+.seg-first, .seg-mid, .seg-last { -fx-background-radius: 0; -fx-border-radius: 0; -fx-padding: 4 10 4 10; -fx-background-color: transparent; -fx-text-fill: -color-fg-muted; -fx-border-width: 1 0 1 1; }
+.seg-first { -fx-background-radius: 3 0 0 3; -fx-border-radius: 3 0 0 3; }
+.seg-last { -fx-background-radius: 0 3 3 0; -fx-border-radius: 0 3 3 0; -fx-border-width: 1; }
+.seg-first:selected, .seg-mid:selected, .seg-last:selected { -fx-background-color: -color-accent-subtle; -fx-text-fill: -color-fg-default; }
+/* riel de navegacion (despues de los botones genericos para que prevalezca) */
+.rail-btn { -fx-background-color: transparent; -fx-background-radius: 3; -fx-text-fill: -color-fg-muted; -fx-font-size: 11px; -fx-padding: 9 1 7 1; -fx-content-display: top; -fx-graphic-text-gap: 4; -fx-border-color: transparent; -fx-border-width: 0 0 0 3; -fx-border-radius: 3; }
+.rail-btn:hover { -fx-background-color: -color-hover; -fx-text-fill: -color-fg-default; }
+.rail-btn:selected { -fx-background-color: -color-accent-subtle; -fx-text-fill: -color-fg-default; -fx-border-color: transparent transparent transparent -color-accent-fg; -fx-border-radius: 0; }
+.text-field { -fx-padding: 4 8 4 8; }
+.text-field, .combo-box-base { -fx-background-color: #181c22; -fx-border-color: -color-border-default; -fx-border-radius: 3; -fx-background-radius: 3; -fx-text-fill: -color-fg-default; -fx-prompt-text-fill: -color-fg-subtle; }
+.text-field:focused, .combo-box-base:focused { -fx-border-color: -color-accent-fg; }
+.text-field.invalid { -fx-border-color: -color-danger-fg; }
+.search-box { -fx-background-color: #181c22; -fx-border-color: -color-border-default; -fx-border-radius: 3; -fx-background-radius: 3; }
+.search-box .text-field { -fx-background-color: transparent; -fx-border-color: transparent; }
+.check-box:selected > .box { -fx-background-color: -color-accent-fg; }
+.slider .thumb { -fx-background-color: -color-fg-default; }
+.slider:focused .thumb { -fx-background-color: -color-accent-fg; }
+
+/* ---------------------------------------------------------------- tablas */
+.table-view { -fx-background-color: -color-bg-default; -fx-border-width: 0; -fx-table-cell-border-color: -color-border-subtle; }
+.table-view .column-header-background { -fx-background-color: -color-bg-subtle; -fx-border-color: -color-border-default; -fx-border-width: 0 0 1 0; }
+.table-view .column-header { -fx-background-color: transparent; -fx-border-color: transparent; }
+.table-view .column-header .label { -fx-text-fill: -color-fg-muted; -fx-font-size: 12px; -fx-font-weight: normal; }
+.table-row-cell { -fx-background-color: transparent; -fx-border-color: -color-border-subtle; -fx-border-width: 0 0 1 0; -fx-cell-size: 30px; }
+.table-row-cell:hover { -fx-background-color: -color-hover; }
+.table-row-cell:selected { -fx-background-color: -color-accent-subtle; }
+.table-row-cell:selected .table-cell { -fx-text-fill: -color-fg-default; }
+.table-cell { -fx-text-fill: -color-fg-default; -fx-alignment: CENTER_LEFT; -fx-border-width: 0; }
+.table-cell.num { -fx-alignment: CENTER_RIGHT; }
+.table-cell.nd { -fx-text-fill: -color-fg-subtle; }
+.table-cell.best { -fx-text-fill: #9bd5b6; -fx-font-weight: bold; }
+.table-cell.key { -fx-text-fill: -color-fg-muted; }
+.table-row-cell.group-row { -fx-background-color: -color-bg-subtle; }
+.table-row-cell.group-row .table-cell { -fx-text-fill: -color-fg-muted; -fx-font-size: 11px; -fx-font-weight: bold; }
+.table-view .placeholder .label { -fx-text-fill: -color-fg-muted; }
+
+/* ---------------------------------------------------------------- etiquetas de estado */
+.tag { -fx-font-size: 11px; -fx-padding: 1 7 1 7; -fx-border-radius: 2; -fx-background-radius: 2; -fx-border-width: 1; -fx-border-color: -color-border-default; -fx-text-fill: -color-fg-muted; }
+.tag.ok { -fx-text-fill: -color-success-fg; -fx-border-color: rgba(91, 178, 131, 0.45); }
+.tag.warn { -fx-text-fill: -color-warning-fg; -fx-border-color: rgba(214, 162, 79, 0.45); }
+.tag.off { -fx-text-fill: -color-fg-subtle; }
+
+/* ---------------------------------------------------------------- ficha (paneles plegables) */
+.titled-pane { -fx-box-border: transparent; }
+.titled-pane > .title { -fx-background-color: transparent; -fx-border-color: -color-border-muted; -fx-border-width: 0 0 1 0; -fx-padding: 7 14 7 14; }
+.titled-pane > .title > .text { -fx-font-size: 11px; -fx-font-weight: bold; -fx-fill: -color-fg-muted; }
+.titled-pane > .content { -fx-background-color: transparent; -fx-border-width: 0; }
+.scroll-pane, .scroll-pane > .viewport { -fx-background-color: transparent; -fx-border-width: 0; }
+
+/* ---------------------------------------------------------------- visor 3D */
+.tool-label { -fx-font-size: 11px; -fx-text-fill: -color-fg-subtle; }
+.viewer-head { -fx-background-color: -color-bg-subtle; -fx-border-color: -color-border-muted; -fx-border-width: 0 0 1 0; }
+.viewer-tag-a { -fx-text-fill: #5ea5c7; -fx-font-weight: bold; }
+.viewer-tag-b { -fx-text-fill: #877fb0; -fx-font-weight: bold; }
+.part-list { -fx-background-color: -color-bg-subtle; -fx-border-color: -color-border-muted; -fx-border-width: 0 1 0 0; }
+.part-list .list-cell { -fx-background-color: transparent; -fx-padding: 5 10 5 9; -fx-border-color: transparent; -fx-border-width: 0 0 0 3; -fx-text-fill: -color-fg-default; }
+.part-list .list-cell:hover { -fx-background-color: -color-hover; }
+.part-list .list-cell:selected { -fx-background-color: -color-accent-subtle; -fx-border-color: -color-accent-fg; }
+.dot { -fx-background-radius: 5; -fx-min-width: 8; -fx-min-height: 8; -fx-max-width: 8; -fx-max-height: 8; -fx-background-color: -color-fg-subtle; }
+.dot.ok { -fx-background-color: -color-success-fg; }
+.dot.warn { -fx-background-color: -color-warning-fg; }
+.inspect-panel { -fx-background-color: -color-bg-subtle; -fx-border-color: -color-border-muted; -fx-border-width: 0 0 0 1; }
+.inspect-row { -fx-border-color: -color-border-subtle; -fx-border-width: 0 0 1 0; }
+.hud-name { -fx-font-size: 11px; }
+.hud-tele { -fx-font-size: 11px; -fx-text-fill: -color-warning-fg; }
+
+/* ---------------------------------------------------------------- dialogos */
+.dialog-pane { -fx-background-color: #1f242b; -fx-border-color: -color-border-default; -fx-border-width: 1; }
+.dialog-pane > .header-panel { -fx-background-color: transparent; }
+.dialog-pane > .header-panel .label { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -color-fg-default; }
+.dialog-pane > .content.label { -fx-text-fill: -color-fg-muted; }
+.dialog-pane > .button-bar > .container { -fx-background-color: transparent; }

@@ -1,0 +1,10 @@
+# HP Victus 16 (16-r0000): foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.055,0.70,0.94,0.965
+fan,0.186,0.374,0.098
+fan,0.818,0.354,0.098
+zone,cooling,0.09,0.05,0.91,0.33
+zone,cpu,0.30,0.07,0.50,0.25
+zone,gpu,0.50,0.07,0.68,0.25
+zone,ram,0.323,0.32,0.51,0.59
+zone,ssd,0.68,0.54,0.91,0.64
+zone,pcb,0.586,0.45,0.655,0.59

@@ -1,0 +1,10 @@
+# HP ZBook Fury 16 G10/G11 (mismo chasis): foto cenital con la tapa inferior retirada (LaptopMedia)
+battery,0.05,0.725,0.955,0.925
+fan,0.136,0.345,0.064
+fan,0.840,0.345,0.064
+zone,cooling,0.27,0.21,0.47,0.43
+zone,cpu,0.30,0.24,0.40,0.40
+zone,gpu,0.40,0.24,0.47,0.40
+zone,ram,0.495,0.31,0.70,0.61
+zone,ssd,0.164,0.50,0.468,0.67
+zone,pcb,0.06,0.56,0.136,0.68

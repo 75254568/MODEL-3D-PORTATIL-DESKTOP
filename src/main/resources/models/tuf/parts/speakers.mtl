@@ -1,0 +1,8 @@
+# Material for speakers
+newmtl mat_speakers
+Ka 0.0360 0.0380 0.0400
+Kd 0.1800 0.1900 0.2000
+Ks 0.2000 0.2000 0.2000
+Ns 20.0
+d 1.00
+illum 2

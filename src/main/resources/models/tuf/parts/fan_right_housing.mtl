@@ -1,0 +1,9 @@
+# Material for fan_right_housing
+newmtl mat_fan_housing
+Ka 0.0500 0.0520 0.0560
+Kd 0.2500 0.2600 0.2800
+Ks 0.2000 0.2000 0.2000
+Ns 20.0
+d 1.00
+illum 2
+map_Kd ../textures/tex_fan_housing.png

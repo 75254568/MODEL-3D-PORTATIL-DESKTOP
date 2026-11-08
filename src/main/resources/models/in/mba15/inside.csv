@@ -1,0 +1,4 @@
+# Apple MacBook Air 15 (M3): foto cenital con la tapa inferior retirada (guia de iFixit). Sin ventilador; chip, memoria y SSD bajo el blindaje superior.
+battery,0.03,0.345,0.97,0.585
+zone,cpu,0.20,0.13,0.45,0.31
+zone,pcb,0.08,0.08,0.92,0.33
