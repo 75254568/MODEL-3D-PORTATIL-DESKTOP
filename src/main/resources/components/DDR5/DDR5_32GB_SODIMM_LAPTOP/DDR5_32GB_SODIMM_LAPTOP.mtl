@@ -1,0 +1,85 @@
+﻿# Material definitions for DDR5 32GB SO-DIMM (Laptop Form Factor)
+newmtl DDR5_PCB_MatteBlack
+Ka 0.08 0.09 0.10
+Kd 0.09 0.11 0.12
+Ks 0.15 0.15 0.16
+Ns 30.0
+illum 2
+newmtl GoldEdgeContacts
+Ka 0.28 0.22 0.05
+Kd 0.94 0.76 0.18
+Ks 0.85 0.85 0.75
+Ns 110.0
+illum 2
+newmtl DRAM_Silicon_Epoxy
+Ka 0.04 0.04 0.05
+Kd 0.12 0.13 0.15
+Ks 0.22 0.22 0.24
+Ns 45.0
+illum 2
+newmtl DRAM_LaserMarkings
+Ka 0.10 0.10 0.12
+Kd 0.22 0.24 0.28
+Ks 0.35 0.35 0.38
+Ns 60.0
+illum 2
+newmtl PMIC_Controller_Body
+Ka 0.05 0.05 0.06
+Kd 0.10 0.11 0.13
+Ks 0.30 0.30 0.35
+Ns 50.0
+illum 2
+newmtl SiliconMirrorDie
+Ka 0.15 0.18 0.22
+Kd 0.28 0.32 0.38
+Ks 0.80 0.82 0.85
+Ns 120.0
+illum 2
+newmtl SMD_FerriteInductor
+Ka 0.06 0.07 0.08
+Kd 0.16 0.18 0.20
+Ks 0.20 0.20 0.22
+Ns 25.0
+illum 2
+newmtl MLCC_Capacitor_Tan
+Ka 0.18 0.13 0.08
+Kd 0.65 0.50 0.35
+Ks 0.25 0.22 0.20
+Ns 35.0
+illum 2
+newmtl SMD_Resistor_Black
+Ka 0.03 0.03 0.03
+Kd 0.08 0.08 0.09
+Ks 0.12 0.12 0.12
+Ns 20.0
+illum 2
+newmtl SilverSolderTerminals
+Ka 0.25 0.26 0.28
+Kd 0.78 0.80 0.84
+Ks 0.88 0.88 0.90
+Ns 95.0
+illum 2
+newmtl Pin1DotSilver
+Ka 0.30 0.30 0.32
+Kd 0.82 0.84 0.88
+Ks 0.90 0.90 0.92
+Ns 100.0
+illum 2
+newmtl SpecLabel_MatteWhite
+Ka 0.25 0.25 0.25
+Kd 0.92 0.93 0.92
+Ks 0.20 0.20 0.20
+Ns 15.0
+illum 2
+newmtl Lenovo_RedAccent
+Ka 0.20 0.02 0.02
+Kd 0.88 0.12 0.14
+Ks 0.30 0.20 0.20
+Ns 30.0
+illum 2
+newmtl Barcode_DarkInk
+Ka 0.02 0.02 0.02
+Kd 0.05 0.05 0.06
+Ks 0.05 0.05 0.05
+Ns 10.0
+illum 2

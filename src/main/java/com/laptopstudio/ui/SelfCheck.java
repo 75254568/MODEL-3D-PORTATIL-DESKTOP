@@ -36,8 +36,39 @@ public final class SelfCheck {
             Platform.exit();
             return;
         }
-        List<Screen> order = List.of(Screen.CATALOGO, Screen.COMPARAR, Screen.VISOR, Screen.AJUSTES);
+        List<Screen> order = List.of(Screen.BUSCAR, Screen.CATALOGO, Screen.COMPARAR, Screen.VISOR, Screen.COMPONENTES,
+                Screen.AJUSTES);
         step(scene, nav, out, order, 0);
+    }
+
+    /**
+     * Opciones para capturar la pantalla Componentes 3D en un estado concreto:
+     * {@code -Dstudio.component=texto} elige el primer componente cuyo nombre lo contiene,
+     * {@code -Dstudio.explode=0..100} mueve el despiece y {@code -Dstudio.sheet=0..1} desplaza la ficha.
+     */
+    private static void prepareComponents(Scene scene) {
+        String want = System.getProperty("studio.component");
+        if (want != null && scene.lookup(".component-list .list-view") instanceof javafx.scene.control.ListView<?> list) {
+            for (int k = 0; k < list.getItems().size(); k++) {
+                if (String.valueOf(list.getItems().get(k)).toLowerCase().contains(want.toLowerCase())) {
+                    list.getSelectionModel().select(k);
+                    list.scrollTo(k);
+                    break;
+                }
+            }
+        }
+        if (System.getProperty("studio.explode") != null
+                && scene.lookup(".component-explode") instanceof javafx.scene.control.Slider slider) {
+            slider.setValue(Double.parseDouble(System.getProperty("studio.explode")));
+        }
+        if (System.getProperty("studio.sheet") != null
+                && scene.lookup(".component-sheet") instanceof javafx.scene.control.ScrollPane sheet) {
+            double v = Double.parseDouble(System.getProperty("studio.sheet"));
+            // la ficha se rellena al cargar el modelo: se desplaza un poco despues
+            PauseTransition later = new PauseTransition(Duration.millis(2500));
+            later.setOnFinished(e -> sheet.setVvalue(v));
+            later.play();
+        }
     }
 
     private static void step(Scene scene, NavigationService nav, Path out, List<Screen> order, int i) {
@@ -48,7 +79,17 @@ public final class SelfCheck {
         }
         Screen s = order.get(i);
         nav.go(s);
-        PauseTransition pt = new PauseTransition(Duration.millis(s == Screen.VISOR ? 2500 : 1200));
+        // -Dstudio.immersive=true: captura el visor en su modo de pantalla completa
+        boolean inmersivo = s == Screen.VISOR && Boolean.getBoolean("studio.immersive");
+        if (inmersivo) {
+            nav.immersiveProperty().set(true);
+        }
+        if (s == Screen.COMPONENTES) {
+            prepareComponents(scene);
+        }
+        // los visores 3D necesitan mas tiempo: cargan modelos (y la biblioteca, ademas, dibuja sus miniaturas)
+        int espera = s == Screen.VISOR ? 2500 : s == Screen.COMPONENTES ? 5000 : 1200;
+        PauseTransition pt = new PauseTransition(Duration.millis(espera));
         pt.setOnFinished(e -> {
             try {
                 WritableImage img = scene.snapshot(null);
@@ -64,6 +105,9 @@ public final class SelfCheck {
                 System.out.println("SELFCHECK ok " + s);
             } catch (Exception ex) {
                 System.out.println("SELFCHECK error " + s + ": " + ex);
+            }
+            if (inmersivo) {
+                nav.immersiveProperty().set(false);
             }
             step(scene, nav, out, order, i + 1);
         });

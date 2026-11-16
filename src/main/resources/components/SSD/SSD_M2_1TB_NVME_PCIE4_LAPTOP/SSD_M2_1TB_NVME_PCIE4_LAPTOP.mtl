@@ -1,0 +1,103 @@
+﻿# Material definitions for M.2 2280 NVMe SSD (Gaming Laptop Form Factor)
+newmtl M2_PCB_MatteBlack
+Ka 0.04 0.04 0.05
+Kd 0.08 0.09 0.11
+Ks 0.18 0.20 0.22
+Ns 30.0
+illum 2
+newmtl GoldEdgeContacts
+Ka 0.28 0.22 0.05
+Kd 0.94 0.76 0.18
+Ks 0.88 0.85 0.75
+Ns 110.0
+illum 2
+newmtl ScrewRing_GoldPlated
+Ka 0.25 0.20 0.05
+Kd 0.90 0.72 0.15
+Ks 0.85 0.82 0.70
+Ns 90.0
+illum 2
+newmtl Controller_Body
+Ka 0.05 0.05 0.06
+Kd 0.12 0.13 0.15
+Ks 0.25 0.25 0.28
+Ns 40.0
+illum 2
+newmtl Nickel_HeatSpreader
+Ka 0.22 0.24 0.26
+Kd 0.75 0.78 0.82
+Ks 0.92 0.92 0.95
+Ns 120.0
+illum 2
+newmtl Silicon_LaserEtch
+Ka 0.12 0.14 0.16
+Kd 0.35 0.38 0.42
+Ks 0.50 0.50 0.55
+Ns 70.0
+illum 2
+newmtl DRAM_Cache_Silicon
+Ka 0.04 0.04 0.05
+Kd 0.10 0.11 0.13
+Ks 0.30 0.30 0.35
+Ns 50.0
+illum 2
+newmtl NAND_Flash_Body
+Ka 0.03 0.03 0.04
+Kd 0.07 0.08 0.09
+Ks 0.22 0.22 0.25
+Ns 35.0
+illum 2
+newmtl Graphene_ThermalLabel
+Ka 0.02 0.03 0.04
+Kd 0.05 0.06 0.08
+Ks 0.35 0.38 0.42
+Ns 60.0
+illum 2
+newmtl Gaming_CyanLaserPrint
+Ka 0.00 0.20 0.25
+Kd 0.00 0.85 0.98
+Ks 0.60 0.90 1.00
+Ns 80.0
+illum 2
+newmtl Gaming_GoldLaserPrint
+Ka 0.20 0.16 0.04
+Kd 0.95 0.78 0.20
+Ks 0.75 0.75 0.65
+Ns 85.0
+illum 2
+newmtl PMIC_Controller_Body
+Ka 0.04 0.04 0.05
+Kd 0.11 0.12 0.14
+Ks 0.25 0.25 0.28
+Ns 45.0
+illum 2
+newmtl SMD_FerriteInductor
+Ka 0.06 0.06 0.07
+Kd 0.18 0.19 0.21
+Ks 0.20 0.20 0.22
+Ns 25.0
+illum 2
+newmtl Crystal_MetalCan
+Ka 0.25 0.26 0.28
+Kd 0.80 0.82 0.86
+Ks 0.90 0.90 0.92
+Ns 100.0
+illum 2
+newmtl MLCC_Capacitor_Tan
+Ka 0.18 0.13 0.08
+Kd 0.65 0.50 0.35
+Ks 0.25 0.22 0.20
+Ns 35.0
+illum 2
+newmtl SilverSolderTerminals
+Ka 0.25 0.26 0.28
+Kd 0.78 0.80 0.84
+Ks 0.88 0.88 0.90
+Ns 95.0
+illum 2
+newmtl Copper_BackHeatSpreader
+Ka 0.25 0.12 0.05
+Kd 0.85 0.45 0.22
+Ks 0.70 0.65 0.55
+Ns 75.0
+illum 2

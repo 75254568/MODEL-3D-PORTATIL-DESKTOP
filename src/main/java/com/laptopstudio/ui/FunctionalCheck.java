@@ -139,6 +139,10 @@ public final class FunctionalCheck {
         CatalogController cat = ctx.getBean(CatalogController.class);
         CompareController cmp = ctx.getBean(CompareController.class);
         ViewerController vis = ctx.getBean(ViewerController.class);
+        // las pantallas se cargan al abrirse por primera vez: se abren antes de leer sus controles
+        nav.go(Screen.VISOR);
+        nav.go(Screen.COMPARAR);
+        nav.go(Screen.CATALOGO);
         TableView<Laptop> tabla = f(cat, "tabla");
         TextField buscar = f(cat, "txtBuscar");
         ComboBox<String> marca = f(cat, "cmbMarca");
@@ -231,6 +235,23 @@ public final class FunctionalCheck {
             check("Descartar restaura la ficha", "ASUS".equals(campos.get("brand").getText()));
         }, 300);
 
+        // --- un dato desconocido no se convierte en "no" al guardar otro campo
+        long[] idSinDato = new long[1];
+        seq.add(() -> {
+            Laptop sinDato = tabla.getItems().stream().filter(l -> l.getRamUpgradable() == null).findFirst().orElseThrow();
+            idSinDato[0] = sinDato.getId();
+            tabla.getSelectionModel().select(sinDato);
+            CheckBox ram = f(cat, "chkRam");
+            check("'RAM ampliable' sin dato se muestra como estado intermedio", ram.isIndeterminate());
+            campos.get("notes").setText("nota de prueba");
+            guardar.fire();
+        }, 700);
+        seq.add(() -> {
+            Laptop db = service.buscarPorId(idSinDato[0]).orElseThrow();
+            check("guardar otro campo conserva 'RAM ampliable: sin dato'",
+                    db.getRamUpgradable() == null && "nota de prueba".equals(db.getNotes()));
+        }, 200);
+
         // --- eliminar
         seq.add(() -> {
             Laptop objetivo = tabla.getItems().stream().filter(l -> l.getModel().equals("Laptop 16")).findFirst().orElseThrow();
@@ -272,9 +293,12 @@ public final class FunctionalCheck {
             boolean puntuaciones = t.getItems().stream().anyMatch(r -> r.label().toLowerCase().contains("puntuaci"));
             check("no hay puntuaciones inventadas", !puntuaciones);
             CheckBox diff = f(cmp, "chkDiff");
+            long iguales = t.getItems().stream().filter(r -> !r.group() && r.same()).count();
             diff.setSelected(true);
             TableView<CompareMatrix.Row> t2 = f(cmp, "tabla");
-            check("'solo diferencias' reduce las filas (" + t2.getItems().size() + " < " + filas + ")", t2.getItems().size() < filas);
+            // cuantas filas son iguales depende de los laptops marcados: se comprueba que ninguna igual quede a la vista
+            check("'solo diferencias' oculta las filas iguales (" + t2.getItems().size() + " de " + filas + ")",
+                    t2.getItems().size() <= filas && t2.getItems().stream().noneMatch(r -> !r.group() && r.same()));
             diff.setSelected(false);
             sel.setMarked(sel.getCompare().get(3), false);
             sel.setMarked(sel.getCompare().get(2), false);
@@ -322,6 +346,26 @@ public final class FunctionalCheck {
         seq.add(() -> {
             Node bat = findPart(viewers(scene).get(0), "battery");
             check("volver a mostrarlo lo restaura", bat != null && bat.isVisible());
+            nav.go(Screen.COMPONENTES);
+        }, 2500);
+
+        // --- componentes 3D
+        seq.add(() -> {
+            var comp = ctx.getBean(com.laptopstudio.controller.ComponentsController.class);
+            var lib = ctx.getBean(com.laptopstudio.component.ComponentLibrary.class);
+            ListView<?> lista = f(comp, "lstComponentes");
+            check("la biblioteca de componentes lista todos sus modelos (" + lista.getItems().size() + ")",
+                    !lista.getItems().isEmpty() && lista.getItems().size() == lib.all().size());
+            javafx.scene.layout.VBox modelo = f(comp, "boxModelo");
+            javafx.scene.layout.VBox secciones = f(comp, "boxSecciones");
+            check("el primer componente carga su modelo 3D, con medidas y piezas", modelo.getChildren().size() == 2);
+            check("y muestra su ficha técnica por secciones (" + secciones.getChildren().size() + ")", secciones.getChildren().size() >= 2);
+            TextField buscarComp = f(comp, "txtBuscar");
+            buscarComp.setText("rtx 5090");
+        }, 1500);
+        seq.add(() -> {
+            ListView<?> lista = f(ctx.getBean(com.laptopstudio.controller.ComponentsController.class), "lstComponentes");
+            check("la búsqueda de componentes filtra por nombre (" + lista.getItems().size() + " resultado)", lista.getItems().size() == 1);
             nav.go(Screen.AJUSTES);
         }, 400);
         seq.add(() -> check("la pantalla Ajustes carga", true), 300);

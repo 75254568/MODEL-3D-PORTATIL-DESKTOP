@@ -50,6 +50,7 @@ public class ViewerController implements Refreshable {
             new Part("base", "Chasis", false));
 
     private final SelectionState selection;
+    private final com.laptopstudio.ui.NavigationService navigation;
 
     @FXML private HBox viewers;
     @FXML private VBox boxA;
@@ -59,6 +60,8 @@ public class ViewerController implements Refreshable {
     @FXML private Label lblNameA;
     @FXML private Label lblNameB;
     @FXML private Label lblModelos;
+    @FXML private VBox specA;
+    @FXML private VBox specB;
     @FXML private HBox boxCam;
     @FXML private ToggleButton tbSplit;
     @FXML private ToggleButton tbGhost;
@@ -107,6 +110,7 @@ public class ViewerController implements Refreshable {
         construirLista();
         cablearBarra();
 
+        navigation.immersiveProperty().addListener((o, antes, on) -> inmersivo(on));
         selection.aProperty().addListener((o, a, b) -> refrescar());
         selection.bProperty().addListener((o, a, b) -> refrescar());
         refrescar();
@@ -278,6 +282,8 @@ public class ViewerController implements Refreshable {
         lblModelos.setText(a == null && b == null ? "No hay laptops cargados. Marca laptops en el catálogo y pulsa «Abrir en visor 3D»."
                 : (a == null ? "" : "A · " + a.getModel()) + (a != null && b != null ? "   |   " : "") + (b == null ? "" : "B · " + b.getModel()));
         boolean overlay = ghost && a != null && b != null;
+        llenarFicha(specA, a);
+        llenarFicha(specB, b);
         boxB.setVisible(!overlay);
         boxB.setManaged(!overlay);
         if (overlay) {
@@ -294,6 +300,104 @@ public class ViewerController implements Refreshable {
         if (p != null) {
             mostrarDetalle(p.id());
         }
+    }
+
+    /** Resumen de compra del laptop (procesador, RAM, SSD, GPU, pantalla, precio) sobre su visor, sin salir del 3D. */
+    private void llenarFicha(VBox box, Laptop l) {
+        box.getChildren().clear();
+        box.setVisible(l != null && !enInmersivo);
+        box.setManaged(l != null && !enInmersivo);
+        if (l == null) {
+            return;
+        }
+        String[][] s = com.laptopstudio.ui.SpecSheet.summary(l);
+        javafx.scene.layout.GridPane g = new javafx.scene.layout.GridPane();
+        g.setHgap(14);
+        g.setVgap(3);
+        // s[0] es marca y modelo, que ya esta en la cabecera del visor
+        for (int i = 1; i < s.length; i++) {
+            VBox cell = new VBox(0);
+            Label k = new Label(s[i][0].toUpperCase());
+            k.getStyleClass().addAll("muted", "small");
+            Label v = new Label(s[i][1]);
+            v.getStyleClass().add(i == s.length - 1 ? "value-strong" : "small");
+            v.setMaxWidth(150);
+            v.setTooltip(new javafx.scene.control.Tooltip(s[i][1]));
+            cell.getChildren().addAll(k, v);
+            g.add(cell, (i - 1) % 2, (i - 1) / 2);
+        }
+        Button mas = new Button("Ficha completa");
+        mas.getStyleClass().add("quiet");
+        mas.setOnAction(e -> com.laptopstudio.ui.SpecSheet.show(box, l));
+        VBox fila = new VBox(4, g, mas);
+        fila.setAlignment(Pos.CENTER_LEFT);
+        mas.getStyleClass().add("compact");
+        box.setPadding(new javafx.geometry.Insets(4, 10, 6, 10));
+        box.getChildren().add(fila);
+    }
+
+    /* ------------------------------------------------------------------ pantalla completa */
+
+    private javafx.scene.Node topNormal;
+    private javafx.scene.Node leftNormal;
+    private javafx.scene.Node rightNormal;
+    private javafx.scene.Node bottomNormal;
+    private boolean enInmersivo;
+
+    @FXML
+    private void onPantallaCompleta() {
+        navigation.immersiveProperty().set(true);
+    }
+
+    /**
+     * Modo inmersivo: quedan solo los dos visores y una barra minima con las vistas de camara y el boton de salir.
+     * No se reconstruye ningun modelo: los mismos visores cambian de tamano y la camara se reajusta sola.
+     */
+    private void inmersivo(boolean on) {
+        javafx.scene.layout.BorderPane root = (javafx.scene.layout.BorderPane) viewers.getParent();
+        if (on && !enInmersivo) {
+            topNormal = root.getTop();
+            leftNormal = root.getLeft();
+            rightNormal = root.getRight();
+            bottomNormal = root.getBottom();
+            HBox barra = new HBox(8);
+            barra.setAlignment(Pos.CENTER_LEFT);
+            barra.setPadding(new javafx.geometry.Insets(10, 14, 0, 14));
+            Label ayuda = new Label("Arrastra para girar · Rueda para acercar");
+            ayuda.getStyleClass().add("immersive-hint");
+            Region sp = new Region();
+            HBox.setHgrow(sp, Priority.ALWAYS);
+            barra.getChildren().addAll(ayuda, sp);
+            String[][] presets = {{"3D", "iso"}, {"Frente", "front"}, {"Perfil", "side"}, {"Superior", "top"}, {"Restablecer", "reset"}};
+            for (String[] p : presets) {
+                Button b = new Button(p[0]);
+                b.getStyleClass().add("immersive-btn");
+                b.setOnAction(e -> {
+                    viewerA.preset(p[1]);
+                    viewerB.preset(p[1]);
+                });
+                barra.getChildren().add(b);
+            }
+            Button salir = new Button("Salir de pantalla completa (Esc)");
+            salir.getStyleClass().addAll("immersive-btn", "immersive-exit");
+            salir.setOnAction(e -> navigation.immersiveProperty().set(false));
+            barra.getChildren().add(salir);
+            root.setTop(barra);
+            root.setLeft(null);
+            root.setRight(null);
+            root.setBottom(null);
+        } else if (!on && enInmersivo) {
+            root.setTop(topNormal);
+            root.setLeft(leftNormal);
+            root.setRight(rightNormal);
+            root.setBottom(bottomNormal);
+        }
+        enInmersivo = on;
+        // la ficha resumida se oculta para dejar todo el alto al modelo
+        specA.setVisible(!on && selection.getA() != null);
+        specA.setManaged(specA.isVisible());
+        specB.setVisible(!on && selection.getB() != null);
+        specB.setManaged(specB.isVisible());
     }
 
     private void elegirPieza(String part, boolean desdeVisor) {
@@ -366,6 +470,12 @@ public class ViewerController implements Refreshable {
 
     @Override
     public void onShow() {
+        viewerA.setActive(true);
+        viewerB.setActive(true);
+        // por si cambio el modelo 3D importado o la moneda mientras la pantalla estaba oculta
+        viewerA.invalidateIfModelChanged(selection.getA());
+        viewerB.invalidateIfModelChanged(selection.getB());
+        refrescar();
         Scene scene = viewers.getScene();
         if (scene == null || keyScene == scene) {
             return;
@@ -375,6 +485,14 @@ public class ViewerController implements Refreshable {
         keyUp = e -> forwardKey(e, false);
         scene.addEventFilter(KeyEvent.KEY_PRESSED, keyDown);
         scene.addEventFilter(KeyEvent.KEY_RELEASED, keyUp);
+    }
+
+    /** Con la pantalla oculta los visores dejan de animar: no gastan CPU ni GPU. */
+    @Override
+    public void onHide() {
+        navigation.immersiveProperty().set(false);
+        viewerA.setActive(false);
+        viewerB.setActive(false);
     }
 
     private void forwardKey(KeyEvent e, boolean down) {

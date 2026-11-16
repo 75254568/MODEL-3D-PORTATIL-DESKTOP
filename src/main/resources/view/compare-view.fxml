@@ -21,15 +21,20 @@
             <HBox styleClass="filter-bar" spacing="18.0" alignment="CENTER_LEFT">
                 <padding><Insets top="8.0" right="16.0" bottom="8.0" left="16.0"/></padding>
                 <CheckBox fx:id="chkDiff" text="Mostrar solo diferencias"/>
+                <CheckBox fx:id="chkTabla" text="Ver como tabla"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Label text="El punto verde marca el mejor valor, solo donde un valor mayor o menor es objetivamente mejor." styleClass="muted small"/>
+                <Label text="En verde, el mejor valor de cada fila, solo donde mayor o menor es objetivamente mejor." styleClass="muted small"/>
             </HBox>
         </VBox>
     </top>
 
     <center>
         <StackPane>
-            <TableView fx:id="tabla"/>
+            <BorderPane.margin><Insets top="0" right="14" bottom="0" left="14"/></BorderPane.margin>
+            <ScrollPane fx:id="scrollColumnas" fitToWidth="true" hbarPolicy="NEVER">
+                <HBox fx:id="columnas" spacing="12.0"/>
+            </ScrollPane>
+            <TableView fx:id="tabla" visible="false" managed="false"/>
             <Label fx:id="lblVacio" styleClass="muted" wrapText="true" maxWidth="420.0" textAlignment="CENTER"/>
         </StackPane>
     </center>

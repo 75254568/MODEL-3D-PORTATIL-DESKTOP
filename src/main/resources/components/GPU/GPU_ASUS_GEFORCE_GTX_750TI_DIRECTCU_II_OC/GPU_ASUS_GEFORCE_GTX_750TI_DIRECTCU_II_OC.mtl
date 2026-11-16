@@ -1,0 +1,127 @@
+# Material definitions for ASUS GeForce GTX 750 Ti DirectCU II OC (Authentic Reference)
+newmtl GPU_MatteBlack_Shroud
+Ka 0.03 0.03 0.03
+Kd 0.11 0.11 0.12
+Ks 0.25 0.25 0.28
+Ns 32.0
+illum 2
+newmtl GPU_ASUS_Red_Stripes
+Ka 0.22 0.02 0.02
+Kd 0.90 0.10 0.10
+Ks 0.65 0.30 0.30
+Ns 60.0
+illum 2
+newmtl GPU_Fan_Blades_Black
+Ka 0.04 0.04 0.05
+Kd 0.14 0.15 0.17
+Ks 0.45 0.45 0.50
+Ns 50.0
+illum 2
+newmtl GPU_Fan_Badge_Black
+Ka 0.02 0.02 0.02
+Kd 0.06 0.06 0.07
+Ks 0.85 0.85 0.90
+Ns 110.0
+illum 2
+newmtl GPU_Fan_Badge_Silver_Ring
+Ka 0.25 0.25 0.27
+Kd 0.85 0.87 0.90
+Ks 0.95 0.95 0.98
+Ns 130.0
+illum 2
+newmtl GPU_ASUS_White_Emblem
+Ka 0.60 0.60 0.65
+Kd 0.96 0.97 0.99
+Ks 0.85 0.85 0.90
+Ns 100.0
+illum 2
+newmtl GPU_Heatsink_Fin_Stack
+Ka 0.20 0.21 0.23
+Kd 0.72 0.75 0.79
+Ks 0.82 0.85 0.88
+Ns 85.0
+illum 2
+newmtl GPU_Aluminum_Silver
+Ka 0.22 0.23 0.25
+Kd 0.78 0.80 0.85
+Ks 0.90 0.92 0.95
+Ns 110.0
+illum 2
+newmtl GPU_Copper_Heatpipes
+Ka 0.25 0.12 0.05
+Kd 0.92 0.48 0.22
+Ks 0.85 0.60 0.40
+Ns 95.0
+illum 2
+newmtl GPU_PCB_Black
+Ka 0.02 0.02 0.02
+Kd 0.08 0.08 0.09
+Ks 0.20 0.20 0.22
+Ns 35.0
+illum 2
+newmtl GPU_PCIe_Gold_Contacts
+Ka 0.28 0.22 0.05
+Kd 0.95 0.78 0.18
+Ks 0.92 0.88 0.75
+Ns 120.0
+illum 2
+newmtl GPU_Silkscreen_White
+Ka 0.50 0.50 0.50
+Kd 0.92 0.94 0.96
+Ks 0.50 0.50 0.55
+Ns 60.0
+illum 2
+newmtl GPU_Capacitor_Silver
+Ka 0.22 0.22 0.24
+Kd 0.82 0.84 0.88
+Ks 0.92 0.92 0.95
+Ns 105.0
+illum 2
+newmtl GPU_Capacitor_Pink_Mark
+Ka 0.25 0.05 0.14
+Kd 0.92 0.28 0.55
+Ks 0.45 0.30 0.38
+Ns 50.0
+illum 2
+newmtl GPU_SuperAlloy_Choke
+Ka 0.05 0.05 0.06
+Kd 0.18 0.19 0.22
+Ks 0.35 0.35 0.40
+Ns 45.0
+illum 2
+newmtl GPU_Screw_Torx
+Ka 0.15 0.15 0.17
+Kd 0.58 0.60 0.65
+Ks 0.82 0.82 0.88
+Ns 85.0
+illum 2
+newmtl GPU_Stainless_Bracket
+Ka 0.20 0.21 0.22
+Kd 0.75 0.78 0.82
+Ks 0.92 0.94 0.96
+Ns 115.0
+illum 2
+newmtl GPU_Gold_HDMI_Shield
+Ka 0.24 0.19 0.06
+Kd 0.90 0.74 0.18
+Ks 0.88 0.82 0.72
+Ns 100.0
+illum 2
+newmtl GPU_DVI_Metal_Shield
+Ka 0.18 0.19 0.20
+Kd 0.70 0.72 0.76
+Ks 0.85 0.85 0.90
+Ns 90.0
+illum 2
+newmtl GPU_Ground_Ring
+Ka 0.25 0.15 0.06
+Kd 0.88 0.55 0.25
+Ks 0.75 0.55 0.35
+Ns 75.0
+illum 2
+newmtl MLCC_Capacitor_Tan
+Ka 0.18 0.13 0.08
+Kd 0.65 0.50 0.35
+Ks 0.25 0.22 0.20
+Ns 35.0
+illum 2

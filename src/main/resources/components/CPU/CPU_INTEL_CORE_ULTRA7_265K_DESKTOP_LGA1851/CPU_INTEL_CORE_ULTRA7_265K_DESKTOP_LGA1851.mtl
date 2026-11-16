@@ -1,0 +1,97 @@
+﻿# Material definitions for Photorealistic CPUs with Authentic Logos
+newmtl Substrate_Intel_Teal
+Ka 0.05 0.15 0.18
+Kd 0.05 0.29 0.33
+Ks 0.25 0.25 0.25
+Ns 35.0
+illum 2
+newmtl Substrate_AMD_Green
+Ka 0.05 0.18 0.08
+Kd 0.08 0.36 0.14
+Ks 0.25 0.25 0.25
+Ns 35.0
+illum 2
+newmtl Substrate_Black_Matte
+Ka 0.02 0.02 0.02
+Kd 0.08 0.08 0.09
+Ks 0.20 0.20 0.20
+Ns 25.0
+illum 2
+newmtl IHS_Nickel_Plated
+Ka 0.22 0.24 0.26
+Kd 0.80 0.84 0.88
+Ks 0.92 0.94 0.96
+Ns 115.0
+illum 2
+newmtl Laser_Engraving_Dark
+Ka 0.04 0.04 0.04
+Kd 0.14 0.15 0.17
+Ks 0.40 0.40 0.45
+Ns 55.0
+illum 2
+newmtl Laser_Engraving_Silver
+Ka 0.18 0.19 0.20
+Kd 0.65 0.68 0.72
+Ks 0.75 0.78 0.82
+Ns 75.0
+illum 2
+newmtl CPU_AMD_Orange_Zen
+Ka 0.25 0.08 0.02
+Kd 0.92 0.35 0.10
+Ks 0.60 0.30 0.15
+Ns 60.0
+illum 2
+newmtl CPU_Intel_Blue_Logo
+Ka 0.02 0.12 0.28
+Kd 0.05 0.42 0.82
+Ks 0.70 0.80 0.95
+Ns 80.0
+illum 2
+newmtl Silicon_Mirror_Die
+Ka 0.10 0.12 0.16
+Kd 0.43 0.51 0.61
+Ks 0.98 0.98 0.99
+Ns 145.0
+illum 2
+newmtl Epoxy_Underfill_Black
+Ka 0.02 0.02 0.02
+Kd 0.07 0.07 0.08
+Ks 0.15 0.15 0.15
+Ns 20.0
+illum 2
+newmtl Gold_Contacts_LGA
+Ka 0.28 0.22 0.05
+Kd 0.95 0.78 0.18
+Ks 0.92 0.88 0.72
+Ns 115.0
+illum 2
+newmtl Gold_Pin1_Triangle
+Ka 0.30 0.24 0.05
+Kd 0.98 0.80 0.15
+Ks 0.95 0.90 0.75
+Ns 125.0
+illum 2
+newmtl Solder_BGA_Balls
+Ka 0.20 0.22 0.24
+Kd 0.72 0.76 0.80
+Ks 0.85 0.85 0.88
+Ns 90.0
+illum 2
+newmtl MLCC_Capacitor_Tan
+Ka 0.18 0.14 0.09
+Kd 0.68 0.53 0.37
+Ks 0.25 0.22 0.20
+Ns 35.0
+illum 2
+newmtl Silver_Solder_Terminals
+Ka 0.22 0.23 0.24
+Kd 0.84 0.87 0.90
+Ks 0.88 0.88 0.90
+Ns 100.0
+illum 2
+newmtl MoP_Memory_Black
+Ka 0.03 0.03 0.03
+Kd 0.12 0.12 0.13
+Ks 0.35 0.35 0.38
+Ns 45.0
+illum 2

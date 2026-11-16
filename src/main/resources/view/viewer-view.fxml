@@ -14,6 +14,8 @@
                 <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
                 <Label text="Visor 3D" styleClass="page-title"/>
                 <Label fx:id="lblModelos" styleClass="muted"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Pantalla completa" onAction="#onPantallaCompleta" styleClass="primary" minWidth="-Infinity"/>
             </HBox>
             <VBox styleClass="filter-bar" spacing="8.0">
                 <padding><Insets top="8.0" right="16.0" bottom="8.0" left="16.0"/></padding>
@@ -51,6 +53,7 @@
 
     <left>
         <VBox styleClass="part-list" prefWidth="220.0" minWidth="220.0" maxWidth="220.0">
+            <BorderPane.margin><Insets top="8" right="0" bottom="0" left="14"/></BorderPane.margin>
             <Label text="COMPONENTES" styleClass="section-label">
                 <padding><Insets top="10.0" right="12.0" bottom="6.0" left="12.0"/></padding>
             </Label>
@@ -65,21 +68,24 @@
     </left>
 
     <center>
-        <HBox fx:id="viewers" spacing="2.0">
-            <VBox fx:id="boxA" HBox.hgrow="ALWAYS" prefWidth="10.0" minWidth="0.0">
+        <HBox fx:id="viewers" spacing="10.0">
+            <BorderPane.margin><Insets top="8" right="10" bottom="0" left="10"/></BorderPane.margin>
+            <VBox fx:id="boxA" styleClass="glass-card, viewer-card" HBox.hgrow="ALWAYS" prefWidth="10.0" minWidth="0.0">
                 <HBox styleClass="viewer-head" alignment="CENTER_LEFT" spacing="8.0">
                     <padding><Insets top="6.0" right="10.0" bottom="6.0" left="10.0"/></padding>
                     <Label text="A" styleClass="viewer-tag-a"/>
                     <Label fx:id="lblNameA"/>
                 </HBox>
+                <VBox fx:id="specA" styleClass="spec-strip" spacing="4.0"/>
                 <StackPane fx:id="holderA" VBox.vgrow="ALWAYS" minWidth="0.0" minHeight="0.0"/>
             </VBox>
-            <VBox fx:id="boxB" HBox.hgrow="ALWAYS" prefWidth="10.0" minWidth="0.0">
+            <VBox fx:id="boxB" styleClass="glass-card, viewer-card" HBox.hgrow="ALWAYS" prefWidth="10.0" minWidth="0.0">
                 <HBox styleClass="viewer-head" alignment="CENTER_LEFT" spacing="8.0">
                     <padding><Insets top="6.0" right="10.0" bottom="6.0" left="10.0"/></padding>
                     <Label text="B" styleClass="viewer-tag-b"/>
                     <Label fx:id="lblNameB"/>
                 </HBox>
+                <VBox fx:id="specB" styleClass="spec-strip" spacing="4.0"/>
                 <StackPane fx:id="holderB" VBox.vgrow="ALWAYS" minWidth="0.0" minHeight="0.0"/>
             </VBox>
         </HBox>
@@ -87,6 +93,7 @@
 
     <right>
         <VBox styleClass="inspect-panel" prefWidth="290.0" minWidth="290.0" maxWidth="290.0">
+            <BorderPane.margin><Insets top="8" right="14" bottom="0" left="0"/></BorderPane.margin>
             <VBox spacing="3.0" styleClass="side-head">
                 <padding><Insets top="12.0" right="12.0" bottom="12.0" left="12.0"/></padding>
                 <Label text="COMPONENTE" styleClass="section-label"/>

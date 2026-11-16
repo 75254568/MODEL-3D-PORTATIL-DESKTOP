@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.laptopstudio.controller.SearchController">
+
+    <top>
+        <HBox styleClass="page-head" spacing="12.0" alignment="CENTER_LEFT">
+            <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
+            <Label text="Búsqueda inteligente" styleClass="page-title"/>
+            <Label fx:id="lblResumen" styleClass="muted"/>
+        </HBox>
+    </top>
+
+    <left>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="side-panel" prefWidth="300.0" minWidth="300.0" maxWidth="300.0">
+            <BorderPane.margin><Insets top="0" right="0" bottom="8" left="14"/></BorderPane.margin>
+            <VBox spacing="7.0">
+                <padding><Insets top="12.0" right="14.0" bottom="14.0" left="14.0"/></padding>
+
+                <Label text="Escribe o elige de las sugerencias. Los resultados se actualizan solos." styleClass="muted small" wrapText="true"/>
+                <Label text="BÚSQUEDA LIBRE" styleClass="section-label"/>
+                <TextField fx:id="txtTexto" promptText="Ej.: Legion, RTX 5080, OLED"/>
+
+                <Label fx:id="lblPresupuesto" text="PRESUPUESTO (USD)" styleClass="section-label"/>
+                <HBox spacing="8.0" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtMin" promptText="Mínimo" HBox.hgrow="ALWAYS" prefWidth="10.0"/>
+                    <TextField fx:id="txtMax" promptText="Máximo" HBox.hgrow="ALWAYS" prefWidth="10.0"/>
+                </HBox>
+                <Label text="Los precios del catálogo inicial son aproximados; puedes corregirlos en Catálogo." styleClass="muted small" wrapText="true"/>
+
+                <Label text="MARCA Y TIPO" styleClass="section-label"/>
+                <ComboBox fx:id="cmbMarca" maxWidth="Infinity"/>
+                <ComboBox fx:id="cmbCategoria" maxWidth="Infinity"/>
+
+                <Label text="ESPECIFICACIONES" styleClass="section-label"/>
+                <TextField fx:id="txtCpu" promptText="Procesador (Ryzen, Core Ultra 9, M3...)"/>
+                <TextField fx:id="txtGpu" promptText="Gráficos (RTX 5070, Arc...)"/>
+                <HBox spacing="8.0" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtRam" promptText="RAM mín. (GB)" HBox.hgrow="ALWAYS" prefWidth="10.0"/>
+                    <TextField fx:id="txtSsd" promptText="SSD mín. (GB)" HBox.hgrow="ALWAYS" prefWidth="10.0"/>
+                </HBox>
+                <HBox spacing="8.0" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtPantMin" promptText="Pantalla mín. (in)" HBox.hgrow="ALWAYS" prefWidth="10.0"/>
+                    <TextField fx:id="txtPantMax" promptText="Pantalla máx. (in)" HBox.hgrow="ALWAYS" prefWidth="10.0"/>
+                </HBox>
+                <TextField fx:id="txtPeso" promptText="Peso máximo (kg)"/>
+
+                <HBox spacing="8.0">
+                    <padding><Insets top="6.0"/></padding>
+                    <Button text="Buscar" onAction="#onBuscar" defaultButton="true" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Button text="Limpiar" onAction="#onLimpiar"/>
+                </HBox>
+                <Label fx:id="lblError" styleClass="muted" wrapText="true"/>
+                <Label text="¿NO ESTÁ EN EL CATÁLOGO?" styleClass="section-label"/>
+                <Button text="Buscar en internet" onAction="#onInternet" maxWidth="Infinity"/>
+                <Label text="Única función que usa conexión. Consulta la web y te deja revisar los datos antes de guardarlos." styleClass="muted small" wrapText="true"/>
+            </VBox>
+        </ScrollPane>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <VBox fx:id="boxResultados" spacing="8.0">
+                <padding><Insets top="12.0" right="16.0" bottom="16.0" left="16.0"/></padding>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -46,6 +46,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.regex.Pattern;
@@ -67,7 +68,13 @@ public class CatalogController implements Refreshable {
     private final LaptopService service;
     private final SelectionState selection;
     private final NavigationService navigation;
+    private final com.laptopstudio.service.ModelStore modelStore;
 
+    @FXML private ToggleButton tbTabla;
+    @FXML private ToggleButton tbTarjetas;
+    @FXML private javafx.scene.control.ScrollPane scrollTarjetas;
+    @FXML private javafx.scene.layout.FlowPane rejilla;
+    @FXML private Button btnModelo3d;
     @FXML private TextField txtBuscar;
     @FXML private HBox searchBox;
     @FXML private ComboBox<String> cmbMarca;
@@ -75,6 +82,7 @@ public class CatalogController implements Refreshable {
     @FXML private ToggleButton tgRtx50;
     @FXML private ToggleButton tgRtx40;
     @FXML private ToggleButton tgRecon;
+    @FXML private ToggleButton tg2026;
     @FXML private Label lblCount;
     @FXML private TableView<Laptop> tabla;
     @FXML private Label lblMarca;
@@ -92,7 +100,8 @@ public class CatalogController implements Refreshable {
     private FilteredList<Laptop> filtrados;
     private final Map<Long, Boolean> reconstruido = new HashMap<>();
     private final Map<String, TextField> campos = new LinkedHashMap<>();
-    private final CheckBox chkRam = new CheckBox("RAM ampliable (módulos SO-DIMM)");
+    private static final String RAM_TEXTO = "RAM ampliable (módulos SO-DIMM)";
+    private final CheckBox chkRam = new CheckBox(RAM_TEXTO);
     private Laptop actual;
     private boolean cargando;
     private boolean sucio;
@@ -115,6 +124,7 @@ public class CatalogController implements Refreshable {
         columna("Pantalla", 86, true, l -> Fmt.num(l.getScreenInches(), "in"), numerico(Laptop::getScreenInches));
         columna("Peso", 84, true, l -> Fmt.num(l.getWeightKg(), "kg"), numerico(Laptop::getWeightKg));
         columna("Batería", 84, true, l -> Fmt.num(l.getBatteryWh(), "Wh"), numerico(Laptop::getBatteryWh));
+        columna("Precio", 120, true, l -> Fmt.price(l.getPriceUsd(), l.getPriceEstimated()).replace("aprox. ", "~"), numerico(Laptop::getPriceUsd));
         columnaInterior();
 
         filtrados = new FilteredList<>(todos, l -> true);
@@ -127,7 +137,7 @@ public class CatalogController implements Refreshable {
         cmbMarca.valueProperty().addListener((o, a, b) -> filtrar());
         cmbCategoria.valueProperty().addListener((o, a, b) -> filtrar());
         txtBuscar.textProperty().addListener((o, a, b) -> filtrar());
-        for (ToggleButton t : List.of(tgRtx50, tgRtx40, tgRecon)) {
+        for (ToggleButton t : List.of(tgRtx50, tgRtx40, tgRecon, tg2026)) {
             t.selectedProperty().addListener((o, a, b) -> {
                 if (b && t == tgRtx50) {
                     tgRtx40.setSelected(false);
@@ -141,9 +151,123 @@ public class CatalogController implements Refreshable {
             tabla.refresh();
             actualizarBarra();
         });
+        javafx.scene.control.ToggleGroup vista = new javafx.scene.control.ToggleGroup();
+        tbTabla.setToggleGroup(vista);
+        tbTarjetas.setToggleGroup(vista);
+        vista.selectedToggleProperty().addListener((o, antes, ahora) -> {
+            if (ahora == null) {
+                antes.setSelected(true);
+                return;
+            }
+            boolean tarjetas = ahora == tbTarjetas;
+            tabla.setVisible(!tarjetas);
+            tabla.setManaged(!tarjetas);
+            scrollTarjetas.setVisible(tarjetas);
+            scrollTarjetas.setManaged(tarjetas);
+            pintarTarjetas();
+        });
+        ordenados.addListener((ListChangeListener<Laptop>) c -> pintarTarjetas());
         cargar(null);
         mostrar(null);
         tabla.getSelectionModel().selectFirst();
+    }
+
+    /** Vista de tarjetas: mismos laptops, filtros y orden que la tabla. Solo se construye mientras se ve. */
+    private void pintarTarjetas() {
+        if (!scrollTarjetas.isVisible()) {
+            rejilla.getChildren().clear();
+            return;
+        }
+        com.laptopstudio.ui.LaptopCard.Actions acciones = new com.laptopstudio.ui.LaptopCard.Actions(l -> {
+            selection.setA(l);
+            navigation.go(Screen.VISOR);
+        }, null, l -> tabla.getSelectionModel().select(l));
+        List<javafx.scene.Node> tarjetas = new java.util.ArrayList<>();
+        for (Laptop l : tabla.getItems()) {
+            tarjetas.add(com.laptopstudio.ui.LaptopCard.build(l, null, true, selection, acciones));
+        }
+        rejilla.getChildren().setAll(tarjetas);
+    }
+
+    /* ------------------------------------------------------------------ modelo 3D externo */
+
+    @FXML
+    private void onModelo3d() {
+        if (actual == null) {
+            return;
+        }
+        Laptop l = actual;
+        javafx.scene.control.ContextMenu menu = new javafx.scene.control.ContextMenu();
+        javafx.scene.control.MenuItem archivo = new javafx.scene.control.MenuItem("Importar archivo .obj…");
+        archivo.setOnAction(e -> {
+            javafx.stage.FileChooser fc = new javafx.stage.FileChooser();
+            fc.setTitle("Modelo 3D de " + l.getDisplayName());
+            fc.getExtensionFilters().add(new javafx.stage.FileChooser.ExtensionFilter("Wavefront OBJ", "*.obj"));
+            java.io.File f = fc.showOpenDialog(tabla.getScene().getWindow());
+            if (f != null) {
+                importarModelo(l, () -> modelStore.importFile(l, f.toPath()));
+            }
+        });
+        javafx.scene.control.MenuItem enlace = new javafx.scene.control.MenuItem("Descargar desde un enlace .obj…");
+        enlace.setOnAction(e -> {
+            javafx.scene.control.TextInputDialog d = new javafx.scene.control.TextInputDialog();
+            d.setTitle("Descargar modelo 3D");
+            d.setHeaderText("Enlace directo (https) a un archivo .obj de " + l.getDisplayName());
+            d.initOwner(tabla.getScene().getWindow());
+            d.getDialogPane().getStylesheets().add(getClass().getResource("/css/app.css").toExternalForm());
+            d.getDialogPane().setMinWidth(520);
+            d.showAndWait().filter(s -> !s.isBlank()).ifPresent(url -> importarModelo(l, () -> modelStore.importUrl(l, url)));
+        });
+        javafx.scene.control.MenuItem quitar = new javafx.scene.control.MenuItem("Quitar modelo importado");
+        quitar.setDisable(!modelStore.has(l));
+        quitar.setOnAction(e -> {
+            modelStore.remove(l);
+            selection.say("Modelo 3D importado quitado de " + l.getDisplayName());
+            refrescarEstado3d(l);
+        });
+        menu.getItems().addAll(archivo, enlace, quitar);
+        menu.show(btnModelo3d, javafx.geometry.Side.BOTTOM, 0, 4);
+    }
+
+    /** Importa en segundo plano (lee disco o red) y avisa si las proporciones no cuadran con la ficha. */
+    private void importarModelo(Laptop l, java.util.function.Supplier<com.laptopstudio.service.ModelStore.Report> trabajo) {
+        btnModelo3d.setDisable(true);
+        selection.say("Importando modelo 3D de " + l.getDisplayName() + "…");
+        javafx.concurrent.Task<com.laptopstudio.service.ModelStore.Report> t = new javafx.concurrent.Task<>() {
+            @Override
+            protected com.laptopstudio.service.ModelStore.Report call() {
+                return trabajo.get();
+            }
+        };
+        t.setOnSucceeded(e -> {
+            btnModelo3d.setDisable(false);
+            com.laptopstudio.service.ModelStore.Report r = t.getValue();
+            selection.say("Modelo 3D importado: " + String.format(Locale.US, "%,d", r.info().triangles()) + " triángulos");
+            refrescarEstado3d(l);
+            if (r.warning() != null) {
+                Dialogs.warn(tabla, "Revisa el modelo 3D", r.warning());
+            }
+        });
+        t.setOnFailed(e -> {
+            btnModelo3d.setDisable(false);
+            selection.say("No se importó el modelo 3D");
+            Dialogs.warn(tabla, "No se pudo importar el modelo 3D", String.valueOf(t.getException().getMessage()));
+        });
+        Thread th = new Thread(t, "importar-modelo-3d");
+        th.setDaemon(true);
+        th.start();
+    }
+
+    /** Etiquetas de estado 3D de la ficha: interior reconstruido o aproximado y, si lo hay, modelo importado. */
+    private void refrescarEstado3d(Laptop l) {
+        if (actual != null && actual.equals(l)) {
+            boxEstado3d.getChildren().setAll(etiqueta3d(l));
+            if (modelStore.has(l)) {
+                Label ext = new Label("Modelo 3D importado");
+                ext.getStyleClass().addAll("tag", "ok");
+                boxEstado3d.getChildren().add(ext);
+            }
+        }
     }
 
     @Override
@@ -230,7 +354,6 @@ public class CatalogController implements Refreshable {
     private void columnaInterior() {
         TableColumn<Laptop, Laptop> c = new TableColumn<>("Interior 3D");
         c.setPrefWidth(118);
-        c.setMinWidth(104);
         c.setComparator(Comparator.comparing((Laptop l) -> !esReconstruido(l)));
         c.setCellValueFactory(x -> new ReadOnlyObjectWrapper<>(x.getValue()));
         c.setCellFactory(col -> new TableCell<>() {
@@ -302,12 +425,15 @@ public class CatalogController implements Refreshable {
         String marca = cmbMarca.getValue();
         String categoria = cmbCategoria.getValue();
         filtrados.setPredicate(l -> {
-            String texto = (l.getBrand() + " " + l.getModel() + " " + l.getCpu() + " " + l.getGpu()).toLowerCase(Locale.ROOT);
+            String texto = (l.getBrand() + " " + l.getModel() + " " + l.getCpu() + " " + l.getGpu() + " "
+                    + (l.getReleaseYear() == null ? "" : l.getReleaseYear()) + " "
+                    + (l.getAvailability() == null ? "" : l.getAvailability())).toLowerCase(Locale.ROOT);
             return (q.isEmpty() || texto.contains(q))
                     && (marca == null || TODAS_MARCAS.equals(marca) || marca.equals(l.getBrand()))
                     && (categoria == null || TODAS_CATEGORIAS.equals(categoria) || categoria.equals(l.getCategory()))
                     && (!tgRtx50.isSelected() || RTX50.matcher(l.getGpu()).find())
                     && (!tgRtx40.isSelected() || RTX40.matcher(l.getGpu()).find())
+                    && (!tg2026.isSelected() || Integer.valueOf(2026).equals(l.getReleaseYear()))
                     && (!tgRecon.isSelected() || esReconstruido(l));
         });
         int n = filtrados.size();
@@ -323,13 +449,14 @@ public class CatalogController implements Refreshable {
         tgRtx50.setSelected(false);
         tgRtx40.setSelected(false);
         tgRecon.setSelected(false);
+        tg2026.setSelected(false);
     }
 
     /* ------------------------------------------------------------------ ficha */
 
     private void construirFicha() {
         String[][][] secciones = {
-                {{"Identificación"}, {"Marca *", "brand"}, {"Modelo *", "model"}, {"Categoría *", "category"}},
+                {{"Identificación"}, {"Marca *", "brand"}, {"Modelo *", "model"}, {"Categoría *", "category"}, {"Precio (USD)", "priceUsd"}, {"Año", "releaseYear"}, {"Disponibilidad", "availability"}},
                 {{"Procesador"}, {"Modelo *", "cpu"}, {"Núcleos", "cpuCores"}, {"Potencia base (W)", "cpuBaseWatts"}, {"Potencia máxima (W)", "cpuBoostWatts"}},
                 {{"Gráficos"}, {"Modelo *", "gpu"}, {"VRAM (GB)", "gpuVramGb"}, {"TGP (W)", "gpuTgpWatts"}},
                 {{"Memoria y almacenamiento"}, {"RAM (GB)", "ramGb"}, {"Tipo de RAM", "ramType"}, {"@ram"}, {"Almacenamiento (GB)", "storageGb"}, {"Ranuras M.2", "storageSlots"}},
@@ -350,7 +477,11 @@ public class CatalogController implements Refreshable {
             for (int i = 1; i < s.length; i++) {
                 if ("@ram".equals(s[i][0])) {
                     g.add(chkRam, 1, row++);
-                    chkRam.selectedProperty().addListener((o, a, b) -> marcarSucio());
+                    // tres estados: sí, no y sin dato (un dato desconocido no debe guardarse como "no")
+                    chkRam.setAllowIndeterminate(true);
+                    chkRam.selectedProperty().addListener((o, a, b) -> alCambiarRam());
+                    chkRam.indeterminateProperty().addListener((o, a, b) -> alCambiarRam());
+                    alCambiarRam();
                     continue;
                 }
                 Label l = new Label(s[i][0]);
@@ -372,6 +503,21 @@ public class CatalogController implements Refreshable {
         }
     }
 
+    /** El estado de la casilla se escribe con palabras: el guion del estado intermedio no se entiende solo. */
+    private void alCambiarRam() {
+        chkRam.setText(RAM_TEXTO + (chkRam.isIndeterminate() ? ": sin dato" : chkRam.isSelected() ? ": sí" : ": no"));
+        marcarSucio();
+    }
+
+    private void setRam(Boolean ampliable) {
+        chkRam.setIndeterminate(ampliable == null);
+        chkRam.setSelected(Boolean.TRUE.equals(ampliable));
+    }
+
+    private Boolean ram() {
+        return chkRam.isIndeterminate() ? null : chkRam.isSelected();
+    }
+
     private void marcarSucio() {
         if (!cargando && actual != null) {
             sucio = true;
@@ -383,6 +529,7 @@ public class CatalogController implements Refreshable {
         btnGuardar.setDisable(actual == null || !sucio);
         btnDescartar.setDisable(actual == null || !sucio);
         btnEliminar.setDisable(actual == null);
+        btnModelo3d.setDisable(actual == null);
     }
 
     private void alCambiarFila(Laptop antes, Laptop ahora) {
@@ -419,12 +566,12 @@ public class CatalogController implements Refreshable {
                 t.setDisable(true);
                 t.getStyleClass().remove("invalid");
             });
-            chkRam.setSelected(false);
+            setRam(null);
             chkRam.setDisable(true);
         } else {
             lblMarca.setText(l.getBrand());
             lblModelo.setText(l.getModel());
-            boxEstado3d.getChildren().add(etiqueta3d(l));
+            refrescarEstado3d(l);
             campos.values().forEach(t -> {
                 t.setDisable(false);
                 t.getStyleClass().remove("invalid");
@@ -437,12 +584,15 @@ public class CatalogController implements Refreshable {
             set("cpuCores", l.getCpuCores());
             set("cpuBaseWatts", l.getCpuBaseWatts());
             set("cpuBoostWatts", l.getCpuBoostWatts());
+            set("priceUsd", l.getPriceUsd());
+            set("releaseYear", l.getReleaseYear());
+            set("availability", l.getAvailability());
             set("gpu", l.getGpu());
             set("gpuVramGb", l.getGpuVramGb());
             set("gpuTgpWatts", l.getGpuTgpWatts());
             set("ramGb", l.getRamGb());
             set("ramType", l.getRamType());
-            chkRam.setSelected(Boolean.TRUE.equals(l.getRamUpgradable()));
+            setRam(l.getRamUpgradable());
             set("storageGb", l.getStorageGb());
             set("storageSlots", l.getStorageSlots());
             set("screenInches", l.getScreenInches());
@@ -508,10 +658,14 @@ public class CatalogController implements Refreshable {
         return Laptop.builder()
                 .id(actual.getId())
                 .brand(t("brand")).model(t("model")).category(t("category"))
+                .priceUsd(i("priceUsd", "Precio"))
+                .releaseYear(i("releaseYear", "Año")).availability(t("availability"))
+                // un precio editado a mano deja de ser una estimacion; si no cambia, conserva su marca
+                .priceEstimated(Objects.equals(i("priceUsd", "Precio"), actual.getPriceUsd()) ? actual.getPriceEstimated() : Boolean.FALSE)
                 .cpu(t("cpu")).cpuCores(i("cpuCores", "Núcleos")).cpuBaseWatts(i("cpuBaseWatts", "Potencia base"))
                 .cpuBoostWatts(i("cpuBoostWatts", "Potencia máxima"))
                 .gpu(t("gpu")).gpuVramGb(i("gpuVramGb", "VRAM")).gpuTgpWatts(i("gpuTgpWatts", "TGP"))
-                .ramGb(i("ramGb", "RAM")).ramType(t("ramType")).ramUpgradable(chkRam.isSelected())
+                .ramGb(i("ramGb", "RAM")).ramType(t("ramType")).ramUpgradable(ram())
                 .storageGb(i("storageGb", "Almacenamiento")).storageSlots(i("storageSlots", "Ranuras M.2"))
                 .screenInches(d("screenInches", "Tamaño de pantalla")).resolution(t("resolution"))
                 .refreshRateHz(i("refreshRateHz", "Frecuencia")).panelType(t("panelType"))
@@ -573,6 +727,7 @@ public class CatalogController implements Refreshable {
         }
         try {
             service.eliminar(objetivo.getId());
+            modelStore.remove(objetivo);
             sucio = false;
             selection.forget(objetivo);
             tabla.getSelectionModel().clearSelection();

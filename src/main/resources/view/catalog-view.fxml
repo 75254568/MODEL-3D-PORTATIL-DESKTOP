@@ -17,32 +17,47 @@
             </HBox>
             <HBox styleClass="filter-bar" spacing="8.0" alignment="CENTER_LEFT">
                 <padding><Insets top="9.0" right="16.0" bottom="9.0" left="16.0"/></padding>
-                <HBox fx:id="searchBox" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="300.0" minWidth="220.0">
+                <HBox fx:id="searchBox" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="260.0" minWidth="160.0">
                     <padding><Insets left="9.0"/></padding>
                     <TextField fx:id="txtBuscar" promptText="Buscar por marca, modelo, CPU o GPU" HBox.hgrow="ALWAYS"/>
                 </HBox>
                 <ComboBox fx:id="cmbMarca" prefWidth="160.0"/>
                 <ComboBox fx:id="cmbCategoria" prefWidth="170.0"/>
-                <ToggleButton fx:id="tgRtx50" text="GPU RTX 50" styleClass="chip"/>
-                <ToggleButton fx:id="tgRtx40" text="GPU RTX 40" styleClass="chip"/>
-                <ToggleButton fx:id="tgRecon" text="Interior 3D reconstruido" styleClass="chip"/>
+                <ToggleButton fx:id="tg2026" text="2026" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tgRtx50" text="GPU RTX 50" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tgRtx40" text="GPU RTX 40" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tgRecon" text="Interior 3D reconstruido" styleClass="chip" minWidth="-Infinity"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Button text="Quitar filtros" onAction="#onQuitarFiltros" styleClass="quiet"/>
+                <HBox alignment="CENTER_LEFT" spacing="0.0" minWidth="-Infinity">
+                    <ToggleButton fx:id="tbTabla" text="Tabla" selected="true" styleClass="seg-first" minWidth="-Infinity"/>
+                    <ToggleButton fx:id="tbTarjetas" text="Tarjetas" styleClass="seg-last" minWidth="-Infinity"/>
+                </HBox>
+                <Button text="Quitar filtros" onAction="#onQuitarFiltros" styleClass="quiet" minWidth="-Infinity"/>
             </HBox>
         </VBox>
     </top>
 
     <center>
-        <TableView fx:id="tabla"/>
+        <StackPane>
+            <BorderPane.margin><Insets top="0" right="0" bottom="0" left="14"/></BorderPane.margin>
+            <TableView fx:id="tabla"/>
+            <ScrollPane fx:id="scrollTarjetas" fitToWidth="true" hbarPolicy="NEVER" visible="false" managed="false">
+                <FlowPane fx:id="rejilla" hgap="12.0" vgap="12.0">
+                    <padding><Insets top="2.0" right="8.0" bottom="8.0" left="2.0"/></padding>
+                </FlowPane>
+            </ScrollPane>
+        </StackPane>
     </center>
 
     <right>
-        <VBox styleClass="side-panel" prefWidth="330.0" minWidth="330.0" maxWidth="330.0">
+        <VBox styleClass="side-panel" prefWidth="340.0" minWidth="340.0" maxWidth="340.0">
+            <BorderPane.margin><Insets top="0" right="14" bottom="0" left="12"/></BorderPane.margin>
             <VBox styleClass="side-head" spacing="3.0">
                 <padding><Insets top="12.0" right="14.0" bottom="12.0" left="14.0"/></padding>
                 <Label fx:id="lblMarca" styleClass="muted small"/>
                 <Label fx:id="lblModelo" styleClass="model-name" wrapText="true"/>
-                <HBox fx:id="boxEstado3d" spacing="6.0"/>
+                <HBox fx:id="boxEstado3d" spacing="6.0" alignment="CENTER_LEFT"/>
+                <Button fx:id="btnModelo3d" text="Modelo 3D…" onAction="#onModelo3d" styleClass="compact" minWidth="-Infinity"/>
             </VBox>
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                 <VBox fx:id="ficha"/>

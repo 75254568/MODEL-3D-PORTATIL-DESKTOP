@@ -18,8 +18,11 @@ import lombok.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Laptop {
 
+    // columnDefinition: en SQLite la clave autogenerada tiene que declararse "integer"; sin decirlo aqui,
+    // Hibernate espera "bigint" para un Long y la validacion del esquema al arrancar falla.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "integer")
     private Long id;
 
     @NotBlank(message = "La marca es obligatoria")
@@ -105,6 +108,21 @@ public class Laptop {
 
     @DecimalMin(value = "1.0", message = "La bateria debe ser mayor que 0")
     private Double batteryWh;
+
+    /** Ano de lanzamiento del modelo (o de su anuncio, si aun no se vende). */
+    @Min(value = 1990, message = "El año no es válido")
+    private Integer releaseYear;
+
+    /** "Disponible" si ya se vende; "Anunciado" si solo se ha presentado. Vacio si no se sabe. */
+    @Size(max = 20)
+    @Column(length = 20)
+    private String availability;
+
+    @Min(value = 0, message = "El precio no puede ser negativo")
+    private Integer priceUsd;
+
+    /** Verdadero si el precio es una referencia aproximada y no un precio verificado. */
+    private Boolean priceEstimated;
 
     @Size(max = 300)
     @Column(length = 300)

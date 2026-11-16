@@ -19,6 +19,14 @@ public final class Fmt {
         return unit == null || unit.isEmpty() ? s : s + " " + unit;
     }
 
+    /** Precio en la moneda elegida (ver {@link Money}); si es una referencia aproximada se antepone "aprox.". */
+    public static String price(Integer usd, Boolean estimated) {
+        if (usd == null || usd <= 0) {
+            return ND;
+        }
+        return Money.format(usd, estimated);
+    }
+
     public static String text(String v) {
         return v == null || v.isBlank() ? ND : v;
     }

@@ -15,7 +15,7 @@
     <groupId>com.laptopstudio</groupId>
     <artifactId>laptop-studio-3d</artifactId>
     <version>1.0.0</version>
-    <name>Laptop Studio 3D</name>
+    <name>Laptop Explorer</name>
 
     <properties>
         <java.version>21</java.version>
@@ -50,11 +50,23 @@
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-community-dialects</artifactId>
         </dependency>
+        <!-- Migraciones del esquema (src/main/resources/db/migration) -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- Cliente oficial de la API de Claude: solo lo usa la consulta en internet -->
+        <dependency>
+            <groupId>com.anthropic</groupId>
+            <artifactId>anthropic-java</artifactId>
+            <version>3.3.0</version>
         </dependency>
 
         <!-- Interfaz grafica -->

@@ -108,7 +108,7 @@ public final class LaptopViewer extends StackPane {
         sub = new SubScene(sceneRoot, 10, 10, true, SceneAntialiasing.BALANCED);
         sub.setCamera(camera);
         sub.setFill(Color.TRANSPARENT);
-        setStyle("-fx-background-color: radial-gradient(center 50% 75%, radius 90%, #18202a 0%, #0d1015 60%, #090b0e 100%);");
+        setStyle("-fx-background-color: radial-gradient(center 50% 75%, radius 90%, #1b4a66 0%, #0c2a40 55%, #071a2b 100%); -fx-background-radius: 14;");
         sub.setManaged(false);
         sub.relocate(0, 0);
         sub.widthProperty().bind(widthProperty());
@@ -140,14 +140,84 @@ public final class LaptopViewer extends StackPane {
                 step(dt);
             }
         };
-        sceneProperty().addListener((o, a, b) -> {
-            if (b == null) {
-                timer.stop();
-                lastNanos = 0;
-            } else {
-                timer.start();
+        sceneProperty().addListener((o, a, b) -> updateTimer());
+    }
+
+    private boolean active = true;
+
+    /**
+     * Pausa o reanuda la animacion. La pantalla del visor lo llama al ocultarse y al mostrarse: sin esto el
+     * temporizador seguia moviendo ventiladores y recalculando la camara 60 veces por segundo con el visor oculto.
+     */
+    public void setActive(boolean on) {
+        active = on;
+        updateTimer();
+    }
+
+    private void updateTimer() {
+        if (active && getScene() != null) {
+            timer.start();
+        } else {
+            timer.stop();
+            lastNanos = 0;
+        }
+    }
+
+    private Laptop shownA;
+    private Laptop shownB;
+    private boolean dirty = true;
+    private double externalDiag;
+    private long loadTicket;
+
+    /** Obliga a reconstruir en la proxima llamada a {@link #setLaptops} (el modelo 3D del laptop cambio en disco). */
+    public void invalidate() {
+        dirty = true;
+    }
+
+    /** Marca para reconstruir si el laptop gano o perdio su modelo importado desde la ultima vez. */
+    public void invalidateIfModelChanged(Laptop current) {
+        boolean has = com.laptopstudio.service.ModelStore.fileFor(current) != null;
+        if (current == shownA && shownB == null && has != (externalDiag > 0)) {
+            dirty = true;
+        }
+    }
+
+    /** Verdadero si lo que se muestra es un modelo OBJ importado y no la reconstruccion interna. */
+    public boolean isExternal() {
+        return externalDiag > 0;
+    }
+
+    private void showExternal(Laptop a, java.nio.file.Path obj) {
+        long ticket = ++loadTicket;
+        hudName.setText("Cargando modelo 3D importado…");
+        double target = a.getWidthMm() != null && a.getWidthMm() > 0 ? a.getWidthMm() : 360;
+        externalDiag = target * 1.25;
+        javafx.concurrent.Task<ExternalModel.Loaded> task = new javafx.concurrent.Task<>() {
+            @Override
+            protected ExternalModel.Loaded call() throws Exception {
+                return ExternalModel.load(obj, target);
+            }
+        };
+        task.setOnSucceeded(e -> {
+            if (ticket != loadTicket) {
+                return;                                  // el usuario ya cambio de laptop mientras cargaba
+            }
+            ExternalModel.Loaded m = task.getValue();
+            holder.getChildren().setAll(m.root());
+            holder.setTranslateY(m.height() / 2);
+            externalDiag = Math.hypot(m.width(), Math.max(m.depth(), m.height()));
+            hudName.setText("Modelo 3D importado · " + String.format(Locale.US, "%,d", m.triangles()) + " triángulos");
+            layoutCamera();
+        });
+        task.setOnFailed(e -> {
+            if (ticket == loadTicket) {
+                externalDiag = 0;
+                hudName.setText("No se pudo leer el modelo 3D importado: " + task.getException().getMessage());
             }
         });
+        Thread t = new Thread(task, "carga-modelo-3d");
+        t.setDaemon(true);
+        t.start();
     }
 
     private static String css(Color c) {
@@ -164,8 +234,25 @@ public final class LaptopViewer extends StackPane {
 
     /** Muestra el portatil {@code a}; si {@code ghostB} no es nulo, superpone ambos en modo Ghost. */
     public void setLaptops(Laptop a, Laptop ghostB) {
+        // Reconstruir un modelo cuesta decenas de milisegundos: no se repite si se pide lo que ya se muestra
+        if (!dirty && a == shownA && ghostB == shownB) {
+            return;
+        }
+        dirty = false;
+        shownA = a;
+        shownB = ghostB;
+        loadTicket++;
+        externalDiag = 0;
         models.clear();
         holder.getChildren().clear();
+        holder.setTranslateY(0);
+        java.nio.file.Path external = ghostB == null ? com.laptopstudio.service.ModelStore.fileFor(a) : null;
+        if (external != null) {
+            showExternal(a, external);
+            updateHud();
+            layoutCamera();
+            return;
+        }
         if (a != null) {
             boolean ghost = ghostB != null;
             LaptopModel ma = new LaptopModel(a, ACCENT_A.equals(accent) || ghost ? ACCENT_A : accent,
@@ -199,6 +286,9 @@ public final class LaptopViewer extends StackPane {
     }
 
     private void recenter() {
+        if (externalDiag > 0) {
+            return;                                      // el modelo importado ya esta centrado
+        }
         double shift = 0;
         for (LaptopModel m : models) {
             shift = m == models.get(0) ? m.centerShift() : Math.max(shift, m.centerShift());
@@ -207,10 +297,10 @@ public final class LaptopViewer extends StackPane {
     }
 
     private void layoutCamera() {
-        if (models.isEmpty() || getWidth() < 10 || getHeight() < 10) {
+        if ((models.isEmpty() && externalDiag <= 0) || getWidth() < 10 || getHeight() < 10) {
             return;
         }
-        double diag = 0;
+        double diag = externalDiag;
         for (LaptopModel m : models) {
             diag = Math.max(diag, Math.hypot(m.width(), m.depth()));
         }

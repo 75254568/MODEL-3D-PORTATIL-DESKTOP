@@ -29,6 +29,7 @@ public final class CompareMatrix {
     }
 
     private static final List<Object[]> GROUPS = List.of(
+            new Object[]{"Precio", List.of(s("Precio", Laptop::getPriceUsd, "$", -1))},
             new Object[]{"Chasis", List.of(
                     s("Ancho", Laptop::getWidthMm, "mm", 0), s("Fondo", Laptop::getDepthMm, "mm", 0),
                     s("Grosor", Laptop::getThicknessMm, "mm", -1), s("Peso", Laptop::getWeightKg, "kg", -1),
@@ -81,7 +82,9 @@ public final class CompareMatrix {
                 }
                 List<String> texts = new ArrayList<>();
                 for (Object v : raw) {
-                    texts.add(v == null ? Fmt.ND : v instanceof Number n ? Fmt.num(n, sp.unit()) : String.valueOf(v));
+                    Laptop l = laptops.get(texts.size());
+                    texts.add(v == null ? Fmt.ND : "$".equals(sp.unit()) ? Money.format(l.getPriceUsd(), l.getPriceEstimated())
+                            : v instanceof Number n ? Fmt.num(n, sp.unit()) : String.valueOf(v));
                 }
                 rows.add(new Row(false, sp.label(), texts, best, same));
             }

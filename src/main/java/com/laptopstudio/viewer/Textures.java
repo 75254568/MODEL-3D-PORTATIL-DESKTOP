@@ -56,11 +56,28 @@ final class Textures {
 
     /** Imagen empaquetada en /models/loq (fotografias rectificadas del equipo real). */
     static Image resource(String dir, String name) {
-        return new Image(Textures.class.getResource("/models/" + dir + "/" + name).toExternalForm(), 0, 0, true, true, false);
+        return cached("/models/" + dir + "/" + name);
+    }
+
+    /**
+     * Imagenes del classpath ya decodificadas. Cada modelo usa varias fotos grandes; sin esta cache se volvian a
+     * leer y decodificar cada vez que se reconstruia un laptop. SoftReference: la JVM las suelta si falta memoria.
+     */
+    private static final java.util.Map<String, java.lang.ref.SoftReference<Image>> CACHE =
+            new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static Image cached(String path) {
+        java.lang.ref.SoftReference<Image> ref = CACHE.get(path);
+        Image img = ref == null ? null : ref.get();
+        if (img == null) {
+            img = new Image(Textures.class.getResource(path).toExternalForm(), 0, 0, true, true, false);
+            CACHE.put(path, new java.lang.ref.SoftReference<>(img));
+        }
+        return img;
     }
 
     static Image resource(String name) {
-        return new Image(Textures.class.getResource("/models/loq/" + name).toExternalForm(), 0, 0, true, true, false);
+        return cached("/models/loq/" + name);
     }
 
     private static Image snap(Canvas c) {

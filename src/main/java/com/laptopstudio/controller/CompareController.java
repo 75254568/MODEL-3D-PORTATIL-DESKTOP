@@ -40,6 +40,9 @@ public class CompareController implements Refreshable {
     @FXML private FlowPane chips;
     @FXML private CheckBox chkDiff;
     @FXML private TableView<CompareMatrix.Row> tabla;
+    @FXML private javafx.scene.control.ScrollPane scrollColumnas;
+    @FXML private HBox columnas;
+    @FXML private CheckBox chkTabla;
     @FXML private Label lblVacio;
     @FXML private Button btnVisor;
 
@@ -58,6 +61,7 @@ public class CompareController implements Refreshable {
             }
         });
         chkDiff.selectedProperty().addListener((o, a, b) -> rebuild());
+        chkTabla.selectedProperty().addListener((o, a, b) -> rebuild());
         selection.getCompare().addListener((ListChangeListener<Laptop>) c -> rebuild());
         rebuild();
     }
@@ -71,8 +75,9 @@ public class CompareController implements Refreshable {
         List<Laptop> sel = new ArrayList<>(selection.getCompare());
         lblCount.setText(sel.isEmpty() ? "" : sel.size() + (sel.size() == 1 ? " laptop" : " laptops"));
         chips.getChildren().clear();
-        chips.setVisible(!sel.isEmpty());
-        chips.setManaged(!sel.isEmpty());
+        // en pantalla dividida cada columna tiene su propio boton de quitar; las etiquetas solo acompanan a la tabla
+        chips.setVisible(!sel.isEmpty() && chkTabla.isSelected());
+        chips.setManaged(chips.isVisible());
         for (Laptop l : sel) {
             Label name = new Label(l.getDisplayName());
             Button x = new Button();
@@ -94,7 +99,12 @@ public class CompareController implements Refreshable {
         lblVacio.setText(sel.isEmpty()
                 ? "No hay laptops para comparar. Marca de 2 a " + SelectionState.MAX_COMPARE + " en el catálogo."
                 : "Marca al menos un laptop más en el catálogo para compararlos.");
-        tabla.setVisible(ready);
+        boolean comoTabla = chkTabla.isSelected();
+        tabla.setVisible(ready && comoTabla);
+        tabla.setManaged(ready && comoTabla);
+        scrollColumnas.setVisible(ready && !comoTabla);
+        scrollColumnas.setManaged(ready && !comoTabla);
+        construirColumnas(ready ? sel : List.of());
         tabla.getColumns().clear();
         if (!ready) {
             tabla.setItems(FXCollections.emptyObservableList());
@@ -144,6 +154,96 @@ public class CompareController implements Refreshable {
             tabla.getColumns().add(c);
         }
         tabla.setItems(FXCollections.observableArrayList(CompareMatrix.build(sel, chkDiff.isSelected())));
+    }
+
+    /**
+     * Pantalla dividida: una columna por laptop, con las mismas filas a la misma altura para leer en horizontal.
+     * Las filas tienen alto fijo; un valor largo se corta y se ve completo al pasar el raton.
+     */
+    private void construirColumnas(List<Laptop> sel) {
+        columnas.getChildren().clear();
+        if (sel.isEmpty()) {
+            return;
+        }
+        List<CompareMatrix.Row> rows = CompareMatrix.build(sel, chkDiff.isSelected());
+        List<javafx.scene.Node> animar = new ArrayList<>();
+        for (int i = 0; i < sel.size(); i++) {
+            final int idx = i;
+            Laptop l = sel.get(i);
+            long gana = rows.stream().filter(r -> !r.group() && r.best().contains(idx)).count();
+
+            Label marca = new Label(l.getBrand().toUpperCase() + "  ·  " + l.getCategory());
+            marca.getStyleClass().add("section-label");
+            Label modelo = new Label(l.getModel());
+            modelo.getStyleClass().add("model-name");
+            modelo.setMinHeight(44);
+            modelo.setMaxHeight(44);
+            modelo.setWrapText(true);
+            Label precio = new Label(Fmt.price(l.getPriceUsd(), l.getPriceEstimated()));
+            precio.getStyleClass().add("price");
+            Label wins = new Label(gana == 0 ? "Sin ventajas medibles" : "Destaca en " + gana + (gana == 1 ? " apartado" : " apartados"));
+            wins.getStyleClass().add(gana == 0 ? "muted" : "compare-wins");
+            Button ver = new Button("Ver en 3D");
+            ver.getStyleClass().addAll("primary", "compact");
+            ver.setOnAction(e -> {
+                selection.setA(l);
+                navigation.go(Screen.VISOR);
+            });
+            Button ficha = new Button("Ficha");
+            ficha.getStyleClass().add("compact");
+            ficha.setOnAction(e -> com.laptopstudio.ui.SpecSheet.show(columnas, l));
+            Button quitar = new Button("Quitar");
+            quitar.getStyleClass().add("compact");
+            quitar.setOnAction(e -> selection.setMarked(l, false));
+            javafx.scene.layout.VBox head = new javafx.scene.layout.VBox(4, marca, modelo, precio, wins, new HBox(6, ver, ficha, quitar));
+            head.getStyleClass().add("compare-head");
+
+            javafx.scene.layout.VBox col = new javafx.scene.layout.VBox(head);
+            col.getStyleClass().addAll("glass-card", "compare-col");
+            for (CompareMatrix.Row r : rows) {
+                if (r.group()) {
+                    Label g = new Label(r.label().toUpperCase());
+                    g.getStyleClass().add("compare-group");
+                    g.setMinHeight(30);
+                    g.setMaxHeight(30);
+                    g.setMaxWidth(Double.MAX_VALUE);
+                    col.getChildren().add(g);
+                    continue;
+                }
+                String v = r.values().get(idx);
+                boolean best = r.best().contains(idx);
+                Label k = new Label(r.label());
+                k.getStyleClass().addAll("muted", "small");
+                Label val = new Label(v);
+                val.getStyleClass().add("value");
+                if (Fmt.ND.equals(v)) {
+                    val.getStyleClass().add("nd");
+                }
+                val.setTooltip(new javafx.scene.control.Tooltip(v));
+                javafx.scene.layout.VBox cell = new javafx.scene.layout.VBox(0, k, val);
+                cell.setAlignment(Pos.CENTER_LEFT);
+                HBox.setHgrow(cell, javafx.scene.layout.Priority.ALWAYS);
+                HBox row = new HBox(8, cell);
+                row.setAlignment(Pos.CENTER_LEFT);
+                if (best) {
+                    Label tag = new Label("Mejor");
+                    tag.getStyleClass().addAll("tag", "ok");
+                    tag.setMinWidth(javafx.scene.layout.Region.USE_PREF_SIZE);
+                    row.getChildren().add(tag);
+                    row.getStyleClass().add("best");
+                }
+                row.getStyleClass().add("compare-row");
+                row.setMinHeight(46);
+                row.setMaxHeight(46);
+                col.getChildren().add(row);
+            }
+            col.setMinWidth(0);
+            col.setPrefWidth(10);
+            HBox.setHgrow(col, javafx.scene.layout.Priority.ALWAYS);
+            columnas.getChildren().add(col);
+            animar.add(col);
+        }
+        com.laptopstudio.ui.Motion.stagger(animar);
     }
 
     @FXML

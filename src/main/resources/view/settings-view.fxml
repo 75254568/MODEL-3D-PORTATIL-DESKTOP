@@ -14,29 +14,67 @@
         </HBox>
     </top>
     <center>
-        <VBox spacing="22.0" maxWidth="640.0" BorderPane.alignment="TOP_LEFT">
-            <padding><Insets top="18.0" right="16.0" bottom="16.0" left="16.0"/></padding>
-            <VBox spacing="8.0">
-                <Label text="BASE DE DATOS" styleClass="section-label"/>
-                <GridPane hgap="14.0" vgap="6.0">
-                    <Label text="Ubicación" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                    <Label fx:id="lblRuta" wrapText="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-                    <Label text="Laptops registrados" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                    <Label fx:id="lblTotal" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                </GridPane>
-                <Label text="Los cambios del catálogo se guardan aquí y se conservan al cerrar la aplicación." styleClass="muted small"/>
-            </VBox>
-            <VBox spacing="8.0">
-                <Label text="APLICACIÓN" styleClass="section-label"/>
-                <GridPane hgap="14.0" vgap="6.0">
-                    <Label text="Java" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                    <Label fx:id="lblJava" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-                    <Label text="JavaFX" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                    <Label fx:id="lblFx" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                    <Label text="Memoria en uso" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-                    <Label fx:id="lblMem" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-                </GridPane>
-            </VBox>
-        </VBox>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+            <FlowPane hgap="14.0" vgap="14.0">
+                <padding><Insets top="4.0" right="14.0" bottom="14.0" left="14.0"/></padding>
+
+                <VBox spacing="8.0" styleClass="glass-card" prefWidth="460.0">
+                    <padding><Insets top="18.0" right="20.0" bottom="18.0" left="20.0"/></padding>
+                    <Label text="MONEDA Y TIPO DE CAMBIO" styleClass="section-label"/>
+                    <Label text="Los precios se guardan en dólares (USD). Aquí defines a cuántos soles equivale un dólar cuando eliges ver los precios en PEN." styleClass="muted small" wrapText="true"/>
+                    <GridPane hgap="12.0" vgap="8.0">
+                        <Label text="1 USD =" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <HBox spacing="8.0" alignment="CENTER_LEFT" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                            <TextField fx:id="txtRate" prefWidth="110.0"/>
+                            <Label text="PEN (soles)"/>
+                        </HBox>
+                        <Label text="Origen del valor" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="txtRateNote" prefWidth="270.0" promptText="Ej.: SBS, venta, 12 nov 2026" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <HBox spacing="8.0" alignment="CENTER_LEFT">
+                        <Button text="Guardar tipo de cambio" onAction="#onGuardarCambio" styleClass="primary"/>
+                        <Button text="Restablecer" onAction="#onRestablecerCambio"/>
+                    </HBox>
+                    <Label fx:id="lblRateMsg" styleClass="muted small" wrapText="true"/>
+                </VBox>
+
+                <VBox spacing="8.0" styleClass="glass-card" prefWidth="460.0">
+                    <padding><Insets top="18.0" right="20.0" bottom="18.0" left="20.0"/></padding>
+                    <Label text="CONSULTA EN INTERNET" styleClass="section-label"/>
+                    <Label text="Única función que usa conexión. Para buscar laptops que no están en el catálogo se usa la API de Claude con búsqueda web, que requiere una clave de API de Anthropic (de pago por uso)." styleClass="muted small" wrapText="true"/>
+                    <PasswordField fx:id="txtKey" promptText="Clave de API (sk-ant-...)"/>
+                    <HBox spacing="8.0" alignment="CENTER_LEFT">
+                        <Button text="Guardar clave" onAction="#onGuardarClave" styleClass="primary"/>
+                        <Button text="Quitar clave" onAction="#onQuitarClave"/>
+                    </HBox>
+                    <Label fx:id="lblKeyMsg" styleClass="muted small" wrapText="true"/>
+                </VBox>
+
+                <VBox spacing="8.0" styleClass="glass-card" prefWidth="460.0">
+                    <padding><Insets top="18.0" right="20.0" bottom="18.0" left="20.0"/></padding>
+                    <Label text="BASE DE DATOS" styleClass="section-label"/>
+                    <GridPane hgap="14.0" vgap="6.0">
+                        <Label text="Ubicación" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblRuta" wrapText="true" maxWidth="320.0" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Laptops registrados" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblTotal" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                    <Label text="Los cambios del catálogo se guardan aquí y se conservan al cerrar la aplicación." styleClass="muted small" wrapText="true"/>
+                </VBox>
+
+                <VBox spacing="8.0" styleClass="glass-card" prefWidth="460.0">
+                    <padding><Insets top="18.0" right="20.0" bottom="18.0" left="20.0"/></padding>
+                    <Label text="APLICACIÓN" styleClass="section-label"/>
+                    <GridPane hgap="14.0" vgap="6.0">
+                        <Label text="Java" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblJava" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="JavaFX" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblFx" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label text="Memoria en uso" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <Label fx:id="lblMem" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+            </FlowPane>
+        </ScrollPane>
     </center>
 </BorderPane>

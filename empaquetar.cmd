@@ -22,8 +22,8 @@ copy target\laptop-studio-3d-1.0.0.jar dist\ >nul
 set MODS=java.se,jdk.unsupported,jdk.jfr,jdk.crypto.ec,jdk.localedata
 
 echo.
-echo === Version portable (carpeta con LaptopStudio3D.exe) ===
-jpackage --type app-image --name LaptopStudio3D --app-version 1.0.0 ^
+echo === Version portable (carpeta con LaptopExplorer.exe) ===
+jpackage --type app-image --name LaptopExplorer --app-version 1.0.0 ^
   --input dist --main-jar laptop-studio-3d-1.0.0.jar --dest installer ^
   --add-modules %MODS% --java-options "-Dfile.encoding=UTF-8" || exit /b 1
 
@@ -31,7 +31,7 @@ where candle.exe >nul 2>nul
 if %errorlevel%==0 (
   echo.
   echo === Instalador .exe ===
-  jpackage --type exe --name LaptopStudio3D --app-version 1.0.40 ^
+  jpackage --type exe --name LaptopExplorer --app-version 1.0.40 ^
     --input dist --main-jar laptop-studio-3d-1.0.0.jar --dest installer ^
     --add-modules %MODS% --java-options "-Dfile.encoding=UTF-8" ^
     --win-shortcut --win-menu --win-dir-chooser --win-per-user-install || exit /b 1

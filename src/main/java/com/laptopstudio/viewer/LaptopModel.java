@@ -465,7 +465,7 @@ public final class LaptopModel {
             "gen/fw16", "#a2a5aa");
 
     private static String genColor(Laptop l) {
-        String m = l.getModel() == null ? "" : l.getModel().toUpperCase(Locale.ROOT);
+        String m = assetKey(l);
         for (String[] g : GEN_PHOTO) {
             String c = GEN_COLOR.get(g[1]);
             if (c != null && m.contains(g[0].toUpperCase(Locale.ROOT)) && LaptopModel.class.getResource("/models/" + g[1] + "/deck.jpg") != null) {
@@ -476,7 +476,7 @@ public final class LaptopModel {
     }
 
     private static double genLidT(Laptop l) {
-        String m = l.getModel() == null ? "" : l.getModel().toUpperCase(Locale.ROOT);
+        String m = assetKey(l);
         for (String[] g : GEN_PHOTO) {
             if (m.contains(g[0].toUpperCase(Locale.ROOT)) && Double.parseDouble(g[3]) > 0) {
                 return Double.parseDouble(g[3]);
@@ -487,7 +487,7 @@ public final class LaptopModel {
     }
 
     private String[] genPhoto() {
-        String m = d.getModel() == null ? "" : d.getModel().toUpperCase(Locale.ROOT);
+        String m = assetKey(d);
         for (String[] g : GEN_PHOTO) {
             if (m.contains(g[0].toUpperCase(Locale.ROOT)) && (hasRes(g[1], "deck.jpg") || hasRes(g[1], "screen.jpg")
                     || hasRes(g[1], "lid.jpg") || hasRes(g[1], "left.png") || hasRes(g[1], "right.png"))) {
@@ -785,7 +785,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Lenovo LOQ 15AHP10 (con fotografias reales) */
 
     private boolean isLoq() {
-        return d.getModel() != null && d.getModel().toUpperCase(Locale.ROOT).contains("LOQ");
+        return assetKey(d).contains("LOQ");
     }
 
     private static float[] pts(double x0, double y0, double z0, double x1, double y1, double z1,
@@ -1088,7 +1088,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Legion Pro 7i Gen 10: interior por piezas (parts.csv) */
 
     private boolean isLegionGen10() {
-        String m = d.getModel() == null ? "" : d.getModel().toUpperCase(Locale.ROOT);
+        String m = assetKey(d);
         return m.contains("LEGION PRO 7I GEN 10");
     }
 
@@ -1573,7 +1573,7 @@ public final class LaptopModel {
         if (tint != null) {
             return;
         }
-        String mdl = d.getModel() == null ? "" : d.getModel().toUpperCase(Locale.ROOT);
+        String mdl = assetKey(d);
         String dir = null;
         boolean similar = false;
         for (String[] e : INSIDE) {
@@ -1793,7 +1793,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ ASUS TUF Gaming A18 (carcasa con fotos + piezas internas OBJ) */
 
     private static boolean isObjModel(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("TUF GAMING A18");
+        return assetKey(l).contains("TUF GAMING A18");
     }
 
     private ObjImporter.Result lastBounds;
@@ -2116,7 +2116,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ ASUS ROG Zephyrus G16 (2025) Platinum White */
 
     private static boolean isZephyr(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("ZEPHYRUS G16 (2025)");
+        return assetKey(l).contains("ZEPHYRUS G16 (2025)");
     }
 
     private void buildZephyr() {
@@ -2343,7 +2343,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ ASUS ROG Strix SCAR 18 (2026) G835 */
 
     private static boolean isScar(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("SCAR 18");
+        return assetKey(l).contains("SCAR 18");
     }
 
     private void fanAt(String name, double fx, double fz, double dia, double hB, boolean ghost) {
@@ -2500,7 +2500,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Alienware 18 Area-51 (AA18250) */
 
     private static boolean isAlienware(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("AREA-51");
+        return assetKey(l).contains("AREA-51");
     }
 
     private void buildAlienware() {
@@ -2623,7 +2623,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Lenovo Legion Pro 7i Gen 10 */
 
     private static boolean isLegion(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("LEGION PRO 7I GEN");
+        return assetKey(l).contains("LEGION PRO 7I GEN");
     }
 
     private void buildLegion() {
@@ -2887,7 +2887,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ HyperX OMEN MAX 16 */
 
     private static boolean isOmen(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("OMEN MAX 16");
+        return assetKey(l).contains("OMEN MAX 16");
     }
 
     private void buildOmen() {
@@ -3016,7 +3016,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ MacBook Pro 16 M5 Pro / M5 Max */
 
     private static boolean isMbp(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("MACBOOK PRO 16 (M");
+        return assetKey(l).contains("MACBOOK PRO 16 (M");
     }
 
     private void buildMbp() {
@@ -3116,7 +3116,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ HP ZBook Fury 16 G11 */
 
     private static boolean isZbook(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("ZBOOK FURY 16");
+        return assetKey(l).contains("ZBOOK FURY 16");
     }
 
     private void buildZbook() {
@@ -3241,7 +3241,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Acer Predator Helios 18 (PH18-71) */
 
     private static boolean isHelios(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("HELIOS 18");
+        return assetKey(l).contains("HELIOS 18");
     }
 
     private void buildHelios() {
@@ -3369,7 +3369,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Acer Predator Helios 16 AI (PH16-73) */
 
     private static boolean isHelios16(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("HELIOS 16 AI");
+        return assetKey(l).contains("HELIOS 16 AI");
     }
 
     private void buildHelios16() {
@@ -3499,7 +3499,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ HP Victus 16 */
 
     private static boolean isVictus(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("VICTUS 16");
+        return assetKey(l).contains("VICTUS 16");
     }
 
     private void buildVictus() {
@@ -3697,7 +3697,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Dell G16 7630 */
 
     private static boolean isDellG16(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("G16 7630");
+        return assetKey(l).contains("G16 7630");
     }
 
     private void buildDellG16() {
@@ -3888,7 +3888,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Gigabyte AORUS 17X */
 
     private static boolean isAorus(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("AORUS 17X");
+        return assetKey(l).contains("AORUS 17X");
     }
 
     private void buildAorus() {
@@ -4079,7 +4079,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Razer Blade 18 (2024) */
 
     private static boolean isBlade18(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("BLADE 1");
+        return assetKey(l).contains("BLADE 1");
     }
 
     private void buildBlade18() {
@@ -4270,7 +4270,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ Alienware m18 R2 */
 
     private static boolean isM18(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("M18 R2");
+        return assetKey(l).contains("M18 R2");
     }
 
     private void buildM18() {
@@ -4461,7 +4461,7 @@ public final class LaptopModel {
     /* ------------------------------------------------------------------ ORIGIN PC EON18-X */
 
     private static boolean isEon18(Laptop l) {
-        return l.getModel() != null && l.getModel().toUpperCase(Locale.ROOT).contains("EON18-X");
+        return assetKey(l).contains("EON18-X");
     }
 
     private void buildEon18() {
@@ -4868,12 +4868,45 @@ public final class LaptopModel {
      * Estado del interior de un modelo. {@code reconstructed} es verdadero si existe un parts.csv propio;
      * {@code counts} da el numero de piezas por categoria y {@code sources} las fuentes citadas en esa tabla.
      */
+    /** Marca|modelo (en minusculas) de los laptops del catalogo original, los unicos con fotos e interiores propios. */
+    private static volatile java.util.Set<String> originals;
+
+    private static java.util.Set<String> originals() {
+        java.util.Set<String> set = originals;
+        if (set == null) {
+            set = new java.util.HashSet<>();
+            try (java.io.InputStream in = LaptopModel.class.getResourceAsStream("/seed/laptops.json")) {
+                for (com.fasterxml.jackson.databind.JsonNode n : new com.fasterxml.jackson.databind.ObjectMapper().readTree(in)) {
+                    set.add((n.path("brand").asText() + "|" + n.path("model").asText()).toLowerCase(Locale.ROOT));
+                }
+            } catch (java.io.IOException | RuntimeException e) {
+                // sin la lista no se puede saber a que modelo pertenece cada recurso: no se asigna ninguno
+            }
+            originals = set;
+        }
+        return set;
+    }
+
+    /**
+     * Nombre con el que se buscan las fotos y el interior de un laptop. Los recursos se hicieron para modelos
+     * concretos del catalogo original y se localizan por fragmentos del nombre ("BLADE 16", "MACBOOK AIR 15").
+     * Un modelo distinto que comparte el fragmento (otra generacion, otra talla) NO debe heredar esas fotos:
+     * para cualquier laptop que no sea uno de los originales se devuelve "" y se dibuja la version generica.
+     */
+    private static String assetKey(Laptop l) {
+        if (l == null || l.getModel() == null || l.getBrand() == null) {
+            return "";
+        }
+        boolean original = originals().contains((l.getBrand() + "|" + l.getModel()).toLowerCase(Locale.ROOT));
+        return original ? l.getModel().toUpperCase(Locale.ROOT) : "";
+    }
+
     public record InteriorInfo(boolean reconstructed, java.util.Map<String, Integer> counts,
                                java.util.Map<String, java.util.Set<String>> sources) {
     }
 
     public static InteriorInfo interiorInfo(Laptop l) {
-        String m = l == null || l.getModel() == null ? "" : l.getModel().toUpperCase(Locale.ROOT);
+        String m = assetKey(l);
         for (String[] e : RECONSTRUCTED) {
             if (!m.contains(e[0])) {
                 continue;

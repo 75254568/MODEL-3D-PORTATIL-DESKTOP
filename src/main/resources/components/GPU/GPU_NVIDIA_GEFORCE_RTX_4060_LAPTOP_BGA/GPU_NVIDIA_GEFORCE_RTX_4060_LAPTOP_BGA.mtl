@@ -1,0 +1,139 @@
+﻿# Master Material definitions for Photorealistic GPUs
+newmtl GPU_DieCast_Titanium
+Ka 0.08 0.09 0.10
+Kd 0.28 0.30 0.34
+Ks 0.85 0.88 0.92
+Ns 80.0
+illum 2
+newmtl GPU_Aluminum_Silver
+Ka 0.18 0.19 0.20
+Kd 0.72 0.75 0.80
+Ks 0.90 0.92 0.95
+Ns 110.0
+illum 2
+newmtl GPU_MatteBlack_Shroud
+Ka 0.03 0.03 0.03
+Kd 0.10 0.10 0.11
+Ks 0.25 0.25 0.28
+Ns 30.0
+illum 2
+newmtl GPU_Radeon_Red
+Ka 0.15 0.02 0.02
+Kd 0.85 0.08 0.08
+Ks 0.60 0.30 0.30
+Ns 55.0
+illum 2
+newmtl GPU_Fan_Blades_Black
+Ka 0.04 0.04 0.04
+Kd 0.14 0.14 0.16
+Ks 0.45 0.45 0.50
+Ns 50.0
+illum 2
+newmtl GPU_Heatsink_Fin_Stack
+Ka 0.15 0.16 0.18
+Kd 0.65 0.68 0.72
+Ks 0.80 0.82 0.85
+Ns 75.0
+illum 2
+newmtl GPU_Backplate_Anodized
+Ka 0.05 0.05 0.06
+Kd 0.18 0.19 0.21
+Ks 0.55 0.55 0.60
+Ns 60.0
+illum 2
+newmtl GPU_PCIe_Gold_Contacts
+Ka 0.28 0.22 0.05
+Kd 0.94 0.76 0.18
+Ks 0.90 0.86 0.75
+Ns 115.0
+illum 2
+newmtl GPU_PCB_Black
+Ka 0.02 0.02 0.02
+Kd 0.07 0.07 0.08
+Ks 0.20 0.20 0.22
+Ns 35.0
+illum 2
+newmtl GPU_PCB_Green
+Ka 0.02 0.08 0.03
+Kd 0.08 0.35 0.12
+Ks 0.22 0.26 0.22
+Ns 40.0
+illum 2
+newmtl GPU_Silicon_Mirror_Die
+Ka 0.10 0.12 0.16
+Kd 0.40 0.46 0.55
+Ks 0.95 0.95 0.98
+Ns 140.0
+illum 2
+newmtl GPU_Epoxy_Underfill_Black
+Ka 0.02 0.02 0.02
+Kd 0.06 0.06 0.07
+Ks 0.15 0.15 0.15
+Ns 20.0
+illum 2
+newmtl GPU_GDDR_Memory_IC
+Ka 0.04 0.04 0.04
+Kd 0.12 0.12 0.14
+Ks 0.35 0.35 0.38
+Ns 45.0
+illum 2
+newmtl GPU_Laser_Engraving
+Ka 0.12 0.12 0.14
+Kd 0.60 0.62 0.66
+Ks 0.70 0.70 0.75
+Ns 70.0
+illum 2
+newmtl GPU_Power_Connector
+Ka 0.03 0.03 0.03
+Kd 0.09 0.09 0.10
+Ks 0.25 0.25 0.25
+Ns 30.0
+illum 2
+newmtl GPU_LED_GeForce_White
+Ka 0.80 0.85 0.90
+Kd 0.95 0.98 1.00
+Ks 0.90 0.90 0.95
+Ns 150.0
+illum 2
+newmtl MLCC_Capacitor_Tan
+Ka 0.18 0.13 0.08
+Kd 0.65 0.50 0.35
+Ks 0.25 0.22 0.20
+Ns 35.0
+illum 2
+newmtl Solder_BGA_Balls
+Ka 0.20 0.22 0.24
+Kd 0.72 0.75 0.80
+Ks 0.85 0.85 0.88
+Ns 90.0
+illum 2
+newmtl GPU_Copper_Heatpipes
+Ka 0.25 0.12 0.05
+Kd 0.90 0.45 0.20
+Ks 0.85 0.60 0.40
+Ns 95.0
+illum 2
+newmtl GPU_ROG_Cyan_Accent
+Ka 0.05 0.20 0.25
+Kd 0.15 0.75 0.90
+Ks 0.80 0.90 0.95
+Ns 85.0
+illum 2
+newmtl GPU_Capacitor_Silver
+Ka 0.20 0.20 0.22
+Kd 0.80 0.82 0.85
+Ks 0.90 0.90 0.92
+Ns 100.0
+illum 2
+newmtl GPU_Capacitor_Pink_Mark
+Ka 0.20 0.05 0.12
+Kd 0.85 0.25 0.50
+Ks 0.40 0.30 0.35
+Ns 45.0
+illum 2
+newmtl GPU_Screw_Torx
+Ka 0.12 0.12 0.14
+Kd 0.55 0.58 0.62
+Ks 0.80 0.80 0.85
+Ns 80.0
+illum 2
