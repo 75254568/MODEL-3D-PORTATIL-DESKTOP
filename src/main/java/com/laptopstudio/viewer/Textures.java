@@ -86,8 +86,13 @@ final class Textures {
         return c.snapshot(sp, null);
     }
 
-    /** Cubierta C: teclado con teclas que se iluminan, altavoces y trackpad. */
-    static Image keyboard(double w, double d, Color deck, Color accent, Set<KeyCode> down) {
+    /**
+     * Cubierta C: teclado con teclas que se iluminan, altavoces y trackpad.
+     *
+     * @param key  color de las teclas
+     * @param glow color de la retroiluminacion, que asoma entre las teclas; null = sin retroiluminacion visible
+     */
+    static Image keyboard(double w, double d, Color deck, Color accent, Set<KeyCode> down, Color key, Color glow) {
         int pw = 1100;
         int ph = (int) Math.round(pw * d / w);
         Canvas c = new Canvas(pw, ph);
@@ -116,10 +121,15 @@ final class Textures {
             double unit = (kw - gap * (row.size() - 1)) / total;
             double x = kx;
             double y = ky + r * (rowH + rowGap);
-            for (Key key : row) {
-                double kwid = unit * key.weight();
-                boolean on = down != null && down.contains(key.code());
-                g.setFill(on ? accent : Color.rgb(20, 23, 28));
+            for (Key k : row) {
+                double kwid = unit * k.weight();
+                boolean on = down != null && down.contains(k.code());
+                if (glow != null && !on) {
+                    // halo de la retroiluminacion: un marco de color algo mayor que la tecla
+                    g.setFill(Color.color(glow.getRed(), glow.getGreen(), glow.getBlue(), 0.55));
+                    g.fillRoundRect(x - 1.5, y - 1.5, kwid + 3, rowH + 3, 6, 6);
+                }
+                g.setFill(on ? accent : key);
                 g.fillRoundRect(x, y, kwid, rowH, 4, 4);
                 g.setStroke(on ? accent.brighter() : Color.rgb(255, 255, 255, 0.07));
                 g.setLineWidth(1);
@@ -137,8 +147,14 @@ final class Textures {
         return snap(c);
     }
 
-    /** Pantalla de la tapa. Con carga activa muestra una animacion de benchmark. */
-    static Image screen(Laptop l, double w, double d, Color accent, boolean stress, double phase) {
+    /**
+     * Pantalla de la tapa. Con carga activa muestra una animacion de benchmark.
+     *
+     * @param wallpaper color del fondo de pantalla (el de la serie); null = fondo neutro
+     * @param notch     muesca de la camara en el borde superior
+     */
+    static Image screen(Laptop l, double w, double d, Color accent, boolean stress, double phase, Color wallpaper,
+                        boolean notch) {
         int pw = 900;
         int ph = (int) Math.round(pw * d / w);
         Canvas c = new Canvas(pw, ph);
@@ -150,6 +166,23 @@ final class Textures {
                 new Stop(0, Color.rgb(24, 34, 46)), new Stop(0.55, Color.rgb(16, 21, 28)),
                 new Stop(1, Color.rgb(27, 27, 40))));
         g.fillRect(ix, iy, iw, ih);
+        if (wallpaper != null) {
+            // fondo de pantalla: dos manchas de luz del color de la serie sobre el fondo oscuro
+            Color strong = Color.color(wallpaper.getRed(), wallpaper.getGreen(), wallpaper.getBlue(), 0.80);
+            Color soft = Color.color(wallpaper.getRed(), wallpaper.getGreen(), wallpaper.getBlue(), 0.0);
+            g.setFill(new RadialGradient(0, 0, ix + iw * 0.72, iy + ih * 0.78, iw * 0.62, false, CycleMethod.NO_CYCLE,
+                    new Stop(0, strong), new Stop(1, soft)));
+            g.fillRect(ix, iy, iw, ih);
+            Color second = wallpaper.deriveColor(48, 1, 1, 0.55);
+            g.setFill(new RadialGradient(0, 0, ix + iw * 0.22, iy + ih * 0.95, iw * 0.45, false, CycleMethod.NO_CYCLE,
+                    new Stop(0, second), new Stop(1, soft)));
+            g.fillRect(ix, iy, iw, ih);
+        }
+        if (notch) {
+            double nw = iw * 0.13, nh = ih * 0.045;
+            g.setFill(Color.rgb(5, 6, 10));
+            g.fillRoundRect(ix + iw / 2 - nw / 2, iy - nh, nw, nh * 2, nh * 0.9, nh * 0.9);
+        }
 
         g.setTextAlign(TextAlignment.LEFT);
         g.setFill(Color.rgb(220, 228, 238, 0.65));
@@ -178,26 +211,52 @@ final class Textures {
         return snap(c);
     }
 
-    /** Logotipo de texto en la tapa exterior (sin marcas registradas, solo el nombre del fabricante). */
-    static Image logo(String brand, Color base) {
+    /**
+     * Tapa exterior: color liso, rotulo de texto (sin logotipos registrados, solo el nombre de la marca o la
+     * serie) y, si la serie lo tiene, un trazo decorativo.
+     *
+     * @param text   rotulo; vacio = tapa sin rotulo
+     * @param ink    color del rotulo; null = blanco tenue
+     * @param corner verdadero para ponerlo pequeno en una esquina; falso, centrado
+     * @param accent "slash" (linea diagonal luminosa), "lines" (trazos finos grabados) o null
+     * @param glow   color del trazo "slash"
+     */
+    static Image lid(Color base, String text, Color ink, boolean corner, String accent, Color glow) {
         int pw = 900, ph = 640;
         Canvas c = new Canvas(pw, ph);
         GraphicsContext g = c.getGraphicsContext2D();
         g.setFill(base);
         g.fillRect(0, 0, pw, ph);
-        g.setFill(Color.rgb(255, 255, 255, 0.22));
-        g.setFont(Font.font("Segoe UI", FontWeight.SEMI_BOLD, 54));
-        g.setTextAlign(TextAlignment.LEFT);
-        String t = brand.toUpperCase();
-        double spacing = 22;
-        double total = 0;
-        for (char ch : t.toCharArray()) {
-            total += 38 + spacing;
+        boolean light = base.getBrightness() > 0.6;
+        Color subtle = light ? Color.rgb(0, 0, 0, 0.16) : Color.rgb(255, 255, 255, 0.14);
+        if ("lines".equals(accent)) {
+            g.setStroke(subtle);
+            g.setLineWidth(1.6);
+            g.strokeLine(pw * 0.04, ph * 0.86, pw * 0.70, ph * 0.10);
+            g.strokeLine(pw * 0.30, ph * 0.96, pw * 0.96, ph * 0.22);
+            g.strokeLine(pw * 0.04, ph * 0.52, pw * 0.96, ph * 0.74);
+            g.strokeLine(pw * 0.52, ph * 0.04, pw * 0.80, ph * 0.96);
+        } else if ("slash".equals(accent)) {
+            Color line = glow == null ? Color.rgb(255, 255, 255, 0.85) : Color.color(glow.getRed(), glow.getGreen(), glow.getBlue(), 0.25);
+            g.setStroke(line);
+            g.setLineWidth(16);
+            g.strokeLine(pw * 0.14, ph * 0.95, pw * 0.86, ph * 0.05);
+            g.setStroke(Color.rgb(255, 255, 255, 0.82));
+            g.setLineWidth(4);
+            g.strokeLine(pw * 0.14, ph * 0.95, pw * 0.86, ph * 0.05);
         }
-        double x = (pw - total) / 2;
-        for (char ch : t.toCharArray()) {
-            g.fillText(String.valueOf(ch), x, ph * 0.55);
-            x += 38 + spacing;
+        if (text != null && !text.isBlank()) {
+            g.setFill(ink != null ? ink : light ? Color.rgb(0, 0, 0, 0.30) : Color.rgb(255, 255, 255, 0.24));
+            double size = corner ? 30 : 54, advance = corner ? 26 : 60;
+            g.setFont(Font.font("Segoe UI", FontWeight.SEMI_BOLD, size));
+            g.setTextAlign(TextAlignment.LEFT);
+            double total = text.length() * advance;
+            double x = corner ? pw * 0.07 : (pw - total) / 2;
+            double y = corner ? ph * 0.14 : ph * 0.55;
+            for (char ch : text.toCharArray()) {
+                g.fillText(String.valueOf(ch), x, y);
+                x += advance;
+            }
         }
         return snap(c);
     }

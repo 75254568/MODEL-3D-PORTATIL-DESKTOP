@@ -117,7 +117,8 @@ public final class ExternalModel {
 
             @Override
             public String image(String name) {
-                URL u = ExternalModel.class.getResource(dir + baseName(name));
+                // "@carpeta/foto.jpg": imagen de los recursos compartida por varios modelos, sin copiarla a cada uno
+                URL u = ExternalModel.class.getResource(name.startsWith("@") ? "/" + name.substring(1) : dir + baseName(name));
                 return u == null ? null : u.toExternalForm();
             }
         };
@@ -144,13 +145,22 @@ public final class ExternalModel {
      * @param targetWidth medida que debe tener el lado mayor en planta; 0 o negativo deja el modelo a su escala
      */
     public static Loaded load(Source src, Up up, double targetWidth) throws IOException {
+        return load(src, up, targetWidth, false);
+    }
+
+    /** Modelo tal como esta en el archivo, sin centrarlo ni escalarlo: (x, y, z) del OBJ con +Z arriba pasa a (x, -z, y). */
+    public static Loaded loadInPlace(Source src) throws IOException {
+        return load(src, Up.Z, 0, true);
+    }
+
+    private static Loaded load(Source src, Up up, double targetWidth, boolean inPlace) throws IOException {
         Parsed p = parse(src);
         // caja envolvente con Y hacia arriba (la convencion de trabajo de este lector)
         double[] mn = up == Up.Z ? new double[]{p.min[0], p.min[2], -p.max[1]} : p.min.clone();
         double[] mx = up == Up.Z ? new double[]{p.max[0], p.max[2], -p.min[1]} : p.max.clone();
         double sx = mx[0] - mn[0], sy = mx[1] - mn[1], sz = mx[2] - mn[2];
         double k = targetWidth > 0 ? targetWidth / Math.max(sx, Math.max(sz, 1e-9)) : 1;
-        double cx = (mn[0] + mx[0]) / 2, cz = (mn[2] + mx[2]) / 2, baseY = mn[1];
+        double cx = inPlace ? 0 : (mn[0] + mx[0]) / 2, cz = inPlace ? 0 : (mn[2] + mx[2]) / 2, baseY = inPlace ? 0 : mn[1];
         Map<String, Mtl> mtls = p.mtlLib == null ? Map.of() : readMtl(src, p.mtlLib);
 
         Group root = new Group();

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 4, "brand": "Alienware", "model": "18 Area-51 (AA18250)", "config": "Ultra 9 275HX, RTX 5090, WQXGA 300 Hz",
+    "sources": ["https://www.dell.com/support/manuals/en-us/alienware-area-51-aa18250-gaming-laptop/alienware-18-area-51-aa18250-owners-manual/back?guid=guid-d3edd4d4-a009-4d16-b3d8-0b965cffcbf0&lang=en-us", "https://www.dell.com/support/manuals/es-pe/alienware-area-51-aa18250-gaming-laptop/alienware-18-area-51-aa18250-owners-manual/left?guid=guid-d010316f-77c6-4dc8-bfc8-2d79d94dbaf9&lang=en-us", "https://www.dell.com/support/manuals/en-us/alienware-area-51-aa18250-gaming-laptop/alienware-18-area-51-aa18250-owners-manual/display?guid=guid-c72a8f17-7e18-47b4-af56-715138111277&lang=en-us", "https://www.notebookcheck.net/Alienware-18-Area-51.1063059.0.html"],
+    "specs": {"ramType": "DDR5 SODIMM (2 ranuras)", "ramUpgradable": true, "storageSlots": 3, "screenInches": 18.0, "resolution": "2560x1600", "refreshRateHz": 300, "panelType": "WQXGA", "widthMm": 410.0, "depthMm": 320.0, "thicknessMm": 30.5, "weightKg": 4.12, "batteryWh": 96.0, "releaseYear": 2025},
+    "notVerified": ["cpu", "gpu", "ramGb", "storageGb", "chassisMaterial", "priceUsd"],
+    "conflicts": ["Peso: de 4,12 a 4,40 kg según configuración en el manual; hasta 4,34 kg según Notebookcheck."],
+    "look": {"shell": "#3b4448", "deck": "#20262a", "key": "#101215", "legend": "#d7f7ff", "logo": "", "metal": 0.7},
+    "design": {"thicknessMinMm": 24.72, "thicknessMaxMm": 30.5, "colors": [],
+      "ports": {"left": ["sd", "audio"], "right": [], "rear": ["rj45", "usba", "usba", "usba", "usbc", "usbc", "hdmi", "power"], "front": null}, "portsOrderConfirmed": true, "portsSource": 0,
+      "keyboard": {"backlight": "RGB por tecla", "extra": "Cherry MX Ultra de perfil bajo"},
+      "touchpad": {"lit": true}, "lighting": ["Touchpad RGB", "Teclado RGB por tecla"],
+      "notVerified": ["bloque numérico (no consta; se dibuja sin él)", "medidas del touchpad", "ángulo de la bisagra", "logotipo de la tapa", "rejillas y repisa térmica trasera"]}
+  },
+  {
+    "id": 50, "brand": "Alienware", "model": "16 Area-51 (2026) AA16250 · Ultra 9 290HX Plus, RTX 5080", "config": "Ultra 9 290HX Plus, RTX 5080, OLED QHD+ 240 Hz",
+    "sources": ["https://www.dell.com/en-us/shop/laptop-computers/spd/alienware16area51aa16250", "https://www.notebookcheck.net/Alienware-16-Area-51-review-New-Core-Ultra-9-290HX-Plus-is-all-power-at-any-cost.1276167.0.html", "https://www.notebookcheck.net/Alienware-16-Area-51-laptop-review-Dell-s-best-flagship-gaming-laptop-yet.1027688.0.html"],
+    "specs": {"cpu": "Intel Core Ultra 9 290HX Plus", "cpuCores": 24, "gpu": "NVIDIA GeForce RTX 5080 Laptop", "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 240, "panelType": "OLED", "widthMm": 365.0, "depthMm": 290.0, "thicknessMm": 28.5, "weightKg": 3.4, "batteryWh": 96.0, "releaseYear": 2026, "chassisMaterial": "Metal oscuro y ventana inferior Gorilla Glass"},
+    "notVerified": ["ramGb", "storageGb", "gpuVramGb", "gpuTgpWatts", "priceUsd"],
+    "conflicts": ["Peso: máximo 3,40 kg según Dell; 3,303 kg medidos.", "Puertos y diseño proceden del análisis de la versión con Ultra 9 275HX, con el mismo chasis."],
+    "look": {"shell": "#30383e", "deck": "#121417", "key": "#0d0e11", "legend": "#d7f7ff", "logo": "", "metal": 0.7},
+    "design": {"thicknessMinMm": 21.6, "thicknessMaxMm": 28.5, "colors": ["Metal oscuro y cubierta negra"],
+      "ports": {"left": ["sd", "audio"], "right": [], "rear": ["usba", "usba", "usba", "usbc", "usbc", "hdmi", "power"], "front": []}, "portsOrderConfirmed": true, "portsSource": 2,
+      "keyboard": {"backlight": "RGB por tecla", "extra": "Cherry de perfil bajo opcional; flechas de tamaño completo"},
+      "touchpad": {"widthMm": 112, "depthMm": 65, "lit": true}, "hingeMaxDeg": 140, "materials": "Metal y Gorilla Glass", "lighting": ["Barra RGB trasera", "Touchpad RGB", "Teclado RGB por tecla"],
+      "vents": ["Rejillas sobre la cubierta del teclado"],
+      "notVerified": ["bloque numérico (no consta; se dibuja sin él)", "logotipo de la tapa", "forma de la barra RGB", "forma de las rejillas", "bisagras Zero Hinge: no se reproduce su forma"]}
+  },
+  {
+    "id": 31, "brand": "Alienware", "model": "m16 R2", "config": "Ultra 9 185H, RTX 4070, QHD+ 240 Hz",
+    "sources": ["https://www.dell.com/support/manuals/en-us/alienware-m16-r2-laptop/alienware-m16-r2-owners-manual/dimensions-and-weight?guid=guid-362133ff-c5e8-4acd-a164-4ce876572659&lang=en-us", "https://www.dell.com/support/manuals/en-us/alienware-m16-r2-laptop/alienware-m16-r2-owners-manual/external-ports-and-slots?guid=guid-4c4cc1ba-66a4-45f0-8dfc-6013a624ddc0&lang=en-us", "https://www.notebookcheck.net/Alienware-m16-R2-laptop-review-Big-and-risky-changes.804547.0.html"],
+    "specs": {"gpu": "NVIDIA GeForce RTX 4070 Laptop", "gpuTgpWatts": 140, "ramType": "DDR5-5600", "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 240, "panelType": "IPS", "widthMm": 363.9, "depthMm": 249.9, "thicknessMm": 23.5, "weightKg": 2.6, "batteryWh": 90.0, "releaseYear": 2024, "chassisMaterial": "Aluminio anodizado (tapa y base) y reposamanos soft-touch"},
+    "notVerified": ["cpu", "ramGb", "storageGb", "priceUsd"],
+    "conflicts": ["Fondo: 249,9 mm en el manual; 249,4 mm en la tienda de Dell.", "Peso: 2,60 kg en el manual; 2,466 kg medidos en una unidad con Ultra 7 155H."],
+    "look": {"shell": "#3b3f45", "deck": "#1d2024", "key": "#121316", "legend": "#d7f7ff", "logo": "", "metal": 0.7},
+    "design": {"thicknessMinMm": 19.99, "thicknessMaxMm": 23.5, "colors": [],
+      "ports": {"left": ["rj45", "audio"], "right": ["microsd", "usba", "usba"], "rear": ["usbc", "usbc", "hdmi", "power"], "front": []}, "portsOrderConfirmed": true, "portsSource": 2,
+      "keyboard": {"backlight": "RGB de una zona; por tecla opcional", "travelMm": 1.8, "extra": "Membrana; flechas de tamaño completo"},
+      "touchpad": {"widthMm": 115, "depthMm": 70, "lit": true}, "hingeMaxDeg": 180, "materials": "Aluminio y soft-touch", "lighting": ["Clickpad con perímetro RGB", "Teclado RGB"],
+      "vents": ["Rejillas hexagonales"],
+      "notVerified": ["bloque numérico (no consta; se dibuja sin él)", "logotipo de la tapa", "forma y posición de las rejillas hexagonales"]}
+  },
+  {
+    "id": 15, "brand": "Alienware", "model": "m18 R2 (2024)", "config": "i9-14900HX, RTX 4090 175 W, 32 GB DDR5-5600, 2 TB, QHD+ 165 Hz, teclado Cherry",
+    "sources": ["https://www.dell.com/support/manuals/en-us/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/dimensions-and-weight?guid=guid-362133ff-c5e8-4acd-a164-4ce876572659&lang=en-us", "https://www.dell.com/support/manuals/es-pe/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/back?guid=guid-0216a0ff-6846-4fd3-9086-b6e56237b1c7&lang=en-us", "https://www.dell.com/support/manuals/es-pe/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/left?guid=guid-2d1c29f6-e1b9-4ae3-837d-7dd562995a66&lang=en-us", "https://www.dell.com/support/manuals/es-pe/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/touchpad?guid=guid-b0f011d5-f758-47d8-8f6d-0afe7346643b&lang=en-us", "https://www.notebookcheck.net/Alienware-m18-R2-laptop-review-Jumping-from-Core-i9-13980HX-to-i9-14900HX.812957.0.html"],
+    "specs": {"cpu": "Intel Core i9-14900HX", "cpuCores": 24, "gpu": "NVIDIA GeForce RTX 4090 Laptop", "gpuTgpWatts": 175, "ramGb": 32, "ramType": "DDR5-5600", "storageGb": 2048, "screenInches": 18.0, "resolution": "2560x1600", "refreshRateHz": 165, "panelType": "IPS", "widthMm": 410.3, "depthMm": 319.9, "thicknessMm": 25.1, "weightKg": 4.23, "batteryWh": 97.0, "releaseYear": 2024},
+    "notVerified": ["chassisMaterial", "gpuVramGb", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["Peso: hasta 4,23 kg según Dell; 3,955 kg medidos.", "Altura: 25,10 mm detrás en el manual; 26,7 mm de máximo según Notebookcheck."],
+    "look": {"shell": "#585a63", "deck": "#1f2126", "key": "#101215", "legend": "#d7f7ff", "logo": "", "metal": 0.6},
+    "design": {"thicknessMinMm": 24.1, "thicknessMaxMm": 25.1, "colors": [],
+      "ports": {"left": ["rj45", "usba", "usba", "audio"], "right": ["usbc"], "rear": ["usbc", "usbc", "usba", "hdmi", "minidp", "sd", "power"], "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": true, "backlight": "RGB por tecla", "extra": "Cherry mecánico de perfil ultrabajo; 102 teclas en distribución de EE. UU."},
+      "touchpad": {"widthMm": 131, "depthMm": 80}, "lighting": ["Teclado RGB por tecla"],
+      "notVerified": ["bloque numérico: se deduce de las 102 teclas, el manual no lo nombra", "material y color", "logotipo de la tapa", "ángulo de la bisagra", "forma de la repisa térmica trasera"]}
+  }
+]

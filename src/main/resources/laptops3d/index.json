@@ -1,0 +1,277 @@
+[
+ {
+  "brand": "Acer",
+  "model": "Predator Helios 18 (PH18-71)",
+  "folder": "acer-predator-helios-18-ph18-71"
+ },
+ {
+  "brand": "Acer",
+  "model": "Predator Helios 16 (PH16-72)",
+  "folder": "acer-predator-helios-16-ph16-72"
+ },
+ {
+  "brand": "Acer",
+  "model": "Predator Helios 16 AI (PH16-73)",
+  "folder": "acer-predator-helios-16-ai-ph16-73"
+ },
+ {
+  "brand": "Acer",
+  "model": "Aspire 16 AI (2026) A16-171M · Ultra 9 386H, 32 GB",
+  "folder": "acer-aspire-16-ai-2026-a16-171m-ultra-9-386h-32-gb"
+ },
+ {
+  "brand": "Acer",
+  "model": "Swift 16 AI (SF16-71T) · Ultra X9 388H",
+  "folder": "acer-swift-16-ai-sf16-71t-ultra-x9-388h"
+ },
+ {
+  "brand": "Alienware",
+  "model": "18 Area-51 (AA18250)",
+  "folder": "alienware-18-area-51-aa18250"
+ },
+ {
+  "brand": "Alienware",
+  "model": "16 Area-51 (2026) AA16250 · Ultra 9 290HX Plus, RTX 5080",
+  "folder": "alienware-16-area-51-2026-aa16250-ultra-9-290hx-plus-rtx-5080"
+ },
+ {
+  "brand": "Alienware",
+  "model": "m16 R2",
+  "folder": "alienware-m16-r2"
+ },
+ {
+  "brand": "Alienware",
+  "model": "m18 R2 (2024)",
+  "folder": "alienware-m18-r2-2024"
+ },
+ {
+  "brand": "Apple",
+  "model": "MacBook Air 15 (M3)",
+  "folder": "apple-macbook-air-15-m3"
+ },
+ {
+  "brand": "Apple",
+  "model": "MacBook Air 15 (M5)",
+  "folder": "apple-macbook-air-15-m5"
+ },
+ {
+  "brand": "Apple",
+  "model": "MacBook Pro 16 (M3 Max)",
+  "folder": "apple-macbook-pro-16-m3-max"
+ },
+ {
+  "brand": "Apple",
+  "model": "MacBook Pro 16 (M5 Max)",
+  "folder": "apple-macbook-pro-16-m5-max"
+ },
+ {
+  "brand": "Apple",
+  "model": "MacBook Neo (A18 Pro) · 8 GB, 256 GB",
+  "folder": "apple-macbook-neo-a18-pro-8-gb-256-gb"
+ },
+ {
+  "brand": "ASUS",
+  "model": "ROG Strix SCAR 18 (2026) G835",
+  "folder": "asus-rog-strix-scar-18-2026-g835"
+ },
+ {
+  "brand": "ASUS",
+  "model": "ROG Zephyrus G14 (2026) GA403 · Ryzen AI 9 465, RTX 5060",
+  "folder": "asus-rog-zephyrus-g14-2026-ga403-ryzen-ai-9-465-rtx-5060"
+ },
+ {
+  "brand": "ASUS",
+  "model": "ROG Zephyrus G16 (2025) Platinum White",
+  "folder": "asus-rog-zephyrus-g16-2025-platinum-white"
+ },
+ {
+  "brand": "ASUS",
+  "model": "ROG Zephyrus G16 (GU605MY)",
+  "folder": "asus-rog-zephyrus-g16-gu605my"
+ },
+ {
+  "brand": "ASUS",
+  "model": "TUF Gaming A18 (FA808U)",
+  "folder": "asus-tuf-gaming-a18-fa808u"
+ },
+ {
+  "brand": "ASUS",
+  "model": "Zenbook 14 OLED (UX3405)",
+  "folder": "asus-zenbook-14-oled-ux3405"
+ },
+ {
+  "brand": "ASUS",
+  "model": "Zenbook S14 (2026) UX5406AA · Ultra 9 386H, 32 GB, 1 TB",
+  "folder": "asus-zenbook-s14-2026-ux5406aa-ultra-9-386h-32-gb-1-tb"
+ },
+ {
+  "brand": "Dell",
+  "model": "G16 7630",
+  "folder": "dell-g16-7630"
+ },
+ {
+  "brand": "Dell",
+  "model": "XPS 16 (9640)",
+  "folder": "dell-xps-16-9640"
+ },
+ {
+  "brand": "Dell",
+  "model": "XPS 14 (2026) DA14260 · Ultra X7 358H, 32 GB, 1 TB",
+  "folder": "dell-xps-14-2026-da14260-ultra-x7-358h-32-gb-1-tb"
+ },
+ {
+  "brand": "Dell",
+  "model": "XPS 14 (2026) DA14260 · Ultra 5 325, 16 GB, 512 GB",
+  "folder": "dell-xps-14-2026-da14260-ultra-5-325-16-gb-512-gb"
+ },
+ {
+  "brand": "HP",
+  "model": "ZBook Fury 16 G11",
+  "folder": "hp-zbook-fury-16-g11"
+ },
+ {
+  "brand": "HP",
+  "model": "Victus 16 (16-r0xxx)",
+  "folder": "hp-victus-16-16-r0xxx"
+ },
+ {
+  "brand": "HP",
+  "model": "OMEN Transcend 16 (u1000)",
+  "folder": "hp-omen-transcend-16-u1000"
+ },
+ {
+  "brand": "HP",
+  "model": "OmniBook Ultra 14 (2026) · Snapdragon X2 Elite, 32 GB, 1 TB",
+  "folder": "hp-omnibook-ultra-14-2026-snapdragon-x2-elite-32-gb-1-tb"
+ },
+ {
+  "brand": "HyperX",
+  "model": "OMEN MAX 16",
+  "folder": "hyperx-omen-max-16"
+ },
+ {
+  "brand": "HyperX",
+  "model": "OMEN MAX 16 (2026) · Ultra 9 290HX Plus, RTX 5090, 32 GB",
+  "folder": "hyperx-omen-max-16-2026-ultra-9-290hx-plus-rtx-5090-32-gb"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "LOQ 15AHP10",
+  "folder": "lenovo-loq-15ahp10"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "LOQ 15 (2026) AMD · Ryzen 7 250, RTX 5060",
+  "folder": "lenovo-loq-15-2026-amd-ryzen-7-250-rtx-5060"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "Legion Pro 7i Gen 10 (16)",
+  "folder": "lenovo-legion-pro-7i-gen-10-16"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "Legion Pro 7i Gen 9",
+  "folder": "lenovo-legion-pro-7i-gen-9"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "Legion Pro 7i Gen 11 (16) · Ultra 9 290HX Plus, RTX 5090, 32 GB, 2 TB",
+  "folder": "lenovo-legion-pro-7i-gen-11-16-ultra-9-290hx-plus-rtx-5090-32-gb-2-tb"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "ThinkPad X1 Carbon Gen 12",
+  "folder": "lenovo-thinkpad-x1-carbon-gen-12"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "ThinkPad X1 Carbon Gen 14 Aura Edition · Ultra 7 355, 32 GB, 512 GB",
+  "folder": "lenovo-thinkpad-x1-carbon-gen-14-aura-edition-ultra-7-355-32-gb-512-gb"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "ThinkPad P16 Gen 3 · Ultra 9 285HX, RTX PRO 5000, 64 GB, 2 TB",
+  "folder": "lenovo-thinkpad-p16-gen-3-ultra-9-285hx-rtx-pro-5000-64-gb-2-tb"
+ },
+ {
+  "brand": "Lenovo",
+  "model": "IdeaPad Slim 5 16 (16AGP11) · Ryzen AI 5 430",
+  "folder": "lenovo-ideapad-slim-5-16-16agp11-ryzen-ai-5-430"
+ },
+ {
+  "brand": "MSI",
+  "model": "Titan 18 HX (A14V)",
+  "folder": "msi-titan-18-hx-a14v"
+ },
+ {
+  "brand": "MSI",
+  "model": "Titan 18 HX AI (A2XW) · Ultra 9 285HX, RTX 5090",
+  "folder": "msi-titan-18-hx-ai-a2xw-ultra-9-285hx-rtx-5090"
+ },
+ {
+  "brand": "MSI",
+  "model": "Prestige 14 Flip AI+ (2026) · Ultra X7 358H, 32 GB, 1 TB",
+  "folder": "msi-prestige-14-flip-ai-2026-ultra-x7-358h-32-gb-1-tb"
+ },
+ {
+  "brand": "Framework",
+  "model": "Laptop 16",
+  "folder": "framework-laptop-16"
+ },
+ {
+  "brand": "Framework",
+  "model": "Laptop 16 (Ryzen AI 300) · Ryzen AI 9 HX 370, RTX 5070, 32 GB, 1 TB",
+  "folder": "framework-laptop-16-ryzen-ai-300-ryzen-ai-9-hx-370-rtx-5070-32-gb-1-tb"
+ },
+ {
+  "brand": "Gigabyte",
+  "model": "AORUS 17X (2024)",
+  "folder": "gigabyte-aorus-17x-2024"
+ },
+ {
+  "brand": "LG",
+  "model": "gram 16 (16Z90S)",
+  "folder": "lg-gram-16-16z90s"
+ },
+ {
+  "brand": "LG",
+  "model": "gram Pro 16 (2026) 16Z90U · Ultra X7 358H, 32 GB, 1 TB",
+  "folder": "lg-gram-pro-16-2026-16z90u-ultra-x7-358h-32-gb-1-tb"
+ },
+ {
+  "brand": "Microsoft",
+  "model": "Surface Laptop 7 15",
+  "folder": "microsoft-surface-laptop-7-15"
+ },
+ {
+  "brand": "ORIGIN PC",
+  "model": "EON18-X (2025)",
+  "folder": "origin-pc-eon18-x-2025"
+ },
+ {
+  "brand": "Samsung",
+  "model": "Galaxy Book6 Ultra · RTX 5070, 32 GB, 2 TB",
+  "folder": "samsung-galaxy-book6-ultra-rtx-5070-32-gb-2-tb"
+ },
+ {
+  "brand": "Razer",
+  "model": "Blade 16 (2024)",
+  "folder": "razer-blade-16-2024"
+ },
+ {
+  "brand": "Razer",
+  "model": "Blade 18 (2024)",
+  "folder": "razer-blade-18-2024"
+ },
+ {
+  "brand": "Razer",
+  "model": "Blade 16 (2026) · Ultra 9 386H, RTX 5090, 32 GB, 2 TB",
+  "folder": "razer-blade-16-2026-ultra-9-386h-rtx-5090-32-gb-2-tb"
+ },
+ {
+  "brand": "Razer",
+  "model": "Blade 16 (2026) · Ultra 9 386H, RTX 5080",
+  "folder": "razer-blade-16-2026-ultra-9-386h-rtx-5080"
+ }
+]

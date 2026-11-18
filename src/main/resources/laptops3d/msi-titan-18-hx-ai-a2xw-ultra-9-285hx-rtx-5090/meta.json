@@ -1,0 +1,103 @@
+{
+ "brand": "MSI",
+ "model": "Titan 18 HX AI (A2XW) · Ultra 9 285HX, RTX 5090",
+ "widthMm": 404.0,
+ "depthMm": 307.5,
+ "thicknessMm": 32.05,
+ "thicknessFrontMm": 24.0,
+ "bodyRearMm": 25.549999999999997,
+ "bodyFrontMm": 17.5,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 306.0,
+ "hingeYMm": 152.25,
+ "hingeZMm": 25.549999999999997,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9886,
+  "scaleZ": 0.985,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "kensington"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo MSI",
+  "reposamanos de vidrio",
+  "touchpad RGB",
+  "base plateada con rótulo TITAN",
+  "trasera con puertos"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "ángulo de la bisagra",
+  "forma de la extensión trasera plateada",
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://storage-asset.msi.com/specSheet/sg/nb/Titan%2018%20HX%20AI%20A2XWJG-487SGDM.pdf",
+  "https://www.msi.com/Laptop/Titan-18-HX-AI-A2XWX",
+  "https://www.notebookcheck.net/MSI-Titan-18-HX-AI-A2XWJG-Review-No-holds-barred-Core-Ultra-9-285HX-and-175-W-RTX-5090-Laptop-performance.1010632.0.html"
+ ]
+}

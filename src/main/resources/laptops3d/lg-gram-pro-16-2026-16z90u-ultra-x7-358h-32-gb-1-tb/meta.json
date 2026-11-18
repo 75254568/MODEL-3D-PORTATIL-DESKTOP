@@ -1,0 +1,78 @@
+{
+ "brand": "LG",
+ "model": "gram Pro 16 (2026) 16Z90U · Ultra X7 358H, 32 GB, 1 TB",
+ "widthMm": 357.7,
+ "depthMm": 251.6,
+ "thicknessMm": 12.8,
+ "thicknessFrontMm": 12.4,
+ "bodyRearMm": 9.4,
+ "bodyFrontMm": 9.0,
+ "lidThicknessMm": 3.4,
+ "lidLengthMm": 250.1,
+ "hingeYMm": 124.3,
+ "hingeZMm": 9.4,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9799,
+  "scaleZ": 0.973,
+  "offsetZ": 0.2
+ },
+ "outlineFromFrac": 0.46,
+ "cornerFrontMm": 5.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 0.7923728813559323,
+  "Foto_tapa": 0.7923728813559323,
+  "Foto_base": 0.7923728813559323,
+  "Foto_izquierda": 0.7923728813559323,
+  "Foto_derecha": 0.7923728813559323,
+  "Foto_trasera": 0.7923728813559323,
+  "Foto_frente": 0.7923728813559323
+ },
+ "panel": {},
+ "portsPlaced": [],
+ "portsNotPlaced": [
+  "usba",
+  "usba",
+  "usbc",
+  "usbc",
+  "hdmi",
+  "audio"
+ ],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "aleación Aerominum muy ligera",
+  "teclado con bloque numérico, según la variante europea",
+  "touchpad bajo las letras",
+  "rótulo LG gram en la tapa"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "bloque numérico: consta solo en la variante del Reino Unido",
+  "medidas del touchpad, estimadas",
+  "lados de los puertos sin confirmar: no se dibujan",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "lado de cada puerto",
+  "bloque numérico: consta solo en la variante del Reino Unido",
+  "medidas del touchpad",
+  "bisagra"
+ ],
+ "sources": [
+  "https://www.lg.com/global/business/monitors-pcs/laptops/gram-pro/16z90u/",
+  "https://www.lg.com/us/laptops/lg-16z90u-k.aub7u1-gram-laptop",
+  "https://www.notebookcheck.net/Less-than-1-2-kg-LG-releases-lightweight-new-16-inch-laptop-with-120-Hz-OLED-display.1260808.0.html",
+  "https://www.notebookcheck.net/LG-gram-Pro-AI-2026-16Z90U.1240959.0.html",
+  "https://www.techradar.com/computing/gaming-laptops/lg-gram-pro-16-2026"
+ ]
+}

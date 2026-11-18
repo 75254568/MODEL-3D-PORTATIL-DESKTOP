@@ -1,0 +1,92 @@
+{
+ "brand": "ASUS",
+ "model": "ROG Strix SCAR 18 (2026) G835",
+ "widthMm": 399.0,
+ "depthMm": 298.0,
+ "thicknessMm": 35.0,
+ "thicknessFrontMm": 23.5,
+ "bodyRearMm": 29.0,
+ "bodyFrontMm": 17.5,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 296.5,
+ "hingeYMm": 147.5,
+ "hingeZMm": 29.0,
+ "maxLidDeg": 135,
+ "innerFit": {
+  "scaleX": 0.9885,
+  "scaleZ": 0.9846,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 8,
+ "cornerRearMm": 5,
+ "cornerLidFreeMm": 6,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo ROG",
+  "trama STRIX en la tapa",
+  "tira de luz inferior",
+  "rejillas traseras"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "forma exacta de la tapa",
+  "orden físico de los puertos"
+ ],
+ "sources": [
+  "https://rog.asus.com/laptops/rog-strix/rog-strix-scar-18-2026/spec/",
+  "https://tbreak.com/asus-rog-strix-scar-18-2026-review/"
+ ]
+}

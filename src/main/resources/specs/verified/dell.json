@@ -1,0 +1,59 @@
+[
+  {
+    "id": 12, "brand": "Dell", "model": "G16 7630", "config": "Configuración con RTX 4070 y panel QHD+ 240 Hz",
+    "sources": ["https://www.dell.com/support/manuals/en-us/g-series-16-7630-laptop/dell-g16-7630-owners-manual/dimensions-and-weight?guid=guid-362133ff-c5e8-4acd-a164-4ce876572659&lang=en-us", "https://www.dell.com/support/manuals/en-us/g-series-16-7630-laptop/dell-g16-7630-owners-manual/back?guid=guid-f2dda353-ba5a-44c0-b85f-6bf1b8c70d15&lang=en-us", "https://www.dell.com/support/manuals/en-us/g-series-16-7630-laptop/dell-g16-7630-owners-manual/display?guid=guid-2bdf1814-06d3-4b69-967b-c48432875f91&lang=en-us", "https://www.notebookcheck.net/Dell-G16-2024-laptop-review-An-affordable-Alienware-alternative-from-the-same-manufacturer.803280.0.html"],
+    "specs": {"screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 240, "panelType": "WVA (IPS)", "widthMm": 356.98, "depthMm": 288.73, "thicknessMm": 24.9, "weightKg": 2.87, "chassisMaterial": "Tapa de aluminio; resto de plástico gris"},
+    "notVerified": ["cpu", "gpuVramGb", "ramGb", "storageGb", "batteryWh", "priceUsd"],
+    "conflicts": ["Altura: el manual da 24,90 mm detrás; la tienda de Dell cita 25,65 mm como máximo.", "Peso: 2,87 kg en el manual; 2,76 kg medidos en una unidad con RTX 4060."],
+    "look": {"shell": "#3a3a42", "deck": "#44454c", "key": "#15161a", "legend": "#eef0f3", "logo": "DELL", "metal": 0.5},
+    "design": {"thicknessMinMm": 20.2, "thicknessMaxMm": 24.9, "colors": ["Gris"],
+      "ports": {"left": ["rj45", "audio"], "right": ["usba", "usba"], "rear": ["usbc", "hdmi", "usba", "power"], "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "backlight": "RGB de una zona; opción mecánica Cherry por tecla", "extra": "Teclas de función de media altura; WASD con contorno blanco"},
+      "touchpad": {"widthMm": 105, "depthMm": 65}, "materials": "Aluminio y plástico", "lighting": [],
+      "notVerified": ["saliente trasero de refrigeración: sin medidas publicadas, no se modela", "ángulo de la bisagra", "rejillas", "altavoces"]}
+  },
+  {
+    "id": 21, "brand": "Dell", "model": "XPS 16 (9640)", "config": "Ultra 9 185H, RTX 4070, OLED UHD+ táctil",
+    "sources": ["https://www.dell.com/support/manuals/en-us/xps-16-9640-laptop/xps-16-9640-owners-manual/dimensions-and-weight?guid=guid-e23ce41c-df4c-436f-a046-21f24f011a9d&lang=en-us", "https://www.dell.com/support/manuals/en-us/xps-16-9640-laptop/xps-16-9640-owners-manual/right?guid=guid-28f91978-658b-48bd-ac24-606e45bfa3b7&lang=en-us", "https://www.dell.com/support/manuals/en-us/xps-16-9640-laptop/xps-16-9640-owners-manual/display?guid=guid-73e1ca36-2dcd-41d4-b0bd-abbae75a1deb&lang=en-us", "https://www.notebookcheck.net/Dell-XPS-16-9640-review-The-multimedia-laptop-with-4K-OLED-and-an-annoying-touch-bar.825261.0.html"],
+    "specs": {"screenInches": 16.3, "resolution": "3840x2400", "refreshRateHz": 90, "panelType": "OLED táctil", "widthMm": 358.18, "depthMm": 240.05, "thicknessMm": 18.7, "weightKg": 2.18, "chassisMaterial": "Aluminio, con reposamanos continuo de vidrio"},
+    "notVerified": ["cpu", "gpuTgpWatts", "ramGb", "storageGb", "batteryWh", "priceUsd"],
+    "conflicts": ["Peso: mínimo 2,18 kg y máximo 2,34 kg según Dell; 2,313 kg medidos por Notebookcheck."],
+    "look": {"shell": "#3a3c40", "deck": "#2c2e32", "key": "#17181b", "legend": "#eef0f3", "logo": "", "metal": 0.8},
+    "design": {"thicknessMinMm": 18.7, "thicknessMaxMm": 18.7, "colors": ["Claro", "Gris oscuro"],
+      "ports": {"left": ["usbc", "usbc"], "right": ["microsd", "usbc", "audio"], "rear": [], "front": []}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "style": "zero-lattice", "fnRow": "touch", "backlight": "Sí", "extra": "Fila de función táctil, teclas sin separación y flechas verticales muy pequeñas"},
+      "speakerGrilles": true, "touchpad": {"invisible": true, "fullHeight": true, "placement": "Integrado en el reposamanos, sin límites visibles"},
+      "palmRest": "vidrio", "hingeMaxDeg": 135, "materials": "Aluminio y vidrio", "lighting": [],
+      "notVerified": ["ancho exacto de la zona del touchpad: se estima por la descripción", "logotipo de la tapa", "rejillas", "forma de los altavoces"]}
+  },
+  {
+    "id": 33, "brand": "Dell", "model": "XPS 14 (2026) DA14260 · Ultra X7 358H, 32 GB, 1 TB", "config": "Ultra X7 358H, 32 GB, 1 TB, OLED 2,8K táctil",
+    "sources": ["https://www.dell.com/en-us/shop/laptop-computers/spd/xps14da14260", "https://www.dell.com/support/manuals/en-us/xps-da14260-laptop/xps-14-da14260-setup-specifications/external-ports-and-slots?guid=guid-b8f739cc-a41e-4ac9-b3f8-ff6d9c6d8c19&lang=en-us", "https://www.notebookcheck.net/Dell-XPS-14-2026-review-Fully-reborn-with-Intel-Panther-Lake-X7.1218670.0.html"],
+    "specs": {"cpu": "Intel Core Ultra X7 358H", "cpuCores": 16, "gpu": "Intel Arc B390 (integrada)", "ramGb": 32, "ramType": "LPDDR5X-7467 (soldada)", "ramUpgradable": false, "storageGb": 1024,
+      "screenInches": 14.0, "resolution": "2880x1800", "panelType": "OLED táctil", "widthMm": 309.52, "depthMm": 209.71, "thicknessMm": 14.62, "weightKg": 1.36, "batteryWh": 70.0, "releaseYear": 2026, "chassisMaterial": "Aleación de aluminio mate (75 % reciclado en cubiertas)"},
+    "notVerified": ["refreshRateHz", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["Dell nombra el procesador «Core Ultra 7 358H»; Notebookcheck y el registro, «Ultra X7 358H».", "Peso: desde 1,36 kg según Dell; 1,444 kg medidos."],
+    "look": {"shell": "#2f3033", "deck": "#2f3033", "key": "#1a1b1e", "legend": "#eef0f3", "logo": "XPS", "metal": 0.8},
+    "design": {"thicknessMinMm": 14.62, "thicknessMaxMm": 14.62, "colors": ["Graphite"],
+      "ports": {"left": ["usbc", "usbc"], "right": ["usbc", "audio"], "rear": [], "front": []}, "portsOrderConfirmed": false, "portsSource": 2,
+      "keyboard": {"numpad": false, "style": "zero-lattice", "backlight": "Sí", "travelMm": 0.8, "extra": "Teclas de función físicas; flechas apretadas"},
+      "touchpad": {"widthMm": 152, "depthMm": 75, "placement": "Delimitado por un grabado sutil en los bordes"}, "hingeMaxDeg": 140, "materials": "Aluminio mate", "lighting": [],
+      "vents": ["Salida trasera: rejillas a lo largo de la parte posterior"],
+      "notVerified": ["orden exacto de los puertos en cada lado", "forma gráfica del logotipo", "posición de altavoces"]}
+  },
+  {
+    "id": 34, "brand": "Dell", "model": "XPS 14 (2026) DA14260 · Ultra 5 325, 16 GB, 512 GB", "config": "Ultra 5 325, 16 GB, 512 GB, LCD 2K",
+    "sources": ["https://www.dell.com/en-us/shop/laptop-computers/spd/xps14da14260", "https://www.dell.com/support/manuals/en-us/xps-da14260-laptop/xps-14-da14260-setup-specifications/external-ports-and-slots?guid=guid-b8f739cc-a41e-4ac9-b3f8-ff6d9c6d8c19&lang=en-us", "https://www.notebookcheck.net/Dell-XPS-14-2026-review-Fully-reborn-with-Intel-Panther-Lake-X7.1218670.0.html"],
+    "specs": {"cpu": "Intel Core Ultra 5 325", "cpuCores": 8, "gpu": "Gráficos Intel Arc (integrados)", "ramGb": 16, "ramType": "LPDDR5X-7467 (soldada)", "ramUpgradable": false, "storageGb": 512,
+      "screenInches": 14.0, "resolution": "1920x1200", "refreshRateHz": 120, "panelType": "LCD", "widthMm": 309.52, "depthMm": 209.71, "thicknessMm": 15.2, "weightKg": 1.38, "batteryWh": 70.0, "releaseYear": 2026, "chassisMaterial": "Aleación de aluminio mate (75 % reciclado en cubiertas)"},
+    "notVerified": ["cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["Peso: 1,38 kg en la ficha de EE. UU.; 1,36 kg en la del Reino Unido.", "El análisis consultado prueba la versión OLED; el diseño se comparte, la pantalla no."],
+    "look": {"shell": "#2f3033", "deck": "#2f3033", "key": "#1a1b1e", "legend": "#eef0f3", "logo": "XPS", "metal": 0.8},
+    "design": {"thicknessMinMm": 15.2, "thicknessMaxMm": 15.2, "colors": ["Graphite"],
+      "ports": {"left": ["usbc", "usbc"], "right": ["usbc", "audio"], "rear": [], "front": []}, "portsOrderConfirmed": false, "portsSource": 2,
+      "keyboard": {"numpad": false, "style": "zero-lattice", "backlight": "Sí", "travelMm": 0.8, "extra": "Teclas de función físicas; flechas apretadas"},
+      "touchpad": {"widthMm": 152, "depthMm": 75, "placement": "Delimitado por un grabado sutil en los bordes"}, "hingeMaxDeg": 140, "materials": "Aluminio mate", "lighting": [],
+      "vents": ["Salida trasera: rejillas a lo largo de la parte posterior"],
+      "notVerified": ["orden exacto de los puertos en cada lado", "forma gráfica del logotipo", "posición de altavoces"]}
+  }
+]

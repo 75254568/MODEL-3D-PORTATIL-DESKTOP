@@ -1,0 +1,100 @@
+{
+ "brand": "ASUS",
+ "model": "ROG Zephyrus G14 (2026) GA403 · Ryzen AI 9 465, RTX 5060",
+ "widthMm": 311.0,
+ "depthMm": 220.0,
+ "thicknessMm": 16.3,
+ "thicknessFrontMm": 15.9,
+ "bodyRearMm": 12.100000000000001,
+ "bodyFrontMm": 11.7,
+ "lidThicknessMm": 4.2,
+ "lidLengthMm": 218.5,
+ "hingeYMm": 108.5,
+ "hingeZMm": 12.100000000000001,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9891,
+  "scaleZ": 0.9845,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.14,
+ "cornerFrontMm": 5.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "tapa con Slash como fila diagonal de LED",
+  "altavoces perforados a los lados del teclado",
+  "cuatro teclas de función sobre el teclado",
+  "encendido arriba a la derecha",
+  "base casi entera perforada"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "color Eclipse Gray elegido entre los dos que se venden",
+  "medidas del touchpad, estimadas",
+  "recorrido exacto de Slash",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "forma exacta de la tapa"
+ ],
+ "sources": [
+  "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g14-2026-ga403/spec/",
+  "https://www.notebookcheck.net/One-of-the-best-multimedia-laptops-gets-a-brighter-OLED-Asus-ROG-Zephyrus-G14-2026-Review.1321952.0.html",
+  "https://www.notebookcheck.net/One-of-the-best-compact-gaming-laptops-gets-a-brighter-OLED-Asus-ROG-Zephyrus-G14-2026-Review.1321952.0.html"
+ ]
+}

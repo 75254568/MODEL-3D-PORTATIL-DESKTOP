@@ -1,0 +1,81 @@
+{
+ "brand": "Apple",
+ "model": "MacBook Neo (A18 Pro) · 8 GB, 256 GB",
+ "widthMm": 297.5,
+ "depthMm": 206.4,
+ "thicknessMm": 12.7,
+ "thicknessFrontMm": 12.7,
+ "bodyRearMm": 9.299999999999999,
+ "bodyFrontMm": 9.299999999999999,
+ "lidThicknessMm": 3.4,
+ "lidLengthMm": 204.9,
+ "hingeYMm": 101.7,
+ "hingeZMm": 9.299999999999999,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9758,
+  "scaleZ": 0.9671,
+  "offsetZ": 0.2
+ },
+ "outlineFromFrac": 0.46,
+ "cornerFrontMm": 8,
+ "cornerRearMm": 4.5,
+ "cornerLidFreeMm": 8,
+ "cornerLidHingeMm": 3,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 0.6742788461538463,
+  "Foto_tapa": 0.6742788461538463,
+  "Foto_base": 0.6742788461538463,
+  "Foto_izquierda": 0.6742788461538463,
+  "Foto_derecha": 0.6742788461538463,
+  "Foto_trasera": 0.6742788461538463,
+  "Foto_frente": 0.6742788461538463
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "esquinas suaves de una pieza de aluminio",
+  "teclado Magic Keyboard de 78 teclas en tono claro",
+  "Touch ID arriba a la derecha",
+  "touchpad de 115 × 72 mm",
+  "logotipo centrado en la tapa",
+  "cuatro pies redondos"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "color Silver supuesto: se vende en cuatro",
+  "forma del logotipo simplificada",
+  "altavoces laterales: no se dibujan",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "posición de altavoces",
+  "forma de la parte superior de la pantalla"
+ ],
+ "sources": [
+  "https://support.apple.com/en-us/126322",
+  "https://www.notebookcheck.net/Apple-MacBook-Neo-Review-Surprisingly-good-and-capable-laptop-for-599-with-one-big-flaw.1247679.0.html"
+ ]
+}

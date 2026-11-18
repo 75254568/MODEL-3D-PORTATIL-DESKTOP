@@ -1,0 +1,448 @@
+[
+  {
+    "id": 9,
+    "brand": "Acer",
+    "model": "Predator Helios 18 (PH18-71)",
+    "config": "i9-13900HX, RTX 4080 12 GB, 32 GB, 2560x1600",
+    "sources": [
+      "https://www.acer.com/gb-en/predator/laptops/helios/helios-18/pdp/NH.QKREK.001",
+      "https://www.notebookcheck.net/Acer-Predator-Helios-18-laptop-review-RTX-4080-gamer-with-MiniLED-display-at-over-1-000-nits.762877.0.html"
+    ],
+    "specs": {
+      "cpu": "Intel Core i9-13900HX",
+      "cpuCores": 24,
+      "gpu": "NVIDIA GeForce RTX 4080 Laptop",
+      "ramGb": 32,
+      "screenInches": 18.0,
+      "resolution": "2560x1600",
+      "widthMm": 405.0,
+      "depthMm": 311.6,
+      "thicknessMm": 29.15,
+      "weightKg": 3.24,
+      "batteryWh": 90.0,
+      "releaseYear": 2023,
+      "chassisMaterial": "Tapa y base de aluminio; detalles de plástico"
+    },
+    "notVerified": [
+      "refreshRateHz",
+      "panelType",
+      "gpuTgpWatts",
+      "storageGb",
+      "cpuBaseWatts",
+      "cpuBoostWatts",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Acer ofrece varias pantallas; la unidad analizada usaba Mini LED a 250 Hz y el registro indica IPS a 240 Hz.",
+      "Peso: de 3,10 a 3,40 kg según configuración; 3,24 kg medidos.",
+      "Altura: Acer da 28,90 o 29,15 mm según la ficha."
+    ],
+    "look": {
+      "shell": "#1c2036",
+      "deck": "#1a1c28",
+      "key": "#101116",
+      "legend": "#dfe8ff",
+      "logo": "PREDATOR",
+      "metal": 0.7
+    },
+    "design": {
+      "thicknessMinMm": 26.9,
+      "thicknessMaxMm": 29.15,
+      "colors": [
+        "Negro"
+      ],
+      "ports": {
+        "left": [
+          "rj45",
+          "usba",
+          "microsd",
+          "audio"
+        ],
+        "right": [
+          "usba",
+          "usba",
+          "kensington"
+        ],
+        "rear": [
+          "power",
+          "hdmi",
+          "usbc",
+          "usbc"
+        ],
+        "front": null
+      },
+      "portsOrderConfirmed": true,
+      "portsSource": 1,
+      "keyboard": {
+        "numpad": true,
+        "backlight": "RGB por tecla (MiniLED)",
+        "extra": "Flechas de tamaño completo; teclas para Predator Sense y modos"
+      },
+      "touchpad": {
+        "widthMm": 152,
+        "depthMm": 91
+      },
+      "materials": "Aluminio y plástico",
+      "lighting": [
+        "Teclado RGB por tecla"
+      ],
+      "vents": [
+        "Salida trasera con cubiertas magnéticas intercambiables"
+      ],
+      "notVerified": [
+        "grosor delantero (26,9 mm procede del registro)",
+        "forma gráfica del logotipo",
+        "ángulo de la bisagra",
+        "altavoces"
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "brand": "Acer",
+    "model": "Predator Helios 16 (PH16-72)",
+    "config": "i9-14900HX, RTX 4080 12 GB, 32 GB DDR5-5600, QHD+ 240 Hz",
+    "sources": [
+      "https://www.acer.com/in-en/predator/laptops/helios/helios-16/pdp/NH.QNXSI.003",
+      "https://www.notebookcheck.net/Acer-Predator-Helios-16-PH16-72-gaming-laptop-review-A-predator-with-sharp-teeth-and-quiet-paws.946274.0.html"
+    ],
+    "specs": {
+      "cpu": "Intel Core i9-14900HX",
+      "cpuCores": 24,
+      "gpu": "NVIDIA GeForce RTX 4080 Laptop",
+      "gpuVramGb": 12,
+      "gpuTgpWatts": 175,
+      "ramGb": 32,
+      "ramType": "DDR5-5600",
+      "screenInches": 16.0,
+      "resolution": "2560x1600",
+      "refreshRateHz": 240,
+      "widthMm": 357.8,
+      "depthMm": 277.6,
+      "thicknessMm": 26.9,
+      "weightKg": 2.6,
+      "batteryWh": 90.0,
+      "releaseYear": 2024,
+      "chassisMaterial": "Aluminio azul oscuro a negro"
+    },
+    "notVerified": [
+      "panelType",
+      "storageGb",
+      "cpuBaseWatts",
+      "cpuBoostWatts",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Pantalla: el texto del análisis la llama Mini LED y su ficha, IPS.",
+      "Altura: 26,9 mm según Acer; 29,6 mm medidos.",
+      "Peso: 2,60 kg según Acer; 2,7 kg medidos."
+    ],
+    "look": {
+      "shell": "#191c26",
+      "deck": "#191c26",
+      "key": "#101116",
+      "legend": "#dfe8ff",
+      "logo": "PREDATOR",
+      "metal": 0.7
+    },
+    "design": {
+      "thicknessMinMm": 26.9,
+      "thicknessMaxMm": 26.9,
+      "colors": [
+        "Azul oscuro a negro"
+      ],
+      "ports": {
+        "left": [
+          "rj45",
+          "usba",
+          "microsd",
+          "audio"
+        ],
+        "right": [
+          "usba",
+          "usba",
+          "kensington"
+        ],
+        "rear": [
+          "power",
+          "hdmi",
+          "usbc",
+          "usbc"
+        ],
+        "front": null
+      },
+      "portsOrderConfirmed": true,
+      "portsSource": 1,
+      "keyboard": {
+        "backlight": "RGB por tecla",
+        "extra": "MagKey 3.0: WASD intercambiables"
+      },
+      "touchpad": {
+        "placement": "Ligeramente a la izquierda del centro"
+      },
+      "materials": "Aluminio",
+      "lighting": [
+        "Barra RGB discreta tras la pantalla",
+        "Teclado RGB por tecla"
+      ],
+      "vents": [
+        "Rejillas de ventilador intercambiables"
+      ],
+      "notVerified": [
+        "lado de los dos USB-A y Kensington: se deduce por eliminación",
+        "bloque numérico (no consta; se dibuja sin él)",
+        "medidas del touchpad",
+        "ángulo de la bisagra",
+        "posición exacta de la barra RGB"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "brand": "Acer",
+    "model": "Predator Helios 16 AI (PH16-73)",
+    "config": "Ultra 9 275HX, RTX 5090 24 GB, OLED 240 Hz, Abyssal Black",
+    "sources": [
+      "https://www.acer.com/us-en/predator/laptops/helios/helios-16-ai/pdp/NH.U0WAA.005",
+      "https://store.acer.com/en-in/acer-predator-helios-16-ai-intel-core-ultra-9-processor-rtx-5090-24-gb-gddr7-32-gb-2-tb-wqxga-oled-16-0-40-64-cm-240hz-win-11-home-abyssal-black-2-65-kg-ph16-73-rgb-backlight-kb-gaming-laptop",
+      "https://www.notebookcheck.net/Acer-Predator-Helios-16-AI-PH16-73.1078253.0.html"
+    ],
+    "specs": {
+      "gpu": "NVIDIA GeForce RTX 5090 Laptop",
+      "gpuVramGb": 24,
+      "screenInches": 16.0,
+      "resolution": "2560x1600",
+      "refreshRateHz": 240,
+      "panelType": "OLED",
+      "widthMm": 356.8,
+      "depthMm": 279.6,
+      "thicknessMm": 27.75,
+      "weightKg": 2.65,
+      "releaseYear": 2025
+    },
+    "notVerified": [
+      "cpu",
+      "ramGb",
+      "storageGb",
+      "batteryWh",
+      "gpuTgpWatts",
+      "chassisMaterial",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Notebookcheck recopila 357,78 x 277,55 x 29,6 mm y 2,7 kg; se usan los datos de Acer."
+    ],
+    "look": {
+      "shell": "#1d2030",
+      "deck": "#1d2030",
+      "key": "#101116",
+      "legend": "#dfe8ff",
+      "logo": "",
+      "metal": 0.6
+    },
+    "design": {
+      "thicknessMinMm": 22.3,
+      "thicknessMaxMm": 27.75,
+      "colors": [
+        "Abyssal Black"
+      ],
+      "ports": {
+        "left": null,
+        "right": null,
+        "rear": null,
+        "front": null
+      },
+      "portsOrderConfirmed": false,
+      "portsUnplaced": [
+        "usba",
+        "usba",
+        "usbc",
+        "usbc",
+        "hdmi",
+        "rj45",
+        "audio",
+        "microsd",
+        "power"
+      ],
+      "keyboard": {
+        "backlight": "RGB por tecla (FineTip mini-LED)",
+        "extra": "Teclas Predator Sense y MagKey"
+      },
+      "lighting": [
+        "Teclado RGB por tecla"
+      ],
+      "notVerified": [
+        "lado de cada puerto: ninguna fuente accesible lo indica, no se colocan",
+        "bloque numérico",
+        "medidas del touchpad",
+        "logotipo",
+        "bisagra"
+      ]
+    }
+  },
+  {
+    "id": 46,
+    "brand": "Acer",
+    "model": "Aspire 16 AI (2026) A16-171M · Ultra 9 386H, 32 GB",
+    "config": "Ultra 9 386H, 32 GB LPDDR5X, 16 pulgadas 16:10",
+    "sources": [
+      "https://www.acer.com/us-en/laptops/aspire/aspire-14-16-ai-intel/pdp/NX.JXRAA.001",
+      "https://news.acer.com/acer-introduces-aspire-ai-copilot-pcs-featuring-intel-core-ultra-series-3-processors",
+      "https://www.notebookcheck.net/Acer-Aspire-14-AI-and-Aspire-16-AI-get-FHD-OLED-options-and-customary-upgrades-to-Intel-Panther-Lake-H.1197453.0.html",
+      "https://www.techradar.com/computing/windows-laptops/acer-aspire-16-ai-review"
+    ],
+    "specs": {
+      "cpu": "Intel Core Ultra 9 386H",
+      "cpuCores": 16,
+      "ramGb": 32,
+      "ramType": "LPDDR5X (soldada)",
+      "ramUpgradable": false,
+      "screenInches": 16.0,
+      "resolution": "1920x1200",
+      "widthMm": 355.6,
+      "depthMm": 248.9,
+      "thicknessMm": 16.0,
+      "weightKg": 1.53,
+      "batteryWh": 65.0,
+      "releaseYear": 2026
+    },
+    "notVerified": [
+      "storageGb",
+      "refreshRateHz",
+      "panelType",
+      "chassisMaterial",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Las medidas proceden de valores en pulgadas redondeados por Acer (14 x 9,8 x 0,63) para la versión A16-I71MT.",
+      "El registro cita A16-171M; las fichas de Acer usan A16-I71M y A16-I71MT."
+    ],
+    "look": {
+      "shell": "#8e9196",
+      "deck": "#8e9196",
+      "key": "#26282c",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.4
+    },
+    "design": {
+      "thicknessMinMm": 16.0,
+      "thicknessMaxMm": 16.0,
+      "colors": [],
+      "ports": {
+        "left": [
+          "usbc",
+          "usbc",
+          "usba",
+          "hdmi"
+        ],
+        "right": [
+          "usba",
+          "audio",
+          "microsd"
+        ],
+        "rear": null,
+        "front": null
+      },
+      "portsOrderConfirmed": false,
+      "keyboard": {},
+      "lighting": [],
+      "notVerified": [
+        "color y material",
+        "bloque numérico y touchpad",
+        "bisagra",
+        "logotipo",
+        "orden de los puertos dentro de cada lado"
+      ],
+      "portsSource": "https://www.techradar.com/computing/windows-laptops/acer-aspire-16-ai-review"
+    }
+  },
+  {
+    "id": 51,
+    "brand": "Acer",
+    "model": "Swift 16 AI (SF16-71T) · Ultra X9 388H",
+    "config": "Ultra X9 388H, Arc B390, OLED 3K 120 Hz táctil",
+    "sources": [
+      "https://www.acer.com/us-en/laptops/swift/swift-16-ai-sf16-71t",
+      "https://www.acer.com/gb-en/laptops/swift/swift-16-ai-sf16-71t/pdp/NX.JU1EK.006",
+      "https://www.notebookcheck.net/Acer-Swift-16-AI-review-High-performance-meets-impressive-cooling.1289101.0.html"
+    ],
+    "specs": {
+      "cpu": "Intel Core Ultra X9 388H",
+      "cpuCores": 16,
+      "gpu": "Intel Arc B390 (integrada)",
+      "ramType": "LPDDR5X (soldada)",
+      "ramUpgradable": false,
+      "screenInches": 16.0,
+      "resolution": "2880x1800",
+      "refreshRateHz": 120,
+      "panelType": "OLED táctil",
+      "widthMm": 355.3,
+      "depthMm": 245.4,
+      "thicknessMm": 14.85,
+      "weightKg": 1.55,
+      "batteryWh": 69.0,
+      "releaseYear": 2026,
+      "chassisMaterial": "Metal y vidrio"
+    },
+    "notVerified": [
+      "ramGb",
+      "storageGb",
+      "colorHex",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Batería: 69 Wh en Acer Reino Unido y Chequia; 70 Wh en Notebookcheck; 65 Wh en una nota de prensa anterior.",
+      "Peso y grosor: 1,55 kg y 14,85 mm según Acer; 1,4 kg y 16,25 mm en el análisis, con Ultra X7 358H.",
+      "Touchpad: 175,5 x 109,7 mm según Acer; unos 170 x 110 mm en el análisis."
+    ],
+    "look": {
+      "shell": "#5a5e66",
+      "deck": "#5a5e66",
+      "key": "#1f2125",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.6
+    },
+    "design": {
+      "thicknessMinMm": 10.61,
+      "thicknessMaxMm": 14.85,
+      "colors": [],
+      "ports": {
+        "left": [
+          "usbc",
+          "usbc",
+          "usba",
+          "hdmi"
+        ],
+        "right": [
+          "usba",
+          "audio",
+          "microsd"
+        ],
+        "rear": [],
+        "front": null
+      },
+      "portsOrderConfirmed": true,
+      "portsSource": 2,
+      "keyboard": {
+        "numpad": true,
+        "backlight": "Sí",
+        "extra": "Tecla Copilot; recorrido corto según las reseñas"
+      },
+      "touchpad": {
+        "widthMm": 175.5,
+        "depthMm": 109.7
+      },
+      "hingeMaxDeg": 180,
+      "materials": "Metal y vidrio",
+      "lighting": [],
+      "notVerified": [
+        "color exacto",
+        "logotipo",
+        "rejillas",
+        "posición de altavoces"
+      ]
+    }
+  }
+]

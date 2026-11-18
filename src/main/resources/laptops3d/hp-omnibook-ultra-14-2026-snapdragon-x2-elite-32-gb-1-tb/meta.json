@@ -1,0 +1,86 @@
+{
+ "brand": "HP",
+ "model": "OmniBook Ultra 14 (2026) · Snapdragon X2 Elite, 32 GB, 1 TB",
+ "widthMm": 311.0,
+ "depthMm": 215.6,
+ "thicknessMm": 10.8,
+ "thicknessFrontMm": 10.7,
+ "bodyRearMm": 7.800000000000001,
+ "bodyFrontMm": 7.699999999999999,
+ "lidThicknessMm": 3.0,
+ "lidLengthMm": 214.1,
+ "hingeYMm": 106.3,
+ "hingeZMm": 7.800000000000001,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9891,
+  "scaleZ": 0.9842,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.14,
+ "cornerFrontMm": 5.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 5.5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "cuerpo de 10,8 mm en Eclipse Gray",
+  "bordes cromados",
+  "logotipo hp en bajorrelieve",
+  "teclado gris oscuro",
+  "touchpad háptico marcado solo por un grabado",
+  "tres USB-C: dos a la derecha y uno a la izquierda, con audio"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "medidas del touchpad, estimadas",
+  "orden de los puertos dentro de cada lado",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "orden de los puertos dentro de cada lado"
+ ],
+ "sources": [
+  "https://support.hp.com/sg-en/document/ish_13888019-13888071-16",
+  "https://www.hp.com/gb-en/shop/products/laptops/hp-omnibook-ultra-laptop-next-gen-ai-14-kg0001nax-d8vz8ea-abu",
+  "https://www.tomshardware.com/laptops/hp-omnibook-ultra-14-snapdragon-x2-elite-2026-review",
+  "https://www.notebookcheck.net/HP-OmniBook-Ultra-14-2026.1240916.0.html",
+  "https://www.notebookcheck.net/HP-OmniBook-Ultra-14-Core-Ultra-X9-review-Fully-redesigned-and-so-much-better-than-before.1317970.0.html"
+ ]
+}

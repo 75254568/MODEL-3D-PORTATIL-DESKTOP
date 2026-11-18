@@ -1,0 +1,109 @@
+{
+ "brand": "Razer",
+ "model": "Blade 16 (2026) · Ultra 9 386H, RTX 5090, 32 GB, 2 TB",
+ "widthMm": 355.0,
+ "depthMm": 250.5,
+ "thicknessMm": 17.4,
+ "thicknessFrontMm": 14.9,
+ "bodyRearMm": 12.399999999999999,
+ "bodyFrontMm": 9.9,
+ "lidThicknessMm": 5.0,
+ "lidLengthMm": 249.0,
+ "hingeYMm": 123.75,
+ "hingeZMm": 12.399999999999999,
+ "maxLidDeg": 135,
+ "innerFit": {
+  "scaleX": 0.9904,
+  "scaleZ": 0.9864,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.14,
+ "cornerFrontMm": 4.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "unibody de aluminio negro más fino",
+  "logotipo verde iluminado en la tapa",
+  "altavoces perforados a ambos lados del teclado",
+  "touchpad de 150 × 97 mm",
+  "base con dos ventiladores y rejilla central"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "forma del logotipo simplificada",
+  "tamaño de la perforación",
+  "zona elevada de la base: sin medidas",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "bloque numérico (no consta; se dibuja sin él)",
+  "zona elevada de la base para refrigeración: sin medidas"
+ ],
+ "sources": [
+  "https://www.razer.com/gaming-laptops/razer-blade-16?page=tech-specs",
+  "https://www.notebookcheck.net/Razer-Blade-16-review-Intel-Core-Ultra-delivers-faster-frame-rates.1303661.0.html",
+  "https://www.notebookcheck.net/Razer-Blade-16-2025-review-Gaming-laptop-now-with-GeForce-RTX-5090-Laptop-and-an-even-slimmer-case.988251.0.html"
+ ]
+}

@@ -268,3 +268,23 @@
 .spec-subhead { -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: -color-fg-default; -fx-padding: 4 0 0 0; }
 .spec-note { -fx-background-color: rgba(31, 180, 232, 0.10); -fx-background-radius: 10; -fx-border-color: rgba(31, 180, 232, 0.55); -fx-border-width: 0 0 0 3; -fx-border-radius: 3; -fx-padding: 8 10 8 12; }
 
+
+/* ---------------------------------------------------------------- tarjeta de producto (catalogo y busqueda) */
+/* arriba, la imagen del laptop sobre fondo claro, como una foto de tienda, con las especificaciones en etiquetas */
+.product-card { -fx-cursor: hand; }
+.product-card.selected { -fx-border-color: -color-accent-emphasis; -fx-border-width: 2; }
+.product-media { -fx-background-color: linear-gradient(to bottom, #fcfeff 0%, #e4eef4 100%); -fx-background-radius: 17 17 0 0; }
+.spec-pill { -fx-background-color: rgba(11, 23, 34, 0.84); -fx-background-radius: 5; -fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: bold; -fx-padding: 1 6 1 6; }
+.origin-tag { -fx-font-size: 10px; -fx-background-radius: 999; -fx-padding: 1 7 1 7; -fx-border-radius: 999; -fx-border-width: 1; }
+.origin-tag.ok { -fx-text-fill: -color-success-fg; -fx-border-color: rgba(21, 145, 90, 0.35); -fx-background-color: rgba(21, 145, 90, 0.08); }
+.origin-tag.approx { -fx-text-fill: -color-fg-muted; -fx-border-color: rgba(12, 36, 52, 0.16); -fx-background-color: rgba(255, 255, 255, 0.55); }
+.media-tag { -fx-background-color: rgba(255, 248, 232, 0.95); }
+.product-brand { -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: -color-fg-muted; }
+.product-title { -fx-font-size: 13.5px; -fx-font-weight: bold; -fx-text-fill: -color-fg-default; }
+.product-card .price { -fx-font-size: 19px; }
+.product-card .price.no-price { -fx-font-size: 13px; -fx-font-weight: normal; -fx-text-fill: -color-fg-subtle; }
+.product-card .button.compact { -fx-padding: 5 10 5 10; -fx-font-size: 12px; }
+.compare-toggle { -fx-padding: 5; -fx-background-color: rgba(255, 255, 255, 0.70); -fx-border-color: rgba(12, 36, 52, 0.18); -fx-background-radius: 999; -fx-border-radius: 999; }
+.compare-toggle:hover { -fx-background-color: white; }
+.compare-toggle.on { -fx-background-color: -ls-ink; -fx-border-color: -ls-ink; }
+.compare-toggle.on .icon, .compare-toggle.on:hover .icon { -fx-stroke: white; }

@@ -1,0 +1,98 @@
+{
+ "brand": "Lenovo",
+ "model": "IdeaPad Slim 5 16 (16AGP11) · Ryzen AI 5 430",
+ "widthMm": 356.5,
+ "depthMm": 250.6,
+ "thicknessMm": 16.9,
+ "thicknessFrontMm": 16.9,
+ "bodyRearMm": 12.7,
+ "bodyFrontMm": 12.7,
+ "lidThicknessMm": 4.2,
+ "lidLengthMm": 249.1,
+ "hingeYMm": 123.8,
+ "hingeZMm": 12.7,
+ "maxLidDeg": 165,
+ "innerFit": {
+  "scaleX": 0.9882,
+  "scaleZ": 0.9832,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 5.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 0.935,
+  "Foto_tapa": 0.935,
+  "Foto_base": 0.935,
+  "Foto_izquierda": 0.935,
+  "Foto_derecha": 0.935,
+  "Foto_trasera": 0.935,
+  "Foto_frente": 0.935
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "aluminio anodizado Luna Grey",
+  "teclado con bloque numérico y bandeja",
+  "touchpad de 120 × 75 mm desplazado bajo las letras",
+  "bisagra de 165 grados",
+  "rejilla horizontal en la base"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "el color real depende de la unidad",
+  "posición del rótulo Lenovo",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "color de la unidad registrada",
+  "rejillas",
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16AGP11/IdeaPad_Slim_5_16AGP11_Spec.pdf",
+  "https://psrefstuff.lenovo.com/syspool/Sys/PDF/datasheet/IdeaPad-Slim-5a-14-16-Gen-11_Datasheet_EN.pdf",
+  "https://www.notebookcheck.net/Lenovo-IdeaPad-Slim-5-16-laptop-review-Intel-Core-i5-vs-AMD-Ryzen-5.1170394.0.html",
+  "https://www.notebookcheck.net/Dual-debut-in-the-Lenovo-IdeaPad-Slim-5-16-Ryzen-AI-5-330-and-Radeon-820M-in-review.1166676.0.html"
+ ]
+}

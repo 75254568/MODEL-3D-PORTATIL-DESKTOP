@@ -1,0 +1,105 @@
+{
+ "brand": "Razer",
+ "model": "Blade 16 (2024)",
+ "widthMm": 355.0,
+ "depthMm": 244.0,
+ "thicknessMm": 22.0,
+ "thicknessFrontMm": 22.0,
+ "bodyRearMm": 15.6,
+ "bodyFrontMm": 15.6,
+ "lidThicknessMm": 6.4,
+ "lidLengthMm": 242.5,
+ "hingeYMm": 120.5,
+ "hingeZMm": 15.6,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9904,
+  "scaleZ": 0.9861,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.14,
+ "cornerFrontMm": 4.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "unibody de aluminio negro",
+  "logotipo verde centrado en la tapa",
+  "altavoces perforados a ambos lados del teclado",
+  "teclado sin bloque numérico con flechas de media altura",
+  "touchpad grande",
+  "base con gran rejilla de ventilación"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "forma del logotipo simplificada",
+  "touchpad con las medidas del Blade 16 de 2023, que comparte chasis",
+  "tamaño de la perforación",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "ángulo de la bisagra"
+ ],
+ "sources": [
+  "https://www.razer.com/gaming-laptops/razer-blade-16-2024",
+  "https://www.notebookcheck.net/Razer-Blade-16-2024-laptop-review-Now-with-super-fast-Samsung-OLED.804677.0.html",
+  "https://www.notebookcheck.net/Razer-Blade-16-2024-review.804677.0.html"
+ ]
+}

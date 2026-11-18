@@ -1,0 +1,532 @@
+[
+  {
+    "id": 8,
+    "brand": "HP",
+    "model": "ZBook Fury 16 G11",
+    "config": "Estación móvil de 16 pulgadas, versión táctil",
+    "sources": [
+      "https://h20195.www2.hp.com/v2/GetDocument.aspx?docname=c08937569",
+      "https://support.hp.com/us-en/document/ish_10384629-10384675-16"
+    ],
+    "specs": {
+      "screenInches": 16.0,
+      "widthMm": 363.0,
+      "depthMm": 250.0,
+      "thicknessMm": 27.7,
+      "weightKg": 2.35,
+      "releaseYear": 2024
+    },
+    "notVerified": [
+      "cpu",
+      "gpu",
+      "ramGb",
+      "storageGb",
+      "resolution",
+      "refreshRateHz",
+      "panelType",
+      "batteryWh",
+      "chassisMaterial",
+      "colorHex",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Grosor: 27,7 mm con pantalla táctil y 28,6 mm sin ella.",
+      "La página de soporte de HP da 356 x 242 x 18-19 mm, incompatible con las especificaciones rápidas; se usan estas últimas.",
+      "Peso: desde 2,35 kg según HP; 2,55 kg en una unidad recopilada por Notebookcheck."
+    ],
+    "look": {
+      "shell": "#a4a8ae",
+      "deck": "#a4a8ae",
+      "key": "#1f2125",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.7
+    },
+    "design": {
+      "thicknessMinMm": 27.7,
+      "thicknessMaxMm": 27.7,
+      "colors": [],
+      "ports": {
+        "left": [
+          "power",
+          "usbc",
+          "usbc",
+          "hdmi"
+        ],
+        "right": [
+          "rj45",
+          "audio",
+          "usba",
+          "usba"
+        ],
+        "rear": null,
+        "front": null
+      },
+      "portsOrderConfirmed": false,
+      "portsSource": 0,
+      "portsUnplaced": [
+        "sd",
+        "kensington"
+      ],
+      "keyboard": {},
+      "lighting": [],
+      "notVerified": [
+        "orden de los puertos en cada lado",
+        "lado del lector SD y de la ranura de seguridad",
+        "bloque numérico y touchpad",
+        "color y material",
+        "bisagra",
+        "rejillas",
+        "logotipo"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "brand": "HP",
+    "model": "Victus 16 (16-r0xxx)",
+    "config": "16-r0: Core i7-13700H, RTX 4070 8 GB, FHD 144 Hz",
+    "sources": [
+      "https://kaas.hpcloud.hp.com/pdf-public/pdf_7660048_en-US-1.pdf",
+      "https://www.notebookcheck.net/HP-Victus-16-laptop-review-Full-HD-gamer-with-RTX-4070.755620.0.html",
+      "https://www.notebookcheck.net/HP-Victus-16-Laptop-Review-A-1080p-gaming-powerhouse-with-few-compromises.748144.0.html"
+    ],
+    "specs": {
+      "cpu": "Intel Core i7-13700H",
+      "cpuCores": 14,
+      "cpuBaseWatts": 45,
+      "gpu": "NVIDIA GeForce RTX 4070 Laptop",
+      "gpuVramGb": 8,
+      "ramType": "DDR5-5600 SODIMM",
+      "ramUpgradable": true,
+      "screenInches": 16.1,
+      "resolution": "1920x1080",
+      "refreshRateHz": 144,
+      "panelType": "IPS",
+      "widthMm": 369.0,
+      "depthMm": 259.4,
+      "thicknessMm": 23.9,
+      "weightKg": 2.3,
+      "batteryWh": 83.0,
+      "releaseYear": 2023,
+      "chassisMaterial": "Plástico"
+    },
+    "notVerified": [
+      "ramGb",
+      "storageGb",
+      "gpuTgpWatts",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Peso: 2,3 kg en la guía de HP; 2,372 kg medidos.",
+      "El registro indica Mica Silver; la unidad analizada era negra."
+    ],
+    "look": {
+      "shell": "#4a4b50",
+      "deck": "#4a4b50",
+      "key": "#17181b",
+      "legend": "#f2f4f7",
+      "logo": "V",
+      "metal": 0.05
+    },
+    "design": {
+      "thicknessMinMm": 22.9,
+      "thicknessMaxMm": 23.9,
+      "colors": [
+        "Negro (unidad analizada)",
+        "Mica Silver (registro)"
+      ],
+      "ports": {
+        "left": [
+          "usba",
+          "rj45",
+          "audio"
+        ],
+        "right": [
+          "hdmi",
+          "usba",
+          "usba",
+          "usbc",
+          "power"
+        ],
+        "rear": [],
+        "front": null
+      },
+      "portsOrderConfirmed": false,
+      "portsSource": 2,
+      "keyboard": {
+        "numpad": true,
+        "backlight": "RGB",
+        "extra": "Teclas para Omen Gaming Hub y calculadora; encendido junto a Supr"
+      },
+      "materials": "Plástico",
+      "lighting": [
+        "Teclado RGB"
+      ],
+      "vents": [
+        "Filtros de polvo en todas las rejillas"
+      ],
+      "notVerified": [
+        "posición exacta del HDMI: la fuente dice solo que está en un extremo del lado derecho",
+        "medidas del touchpad",
+        "ángulo de la bisagra",
+        "forma del logotipo «V»"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "brand": "HP",
+    "model": "OMEN Transcend 16 (u1000)",
+    "config": "16-u1095ng: i9-14900HX, RTX 4070, 32 GB, 1 TB, OLED 240 Hz",
+    "sources": [
+      "https://www.notebookcheck.net/HP-Omen-Transcend-16-2024-laptop-review-An-RTX-4070-gaming-machine-with-an-OLED-display.802778.0.html",
+      "https://www.hp.com/ca-en/gaming-pc/laptops/2023-omen-transcend-intel.html"
+    ],
+    "specs": {
+      "cpu": "Intel Core i9-14900HX",
+      "cpuCores": 24,
+      "gpu": "NVIDIA GeForce RTX 4070 Laptop",
+      "gpuVramGb": 8,
+      "gpuTgpWatts": 130,
+      "ramGb": 32,
+      "ramType": "DDR5-5600",
+      "storageGb": 1024,
+      "screenInches": 16.0,
+      "resolution": "2560x1600",
+      "refreshRateHz": 240,
+      "panelType": "OLED",
+      "widthMm": 356.5,
+      "depthMm": 269.0,
+      "thicknessMm": 19.9,
+      "weightKg": 2.24,
+      "batteryWh": 97.0,
+      "releaseYear": 2024,
+      "chassisMaterial": "Principalmente plástico, acabado mate"
+    },
+    "notVerified": [
+      "cpuBaseWatts",
+      "cpuBoostWatts",
+      "priceUsd",
+      "colorHex"
+    ],
+    "conflicts": [
+      "El registro indicaba aluminio; el análisis describe el chasis como principalmente de plástico.",
+      "Peso: 2,24 kg en una ficha y 2,284 kg en la unidad analizada."
+    ],
+    "look": {
+      "shell": "#1f2123",
+      "deck": "#1f2123",
+      "key": "#141518",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.1
+    },
+    "design": {
+      "thicknessMinMm": 19.9,
+      "thicknessMaxMm": 19.9,
+      "colors": [],
+      "ports": {
+        "left": [
+          "usbc",
+          "usbc",
+          "audio"
+        ],
+        "right": [
+          "usba"
+        ],
+        "rear": [
+          "power",
+          "rj45",
+          "hdmi",
+          "usba"
+        ],
+        "front": null
+      },
+      "portsOrderConfirmed": true,
+      "portsSource": 0,
+      "keyboard": {
+        "numpad": false,
+        "backlight": "Varios colores",
+        "extra": "WASD transparentes; flechas separadas de buen tamaño"
+      },
+      "touchpad": {
+        "widthMm": 135,
+        "depthMm": 85
+      },
+      "hingeMaxDeg": 180,
+      "materials": "Plástico mate",
+      "lighting": [
+        "Teclado RGB"
+      ],
+      "notVerified": [
+        "logotipo de la tapa",
+        "rejillas",
+        "posición de altavoces",
+        "color exacto"
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "brand": "HP",
+    "model": "OmniBook Ultra 14 (2026) · Snapdragon X2 Elite, 32 GB, 1 TB",
+    "config": "Snapdragon X2 Elite X2E-90-100, 32 GB, 1 TB, OLED 3K táctil",
+    "sources": [
+      "https://support.hp.com/sg-en/document/ish_13888019-13888071-16",
+      "https://www.hp.com/gb-en/shop/products/laptops/hp-omnibook-ultra-laptop-next-gen-ai-14-kg0001nax-d8vz8ea-abu",
+      "https://www.tomshardware.com/laptops/hp-omnibook-ultra-14-snapdragon-x2-elite-2026-review",
+      "https://www.notebookcheck.net/HP-OmniBook-Ultra-14-2026.1240916.0.html",
+      "https://www.notebookcheck.net/HP-OmniBook-Ultra-14-Core-Ultra-X9-review-Fully-redesigned-and-so-much-better-than-before.1317970.0.html"
+    ],
+    "specs": {
+      "cpu": "Qualcomm Snapdragon X2 Elite X2E-90-100",
+      "cpuCores": 18,
+      "ramGb": 32,
+      "storageGb": 1024,
+      "screenInches": 14.0,
+      "resolution": "2880x1800",
+      "refreshRateHz": 120,
+      "panelType": "OLED",
+      "widthMm": 311.0,
+      "depthMm": 215.6,
+      "thicknessMm": 10.8,
+      "weightKg": 1.27,
+      "batteryWh": 70.0,
+      "releaseYear": 2026,
+      "chassisMaterial": "Aluminio"
+    },
+    "notVerified": [
+      "cpuBaseWatts",
+      "cpuBoostWatts",
+      "colorHex",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Las páginas de HP y Tom's Hardware no pudieron abrirse completas; las medidas y los puertos proceden de los resultados de búsqueda de esas fichas.",
+      "Puertos: HP y Tom's indican USB-C de 40 Gbps sin Thunderbolt; Notebookcheck recoge 3 Thunderbolt 4."
+    ],
+    "look": {
+      "shell": "#6d7076",
+      "deck": "#6d7076",
+      "key": "#1f2125",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.7
+    },
+    "design": {
+      "thicknessMinMm": 10.7,
+      "thicknessMaxMm": 10.8,
+      "colors": [],
+      "ports": {
+        "left": [
+          "usbc",
+          "audio"
+        ],
+        "right": [
+          "usbc",
+          "usbc"
+        ],
+        "rear": null,
+        "front": null
+      },
+      "portsOrderConfirmed": false,
+      "portsSource": "https://www.notebookcheck.net/HP-OmniBook-Ultra-14-Core-Ultra-X9-review-Fully-redesigned-and-so-much-better-than-before.1317970.0.html",
+      "keyboard": {},
+      "lighting": [],
+      "notVerified": [
+        "color exacto",
+        "teclado y touchpad",
+        "bisagra",
+        "logotipo",
+        "orden de los puertos dentro de cada lado"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "brand": "HyperX",
+    "model": "OMEN MAX 16",
+    "config": "Ultra 9 290HX, RTX 5080 16 GB, OLED 240 Hz, Shadow Black",
+    "sources": [
+      "https://www.hp.com/us-en/gaming-pc/laptops/2026-hyperx-omen-max16-intel.html",
+      "https://www.notebookcheck.net/HP-HyperX-Omen-Max-16-review-The-gaming-laptop-with-a-460-W-AC-adapter.1396262.0.html"
+    ],
+    "specs": {
+      "ramType": "DDR5-6400 SODIMM (2 ranuras)",
+      "ramUpgradable": true,
+      "storageSlots": 2,
+      "screenInches": 16.0,
+      "resolution": "2560x1600",
+      "refreshRateHz": 240,
+      "panelType": "OLED",
+      "widthMm": 356.5,
+      "depthMm": 269.0,
+      "thicknessMm": 28.75,
+      "weightKg": 2.977,
+      "batteryWh": 83.0,
+      "releaseYear": 2026
+    },
+    "notVerified": [
+      "cpu",
+      "gpu",
+      "ramGb",
+      "storageGb",
+      "chassisMaterial",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "El registro indicaba 3200x2000; HP indica OLED 2.5K (2560x1600).",
+      "Peso: 2,977 kg según HP; 2,927 kg medidos."
+    ],
+    "look": {
+      "shell": "#3a3b3f",
+      "deck": "#3a3b3f",
+      "key": "#15161a",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.5
+    },
+    "design": {
+      "thicknessMinMm": 26.15,
+      "thicknessMaxMm": 28.75,
+      "colors": [
+        "Shadow Black"
+      ],
+      "ports": {
+        "left": [
+          "usba",
+          "usbc",
+          "usbc",
+          "audio"
+        ],
+        "right": [
+          "usba"
+        ],
+        "rear": [
+          "power",
+          "hdmi",
+          "rj45"
+        ],
+        "front": []
+      },
+      "portsOrderConfirmed": true,
+      "portsSource": 1,
+      "keyboard": {
+        "numpad": true,
+        "backlight": "RGB por tecla",
+        "extra": "Teclas biseladas, sin opción mecánica"
+      },
+      "touchpad": {
+        "widthMm": 125,
+        "depthMm": 80
+      },
+      "lighting": [
+        "Teclado RGB por tecla"
+      ],
+      "notVerified": [
+        "lado del segundo USB-A: se deduce porque el izquierdo ya tiene uno",
+        "material",
+        "logotipo de la tapa",
+        "ángulo de la bisagra",
+        "rejillas"
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "brand": "HyperX",
+    "model": "OMEN MAX 16 (2026) · Ultra 9 290HX Plus, RTX 5090, 32 GB",
+    "config": "16-ah1932nr: Ultra 9 290HX Plus, RTX 5090 24 GB, 32 GB, 2 TB, OLED 240 Hz",
+    "sources": [
+      "https://www.hp.com/us-en/gaming-pc/laptops/2026-hyperx-omen-max16-intel.html",
+      "https://www.hp.com/us-en/shop/pdp/hyperx-omen-max-16-inch-gaming-laptop-pc-16-ah1932nr",
+      "https://www.notebookcheck.net/HP-HyperX-Omen-Max-16-review-The-gaming-laptop-with-a-460-W-AC-adapter.1396262.0.html"
+    ],
+    "specs": {
+      "cpu": "Intel Core Ultra 9 290HX Plus",
+      "cpuCores": 24,
+      "cpuBaseWatts": 131,
+      "cpuBoostWatts": 171,
+      "gpu": "NVIDIA GeForce RTX 5090 Laptop",
+      "gpuVramGb": 24,
+      "gpuTgpWatts": 175,
+      "ramGb": 32,
+      "ramType": "DDR5-6400 SODIMM (2 ranuras)",
+      "ramUpgradable": true,
+      "storageGb": 2048,
+      "storageSlots": 2,
+      "screenInches": 16.0,
+      "resolution": "2560x1600",
+      "refreshRateHz": 240,
+      "panelType": "OLED",
+      "widthMm": 356.5,
+      "depthMm": 269.0,
+      "thicknessMm": 28.75,
+      "weightKg": 2.977,
+      "batteryWh": 83.0,
+      "releaseYear": 2026
+    },
+    "notVerified": [
+      "chassisMaterial",
+      "priceUsd"
+    ],
+    "conflicts": [
+      "Peso: 2,977 kg según HP; 2,927 kg medidos.",
+      "Los vatios de CPU son los observados por Notebookcheck (PL1 y PL2), no un dato de HP."
+    ],
+    "look": {
+      "shell": "#34353a",
+      "deck": "#34353a",
+      "key": "#15161a",
+      "legend": "#f2f4f7",
+      "logo": "",
+      "metal": 0.5
+    },
+    "design": {
+      "thicknessMinMm": 26.15,
+      "thicknessMaxMm": 28.75,
+      "colors": [
+        "Shadow Black"
+      ],
+      "ports": {
+        "left": [
+          "usba",
+          "usbc",
+          "usbc",
+          "audio"
+        ],
+        "right": [
+          "usba"
+        ],
+        "rear": [
+          "power",
+          "hdmi",
+          "rj45"
+        ],
+        "front": []
+      },
+      "portsOrderConfirmed": true,
+      "portsSource": 2,
+      "keyboard": {
+        "numpad": true,
+        "backlight": "RGB por tecla",
+        "extra": "Teclas biseladas, sin opción mecánica"
+      },
+      "touchpad": {
+        "widthMm": 125,
+        "depthMm": 80
+      },
+      "lighting": [
+        "Teclado RGB por tecla"
+      ],
+      "notVerified": [
+        "lado del segundo USB-A: se deduce porque el izquierdo ya tiene uno",
+        "material",
+        "logotipo de la tapa",
+        "ángulo de la bisagra",
+        "rejillas"
+      ]
+    }
+  }
+]

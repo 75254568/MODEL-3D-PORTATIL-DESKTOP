@@ -1,0 +1,95 @@
+{
+ "brand": "Acer",
+ "model": "Swift 16 AI (SF16-71T) · Ultra X9 388H",
+ "widthMm": 355.3,
+ "depthMm": 245.4,
+ "thicknessMm": 14.85,
+ "thicknessFrontMm": 10.61,
+ "bodyRearMm": 10.95,
+ "bodyFrontMm": 6.709999999999999,
+ "lidThicknessMm": 3.9,
+ "lidLengthMm": 243.9,
+ "hingeYMm": 121.2,
+ "hingeZMm": 10.95,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9797,
+  "scaleZ": 0.9723,
+  "offsetZ": 0.2
+ },
+ "outlineFromFrac": 0.46,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "touchpad háptico enorme de 175,5 × 109,7 mm, solo con grabado",
+  "teclado con bloque numérico",
+  "bisagra de 180 grados",
+  "chasis gris metálico con cuña"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "tono exacto del gris",
+  "tipografía del rótulo",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "color exacto",
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://www.acer.com/us-en/laptops/swift/swift-16-ai-sf16-71t",
+  "https://www.acer.com/gb-en/laptops/swift/swift-16-ai-sf16-71t/pdp/NX.JU1EK.006",
+  "https://www.notebookcheck.net/Acer-Swift-16-AI-review-High-performance-meets-impressive-cooling.1289101.0.html"
+ ]
+}

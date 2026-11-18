@@ -1,0 +1,90 @@
+{
+ "brand": "ASUS",
+ "model": "Zenbook S14 (2026) UX5406AA · Ultra 9 386H, 32 GB, 1 TB",
+ "widthMm": 310.3,
+ "depthMm": 214.7,
+ "thicknessMm": 12.9,
+ "thicknessFrontMm": 11.9,
+ "bodyRearMm": 9.4,
+ "bodyFrontMm": 8.4,
+ "lidThicknessMm": 3.5,
+ "lidLengthMm": 213.2,
+ "hingeYMm": 105.85,
+ "hingeZMm": 9.4,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9768,
+  "scaleZ": 0.9683,
+  "offsetZ": 0.2
+ },
+ "outlineFromFrac": 0.46,
+ "cornerFrontMm": 6.5,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 6,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [
+  "audio"
+ ],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "cuerpo muy fino de Ceraluminum mate",
+  "teclado del mismo tono que la cubierta",
+  "touchpad grande, casi hasta el borde",
+  "muesca delantera para abrir",
+  "rótulo en el centro de la tapa"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "tono gris de esta unidad, estimado",
+  "patrón grabado exacto de la tapa",
+  "lado del conector de audio: sin confirmar, no se dibuja",
+  "el touchpad publicado mide 99.5 mm de fondo; se dibuja de 93 mm para que quepa bajo el teclado de este modelo",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "lado del conector de audio",
+  "patrón exacto de la tapa",
+  "posición de la rejilla"
+ ],
+ "sources": [
+  "https://www.asus.com/laptops/for-home/zenbook/asus-zenbook-s-14-ux5406/techspec/",
+  "https://www.notebookcheck.net/Asus-ZenBook-S14-2026-Laptop-Review-Brighter-OLED-but-a-slow-Panther-Lake-iGPU.1342874.0.html",
+  "https://www.technobaboy.com/2026/05/18/asus-zenbook-s14-ux5406aa-review-portable-ultrabook-for-work-and-play/",
+  "https://press.asus.com/news/press-releases/zenbook-s14-2026/"
+ ]
+}

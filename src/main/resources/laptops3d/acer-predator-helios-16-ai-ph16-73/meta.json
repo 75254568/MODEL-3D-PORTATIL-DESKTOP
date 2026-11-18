@@ -1,0 +1,103 @@
+{
+ "brand": "Acer",
+ "model": "Predator Helios 16 AI (PH16-73)",
+ "widthMm": 356.8,
+ "depthMm": 279.6,
+ "thicknessMm": 27.75,
+ "thicknessFrontMm": 22.3,
+ "bodyRearMm": 21.25,
+ "bodyFrontMm": 15.8,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 278.1,
+ "hingeYMm": 138.3,
+ "hingeZMm": 21.25,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.9835,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "microsd"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo Predator",
+  "marca 16 junto a la bisagra",
+  "trasera con puertos",
+  "rejillas laterales"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "lado de cada puerto: ninguna fuente accesible lo indica, no se colocan",
+  "bloque numérico",
+  "bisagra"
+ ],
+ "sources": [
+  "https://www.acer.com/us-en/predator/laptops/helios/helios-16-ai/pdp/NH.U0WAA.005",
+  "https://store.acer.com/en-in/acer-predator-helios-16-ai-intel-core-ultra-9-processor-rtx-5090-24-gb-gddr7-32-gb-2-tb-wqxga-oled-16-0-40-64-cm-240hz-win-11-home-abyssal-black-2-65-kg-ph16-73-rgb-backlight-kb-gaming-laptop",
+  "https://www.notebookcheck.net/Acer-Predator-Helios-16-AI-PH16-73.1078253.0.html"
+ ]
+}

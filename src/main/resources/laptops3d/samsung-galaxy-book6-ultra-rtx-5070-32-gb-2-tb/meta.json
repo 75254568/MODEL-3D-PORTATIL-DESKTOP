@@ -1,0 +1,92 @@
+{
+ "brand": "Samsung",
+ "model": "Galaxy Book6 Ultra · RTX 5070, 32 GB, 2 TB",
+ "widthMm": 356.9,
+ "depthMm": 248.0,
+ "thicknessMm": 15.4,
+ "thicknessFrontMm": 15.4,
+ "bodyRearMm": 11.2,
+ "bodyFrontMm": 11.2,
+ "lidThicknessMm": 4.2,
+ "lidLengthMm": 246.5,
+ "hingeYMm": 122.5,
+ "hingeZMm": 11.2,
+ "maxLidDeg": 135,
+ "innerFit": {
+  "scaleX": 0.9905,
+  "scaleZ": 0.9863,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.14,
+ "cornerFrontMm": 7,
+ "cornerRearMm": 3.5,
+ "cornerLidFreeMm": 6,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "teclado y touchpad centrados",
+  "touchpad háptico grande sin botones",
+  "rótulo SAMSUNG junto al borde libre de la tapa",
+  "bisagra larga y fina",
+  "cuatro pies redondos grandes con aro",
+  "campo rectangular de perforaciones en la base"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "medidas del touchpad, estimadas",
+  "seis altavoces: sin rejillas visibles en la cubierta",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "posición de los seis altavoces"
+ ],
+ "sources": [
+  "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-ultra/",
+  "https://www.samsung.com/us/computing/galaxy-books/compare/",
+  "https://www.notebookcheck.net/Samsung-Galaxy-Book6-Ultra-Review-Impressive-multimedia-laptop-with-gorgeous-OLED-RTX-5070.1242686.0.html"
+ ]
+}

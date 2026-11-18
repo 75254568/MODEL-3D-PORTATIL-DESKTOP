@@ -1,0 +1,101 @@
+{
+ "brand": "Razer",
+ "model": "Blade 18 (2024)",
+ "widthMm": 399.9,
+ "depthMm": 275.4,
+ "thicknessMm": 21.9,
+ "thicknessFrontMm": 21.9,
+ "bodyRearMm": 16.4,
+ "bodyFrontMm": 16.4,
+ "lidThicknessMm": 5.5,
+ "lidLengthMm": 273.9,
+ "hingeYMm": 136.2,
+ "hingeZMm": 16.4,
+ "maxLidDeg": 140,
+ "innerFit": {
+  "scaleX": 0.9885,
+  "scaleZ": 0.9833,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 5,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo Razer",
+  "altavoces a los lados del teclado",
+  "touchpad grande",
+  "bisagra de barra"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base"
+ ],
+ "sources": [
+  "https://www.razer.com/gaming-laptops/razer-blade-18-2024",
+  "https://www.notebookcheck.net/Razer-Blade-18-2024-review-First-laptop-to-market-with-both-mini-LED-and-Thunderbolt-5.828004.0.html",
+  "https://www.notebookcheck.net/Razer-Blade-18-laptop-review-Smaller-than-many-17-inch-gaming-laptops.694686.0.html"
+ ]
+}

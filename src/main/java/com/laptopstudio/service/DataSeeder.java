@@ -39,6 +39,7 @@ public class DataSeeder implements ApplicationRunner {
     private final ObjectMapper mapper;
     private final JdbcTemplate jdbc;
     private final AppConfig config;
+    private final VerifiedSpecs fichas;
 
     private static String key(Laptop l) {
         return (l.getBrand() + "|" + l.getModel()).toLowerCase(Locale.ROOT);
@@ -56,6 +57,7 @@ public class DataSeeder implements ApplicationRunner {
             rellenarPrecios();
             marcar(PRECIOS, aplicados);
         }
+        fichas.aplicar(aplicados, clave -> marcar(clave, aplicados));
     }
 
     private void marcar(String clave, Set<String> aplicados) {

@@ -1,6 +1,7 @@
 package com.laptopstudio.ui;
 
 import com.laptopstudio.model.Laptop;
+import com.laptopstudio.service.VerifiedSpecs;
 import com.laptopstudio.viewer.LaptopModel;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -107,11 +108,33 @@ public final class SpecSheet {
                 {"Peso", Fmt.num(l.getWeightKg(), "kg")}, {"Batería", Fmt.num(l.getBatteryWh(), "Wh")}});
         LaptopModel.InteriorInfo info = LaptopModel.interiorInfo(l);
         section(body, "Modelo 3D", new String[][]{
-                {"Exterior", com.laptopstudio.service.ModelStore.fileFor(l) != null ? "Modelo 3D importado (OBJ)" : "Generado por la aplicación"},
+                {"Exterior", com.laptopstudio.service.ModelStore.fileFor(l) != null ? "Modelo 3D importado (OBJ)"
+                        : LaptopModel.exteriorInfo(l).detail()},
                 {"Interior", info.reconstructed() ? "Reconstruido pieza por pieza" : "Aproximado, sin reconstruir"}});
+        LaptopModel.BlenderInfo blender = LaptopModel.blenderInfo(l);
+        if (blender != null) {
+            section(body, "Fidelidad del modelo 3D", new String[][]{
+                    {"Puertos colocados", blender.portsPlaced() + " con su lado confirmado"},
+                    {"Rasgos confirmados", list(blender.verified())},
+                    {"Puertos sin colocar", list(blender.portsNotPlaced())},
+                    {"Valores supuestos", list(blender.assumed())},
+                    {"Sin información", list(blender.notVerified())}});
+        }
+        VerifiedSpecs.Ficha ficha = VerifiedSpecs.of(l);
+        if (ficha != null) {
+            section(body, "Verificación de la ficha", new String[][]{
+                    {"Configuración", Fmt.text(ficha.config())},
+                    {"Sin confirmar", list(ficha.notVerified())},
+                    {"Discrepancias", ficha.conflicts().isEmpty() ? "Ninguna detectada" : String.join("\n", ficha.conflicts())},
+                    {"Fuentes", String.join("\n", ficha.sources())}});
+        }
         section(body, "Origen de los datos", new String[][]{
                 {"Fuente", Fmt.text(l.getSourceUrl())}, {"Notas", Fmt.text(l.getNotes())}});
         return body;
+    }
+
+    private static String list(java.util.List<String> items) {
+        return items.isEmpty() ? "Ninguno" : String.join(", ", items);
     }
 
     private static void section(VBox into, String title, String[][] rows) {

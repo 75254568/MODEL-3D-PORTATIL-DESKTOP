@@ -1,0 +1,110 @@
+{
+ "brand": "Alienware",
+ "model": "m18 R2 (2024)",
+ "widthMm": 410.3,
+ "depthMm": 319.9,
+ "thicknessMm": 25.1,
+ "thicknessFrontMm": 24.1,
+ "bodyRearMm": 18.6,
+ "bodyFrontMm": 17.6,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 318.4,
+ "hingeYMm": 158.45,
+ "hingeZMm": 18.6,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9888,
+  "scaleZ": 0.9856,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 8,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "minidp"
+  },
+  {
+   "side": "rear",
+   "type": "sd"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "rejilla hexagonal superior",
+  "panel trasero de puertos saliente",
+  "logotipos Alienware",
+  "lomo de bisagra"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "bloque numérico: se deduce de las 102 teclas, el manual no lo nombra",
+  "material y color",
+  "ángulo de la bisagra",
+  "forma de la repisa térmica trasera"
+ ],
+ "sources": [
+  "https://www.dell.com/support/manuals/en-us/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/dimensions-and-weight?guid=guid-362133ff-c5e8-4acd-a164-4ce876572659&lang=en-us",
+  "https://www.dell.com/support/manuals/es-pe/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/back?guid=guid-0216a0ff-6846-4fd3-9086-b6e56237b1c7&lang=en-us",
+  "https://www.dell.com/support/manuals/es-pe/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/left?guid=guid-2d1c29f6-e1b9-4ae3-837d-7dd562995a66&lang=en-us",
+  "https://www.dell.com/support/manuals/es-pe/alienware-m18-r2-laptop/alienware-m18-r2-owners-manual/touchpad?guid=guid-b0f011d5-f758-47d8-8f6d-0afe7346643b&lang=en-us",
+  "https://www.notebookcheck.net/Alienware-m18-R2-laptop-review-Jumping-from-Core-i9-13980HX-to-i9-14900HX.812957.0.html"
+ ]
+}

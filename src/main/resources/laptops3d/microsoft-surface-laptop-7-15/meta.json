@@ -1,0 +1,82 @@
+{
+ "brand": "Microsoft",
+ "model": "Surface Laptop 7 15",
+ "widthMm": 329.0,
+ "depthMm": 239.0,
+ "thicknessMm": 18.29,
+ "thicknessFrontMm": 18.29,
+ "bodyRearMm": 13.79,
+ "bodyFrontMm": 13.79,
+ "lidThicknessMm": 4.5,
+ "lidLengthMm": 237.5,
+ "hingeYMm": 118.0,
+ "hingeZMm": 13.79,
+ "maxLidDeg": 135,
+ "innerFit": {
+  "scaleX": 0.986,
+  "scaleZ": 0.9808,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 8,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 6,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 0.84,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  },
+  {
+   "side": "right",
+   "type": "surface"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "bandeja del teclado",
+  "touchpad grande",
+  "conector Surface"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: lado izquierdo",
+  "sin foto fiable de: lado derecho",
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "sin foto fiable de: tapa",
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://www.microsoft.com/en-us/d/surface-laptop-for-business-138-and-15-inch-7th-edition-snapdragon/8tkcbz02bdvk",
+  "https://www.notebookcheck.net/Microsoft-Surface-Laptop-7-15-Snapdragon-laptop-review-Finally-easier-to-repair.956423.0.html"
+ ]
+}

@@ -69,6 +69,8 @@ public class CatalogController implements Refreshable {
     private final SelectionState selection;
     private final NavigationService navigation;
     private final com.laptopstudio.service.ModelStore modelStore;
+    private final com.laptopstudio.ui.LaptopThumbs thumbs;
+    private final com.laptopstudio.service.AppConfig config;
 
     @FXML private ToggleButton tbTabla;
     @FXML private ToggleButton tbTarjetas;
@@ -151,28 +153,41 @@ public class CatalogController implements Refreshable {
             tabla.refresh();
             actualizarBarra();
         });
+        // Vista de tarjetas por defecto, como una tienda; la tabla sigue a un clic. La eleccion se recuerda.
         javafx.scene.control.ToggleGroup vista = new javafx.scene.control.ToggleGroup();
         tbTabla.setToggleGroup(vista);
         tbTarjetas.setToggleGroup(vista);
+        (VISTA_TABLA.equals(config.get(VISTA, VISTA_TARJETAS)) ? tbTabla : tbTarjetas).setSelected(true);
         vista.selectedToggleProperty().addListener((o, antes, ahora) -> {
             if (ahora == null) {
                 antes.setSelected(true);
                 return;
             }
-            boolean tarjetas = ahora == tbTarjetas;
-            tabla.setVisible(!tarjetas);
-            tabla.setManaged(!tarjetas);
-            scrollTarjetas.setVisible(tarjetas);
-            scrollTarjetas.setManaged(tarjetas);
-            pintarTarjetas();
+            config.set(VISTA, ahora == tbTarjetas ? VISTA_TARJETAS : VISTA_TABLA);
+            aplicarVista();
         });
         ordenados.addListener((ListChangeListener<Laptop>) c -> pintarTarjetas());
         cargar(null);
         mostrar(null);
+        aplicarVista();
         tabla.getSelectionModel().selectFirst();
     }
 
-    /** Vista de tarjetas: mismos laptops, filtros y orden que la tabla. Solo se construye mientras se ve. */
+    private static final String VISTA = "catalogo_vista", VISTA_TABLA = "tabla", VISTA_TARJETAS = "tarjetas";
+
+    private void aplicarVista() {
+        boolean tarjetas = tbTarjetas.isSelected();
+        tabla.setVisible(!tarjetas);
+        tabla.setManaged(!tarjetas);
+        scrollTarjetas.setVisible(tarjetas);
+        scrollTarjetas.setManaged(tarjetas);
+        pintarTarjetas();
+    }
+
+    /**
+     * Vista de tarjetas: mismos laptops, filtros y orden que la tabla. Solo se construye mientras se ve. Un clic
+     * en una tarjeta la elige, como elegir su fila: la ficha de la derecha pasa a ser la suya.
+     */
     private void pintarTarjetas() {
         if (!scrollTarjetas.isVisible()) {
             rejilla.getChildren().clear();
@@ -184,9 +199,24 @@ public class CatalogController implements Refreshable {
         }, null, l -> tabla.getSelectionModel().select(l));
         List<javafx.scene.Node> tarjetas = new java.util.ArrayList<>();
         for (Laptop l : tabla.getItems()) {
-            tarjetas.add(com.laptopstudio.ui.LaptopCard.build(l, null, true, selection, acciones));
+            javafx.scene.layout.VBox card = com.laptopstudio.ui.LaptopCard.build(l, null, true, selection, acciones, thumbs);
+            card.getProperties().put(TARJETA, l);
+            tarjetas.add(card);
         }
         rejilla.getChildren().setAll(tarjetas);
+        marcarTarjeta();
+    }
+
+    private static final String TARJETA = "catalogo.laptop";
+
+    /** Resalta la tarjeta del laptop cuya ficha se esta viendo. */
+    private void marcarTarjeta() {
+        for (javafx.scene.Node n : rejilla.getChildren()) {
+            n.getStyleClass().remove("selected");
+            if (actual != null && actual.equals(n.getProperties().get(TARJETA))) {
+                n.getStyleClass().add("selected");
+            }
+        }
     }
 
     /* ------------------------------------------------------------------ modelo 3D externo */
@@ -261,7 +291,13 @@ public class CatalogController implements Refreshable {
     /** Etiquetas de estado 3D de la ficha: interior reconstruido o aproximado y, si lo hay, modelo importado. */
     private void refrescarEstado3d(Laptop l) {
         if (actual != null && actual.equals(l)) {
-            boxEstado3d.getChildren().setAll(etiqueta3d(l));
+            // de donde sale el exterior del 3D (fotos propias, de la familia o rasgos de la serie) y el interior
+            LaptopModel.ExteriorInfo origen = LaptopModel.exteriorInfo(l);
+            Label exterior = new Label("Exterior: " + origen.label().toLowerCase(Locale.ROOT));
+            exterior.getStyleClass().addAll("tag", origen.kind() == LaptopModel.Exterior.PHOTOS || origen.kind() == LaptopModel.Exterior.BLENDER ? "ok"
+                    : origen.kind() == LaptopModel.Exterior.GENERIC ? "off" : "warn");
+            exterior.setTooltip(new javafx.scene.control.Tooltip(origen.detail()));
+            boxEstado3d.getChildren().setAll(exterior, etiqueta3d(l));
             if (modelStore.has(l)) {
                 Label ext = new Label("Modelo 3D importado");
                 ext.getStyleClass().addAll("tag", "ok");
@@ -613,6 +649,7 @@ public class CatalogController implements Refreshable {
         cargando = false;
         actualizarBotones();
         actualizarBarra();
+        marcarTarjeta();
     }
 
     private void set(String key, Object v) {

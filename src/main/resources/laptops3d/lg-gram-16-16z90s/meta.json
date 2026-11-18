@@ -1,0 +1,89 @@
+{
+ "brand": "LG",
+ "model": "gram 16 (16Z90S)",
+ "widthMm": 355.1,
+ "depthMm": 242.3,
+ "thicknessMm": 16.8,
+ "thicknessFrontMm": 16.8,
+ "bodyRearMm": 12.600000000000001,
+ "bodyFrontMm": 12.600000000000001,
+ "lidThicknessMm": 4.2,
+ "lidLengthMm": 240.8,
+ "hingeYMm": 119.65,
+ "hingeZMm": 12.600000000000001,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.987,
+  "scaleZ": 0.981,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "rótulo gram",
+  "bloque numérico de tres columnas",
+  "bisagra de barra"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "lado de cada puerto: LG no lo indica, no se colocan",
+  "bisagra"
+ ],
+ "sources": [
+  "https://www.lg.com/global/business/monitors-pcs/laptops/gram/16z90s/",
+  "https://www.lg.com/ca_en/laptops/gram/16z90s-h-aa78a9"
+ ]
+}

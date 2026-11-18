@@ -1,0 +1,95 @@
+{
+ "brand": "Alienware",
+ "model": "m16 R2",
+ "widthMm": 363.9,
+ "depthMm": 249.9,
+ "thicknessMm": 23.5,
+ "thicknessFrontMm": 19.99,
+ "bodyRearMm": 17.0,
+ "bodyFrontMm": 13.49,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 248.4,
+ "hingeYMm": 123.45,
+ "hingeZMm": 17.0,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.978,
+  "scaleZ": 0.9248,
+  "offsetZ": -6.6
+ },
+ "outlineFromFrac": 0.3,
+ "cornerFrontMm": 8.0,
+ "cornerRearMm": 3.0,
+ "cornerLidFreeMm": 4.0,
+ "cornerLidHingeMm": 1.2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "zona térmica trasera elevada",
+  "pie trasero retranqueado",
+  "panel trasero de puertos saliente",
+  "logotipos Alienware en relieve",
+  "touchpad con su marco",
+  "lomo de bisagra con dos soportes"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "bloque numérico (no consta; se dibuja sin él)"
+ ],
+ "sources": [
+  "https://www.dell.com/support/manuals/en-us/alienware-m16-r2-laptop/alienware-m16-r2-owners-manual/dimensions-and-weight?guid=guid-362133ff-c5e8-4acd-a164-4ce876572659&lang=en-us",
+  "https://www.dell.com/support/manuals/en-us/alienware-m16-r2-laptop/alienware-m16-r2-owners-manual/external-ports-and-slots?guid=guid-4c4cc1ba-66a4-45f0-8dfc-6013a624ddc0&lang=en-us",
+  "https://www.notebookcheck.net/Alienware-m16-R2-laptop-review-Big-and-risky-changes.804547.0.html"
+ ]
+}

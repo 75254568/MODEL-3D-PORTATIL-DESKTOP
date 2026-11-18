@@ -1,0 +1,89 @@
+{
+ "brand": "Framework",
+ "model": "Laptop 16 (Ryzen AI 300) · Ryzen AI 9 HX 370, RTX 5070, 32 GB, 1 TB",
+ "widthMm": 356.58,
+ "depthMm": 270.0,
+ "thicknessMm": 17.95,
+ "thicknessFrontMm": 17.95,
+ "bodyRearMm": 12.95,
+ "bodyFrontMm": 12.95,
+ "lidThicknessMm": 5.0,
+ "lidLengthMm": 268.5,
+ "hingeYMm": 133.5,
+ "hingeZMm": 12.95,
+ "maxLidDeg": 150,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.983,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 0.86,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "módulos de teclado y espaciadores",
+  "módulo gráfico trasero",
+  "logotipo Framework",
+  "seis ranuras de expansión"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: lado izquierdo",
+  "sin foto fiable de: lado derecho",
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "sin foto fiable de: pantalla",
+  "las seis ranuras admiten tarjetas distintas: se dibujan con USB-C",
+  "color exacto"
+ ],
+ "sources": [
+  "https://frame.work/laptop16",
+  "https://frame.work/blog/introducing-the-new-framework-laptop-16-with-nvidia",
+  "https://www.notebookcheck.net/Radeon-RX-7700S-performance-debut-Framework-Laptop-16-review.790807.0.html"
+ ]
+}

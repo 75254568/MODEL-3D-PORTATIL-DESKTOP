@@ -1,0 +1,90 @@
+{
+ "brand": "HP",
+ "model": "Victus 16 (16-r0xxx)",
+ "widthMm": 369.0,
+ "depthMm": 259.4,
+ "thicknessMm": 23.9,
+ "thicknessFrontMm": 22.9,
+ "bodyRearMm": 18.9,
+ "bodyFrontMm": 17.9,
+ "lidThicknessMm": 5.0,
+ "lidLengthMm": 257.9,
+ "hingeYMm": 128.2,
+ "hingeZMm": 18.9,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9875,
+  "scaleZ": 0.9823,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo V",
+  "teclado completo con bloque numérico",
+  "rejillas laterales",
+  "dos bisagras"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "posición exacta del HDMI: la fuente dice solo que está en un extremo del lado derecho",
+  "ángulo de la bisagra"
+ ],
+ "sources": [
+  "https://kaas.hpcloud.hp.com/pdf-public/pdf_7660048_en-US-1.pdf",
+  "https://www.notebookcheck.net/HP-Victus-16-laptop-review-Full-HD-gamer-with-RTX-4070.755620.0.html",
+  "https://www.notebookcheck.net/HP-Victus-16-Laptop-Review-A-1080p-gaming-powerhouse-with-few-compromises.748144.0.html"
+ ]
+}

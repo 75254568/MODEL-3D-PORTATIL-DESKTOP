@@ -1,0 +1,97 @@
+{
+ "brand": "Lenovo",
+ "model": "ThinkPad X1 Carbon Gen 14 Aura Edition · Ultra 7 355, 32 GB, 512 GB",
+ "widthMm": 312.5,
+ "depthMm": 215.75,
+ "thicknessMm": 14.3,
+ "thicknessFrontMm": 10.1,
+ "bodyRearMm": 10.5,
+ "bodyFrontMm": 6.3,
+ "lidThicknessMm": 3.8,
+ "lidLengthMm": 214.25,
+ "hingeYMm": 106.375,
+ "hingeZMm": 10.5,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.936,
+  "scaleZ": 0.9444,
+  "offsetZ": 3.0
+ },
+ "outlineFromFrac": 0.64,
+ "cornerFrontMm": 4.5,
+ "cornerRearMm": 2,
+ "cornerLidFreeMm": 2.5,
+ "cornerLidHingeMm": 1,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "barra de la cámara en relieve sobre el borde de la tapa",
+  "rótulos ThinkPad X1 con punto rojo y Lenovo",
+  "TrackPoint rojo y tres botones físicos",
+  "bandeja del teclado con marco",
+  "chaflán inferior ancho",
+  "dos ventiladores redondos en la base"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "medidas de la barra de la cámara",
+  "tipografía de los rótulos",
+  "tramado de fibra de carbono: se representa con color mate",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "medidas de la joroba de la cámara (grosor máximo 16,85 mm)",
+  "ángulo de la bisagra"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_14_Aura_Edition/ThinkPad_X1_Carbon_Gen_14_Aura_Edition_Spec.PDF",
+  "https://www.notebookcheck.net/Flagship-business-laptop-with-almost-24-hours-of-battery-life-Lenovo-ThinkPad-X1-Carbon-Gen-14-Review.1332558.0.html"
+ ]
+}

@@ -1,0 +1,50 @@
+[
+  {"brand": "Apple", "series": "MacBook Air", "lid": "#cfd2d6", "deck": "#cfd2d6", "keys": "#1a1b1e", "legend": "#f1f3f5", "logo": "", "accent": "#6ea8ff", "notch": true},
+  {"brand": "Apple", "series": "MacBook Pro", "lid": "#2a2b2e", "deck": "#2a2b2e", "keys": "#111214", "legend": "#f1f3f5", "logo": "", "accent": "#b48cff", "notch": true},
+  {"brand": "Apple", "series": "", "lid": "#cfd2d6", "deck": "#cfd2d6", "keys": "#1a1b1e", "legend": "#f1f3f5", "logo": "", "accent": "#6ea8ff"},
+
+  {"brand": "Dell", "series": "XPS", "lid": "#3a3c40", "deck": "#232427", "keys": "#18191c", "legend": "#e8eaed", "logo": "DELL", "logoPlace": "center", "accent": "#3b9cff"},
+  {"brand": "Dell", "series": "", "lid": "#5a5d63", "deck": "#3a3c41", "keys": "#1b1c1f", "legend": "#e8eaed", "logo": "DELL", "logoPlace": "center", "accent": "#3b9cff"},
+
+  {"brand": "Alienware", "series": "Area-51", "lid": "#27333a", "deck": "#1b2227", "keys": "#0f1113", "legend": "#42e0ee", "logo": "ALIENWARE", "logoPlace": "center", "accent": "#42e0ee", "shelf": 30, "lightBar": true},
+  {"brand": "Alienware", "series": "", "lid": "#4b4e56", "deck": "#2a2c31", "keys": "#101113", "legend": "#42e0ee", "logo": "ALIENWARE", "logoPlace": "center", "accent": "#42e0ee", "shelf": 24},
+
+  {"brand": "ASUS", "series": "Zephyrus", "lid": "#3c3e43", "deck": "#3c3e43", "keys": "#1c1d20", "legend": "#f2f4f7", "logo": "ROG", "logoPlace": "corner", "lidAccent": "slash", "accent": "#ff3b6b"},
+  {"brand": "ASUS", "series": "Strix", "lid": "#242529", "deck": "#1d1e21", "keys": "#0f1012", "legend": "#ff4d6d", "logo": "ROG", "logoPlace": "center", "accent": "#ff3b6b", "lightBar": true},
+  {"brand": "ASUS", "series": "TUF", "lid": "#3a3b3e", "deck": "#2d2e31", "keys": "#151618", "legend": "#f2f4f7", "logo": "TUF", "logoPlace": "corner", "accent": "#ffa028"},
+  {"brand": "ASUS", "series": "Zenbook", "lid": "#72767c", "deck": "#62656b", "keys": "#3a3c41", "legend": "#f2f4f7", "logo": "ASUS ZENBOOK", "logoPlace": "corner", "lidAccent": "lines", "accent": "#5fb0ff"},
+  {"brand": "ASUS", "series": "Vivobook", "lid": "#b7bac0", "deck": "#b7bac0", "keys": "#8d9096", "legend": "#ffffff", "logo": "ASUS VIVOBOOK", "logoPlace": "corner", "accent": "#5fb0ff"},
+  {"brand": "ASUS", "series": "", "lid": "#4a4c51", "deck": "#3a3c40", "keys": "#17181b", "legend": "#f2f4f7", "logo": "ASUS", "logoPlace": "center", "accent": "#5fb0ff"},
+
+  {"brand": "Lenovo", "series": "Legion", "lid": "#27282c", "deck": "#202124", "keys": "#101113", "legend": "#58b8ff", "logo": "LEGION", "logoPlace": "corner", "accent": "#3fa9ff", "shelf": 26, "lightBar": true},
+  {"brand": "Lenovo", "series": "LOQ", "lid": "#8c9196", "deck": "#7d8287", "keys": "#2a2c30", "legend": "#f2f4f7", "logo": "LOQ", "logoPlace": "corner", "accent": "#4fa3ff", "shelf": 22},
+  {"brand": "Lenovo", "series": "ThinkPad", "lid": "#1c1d1f", "deck": "#1c1d1f", "keys": "#101113", "legend": "#f2f4f7", "logo": "ThinkPad", "logoPlace": "corner", "accent": "#e2231a", "trackpoint": true},
+  {"brand": "Lenovo", "series": "IdeaPad", "lid": "#a6aab0", "deck": "#a6aab0", "keys": "#7c8086", "legend": "#ffffff", "logo": "LENOVO", "logoPlace": "corner", "accent": "#4fa3ff"},
+  {"brand": "Lenovo", "series": "Yoga", "lid": "#5f6672", "deck": "#5f6672", "keys": "#383c44", "legend": "#ffffff", "logo": "YOGA", "logoPlace": "corner", "accent": "#4fa3ff"},
+  {"brand": "Lenovo", "series": "", "lid": "#5c6067", "deck": "#5c6067", "keys": "#26282c", "legend": "#ffffff", "logo": "LENOVO", "logoPlace": "corner", "accent": "#4fa3ff"},
+
+  {"brand": "Razer", "series": "", "lid": "#151618", "deck": "#151618", "keys": "#0b0c0d", "legend": "#44d62c", "logo": "RAZER", "logoColor": "#44d62c", "logoPlace": "center", "accent": "#44d62c"},
+
+  {"brand": "HP|HyperX", "series": "OMEN MAX", "lid": "#1e1f22", "deck": "#1e1f22", "keys": "#0e0f11", "legend": "#ff5ad1", "logo": "OMEN", "logoPlace": "center", "accent": "#b86bff", "lightBar": true},
+  {"brand": "HP|HyperX", "series": "OMEN", "lid": "#1f2123", "deck": "#1f2123", "keys": "#0e0f11", "legend": "#ff5ad1", "logo": "OMEN", "logoPlace": "center", "accent": "#b86bff"},
+  {"brand": "HP", "series": "Victus", "lid": "#4a4b50", "deck": "#3d3e43", "keys": "#1b1c1f", "legend": "#ffffff", "logo": "VICTUS", "logoPlace": "center", "accent": "#6c8cff"},
+  {"brand": "HP", "series": "OmniBook", "lid": "#aeb2b8", "deck": "#aeb2b8", "keys": "#8a8e95", "legend": "#ffffff", "logo": "HP", "logoPlace": "center", "accent": "#4d8dff"},
+  {"brand": "HP", "series": "", "lid": "#b4b7bc", "deck": "#b4b7bc", "keys": "#2a2c30", "legend": "#ffffff", "logo": "HP", "logoPlace": "center", "accent": "#4d8dff"},
+
+  {"brand": "MSI", "series": "Titan", "lid": "#141518", "deck": "#141518", "keys": "#0b0c0d", "legend": "#ff4040", "logo": "MSI", "logoPlace": "center", "accent": "#ff3030", "shelf": 30, "lightBar": true},
+  {"brand": "MSI", "series": "Raider", "lid": "#17181b", "deck": "#17181b", "keys": "#0b0c0d", "legend": "#ff4040", "logo": "MSI", "logoPlace": "center", "accent": "#ff3030", "lightBar": true},
+  {"brand": "MSI", "series": "Prestige", "lid": "#41454d", "deck": "#41454d", "keys": "#222428", "legend": "#ffffff", "logo": "MSI", "logoPlace": "corner", "accent": "#5fb0ff"},
+  {"brand": "MSI", "series": "", "lid": "#1b1c1f", "deck": "#1b1c1f", "keys": "#0d0e10", "legend": "#ff4040", "logo": "MSI", "logoPlace": "center", "accent": "#ff3030"},
+
+  {"brand": "Acer", "series": "Predator", "lid": "#1b1d24", "deck": "#1b1d24", "keys": "#0d0e11", "legend": "#2fe3e3", "logo": "PREDATOR", "logoPlace": "center", "accent": "#19c8d8"},
+  {"brand": "Acer", "series": "Nitro", "lid": "#1d1e21", "deck": "#1d1e21", "keys": "#0f1012", "legend": "#ff4040", "logo": "NITRO", "logoPlace": "center", "accent": "#ff3030"},
+  {"brand": "Acer", "series": "Swift", "lid": "#7c8087", "deck": "#7c8087", "keys": "#3b3d42", "legend": "#ffffff", "logo": "ACER", "logoPlace": "corner", "accent": "#3fd0a0"},
+  {"brand": "Acer", "series": "", "lid": "#6e7279", "deck": "#6e7279", "keys": "#33353a", "legend": "#ffffff", "logo": "ACER", "logoPlace": "corner", "accent": "#3fd0a0"},
+
+  {"brand": "Samsung", "series": "", "lid": "#5b5e64", "deck": "#5b5e64", "keys": "#27292d", "legend": "#ffffff", "logo": "SAMSUNG", "logoPlace": "corner", "accent": "#4d8dff"},
+  {"brand": "LG", "series": "", "lid": "#25272b", "deck": "#25272b", "keys": "#151618", "legend": "#ffffff", "logo": "gram", "logoPlace": "center", "accent": "#e0527a"},
+  {"brand": "Microsoft", "series": "", "lid": "#c7c9cc", "deck": "#c7c9cc", "keys": "#9da0a5", "legend": "#ffffff", "logo": "", "accent": "#4d8dff"},
+  {"brand": "Framework", "series": "", "lid": "#a2a5aa", "deck": "#a2a5aa", "keys": "#141518", "legend": "#ffffff", "logo": "FRAMEWORK", "logoPlace": "corner", "accent": "#f15a24"},
+  {"brand": "Gigabyte", "series": "AORUS", "lid": "#232428", "deck": "#232428", "keys": "#0e0f11", "legend": "#ff8a2a", "logo": "AORUS", "logoPlace": "center", "accent": "#ff7a1a"},
+  {"brand": "Gigabyte", "series": "", "lid": "#8f9399", "deck": "#8f9399", "keys": "#2a2c30", "legend": "#ffffff", "logo": "GIGABYTE", "logoPlace": "center", "accent": "#ff7a1a"}
+]

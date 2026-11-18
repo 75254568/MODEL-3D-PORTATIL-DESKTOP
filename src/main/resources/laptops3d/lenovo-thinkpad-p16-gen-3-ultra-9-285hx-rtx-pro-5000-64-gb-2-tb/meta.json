@@ -1,0 +1,109 @@
+{
+ "brand": "Lenovo",
+ "model": "ThinkPad P16 Gen 3 · Ultra 9 285HX, RTX PRO 5000, 64 GB, 2 TB",
+ "widthMm": 362.0,
+ "depthMm": 252.0,
+ "thicknessMm": 20.9,
+ "thicknessFrontMm": 15.8,
+ "bodyRearMm": 15.299999999999999,
+ "bodyFrontMm": 10.200000000000001,
+ "lidThicknessMm": 5.6,
+ "lidLengthMm": 236.5,
+ "hingeYMm": 110.5,
+ "hingeZMm": 15.299999999999999,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9884,
+  "scaleZ": 0.9833,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 3,
+ "cornerLidHingeMm": 1,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "bloque trasero con rejillas y puertos",
+  "bisagra ancha de una pieza",
+  "teclado con bloque numérico y TrackPoint",
+  "touchpad de 115 × 67 mm con tres botones",
+  "rótulos ThinkPad y Lenovo",
+  "base casi entera de rejilla"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "altura de la zona trasera de 29,8 mm: su forma no se publica y no se modela",
+  "tipografía de los rótulos",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "zona trasera que alcanza 29,8 mm: forma no publicada, no se modela",
+  "lector de tarjetas inteligentes y SIM: opcionales, no se dibujan",
+  "ángulo de la bisagra"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_P16_Gen_3/ThinkPad_P16_Gen_3_Spec.PDF",
+  "https://www.notebookcheck.net/This-laptop-is-a-local-AI-monster-Lenovo-ThinkPad-P16-Gen-3-review.1221962.0.html"
+ ]
+}

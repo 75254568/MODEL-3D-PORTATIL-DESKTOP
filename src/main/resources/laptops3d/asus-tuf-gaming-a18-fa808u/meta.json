@@ -1,0 +1,91 @@
+{
+ "brand": "ASUS",
+ "model": "TUF Gaming A18 (FA808U)",
+ "widthMm": 399.0,
+ "depthMm": 283.0,
+ "thicknessMm": 26.7,
+ "thicknessFrontMm": 18.9,
+ "bodyRearMm": 20.7,
+ "bodyFrontMm": 12.899999999999999,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 281.5,
+ "hingeYMm": 140.0,
+ "hingeZMm": 20.7,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9885,
+  "scaleZ": 0.9837,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "rótulo TUF",
+  "rejillas traseras",
+  "base con patrón hexagonal",
+  "bisagras en bloque"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "forma exacta de la tapa",
+  "teclado numérico de esta configuración"
+ ],
+ "sources": [
+  "https://www.asus.com/laptops/for-gaming/tuf-gaming/asus-tuf-gaming-a18-2025/techspec/",
+  "https://www.notebookcheck.net/Flat-quiet-and-efficient-the-18-inch-Asus-TUF-Gaming-A18-review.1168036.0.html"
+ ]
+}

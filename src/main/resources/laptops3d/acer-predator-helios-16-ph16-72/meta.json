@@ -1,0 +1,102 @@
+{
+ "brand": "Acer",
+ "model": "Predator Helios 16 (PH16-72)",
+ "widthMm": 357.8,
+ "depthMm": 277.6,
+ "thicknessMm": 26.9,
+ "thicknessFrontMm": 26.9,
+ "bodyRearMm": 20.4,
+ "bodyFrontMm": 20.4,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 276.1,
+ "hingeYMm": 137.3,
+ "hingeZMm": 20.4,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.9834,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "microsd"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipos Predator",
+  "trasera con puertos y rejillas",
+  "bisagras en bloque"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "lado de los dos USB-A y Kensington: se deduce por eliminación",
+  "bloque numérico (no consta; se dibuja sin él)",
+  "ángulo de la bisagra",
+  "posición exacta de la barra RGB"
+ ],
+ "sources": [
+  "https://www.acer.com/in-en/predator/laptops/helios/helios-16/pdp/NH.QNXSI.003",
+  "https://www.notebookcheck.net/Acer-Predator-Helios-16-PH16-72-gaming-laptop-review-A-predator-with-sharp-teeth-and-quiet-paws.946274.0.html"
+ ]
+}

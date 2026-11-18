@@ -1,0 +1,102 @@
+[
+  {
+    "id": 26, "brand": "Framework", "model": "Laptop 16", "config": "Ryzen 9 7940HS, Radeon RX 7700S, QHD+ 165 Hz, con módulo gráfico",
+    "sources": ["https://frame.work/laptop16", "https://www.notebookcheck.net/Radeon-RX-7700S-performance-debut-Framework-Laptop-16-review.790807.0.html"],
+    "specs": {"cpu": "AMD Ryzen 9 7940HS", "cpuCores": 8, "gpu": "AMD Radeon RX 7700S (módulo)", "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 165, "panelType": "IPS", "widthMm": 356.58, "depthMm": 290.2, "thicknessMm": 20.95, "weightKg": 2.4, "batteryWh": 85.0, "releaseYear": 2024, "chassisMaterial": "Aleación de magnesio y aluminio"},
+    "notVerified": ["ramGb", "storageGb", "gpuTgpWatts", "colorHex", "priceUsd"],
+    "conflicts": ["Sin módulo gráfico mide 356,58 x 270 x 17,95 mm y pesa 2,1 kg; se modela con módulo, como el registro."],
+    "look": {"shell": "#555a61", "deck": "#555a61", "key": "#1d1f23", "legend": "#f2f4f7", "logo": "", "metal": 0.6},
+    "design": {"thicknessMinMm": 17.95, "thicknessMaxMm": 17.95, "rearExtensionMm": 20.2, "colors": [],
+      "ports": {"left": ["usbc", "usbc", "usbc"], "right": ["usbc", "usbc", "usbc"], "rear": ["usbc"], "front": []}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "backlight": "RGB por tecla", "travelMm": 1.5, "extra": "Módulos intercambiables; numérico y espaciadores opcionales"},
+      "touchpad": {"widthMm": 123, "depthMm": 77, "placement": "Desplazable sobre el reposamanos"}, "hingeMaxDeg": 150, "materials": "Magnesio y aluminio", "lighting": ["Teclado RGB por tecla"],
+      "notVerified": ["las seis ranuras admiten tarjetas distintas: se dibujan con USB-C, como la unidad analizada", "grosor del módulo trasero (20,95 mm) no se modela por separado", "logotipo", "rejillas", "color exacto"]}
+  },
+  {
+    "id": 52, "brand": "Framework", "model": "Laptop 16 (Ryzen AI 300) · Ryzen AI 9 HX 370, RTX 5070, 32 GB, 1 TB", "config": "Ryzen AI 9 HX 370, RTX 5070 8 GB, 32 GB, 1 TB, con módulo gráfico",
+    "sources": ["https://frame.work/laptop16", "https://frame.work/blog/introducing-the-new-framework-laptop-16-with-nvidia", "https://www.notebookcheck.net/Radeon-RX-7700S-performance-debut-Framework-Laptop-16-review.790807.0.html"],
+    "specs": {"cpu": "AMD Ryzen AI 9 HX 370", "cpuCores": 12, "cpuBaseWatts": 45, "gpu": "NVIDIA GeForce RTX 5070 Laptop (módulo)", "gpuVramGb": 8, "gpuTgpWatts": 100, "ramGb": 32, "ramType": "DDR5 SODIMM (2 ranuras)", "ramUpgradable": true, "storageGb": 1024, "storageSlots": 2, "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 165, "widthMm": 356.58, "depthMm": 290.2, "thicknessMm": 20.95, "weightKg": 2.4, "batteryWh": 85.0, "releaseYear": 2025, "chassisMaterial": "Aleación de magnesio y aluminio"},
+    "notVerified": ["panelType", "colorHex", "priceUsd"],
+    "conflicts": ["El diseño físico procede del análisis del Laptop 16 original, con el mismo chasis."],
+    "look": {"shell": "#555a61", "deck": "#555a61", "key": "#1d1f23", "legend": "#f2f4f7", "logo": "", "metal": 0.6},
+    "design": {"thicknessMinMm": 17.95, "thicknessMaxMm": 17.95, "rearExtensionMm": 20.2, "colors": [],
+      "ports": {"left": ["usbc", "usbc", "usbc"], "right": ["usbc", "usbc", "usbc"], "rear": ["usbc"], "front": []}, "portsOrderConfirmed": true, "portsSource": 2,
+      "keyboard": {"numpad": false, "backlight": "RGB por tecla", "travelMm": 1.5, "extra": "Módulos intercambiables; numérico y espaciadores opcionales"},
+      "touchpad": {"widthMm": 123, "depthMm": 77, "placement": "Desplazable sobre el reposamanos"}, "hingeMaxDeg": 150, "materials": "Magnesio y aluminio", "lighting": ["Teclado RGB por tecla"],
+      "notVerified": ["las seis ranuras admiten tarjetas distintas: se dibujan con USB-C", "logotipo", "rejillas", "color exacto"]}
+  },
+  {
+    "id": 13, "brand": "Gigabyte", "model": "AORUS 17X (2024)", "config": "AZG: i9-14900HX, RTX 4090, QHD 240 Hz",
+    "sources": ["https://www.gigabyte.com/Laptop/AORUS-17X--2024/sp", "https://www.aorus.com/us/laptops/AORUS-17X--2024/Specification", "https://www.notebookcheck.net/Aorus-17X-AZG.849382.0.html"],
+    "specs": {"cpu": "Intel Core i9-14900HX", "cpuCores": 24, "gpu": "NVIDIA GeForce RTX 4090 Laptop", "ramType": "DDR5-5600 (2 ranuras, máximo 64 GB)", "ramUpgradable": true, "storageSlots": 2, "screenInches": 17.3, "resolution": "2560x1440", "refreshRateHz": 240, "widthMm": 396.0, "depthMm": 293.0, "thicknessMm": 21.8, "weightKg": 2.8, "batteryWh": 99.0, "releaseYear": 2024},
+    "notVerified": ["ramGb", "storageGb", "panelType", "gpuTgpWatts", "chassisMaterial", "priceUsd"],
+    "conflicts": ["La web de Gigabyte rechaza la lectura automática; sus datos proceden del resultado de búsqueda de esas fichas."],
+    "look": {"shell": "#35363b", "deck": "#25262a", "key": "#111215", "legend": "#ffb36b", "logo": "", "metal": 0.6},
+    "design": {"thicknessMinMm": 21.8, "thicknessMaxMm": 21.8, "colors": [],
+      "ports": {"left": ["usba", "usba", "audio"], "right": ["usba", "usbc"], "rear": ["hdmi", "minidp", "rj45", "power"], "front": null}, "portsOrderConfirmed": false, "portsSource": 1,
+      "keyboard": {"backlight": "RGB por tecla", "travelMm": 2.0}, "lighting": ["Teclado RGB por tecla"],
+      "notVerified": ["orden de los puertos en cada lado", "bloque numérico", "medidas del touchpad de vidrio", "material y color", "logotipo", "bisagra", "rejillas"]}
+  },
+  {
+    "id": 30, "brand": "LG", "model": "gram 16 (16Z90S)", "config": "Ultra 7 155H, 16 GB LPDDR5X, 1 TB, WQXGA sin táctil",
+    "sources": ["https://www.lg.com/global/business/monitors-pcs/laptops/gram/16z90s/", "https://www.lg.com/ca_en/laptops/gram/16z90s-h-aa78a9"],
+    "specs": {"cpu": "Intel Core Ultra 7 155H", "cpuCores": 16, "ramGb": 16, "ramType": "LPDDR5X-7467 (soldada)", "ramUpgradable": false, "storageGb": 1024, "storageSlots": 2, "screenInches": 16.0, "resolution": "2560x1600", "panelType": "IPS", "widthMm": 355.1, "depthMm": 242.3, "thicknessMm": 16.8, "weightKg": 1.199, "batteryWh": 77.0, "releaseYear": 2024, "chassisMaterial": "Magnesio (tapa, cubierta y base); marco PC-ABS"},
+    "notVerified": ["refreshRateHz", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["Frecuencia: LG ofrece 60 Hz o VRR de 31 a 144 Hz; el registro indica 120 Hz.", "Teclado numérico de 3 columnas confirmado en distribuciones del Reino Unido y Japón; en la de EE. UU. no consta."],
+    "look": {"shell": "#6e7176", "deck": "#6e7176", "key": "#25272b", "legend": "#f2f4f7", "logo": "", "metal": 0.4},
+    "design": {"thicknessMinMm": 16.8, "thicknessMaxMm": 16.8, "colors": ["Snow White", "Charcoal Gray", "Obsidian Black"],
+      "ports": {"left": null, "right": null, "rear": null, "front": null}, "portsOrderConfirmed": false, "portsUnplaced": ["usba", "usba", "usbc", "usbc", "hdmi", "audio", "microsd"],
+      "keyboard": {"numpad": true, "numpadCols": 3, "backlight": "Sí"}, "touchpad": {"widthMm": 131.5, "depthMm": 82.6}, "materials": "Magnesio", "lighting": [],
+      "notVerified": ["lado de cada puerto: LG no lo indica, no se colocan", "logotipo", "bisagra", "rejillas"]}
+  },
+  {
+    "id": 43, "brand": "LG", "model": "gram Pro 16 (2026) 16Z90U · Ultra X7 358H, 32 GB, 1 TB", "config": "16Z90U-K.AUB7U1: Ultra X7 358H, 32 GB, 1 TB, OLED",
+    "sources": ["https://www.lg.com/global/business/monitors-pcs/laptops/gram-pro/16z90u/", "https://www.lg.com/us/laptops/lg-16z90u-k.aub7u1-gram-laptop", "https://www.notebookcheck.net/Less-than-1-2-kg-LG-releases-lightweight-new-16-inch-laptop-with-120-Hz-OLED-display.1260808.0.html"],
+    "specs": {"cpu": "Intel Core Ultra X7 358H", "cpuCores": 16, "gpu": "Intel Arc B390 (integrada)", "ramGb": 32, "ramType": "LPDDR5X-8533 (soldada)", "ramUpgradable": false, "storageGb": 1024, "storageSlots": 2, "screenInches": 16.0, "resolution": "2880x1800", "refreshRateHz": 120, "panelType": "OLED", "widthMm": 357.7, "depthMm": 251.6, "thicknessMm": 12.8, "weightKg": 1.199, "batteryWh": 77.0, "releaseYear": 2026, "chassisMaterial": "Aerominum (aluminio-magnesio) y magnesio"},
+    "notVerified": ["cpuBaseWatts", "cpuBoostWatts", "priceUsd", "colorHex"],
+    "conflicts": ["El registro no indica el color; se usa Aerominum Silver."],
+    "look": {"shell": "#a9acb1", "deck": "#a9acb1", "key": "#2a2c30", "legend": "#f2f4f7", "logo": "", "metal": 0.6},
+    "design": {"thicknessMinMm": 12.4, "thicknessMaxMm": 12.8, "colors": ["Aerominum White", "Aerominum Silver", "Aerominum Black"],
+      "ports": {"left": null, "right": null, "rear": null, "front": null}, "portsOrderConfirmed": false, "portsUnplaced": ["usba", "usba", "usbc", "usbc", "hdmi", "audio"],
+      "keyboard": {"backlight": "Sí"}, "materials": "Aerominum", "lighting": [],
+      "notVerified": ["lado de cada puerto", "bloque numérico: consta solo en la variante del Reino Unido", "medidas del touchpad", "logotipo", "bisagra"]}
+  },
+  {
+    "id": 25, "brand": "Microsoft", "model": "Surface Laptop 7 15", "config": "Snapdragon X Elite, 16 GB, 512 GB, Platinum",
+    "sources": ["https://www.microsoft.com/en-us/d/surface-laptop-for-business-138-and-15-inch-7th-edition-snapdragon/8tkcbz02bdvk", "https://www.notebookcheck.net/Microsoft-Surface-Laptop-7-15-Snapdragon-laptop-review-Finally-easier-to-repair.956423.0.html"],
+    "specs": {"cpu": "Qualcomm Snapdragon X Elite", "cpuCores": 12, "screenInches": 15.0, "resolution": "2496x1664", "refreshRateHz": 120, "panelType": "IPS táctil", "widthMm": 329.0, "depthMm": 239.0, "thicknessMm": 18.29, "weightKg": 1.66, "batteryWh": 64.0, "releaseYear": 2024, "chassisMaterial": "Aleación de aluminio 100 % reciclado, mate"},
+    "notVerified": ["ramGb", "storageGb", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["Batería: 64 Wh en Notebookcheck; el registro indicaba 66 Wh, sin fuente oficial accesible.", "Fondo: 239 mm según Microsoft; 237 mm según Notebookcheck."],
+    "look": {"shell": "#c7c9cc", "deck": "#c7c9cc", "key": "#3a3c41", "legend": "#f2f4f7", "logo": "", "metal": 0.5},
+    "design": {"thicknessMinMm": 18.29, "thicknessMaxMm": 18.29, "colors": ["Platinum", "Black"],
+      "ports": {"left": ["audio", "usba", "usbc", "usbc"], "right": ["microsd", "surface"], "rear": [], "front": []}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "backlight": "Sí", "extra": "Flechas arriba y abajo muy justas; letras centradas"},
+      "touchpad": {"widthMm": 120, "depthMm": 80}, "hingeMaxDeg": 135, "materials": "Aluminio mate", "lighting": [],
+      "vents": ["Rejillas ocultas bajo las bisagras"],
+      "notVerified": ["logotipo de la tapa", "posición de altavoces"]}
+  },
+  {
+    "id": 16, "brand": "ORIGIN PC", "model": "EON18-X (2025)", "config": "Ultra 9 275HX, RTX 5090 24 GB, UHD+ 240 Hz",
+    "sources": ["https://www.originpc.com/gaming/laptops/eon18-x/", "https://www.originpc.com/configurator/eon18-x/"],
+    "specs": {"gpu": "NVIDIA GeForce RTX 5090 Laptop", "gpuVramGb": 24, "screenInches": 18.0, "resolution": "3840x2400", "refreshRateHz": 240, "widthMm": 402.1, "depthMm": 320.0, "thicknessMm": 27.9, "weightKg": 3.58, "batteryWh": 98.0, "releaseYear": 2025},
+    "notVerified": ["cpu", "ramGb", "storageGb", "panelType", "chassisMaterial", "priceUsd"],
+    "conflicts": ["Medidas convertidas de pulgadas (15,83 x 12,60 x 1,10).", "Peso: 7,9 lb en la ficha, 8,5 y 8,6 lb en otros textos de ORIGIN; 3,9 kg en el manual del chasis.", "Frecuencia: el registro indicaba 200 Hz; ORIGIN indica 240 Hz.", "RJ-45: el texto cita dos y la imagen uno."],
+    "look": {"shell": "#26262a", "deck": "#1d1d21", "key": "#111215", "legend": "#f2f4f7", "logo": "", "metal": 0.5},
+    "design": {"thicknessMinMm": 27.9, "thicknessMaxMm": 27.9, "colors": ["Negro"],
+      "ports": {"left": null, "right": null, "rear": ["hdmi", "rj45", "power"], "front": null}, "portsOrderConfirmed": false, "portsSource": 0, "portsUnplaced": ["usba", "usba", "usbc", "usbc", "audio", "microsd"],
+      "keyboard": {}, "lighting": [],
+      "notVerified": ["reparto de puertos entre izquierda y derecha", "orden de los puertos traseros", "teclado y touchpad", "material", "logotipo", "bisagra"]}
+  },
+  {
+    "id": 37, "brand": "Samsung", "model": "Galaxy Book6 Ultra · RTX 5070, 32 GB, 2 TB", "config": "Ultra 7 356H, RTX 5070 8 GB, 32 GB, OLED táctil 120 Hz",
+    "sources": ["https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-ultra/", "https://www.samsung.com/us/computing/galaxy-books/compare/", "https://www.notebookcheck.net/Samsung-Galaxy-Book6-Ultra-Review-Impressive-multimedia-laptop-with-gorgeous-OLED-RTX-5070.1242686.0.html"],
+    "specs": {"cpu": "Intel Core Ultra 7 356H", "cpuCores": 16, "cpuBaseWatts": 65, "cpuBoostWatts": 65, "gpu": "NVIDIA GeForce RTX 5070 Laptop", "gpuVramGb": 8, "gpuTgpWatts": 90, "ramGb": 32, "ramType": "LPDDR5X-8533 (soldada)", "ramUpgradable": false, "storageSlots": 2, "screenInches": 16.0, "resolution": "2880x1800", "refreshRateHz": 120, "panelType": "OLED táctil", "widthMm": 356.9, "depthMm": 248.0, "thicknessMm": 15.4, "weightKg": 1.89, "batteryWh": 80.2, "releaseYear": 2026, "chassisMaterial": "Aluminio"},
+    "notVerified": ["storageGb", "priceUsd"],
+    "conflicts": ["El análisis consultado prueba 1 TB; el registro indica 2 TB."],
+    "look": {"shell": "#3a3d44", "deck": "#3a3d44", "key": "#17181c", "legend": "#f2f4f7", "logo": "", "metal": 0.8},
+    "design": {"thicknessMinMm": 15.4, "thicknessMaxMm": 15.4, "colors": ["Gris"],
+      "ports": {"left": ["hdmi", "usbc", "usbc"], "right": ["sd", "audio", "usba"], "rear": [], "front": []}, "portsOrderConfirmed": true, "portsSource": 2,
+      "keyboard": {"numpad": false, "backlight": "Sí"}, "hingeMaxDeg": 135, "materials": "Aluminio", "lighting": [],
+      "notVerified": ["medidas del touchpad háptico", "logotipo de la tapa", "rejillas", "posición de los seis altavoces"]}
+  }
+]

@@ -1,0 +1,93 @@
+{
+ "brand": "Lenovo",
+ "model": "Legion Pro 7i Gen 10 (16)",
+ "widthMm": 364.38,
+ "depthMm": 275.94,
+ "thicknessMm": 26.65,
+ "thicknessFrontMm": 21.9,
+ "bodyRearMm": 20.65,
+ "bodyFrontMm": 15.899999999999999,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 274.44,
+ "hingeYMm": 136.47,
+ "hingeZMm": 20.65,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9874,
+  "scaleZ": 0.9833,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 7,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 6,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "rj45"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "botón de encendido en relieve",
+  "rótulo LEGION",
+  "dos bisagras",
+  "pies de goma"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "ángulo de la bisagra",
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/Legion/Legion_Pro_7_16IAX10H/Legion_Pro_7_16IAX10H_Spec.pdf",
+  "https://www.notebookcheck.net/Lenovo-Legion-Pro-7i-16-Gen-10-laptop-review-400-W-power-supply-with-almost-no-compromises.999828.0.html"
+ ]
+}

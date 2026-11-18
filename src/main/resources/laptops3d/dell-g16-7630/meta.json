@@ -1,0 +1,92 @@
+{
+ "brand": "Dell",
+ "model": "G16 7630",
+ "widthMm": 356.98,
+ "depthMm": 288.73,
+ "thicknessMm": 24.9,
+ "thicknessFrontMm": 20.2,
+ "bodyRearMm": 18.9,
+ "bodyFrontMm": 14.2,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 287.23,
+ "hingeYMm": 142.865,
+ "hingeZMm": 18.9,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.9841,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "zona de rejillas sobre el teclado",
+  "logotipo Dell",
+  "lomo de bisagra",
+  "trasera con puertos"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "saliente trasero de refrigeración: sin medidas publicadas, no se modela",
+  "ángulo de la bisagra",
+  "altavoces"
+ ],
+ "sources": [
+  "https://www.dell.com/support/manuals/en-us/g-series-16-7630-laptop/dell-g16-7630-owners-manual/dimensions-and-weight?guid=guid-362133ff-c5e8-4acd-a164-4ce876572659&lang=en-us",
+  "https://www.dell.com/support/manuals/en-us/g-series-16-7630-laptop/dell-g16-7630-owners-manual/back?guid=guid-f2dda353-ba5a-44c0-b85f-6bf1b8c70d15&lang=en-us",
+  "https://www.dell.com/support/manuals/en-us/g-series-16-7630-laptop/dell-g16-7630-owners-manual/display?guid=guid-2bdf1814-06d3-4b69-967b-c48432875f91&lang=en-us",
+  "https://www.notebookcheck.net/Dell-G16-2024-laptop-review-An-affordable-Alienware-alternative-from-the-same-manufacturer.803280.0.html"
+ ]
+}

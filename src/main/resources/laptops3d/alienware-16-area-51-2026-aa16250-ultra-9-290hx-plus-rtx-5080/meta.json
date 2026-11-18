@@ -1,0 +1,106 @@
+{
+ "brand": "Alienware",
+ "model": "16 Area-51 (2026) AA16250 · Ultra 9 290HX Plus, RTX 5080",
+ "widthMm": 365.0,
+ "depthMm": 290.0,
+ "thicknessMm": 28.5,
+ "thicknessFrontMm": 21.6,
+ "bodyRearMm": 21.5,
+ "bodyFrontMm": 14.600000000000001,
+ "lidThicknessMm": 7.0,
+ "lidLengthMm": 250.5,
+ "hingeYMm": 105.5,
+ "hingeZMm": 21.5,
+ "maxLidDeg": 140,
+ "innerFit": {
+  "scaleX": 0.9699,
+  "scaleZ": 0.9741,
+  "offsetZ": 0.75
+ },
+ "outlineFromFrac": 0.42,
+ "cornerFrontMm": 13,
+ "cornerRearMm": 5,
+ "cornerLidFreeMm": 7,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "sd"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "tapa Liquid Teal con la cabeza de Alienware",
+  "bloque térmico trasero muy profundo",
+  "barra de luz trasera y touchpad iluminado",
+  "rejillas ovaladas en las esquinas traseras",
+  "rótulo ALIENWARE sobre el teclado",
+  "ventana inferior de vidrio"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "forma de la cabeza simplificada",
+  "profundidad del bloque trasero, estimada",
+  "forma exacta de la barra de luz",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "bloque numérico (no consta; se dibuja sin él)",
+  "bisagras Zero Hinge: no se reproduce su forma"
+ ],
+ "sources": [
+  "https://www.dell.com/en-us/shop/laptop-computers/spd/alienware16area51aa16250",
+  "https://www.notebookcheck.net/Alienware-16-Area-51-review-New-Core-Ultra-9-290HX-Plus-is-all-power-at-any-cost.1276167.0.html",
+  "https://www.notebookcheck.net/Alienware-16-Area-51-laptop-review-Dell-s-best-flagship-gaming-laptop-yet.1027688.0.html"
+ ]
+}

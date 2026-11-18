@@ -1,0 +1,89 @@
+{
+ "brand": "HP",
+ "model": "OMEN Transcend 16 (u1000)",
+ "widthMm": 356.5,
+ "depthMm": 269.0,
+ "thicknessMm": 19.9,
+ "thicknessFrontMm": 19.9,
+ "bodyRearMm": 14.899999999999999,
+ "bodyFrontMm": 14.899999999999999,
+ "lidThicknessMm": 5.0,
+ "lidLengthMm": 267.5,
+ "hingeYMm": 133.0,
+ "hingeZMm": 14.899999999999999,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.9829,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "rótulo OMEN",
+  "rejilla sobre el teclado",
+  "rejillas laterales",
+  "dos bisagras"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "posición de altavoces",
+  "color exacto"
+ ],
+ "sources": [
+  "https://www.notebookcheck.net/HP-Omen-Transcend-16-2024-laptop-review-An-RTX-4070-gaming-machine-with-an-OLED-display.802778.0.html",
+  "https://www.hp.com/ca-en/gaming-pc/laptops/2023-omen-transcend-intel.html"
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "brand": "Lenovo",
+ "model": "LOQ 15AHP10",
+ "widthMm": 359.86,
+ "depthMm": 258.7,
+ "thicknessMm": 23.9,
+ "thicknessFrontMm": 21.9,
+ "bodyRearMm": 18.4,
+ "bodyFrontMm": 16.4,
+ "lidThicknessMm": 5.5,
+ "lidLengthMm": 257.2,
+ "hingeYMm": 127.85,
+ "hingeZMm": 18.4,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9872,
+  "scaleZ": 0.9822,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 0.92,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "bloque trasero con puertos",
+  "rótulo LOQ",
+  "etiqueta Lenovo",
+  "pies de goma"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/LOQ/LOQ_15AHP10/LOQ_15AHP10_Spec.pdf",
+  "https://www.notebookcheck.net/Lenovo-LOQ-15-laptop-review-The-mobile-RTX-5060-celebrates-its-debut.1050248.0.html"
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "brand": "ORIGIN PC",
+ "model": "EON18-X (2025)",
+ "widthMm": 402.1,
+ "depthMm": 320.0,
+ "thicknessMm": 27.9,
+ "thicknessFrontMm": 27.9,
+ "bodyRearMm": 21.9,
+ "bodyFrontMm": 21.9,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 318.5,
+ "hingeYMm": 158.5,
+ "hingeZMm": 21.9,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9886,
+  "scaleZ": 0.9856,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 8,
+ "cornerRearMm": 5,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [
+  "usba",
+  "usba",
+  "usbc",
+  "usbc",
+  "audio",
+  "microsd"
+ ],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "logotipo ORIGIN",
+  "cubierta con su zona de teclado",
+  "touchpad"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: lado izquierdo",
+  "sin foto fiable de: lado derecho",
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "reparto de puertos entre izquierda y derecha",
+  "orden de los puertos traseros",
+  "material",
+  "bisagra"
+ ],
+ "sources": [
+  "https://www.originpc.com/gaming/laptops/eon18-x/",
+  "https://www.originpc.com/configurator/eon18-x/"
+ ]
+}

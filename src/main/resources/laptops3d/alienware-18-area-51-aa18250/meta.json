@@ -1,0 +1,99 @@
+{
+ "brand": "Alienware",
+ "model": "18 Area-51 (AA18250)",
+ "widthMm": 410.0,
+ "depthMm": 320.0,
+ "thicknessMm": 30.5,
+ "thicknessFrontMm": 24.72,
+ "bodyRearMm": 23.5,
+ "bodyFrontMm": 17.72,
+ "lidThicknessMm": 7.0,
+ "lidLengthMm": 318.5,
+ "hingeYMm": 158.5,
+ "hingeZMm": 23.5,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9888,
+  "scaleZ": 0.9856,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 9,
+ "cornerRearMm": 6,
+ "cornerLidFreeMm": 7,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "sd"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "bloque térmico trasero",
+  "zona de ventiladores sobre el teclado",
+  "logotipo Alienware",
+  "touchpad iluminado"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "bloque numérico (no consta; se dibuja sin él)",
+  "ángulo de la bisagra"
+ ],
+ "sources": [
+  "https://www.dell.com/support/manuals/en-us/alienware-area-51-aa18250-gaming-laptop/alienware-18-area-51-aa18250-owners-manual/back?guid=guid-d3edd4d4-a009-4d16-b3d8-0b965cffcbf0&lang=en-us",
+  "https://www.dell.com/support/manuals/es-pe/alienware-area-51-aa18250-gaming-laptop/alienware-18-area-51-aa18250-owners-manual/left?guid=guid-d010316f-77c6-4dc8-bfc8-2d79d94dbaf9&lang=en-us",
+  "https://www.dell.com/support/manuals/en-us/alienware-area-51-aa18250-gaming-laptop/alienware-18-area-51-aa18250-owners-manual/display?guid=guid-c72a8f17-7e18-47b4-af56-715138111277&lang=en-us",
+  "https://www.notebookcheck.net/Alienware-18-Area-51.1063059.0.html"
+ ]
+}

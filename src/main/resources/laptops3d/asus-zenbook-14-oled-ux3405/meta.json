@@ -1,0 +1,79 @@
+{
+ "brand": "ASUS",
+ "model": "Zenbook 14 OLED (UX3405)",
+ "widthMm": 312.4,
+ "depthMm": 220.1,
+ "thicknessMm": 14.9,
+ "thicknessFrontMm": 14.9,
+ "bodyRearMm": 10.7,
+ "bodyFrontMm": 10.7,
+ "lidThicknessMm": 4.2,
+ "lidLengthMm": 218.6,
+ "hingeYMm": 108.55,
+ "hingeZMm": 10.7,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9853,
+  "scaleZ": 0.9791,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 0.84,
+ "photoGains": {
+  "Foto_cubierta": 0.72
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "líneas grabadas en la tapa",
+  "touchpad con teclado numérico",
+  "bisagra de barra"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "patrón exacto de la tapa",
+  "ubicación de altavoces"
+ ],
+ "sources": [
+  "https://www.asus.com/laptops/for-home/zenbook/asus-zenbook-14-oled-ux3405/techspec/",
+  "https://www.notebookcheck.net/Asus-Zenbook-14-OLED-review-The-1-2-kg-subnotebook-with-120-Hz-OLED-and-Core-Ultra-7.805236.0.html"
+ ]
+}

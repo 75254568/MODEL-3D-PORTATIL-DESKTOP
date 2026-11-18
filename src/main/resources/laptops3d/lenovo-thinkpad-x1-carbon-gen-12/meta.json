@@ -1,0 +1,86 @@
+{
+ "brand": "Lenovo",
+ "model": "ThinkPad X1 Carbon Gen 12",
+ "widthMm": 312.8,
+ "depthMm": 214.75,
+ "thicknessMm": 14.96,
+ "thicknessFrontMm": 14.96,
+ "bodyRearMm": 10.56,
+ "bodyFrontMm": 10.56,
+ "lidThicknessMm": 4.4,
+ "lidLengthMm": 213.25,
+ "hingeYMm": 105.875,
+ "hingeZMm": 10.56,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9073,
+  "scaleZ": 0.9185,
+  "offsetZ": 4.75
+ },
+ "outlineFromFrac": 0.62,
+ "cornerFrontMm": 4.5,
+ "cornerRearMm": 2.0,
+ "cornerLidFreeMm": 2.5,
+ "cornerLidHingeMm": 1.0,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "barra de la cámara saliente",
+  "bandeja del teclado con escalón de flechas",
+  "TrackPoint",
+  "tres botones físicos",
+  "chaflán inferior ancho",
+  "pies de goma"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "medidas de la barra de la cámara"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_12/ThinkPad_X1_Carbon_Gen_12_Spec.pdf",
+  "https://www.notebookcheck.net/Lenovo-ThinkPad-X1-Carbon-G12-laptop-review-First-major-refresh-in-three-years.803321.0.html"
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "brand": "Lenovo",
+ "model": "LOQ 15 (2026) AMD · Ryzen 7 250, RTX 5060",
+ "widthMm": 344.9,
+ "depthMm": 254.83,
+ "thicknessMm": 23.25,
+ "thicknessFrontMm": 20.9,
+ "bodyRearMm": 17.25,
+ "bodyFrontMm": 14.899999999999999,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 241.83,
+ "hingeYMm": 114.415,
+ "hingeZMm": 17.25,
+ "maxLidDeg": 180,
+ "innerFit": {
+  "scaleX": 0.9681,
+  "scaleZ": 0.9706,
+  "offsetZ": 0.75
+ },
+ "outlineFromFrac": 0.42,
+ "cornerFrontMm": 8,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [],
+ "portsNotPlaced": [
+  "usba",
+  "usba",
+  "usba",
+  "usbc",
+  "hdmi",
+  "audio",
+  "rj45",
+  "power"
+ ],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "chasis de plástico con bloque trasero",
+  "rótulo LOQ centrado en la tapa",
+  "teclado con bloque numérico y flechas de buen tamaño",
+  "aletas de ventilación laterales",
+  "dos campos de rejilla en la base"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "color Eclipse Black supuesto: la ficha no dice el de esta unidad",
+  "tipografía del rótulo",
+  "puertos sin colocar: ninguna fuente dice su lado exacto en este modelo",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "lado de cada puerto: ninguna fuente lo indica, no se colocan",
+  "color de la unidad registrada"
+ ],
+ "sources": [
+  "https://psref.lenovo.com/syspool/Sys/PDF/LOQ/LOQ_15AHP11/LOQ_15AHP11_Spec.pdf",
+  "https://www.notebookcheck.net/Eyesore-or-eye-catcher-Lenovo-LOQ-15-gaming-laptop-review.1338691.0.html"
+ ]
+}

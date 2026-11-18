@@ -1,0 +1,32 @@
+# Blender 5.3.0 MTL File: 'None'
+# www.blender.org
+
+newmtl Canto_tapa
+Ns 122.500015
+Ka 1.000000 1.000000 1.000000
+Kd 0.109804 0.117647 0.168627
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Foto_pantalla
+Ns 490.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.120000 0.120000 0.120000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd @models/gen/ph16_72/screen.jpg
+
+newmtl Foto_tapa
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd @models/gen/ph16_72/lid.jpg

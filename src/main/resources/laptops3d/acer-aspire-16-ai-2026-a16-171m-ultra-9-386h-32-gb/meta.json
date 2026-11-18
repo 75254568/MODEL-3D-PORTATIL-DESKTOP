@@ -1,0 +1,97 @@
+{
+ "brand": "Acer",
+ "model": "Aspire 16 AI (2026) A16-171M · Ultra 9 386H, 32 GB",
+ "widthMm": 355.6,
+ "depthMm": 248.9,
+ "thicknessMm": 16.0,
+ "thicknessFrontMm": 16.0,
+ "bodyRearMm": 12.0,
+ "bodyFrontMm": 12.0,
+ "lidThicknessMm": 4.0,
+ "lidLengthMm": 247.4,
+ "hingeYMm": 122.95,
+ "hingeZMm": 12.0,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9882,
+  "scaleZ": 0.9831,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 5.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 4,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 0.935,
+  "Foto_tapa": 0.935,
+  "Foto_base": 0.935,
+  "Foto_izquierda": 0.935,
+  "Foto_derecha": 0.935,
+  "Foto_trasera": 0.935,
+  "Foto_frente": 0.935
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "tapa metálica de poco brillo",
+  "teclado con bloque numérico de teclas estrechas",
+  "sin Ctrl derecho: en su lugar, tecla Copilot",
+  "touchpad grande",
+  "bisagra de 180 grados"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "medidas del touchpad, estimadas",
+  "tipografía del rótulo",
+  "color gris, estimado",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "orden de los puertos dentro de cada lado"
+ ],
+ "sources": [
+  "https://www.acer.com/us-en/laptops/aspire/aspire-14-16-ai-intel/pdp/NX.JXRAA.001",
+  "https://news.acer.com/acer-introduces-aspire-ai-copilot-pcs-featuring-intel-core-ultra-series-3-processors",
+  "https://www.notebookcheck.net/Acer-Aspire-14-AI-and-Aspire-16-AI-get-FHD-OLED-options-and-customary-upgrades-to-Intel-Panther-Lake-H.1197453.0.html",
+  "https://www.techradar.com/computing/windows-laptops/acer-aspire-16-ai-review"
+ ]
+}

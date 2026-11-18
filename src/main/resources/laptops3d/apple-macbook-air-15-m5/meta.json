@@ -1,0 +1,73 @@
+{
+ "brand": "Apple",
+ "model": "MacBook Air 15 (M5)",
+ "widthMm": 340.4,
+ "depthMm": 237.6,
+ "thicknessMm": 11.5,
+ "thicknessFrontMm": 11.5,
+ "bodyRearMm": 7.3,
+ "bodyFrontMm": 7.3,
+ "lidThicknessMm": 4.2,
+ "lidLengthMm": 236.1,
+ "hingeYMm": 117.3,
+ "hingeZMm": 7.3,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9865,
+  "scaleZ": 0.9806,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 9,
+ "cornerRearMm": 9,
+ "cornerLidFreeMm": 9,
+ "cornerLidHingeMm": 7,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "magsafe"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "logotipo de Apple",
+  "altavoces a los lados del teclado",
+  "muesca de la cámara en pantalla"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: lado izquierdo",
+  "sin foto fiable de: lado derecho",
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "medidas del trackpad"
+ ],
+ "sources": [
+  "https://support.apple.com/en-us/126321",
+  "https://www.notebookcheck.net/Apple-MacBook-Air-15-M5-Review-Very-powerful-fanless-and-without-competition.1244905.0.html"
+ ]
+}

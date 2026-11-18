@@ -194,6 +194,30 @@ public final class FunctionalCheck {
         }, 300);
         seq.add(() -> check("quitar filtros devuelve todas las filas", tabla.getItems().size() == total0), 100);
 
+        // --- vista de tarjetas y diseno 3D de cada laptop
+        seq.add(() -> {
+            javafx.scene.layout.FlowPane rejilla = f(cat, "rejilla");
+            ToggleButton tarjetas = f(cat, "tbTarjetas");
+            check("el catálogo abre en vista de tarjetas, una por laptop (" + rejilla.getChildren().size() + ")",
+                    tarjetas.isSelected() && rejilla.getChildren().size() == total0);
+            long genericos = service.todos().stream()
+                    .filter(l -> com.laptopstudio.viewer.LaptopModel.exteriorInfo(l).kind() == com.laptopstudio.viewer.LaptopModel.Exterior.GENERIC)
+                    .count();
+            check("cada laptop tiene diseño 3D propio o de su serie (" + genericos + " genéricos)", genericos == 0);
+            long sinFicha = service.todos().stream().filter(l -> com.laptopstudio.service.VerifiedSpecs.of(l) == null).count();
+            long sinBlender = service.todos().stream().filter(l -> com.laptopstudio.viewer.LaptopModel.blenderInfo(l) == null).count();
+            check("cada laptop tiene ficha verificada (" + sinFicha + " sin ficha) y modelo de Blender (" + sinBlender + " sin modelo)",
+                    sinFicha == 0 && sinBlender == 0);
+            Laptop esperado = tabla.getItems().get(2);
+            Node tercera = rejilla.getChildren().get(2);
+            tercera.fireEvent(new javafx.scene.input.MouseEvent(javafx.scene.input.MouseEvent.MOUSE_CLICKED, 0, 0, 0, 0,
+                    javafx.scene.input.MouseButton.PRIMARY, 1, false, false, false, false, true, false, false, true, false, false, null));
+            check("un clic en una tarjeta la elige y muestra su ficha",
+                    esperado.equals(tabla.getSelectionModel().getSelectedItem())
+                            && campos.get("model").getText().equals(esperado.getModel())
+                            && tercera.getStyleClass().contains("selected"));
+        }, 300);
+
         // --- edicion y guardado
         seq.add(() -> {
             Laptop tuf = tabla.getItems().stream().filter(l -> l.getModel().contains("TUF")).findFirst().orElseThrow();
@@ -267,6 +291,10 @@ public final class FunctionalCheck {
         seq.add(() -> {
             check("confirmar elimina el registro (" + service.contar() + " de " + total0 + ")", service.contar() == total0 - 1);
             check("la tabla se actualiza tras eliminar", tabla.getItems().size() == total0 - 1);
+            javafx.scene.layout.FlowPane rejilla = f(cat, "rejilla");
+            Node imagen = rejilla.getChildren().isEmpty() ? null : rejilla.getChildren().get(0).lookup(".image-view");
+            check("las tarjetas reciben la imagen de su modelo 3D",
+                    imagen instanceof javafx.scene.image.ImageView iv && iv.getImage() != null);
         }, 200);
 
         // --- marcar y comparar

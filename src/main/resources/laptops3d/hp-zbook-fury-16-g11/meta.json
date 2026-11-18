@@ -1,0 +1,95 @@
+{
+ "brand": "HP",
+ "model": "ZBook Fury 16 G11",
+ "widthMm": 363.0,
+ "depthMm": 250.0,
+ "thicknessMm": 27.7,
+ "thicknessFrontMm": 27.7,
+ "bodyRearMm": 22.2,
+ "bodyFrontMm": 22.2,
+ "lidThicknessMm": 5.5,
+ "lidLengthMm": 248.5,
+ "hingeYMm": 123.5,
+ "hingeZMm": 22.2,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9873,
+  "scaleZ": 0.9816,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 7,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 0.9,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "right",
+   "type": "rj45"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [
+  "sd",
+  "kensington"
+ ],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo HP",
+  "touchpad con tres botones",
+  "cuerpo plateado",
+  "lomo de bisagra"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "orden de los puertos en cada lado",
+  "lado del lector SD y de la ranura de seguridad",
+  "color y material",
+  "bisagra"
+ ],
+ "sources": [
+  "https://h20195.www2.hp.com/v2/GetDocument.aspx?docname=c08937569",
+  "https://support.hp.com/us-en/document/ish_10384629-10384675-16"
+ ]
+}

@@ -46,6 +46,7 @@ public class SearchController implements Refreshable {
     private final SelectionState selection;
     private final NavigationService navigation;
     private final OnlineLookupDialog onlineLookup;
+    private final com.laptopstudio.ui.LaptopThumbs thumbs;
 
     @FXML private TextField txtTexto;
     @FXML private TextField txtMin;
@@ -263,7 +264,7 @@ public class SearchController implements Refreshable {
         LaptopCard.Actions acciones = new LaptopCard.Actions(this::verEn3d, this::mostrarSimilares, null);
         for (Hit h : hits) {
             VBox card = LaptopCard.build(h.laptop(), LaptopCard.note(similar ? "Se parece en: " : "No cumple: ", textos(h.notes())),
-                    similar, selection, acciones);
+                    similar, selection, acciones, thumbs);
             grid.getChildren().add(card);
             animar.add(card);
         }

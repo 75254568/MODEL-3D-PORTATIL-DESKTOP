@@ -1,0 +1,102 @@
+{
+ "brand": "Acer",
+ "model": "Predator Helios 18 (PH18-71)",
+ "widthMm": 405.0,
+ "depthMm": 311.6,
+ "thicknessMm": 29.15,
+ "thicknessFrontMm": 26.9,
+ "bodyRearMm": 22.65,
+ "bodyFrontMm": 20.4,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 310.1,
+ "hingeYMm": 154.3,
+ "hingeZMm": 22.65,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9886,
+  "scaleZ": 0.9852,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "rj45"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "microsd"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "kensington"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo Predator",
+  "bisagras en bloque",
+  "rejillas laterales inclinadas",
+  "trasera iluminada"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "grosor delantero (26,9 mm procede del registro)",
+  "ángulo de la bisagra",
+  "altavoces"
+ ],
+ "sources": [
+  "https://www.acer.com/gb-en/predator/laptops/helios/helios-18/pdp/NH.QKREK.001",
+  "https://www.notebookcheck.net/Acer-Predator-Helios-18-laptop-review-RTX-4080-gamer-with-MiniLED-display-at-over-1-000-nits.762877.0.html"
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "brand": "Apple",
+ "model": "MacBook Pro 16 (M3 Max)",
+ "widthMm": 355.7,
+ "depthMm": 248.1,
+ "thicknessMm": 16.8,
+ "thicknessFrontMm": 16.8,
+ "bodyRearMm": 11.8,
+ "bodyFrontMm": 11.8,
+ "lidThicknessMm": 5.0,
+ "lidLengthMm": 246.6,
+ "hingeYMm": 122.55,
+ "hingeZMm": 11.8,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.9815,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 9,
+ "cornerRearMm": 9,
+ "cornerLidFreeMm": 9,
+ "cornerLidHingeMm": 7,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "magsafe"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "hdmi"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo de Apple",
+  "altavoces a los lados del teclado",
+  "cuatro patas redondas"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "medidas del trackpad",
+  "muesca de la cámara en este modelo"
+ ],
+ "sources": [
+  "https://support.apple.com/en-us/117737",
+  "https://www.notebookcheck.net/Apple-s-fastest-laptop-starts-to-show-its-age-Apple-MacBook-Pro-16-2026-M5-Max-Review.1250821.0.html"
+ ]
+}

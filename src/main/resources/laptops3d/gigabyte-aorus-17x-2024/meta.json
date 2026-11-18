@@ -1,0 +1,96 @@
+{
+ "brand": "Gigabyte",
+ "model": "AORUS 17X (2024)",
+ "widthMm": 396.0,
+ "depthMm": 293.0,
+ "thicknessMm": 21.8,
+ "thicknessFrontMm": 21.8,
+ "bodyRearMm": 15.8,
+ "bodyFrontMm": 15.8,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 291.5,
+ "hingeYMm": 145.0,
+ "hingeZMm": 15.8,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9884,
+  "scaleZ": 0.9843,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "minidp"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo AORUS",
+  "touchpad con el águila",
+  "panel trasero de puertos",
+  "rejillas de cobre"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: base",
+  "orden de los puertos en cada lado",
+  "bloque numérico",
+  "material y color",
+  "bisagra"
+ ],
+ "sources": [
+  "https://www.gigabyte.com/Laptop/AORUS-17X--2024/sp",
+  "https://www.aorus.com/us/laptops/AORUS-17X--2024/Specification",
+  "https://www.notebookcheck.net/Aorus-17X-AZG.849382.0.html"
+ ]
+}

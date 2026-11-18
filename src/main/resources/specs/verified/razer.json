@@ -1,0 +1,59 @@
+[
+  {
+    "id": 20, "brand": "Razer", "model": "Blade 16 (2024)", "config": "Core i9-14900HX, RTX 4090, OLED QHD+ 240 Hz",
+    "sources": ["https://www.razer.com/gaming-laptops/razer-blade-16-2024", "https://www.notebookcheck.net/Razer-Blade-16-2024-laptop-review-Now-with-super-fast-Samsung-OLED.804677.0.html"],
+    "specs": {"cpu": "Intel Core i9-14900HX", "cpuCores": 24, "gpu": "NVIDIA GeForce RTX 4090 Laptop", "gpuTgpWatts": 175, "ramType": "DDR5 SODIMM", "ramUpgradable": true,
+      "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 240, "panelType": "OLED", "widthMm": 355.0, "depthMm": 244.0, "thicknessMm": 22.0, "weightKg": 2.45, "batteryWh": 95.2, "releaseYear": 2024, "chassisMaterial": "Aluminio unibody CNC y placa de titanio"},
+    "notVerified": ["ramGb", "storageGb", "gpuVramGb", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["Peso: 2,45 kg según Razer; 2,452 kg medidos por Notebookcheck."],
+    "look": {"shell": "#1c1c1e", "deck": "#1c1c1e", "key": "#101012", "legend": "#d8f5d0", "logo": "", "metal": 0.8},
+    "design": {"thicknessMinMm": 22.0, "thicknessMaxMm": 22.0, "colors": ["Negro", "Mercury (edición clara)"],
+      "ports": {"left": ["power", "usba", "usba", "usbc", "audio"], "right": ["sd", "usbc", "hdmi", "kensington"], "rear": [], "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "backlight": "RGB por tecla (Razer Chroma)", "extra": "Flechas arriba y abajo de media altura"},
+      "materials": "Aluminio unibody y placa de titanio", "lighting": ["Teclado RGB por tecla"],
+      "notVerified": ["logotipo de la tapa", "medidas del touchpad", "ángulo de la bisagra", "posición de altavoces y rejillas"]}
+  },
+  {
+    "id": 14, "brand": "Razer", "model": "Blade 18 (2024)", "config": "Core i9-14900HX, RTX 4090, Mini LED QHD+ 300 Hz",
+    "sources": ["https://www.razer.com/gaming-laptops/razer-blade-18-2024", "https://www.notebookcheck.net/Razer-Blade-18-2024-review-First-laptop-to-market-with-both-mini-LED-and-Thunderbolt-5.828004.0.html", "https://www.notebookcheck.net/Razer-Blade-18-laptop-review-Smaller-than-many-17-inch-gaming-laptops.694686.0.html"],
+    "specs": {"cpu": "Intel Core i9-14900HX", "cpuCores": 24, "gpu": "NVIDIA GeForce RTX 4090 Laptop", "gpuTgpWatts": 175, "ramType": "DDR5-5600 SODIMM (2 ranuras)", "ramUpgradable": true, "storageSlots": 2,
+      "screenInches": 18.0, "resolution": "2560x1600", "refreshRateHz": 300, "panelType": "Mini LED", "widthMm": 399.9, "depthMm": 275.4, "thicknessMm": 21.9, "weightKg": 3.1, "batteryWh": 91.7, "releaseYear": 2024, "chassisMaterial": "Aluminio unibody CNC anodizado"},
+    "notVerified": ["ramGb", "storageGb", "gpuVramGb", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"],
+    "conflicts": ["El registro indicaba IPS a 240 Hz; Razer solo ofrece Mini LED QHD+ a 300 Hz o UHD+ a 200 Hz en este modelo.", "Peso: 3,1 kg según Razer; 3,134 kg medidos por Notebookcheck."],
+    "look": {"shell": "#1f1f22", "deck": "#1f1f22", "key": "#101012", "legend": "#d8f5d0", "logo": "", "metal": 0.8},
+    "design": {"thicknessMinMm": 21.9, "thicknessMaxMm": 21.9, "colors": ["Negro", "Mercury White (algunas configuraciones)"],
+      "ports": {"left": ["power", "rj45", "usba", "usba", "usbc", "audio"], "right": ["sd", "usbc", "usba", "hdmi", "kensington"], "rear": [], "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "backlight": "RGB por tecla (Razer Chroma)", "extra": "Altavoces mayores en lugar de bloque numérico (análisis del chasis 2023)"},
+      "speakerGrilles": true, "touchpad": {"widthMm": 170, "depthMm": 97}, "hingeMaxDeg": 140, "materials": "Aluminio unibody", "lighting": ["Teclado RGB por tecla"],
+      "vents": ["Rejillas ocultas bajo la bisagra de barra"],
+      "notVerified": ["logotipo de la tapa", "forma exacta de las rejillas de altavoz"]}
+  },
+  {
+    "id": 39, "brand": "Razer", "model": "Blade 16 (2026) · Ultra 9 386H, RTX 5090, 32 GB, 2 TB", "config": "Ultra 9 386H, RTX 5090 24 GB, 32 GB LPDDR5X-9600, 2 TB, OLED QHD+ 240 Hz",
+    "sources": ["https://www.razer.com/gaming-laptops/razer-blade-16?page=tech-specs", "https://www.notebookcheck.net/Razer-Blade-16-review-Intel-Core-Ultra-delivers-faster-frame-rates.1303661.0.html", "https://www.notebookcheck.net/Razer-Blade-16-2025-review-Gaming-laptop-now-with-GeForce-RTX-5090-Laptop-and-an-even-slimmer-case.988251.0.html"],
+    "specs": {"cpu": "Intel Core Ultra 9 386H", "cpuCores": 16, "cpuBaseWatts": 55, "cpuBoostWatts": 85, "gpu": "NVIDIA GeForce RTX 5090 Laptop", "gpuVramGb": 24, "gpuTgpWatts": 165, "ramGb": 32, "ramType": "LPDDR5X-9600 (soldada)", "ramUpgradable": false, "storageGb": 2048,
+      "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 240, "panelType": "OLED", "widthMm": 355.0, "depthMm": 250.5, "thicknessMm": 17.4, "weightKg": 2.12, "batteryWh": 90.0, "releaseYear": 2026, "chassisMaterial": "Aluminio unibody CNC anodizado"},
+    "notVerified": ["priceUsd"],
+    "conflicts": ["TGP: 165 W según Razer; 160 W en el análisis de Notebookcheck.", "Peso: 4,6 lb (2,09 kg) según Razer; 2,124 kg medidos con esta configuración.", "Los puertos y la bisagra proceden del análisis del modelo 2025: Notebookcheck indica que 2025 y 2026 comparten chasis."],
+    "look": {"shell": "#1b1b1d", "deck": "#1b1b1d", "key": "#101012", "legend": "#d8f5d0", "logo": "RAZER", "logoColor": "#44d62c", "logoLit": true, "metal": 0.8},
+    "design": {"thicknessMinMm": 14.9, "thicknessMaxMm": 17.4, "colors": ["Negro"],
+      "ports": {"left": ["power", "usba", "usba", "usbc", "audio"], "right": ["sd", "usbc", "usba", "hdmi", "kensington"], "rear": [], "front": null}, "portsOrderConfirmed": true, "portsSource": 2,
+      "keyboard": {"backlight": "RGB por tecla (Razer Chroma)", "travelMm": 1.5},
+      "touchpad": {"widthMm": 150, "depthMm": 97}, "hingeMaxDeg": 135, "materials": "Aluminio unibody", "lighting": ["Logotipo de la tapa iluminado", "Teclado RGB por tecla"],
+      "notVerified": ["bloque numérico (no consta; se dibuja sin él)", "forma gráfica del logotipo", "posición de altavoces y rejillas", "zona elevada de la base para refrigeración: sin medidas"]}
+  },
+  {
+    "id": 40, "brand": "Razer", "model": "Blade 16 (2026) · Ultra 9 386H, RTX 5080", "config": "Ultra 9 386H, RTX 5080, OLED QHD+ 240 Hz",
+    "sources": ["https://www.razer.com/gaming-laptops/razer-blade-16?page=tech-specs", "https://www.notebookcheck.net/Razer-Blade-16-review-Intel-Core-Ultra-delivers-faster-frame-rates.1303661.0.html", "https://www.notebookcheck.net/Razer-Blade-16-2025-review-Gaming-laptop-now-with-GeForce-RTX-5090-Laptop-and-an-even-slimmer-case.988251.0.html"],
+    "specs": {"cpu": "Intel Core Ultra 9 386H", "cpuCores": 16, "cpuBaseWatts": 55, "cpuBoostWatts": 85, "gpu": "NVIDIA GeForce RTX 5080 Laptop", "ramType": "LPDDR5X-9600 (soldada)", "ramUpgradable": false,
+      "screenInches": 16.0, "resolution": "2560x1600", "refreshRateHz": 240, "panelType": "OLED", "widthMm": 355.0, "depthMm": 250.5, "thicknessMm": 17.4, "weightKg": 2.09, "batteryWh": 90.0, "releaseYear": 2026, "chassisMaterial": "Aluminio unibody CNC anodizado"},
+    "notVerified": ["ramGb", "storageGb", "gpuVramGb", "gpuTgpWatts", "priceUsd"],
+    "conflicts": ["El análisis consultado prueba la RTX 5090; la batería y los vatios de CPU se toman de esa unidad.", "Los puertos y la bisagra proceden del análisis del modelo 2025, con el mismo chasis."],
+    "look": {"shell": "#1b1b1d", "deck": "#1b1b1d", "key": "#101012", "legend": "#d8f5d0", "logo": "RAZER", "logoColor": "#44d62c", "logoLit": true, "metal": 0.8},
+    "design": {"thicknessMinMm": 14.9, "thicknessMaxMm": 17.4, "colors": ["Negro"],
+      "ports": {"left": ["power", "usba", "usba", "usbc", "audio"], "right": ["sd", "usbc", "usba", "hdmi", "kensington"], "rear": [], "front": null}, "portsOrderConfirmed": true, "portsSource": 2,
+      "keyboard": {"backlight": "RGB por tecla (Razer Chroma)", "travelMm": 1.5},
+      "touchpad": {"widthMm": 150, "depthMm": 97}, "hingeMaxDeg": 135, "materials": "Aluminio unibody", "lighting": ["Logotipo de la tapa iluminado", "Teclado RGB por tecla"],
+      "notVerified": ["bloque numérico (no consta; se dibuja sin él)", "forma gráfica del logotipo", "posición de altavoces y rejillas"]}
+  }
+]

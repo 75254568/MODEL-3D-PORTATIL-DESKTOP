@@ -1,0 +1,79 @@
+{
+ "brand": "Dell",
+ "model": "XPS 16 (9640)",
+ "widthMm": 358.18,
+ "depthMm": 240.05,
+ "thicknessMm": 18.7,
+ "thicknessFrontMm": 18.7,
+ "bodyRearMm": 14.0,
+ "bodyFrontMm": 14.0,
+ "lidThicknessMm": 4.7,
+ "lidLengthMm": 238.55,
+ "hingeYMm": 118.525,
+ "hingeZMm": 14.0,
+ "maxLidDeg": 135,
+ "innerFit": {
+  "scaleX": 0.9872,
+  "scaleZ": 0.9808,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 7,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "microsd"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo Dell",
+  "touchpad invisible",
+  "teclado sin separación",
+  "rejillas inferiores laterales"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "forma de los altavoces"
+ ],
+ "sources": [
+  "https://www.dell.com/support/manuals/en-us/xps-16-9640-laptop/xps-16-9640-owners-manual/dimensions-and-weight?guid=guid-e23ce41c-df4c-436f-a046-21f24f011a9d&lang=en-us",
+  "https://www.dell.com/support/manuals/en-us/xps-16-9640-laptop/xps-16-9640-owners-manual/right?guid=guid-28f91978-658b-48bd-ac24-606e45bfa3b7&lang=en-us",
+  "https://www.dell.com/support/manuals/en-us/xps-16-9640-laptop/xps-16-9640-owners-manual/display?guid=guid-73e1ca36-2dcd-41d4-b0bd-abbae75a1deb&lang=en-us",
+  "https://www.notebookcheck.net/Dell-XPS-16-9640-review-The-multimedia-laptop-with-4K-OLED-and-an-annoying-touch-bar.825261.0.html"
+ ]
+}

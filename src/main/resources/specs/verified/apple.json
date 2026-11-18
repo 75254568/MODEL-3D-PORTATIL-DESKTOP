@@ -1,0 +1,63 @@
+[
+  {
+    "id": 23, "brand": "Apple", "model": "MacBook Air 15 (M3)", "config": "M3 de 8 núcleos CPU y 10 GPU, 16 GB, 512 GB, color Midnight",
+    "sources": ["https://support.apple.com/en-us/118552", "https://www.notebookcheck.net/Apple-MacBook-Air-15-M5-Review-Very-powerful-fanless-and-without-competition.1244905.0.html", "https://www.notebookcheck.net/Apple-MacBook-Air-15-2023-Series.730080.0.html"],
+    "specs": {"cpu": "Apple M3", "cpuCores": 8, "gpu": "GPU integrada Apple de 10 núcleos", "ramGb": 16, "ramType": "Memoria unificada (soldada)", "ramUpgradable": false, "storageGb": 512,
+      "screenInches": 15.3, "resolution": "2880x1864", "panelType": "Liquid Retina (IPS)", "widthMm": 340.4, "depthMm": 237.6, "thicknessMm": 11.5, "weightKg": 1.51, "batteryWh": 66.5, "releaseYear": 2024, "chassisMaterial": "Aluminio"},
+    "notVerified": ["refreshRateHz", "cpuBaseWatts", "cpuBoostWatts", "priceUsd"], "conflicts": [],
+    "look": {"shell": "#2e3642", "deck": "#2e3642", "key": "#0f1115", "legend": "#e8eaed", "logo": "", "metal": 0.9},
+    "design": {"thicknessMinMm": 11.5, "thicknessMaxMm": 11.5, "colors": ["Silver", "Starlight", "Space Gray", "Midnight"],
+      "ports": {"left": ["magsafe", "usbc", "usbc"], "right": ["audio"], "rear": null, "front": null}, "portsOrderConfirmed": false, "portsSource": 1,
+      "keyboard": {"numpad": false, "layout": "apple", "backlight": "Sí", "extra": "Magic Keyboard de 78 teclas con Touch ID"}, "notch": true, "materials": "Aluminio",
+      "notVerified": ["medidas del trackpad", "posición de altavoces y rejillas"]}
+  },
+  {
+    "id": 42, "brand": "Apple", "model": "MacBook Air 15 (M5)", "config": "M5 de 10 núcleos CPU y 10 GPU, 16 GB, 512 GB",
+    "sources": ["https://support.apple.com/en-us/126321", "https://www.notebookcheck.net/Apple-MacBook-Air-15-M5-Review-Very-powerful-fanless-and-without-competition.1244905.0.html"],
+    "specs": {"cpu": "Apple M5", "cpuCores": 10, "gpu": "GPU integrada Apple de 10 núcleos", "ramGb": 16, "ramType": "Memoria unificada (soldada)", "ramUpgradable": false, "storageGb": 512,
+      "screenInches": 15.3, "resolution": "2880x1864", "panelType": "Liquid Retina (IPS)", "widthMm": 340.4, "depthMm": 237.6, "thicknessMm": 11.5, "weightKg": 1.51, "batteryWh": 66.5, "releaseYear": 2026, "chassisMaterial": "Aluminio"},
+    "notVerified": ["refreshRateHz", "cpuBaseWatts", "cpuBoostWatts", "priceUsd", "colorHex"], "conflicts": ["El registro no indica color; se usa Midnight, el de las fotos del M3 reutilizadas."],
+    "look": {"shell": "#2e3642", "deck": "#2e3642", "key": "#0f1115", "legend": "#e8eaed", "logo": "", "metal": 0.9},
+    "design": {"thicknessMinMm": 11.5, "thicknessMaxMm": 11.5, "colors": ["Sky Blue", "Silver", "Starlight", "Midnight"],
+      "ports": {"left": ["magsafe", "usbc", "usbc"], "right": ["audio"], "rear": null, "front": null}, "portsOrderConfirmed": false, "portsSource": 1,
+      "keyboard": {"numpad": false, "layout": "apple", "backlight": "Sí", "extra": "Magic Keyboard de 78 teclas con Touch ID"}, "notch": true, "materials": "Aluminio",
+      "notVerified": ["medidas del trackpad", "posición de altavoces y rejillas"]}
+  },
+  {
+    "id": 18, "brand": "Apple", "model": "MacBook Pro 16 (M3 Max)", "config": "M3 Max de 16 núcleos CPU y 40 GPU, 48 GB, 1 TB, Space Black",
+    "sources": ["https://support.apple.com/en-us/117737", "https://www.notebookcheck.net/Apple-s-fastest-laptop-starts-to-show-its-age-Apple-MacBook-Pro-16-2026-M5-Max-Review.1250821.0.html"],
+    "specs": {"cpu": "Apple M3 Max", "cpuCores": 16, "gpu": "GPU integrada Apple de 40 núcleos", "ramGb": 48, "ramType": "Memoria unificada (soldada)", "ramUpgradable": false, "storageGb": 1024,
+      "screenInches": 16.2, "resolution": "3456x2234", "refreshRateHz": 120, "panelType": "Liquid Retina XDR", "widthMm": 355.7, "depthMm": 248.1, "thicknessMm": 16.8, "weightKg": 2.16, "batteryWh": 100.0, "releaseYear": 2023, "chassisMaterial": "Aluminio"},
+    "notVerified": ["cpuBaseWatts", "cpuBoostWatts", "priceUsd"], "conflicts": ["El lado de cada puerto procede del análisis del modelo M5 Max, con el mismo conjunto de conectores."],
+    "look": {"shell": "#2e2e30", "deck": "#2e2e30", "key": "#0e0f11", "legend": "#e8eaed", "logo": "", "metal": 0.9},
+    "design": {"thicknessMinMm": 16.8, "thicknessMaxMm": 16.8, "colors": ["Space Black", "Silver"],
+      "ports": {"left": ["magsafe", "usbc", "usbc", "audio"], "right": ["sd", "usbc", "hdmi"], "rear": null, "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "layout": "apple", "backlight": "Sí", "extra": "Magic Keyboard de 78 teclas con Touch ID"}, "materials": "Aluminio",
+      "notVerified": ["medidas del trackpad", "posición de altavoces y rejillas", "muesca de la cámara en este modelo"]}
+  },
+  {
+    "id": 7, "brand": "Apple", "model": "MacBook Pro 16 (M5 Max)", "config": "M5 Max de 18 núcleos CPU y 40 GPU, 36 GB, 2 TB, Space Black",
+    "sources": ["https://support.apple.com/en-us/126319", "https://www.notebookcheck.net/Apple-s-fastest-laptop-starts-to-show-its-age-Apple-MacBook-Pro-16-2026-M5-Max-Review.1250821.0.html"],
+    "specs": {"cpu": "Apple M5 Max", "cpuCores": 18, "gpu": "GPU integrada Apple de 40 núcleos", "ramGb": 36, "ramType": "Memoria unificada (soldada)", "ramUpgradable": false, "storageGb": 2048,
+      "screenInches": 16.2, "resolution": "3456x2234", "refreshRateHz": 120, "panelType": "Liquid Retina XDR", "widthMm": 355.7, "depthMm": 248.1, "thicknessMm": 16.8, "weightKg": 2.15, "batteryWh": 100.0, "releaseYear": 2026, "chassisMaterial": "Aluminio"},
+    "notVerified": ["cpuBaseWatts", "cpuBoostWatts", "priceUsd"], "conflicts": ["Peso: 2,15 kg según Apple; 2,14 kg según Notebookcheck."],
+    "look": {"shell": "#2a2b2e", "deck": "#2a2b2e", "key": "#0e0f11", "legend": "#e8eaed", "logo": "", "metal": 0.9},
+    "design": {"thicknessMinMm": 16.8, "thicknessMaxMm": 16.8, "colors": ["Space Black", "Silver"],
+      "ports": {"left": ["magsafe", "usbc", "usbc", "audio"], "right": ["sd", "usbc", "hdmi"], "rear": null, "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "layout": "apple", "backlight": "Sí", "extra": "Magic Keyboard de 78 teclas con Touch ID"}, "materials": "Aluminio",
+      "notVerified": ["medidas del trackpad", "posición de altavoces y rejillas", "muesca de la cámara en este modelo"]}
+  },
+  {
+    "id": 55, "brand": "Apple", "model": "MacBook Neo (A18 Pro) · 8 GB, 256 GB", "config": "A18 Pro, 8 GB, 256 GB",
+    "sources": ["https://support.apple.com/en-us/126322", "https://www.notebookcheck.net/Apple-MacBook-Neo-Review-Surprisingly-good-and-capable-laptop-for-599-with-one-big-flaw.1247679.0.html"],
+    "specs": {"cpu": "Apple A18 Pro", "cpuCores": 6, "gpu": "GPU integrada Apple de 5 núcleos", "ramGb": 8, "ramType": "Memoria unificada (soldada)", "ramUpgradable": false, "storageGb": 256,
+      "screenInches": 13.0, "resolution": "2408x1506", "panelType": "IPS", "widthMm": 297.5, "depthMm": 206.4, "thicknessMm": 12.7, "weightKg": 1.23, "batteryWh": 36.5, "releaseYear": 2026, "chassisMaterial": "Aluminio"},
+    "notVerified": ["refreshRateHz", "cpuBaseWatts", "cpuBoostWatts", "priceUsd", "colorHex"], "conflicts": ["El registro no indica color; se usa Silver.", "Peso: 1,23 kg según Apple; 1,235 kg según Notebookcheck."],
+    "look": {"shell": "#c9ccd0", "deck": "#c9ccd0", "key": "#e4e5e7", "legend": "#2c2e33", "logo": "", "metal": 0.8},
+    "design": {"thicknessMinMm": 12.7, "thicknessMaxMm": 12.7, "colors": ["Silver", "Blush", "Citrus", "Indigo"],
+      "ports": {"left": ["usbc", "usbc", "gap", "audio"], "right": [], "rear": null, "front": null}, "portsOrderConfirmed": true, "portsSource": 1,
+      "keyboard": {"numpad": false, "layout": "apple", "backlight": "No", "extra": "Magic Keyboard de 78 teclas, sin retroiluminación"},
+      "touchpad": {"widthMm": 115, "depthMm": 72}, "materials": "Aluminio",
+      "notVerified": ["color de las teclas", "posición de altavoces", "forma de la parte superior de la pantalla"]}
+  }
+]

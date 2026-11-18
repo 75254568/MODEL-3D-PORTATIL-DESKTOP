@@ -1,0 +1,86 @@
+{
+ "brand": "Dell",
+ "model": "XPS 14 (2026) DA14260 · Ultra X7 358H, 32 GB, 1 TB",
+ "widthMm": 309.52,
+ "depthMm": 209.71,
+ "thicknessMm": 14.62,
+ "thicknessFrontMm": 14.62,
+ "bodyRearMm": 10.52,
+ "bodyFrontMm": 10.52,
+ "lidThicknessMm": 4.1,
+ "lidLengthMm": 208.21,
+ "hingeYMm": 103.355,
+ "hingeZMm": 10.52,
+ "maxLidDeg": 140,
+ "innerFit": {
+  "scaleX": 0.989,
+  "scaleZ": 0.9838,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.14,
+ "cornerFrontMm": 5.5,
+ "cornerRearMm": 2.5,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "teclado de lado a lado sin separación",
+  "touchpad sin marco, señalado por un grabado sutil",
+  "fila de función física",
+  "bisagras cortas junto a los extremos",
+  "rótulo XPS en la tapa y DELL en la base",
+  "ranura de ventilación trasera"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "altavoces ocultos: no se dibujan",
+  "tipografía de los rótulos",
+  "el touchpad publicado mide 75 mm de fondo; se dibuja de 75 mm para que quepa bajo el teclado de este modelo",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "orden exacto de los puertos en cada lado"
+ ],
+ "sources": [
+  "https://www.dell.com/en-us/shop/laptop-computers/spd/xps14da14260",
+  "https://www.dell.com/support/manuals/en-us/xps-da14260-laptop/xps-14-da14260-setup-specifications/external-ports-and-slots?guid=guid-b8f739cc-a41e-4ac9-b3f8-ff6d9c6d8c19&lang=en-us",
+  "https://www.notebookcheck.net/Dell-XPS-14-2026-review-Fully-reborn-with-Intel-Panther-Lake-X7.1218670.0.html",
+  "https://tomshardware.com/laptops/dell-xps-14-2026-da14260-review"
+ ]
+}

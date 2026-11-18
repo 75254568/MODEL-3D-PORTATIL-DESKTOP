@@ -1,0 +1,102 @@
+{
+ "brand": "MSI",
+ "model": "Titan 18 HX (A14V)",
+ "widthMm": 404.0,
+ "depthMm": 307.5,
+ "thicknessMm": 32.05,
+ "thicknessFrontMm": 24.0,
+ "bodyRearMm": 25.549999999999997,
+ "bodyFrontMm": 17.5,
+ "lidThicknessMm": 6.5,
+ "lidLengthMm": 306.0,
+ "hingeYMm": 152.25,
+ "hingeZMm": 25.549999999999997,
+ "maxLidDeg": 145,
+ "innerFit": {
+  "scaleX": 0.9886,
+  "scaleZ": 0.985,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 6,
+ "cornerRearMm": 3,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "kensington"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo MSI",
+  "reposamanos de vidrio",
+  "touchpad RGB",
+  "base plateada con rótulo TITAN",
+  "trasera con puertos"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "forma de la extensión trasera plateada",
+  "posición de altavoces"
+ ],
+ "sources": [
+  "https://www.msi.com/Laptop/Titan-18-HX-A14VX/Specification",
+  "https://storage-asset.msi.com/specSheet/ca/nb/Titan%2018%20HX%20A14VIG-082CA.pdf",
+  "https://www.notebookcheck.net/MSI-Titan-18-HX-A14VIG-laptop-review-Year-of-the-dragon.794953.0.html"
+ ]
+}

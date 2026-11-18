@@ -1,0 +1,111 @@
+{
+ "brand": "Lenovo",
+ "model": "Legion Pro 7i Gen 9",
+ "widthMm": 363.5,
+ "depthMm": 262.1,
+ "thicknessMm": 25.9,
+ "thicknessFrontMm": 21.95,
+ "bodyRearMm": 19.5,
+ "bodyFrontMm": 15.549999999999999,
+ "lidThicknessMm": 6.4,
+ "lidLengthMm": 247.6,
+ "hingeYMm": 116.55,
+ "hingeZMm": 19.5,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9697,
+  "scaleZ": 0.9714,
+  "offsetZ": 0.75
+ },
+ "outlineFromFrac": 0.42,
+ "cornerFrontMm": 9,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 1.5,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "usbc"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "teclado completo con bloque numérico y RGB por tecla",
+  "touchpad de 120 × 75 mm bajo las teclas principales",
+  "bloque trasero con los puertos y salidas de aire",
+  "saliente de la cámara en la tapa",
+  "base con gran rejilla central y dos barras de goma"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "sin logotipo en la tapa: ninguna fuente consultada lo describe",
+  "posición de las rejillas laterales y traseras",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "orden de los puertos dentro de cada lado",
+  "logotipo de la tapa",
+  "ángulo de la bisagra",
+  "rejillas"
+ ],
+ "sources": [
+  "https://psrefstuff.lenovo.com/syspool/Sys/PDF/datasheet/Legion_Pro_7_16IRX9H_Datasheet_EN.pdf",
+  "https://psref.lenovo.com/syspool/Sys/PDF/Legion/Legion_Pro_7_16IRX9H/Legion_Pro_7_16IRX9H_Spec.PDF",
+  "https://www.notebookcheck.net/Lenovo-Legion-Pro-7-16-2024-review-Cream-of-the-crop-amongst-RTX-4080-laptops.819046.0.html",
+  "https://gamesradar.com/hardware/laptops/lenovo-legion-pro-7i-gen-9-review"
+ ]
+}

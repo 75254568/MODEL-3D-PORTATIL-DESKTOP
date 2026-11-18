@@ -87,6 +87,13 @@ public final class LaptopModel {
     private MeshView shadow;
 
     private final double W, D, T, lt, bodyH, yHinge;
+    /** Exterior modelado en Blender; null si este laptop aun no lo tiene. */
+    private final BlenderShell blender;
+    /** Rasgos de la serie para un modelo sin fotografias propias; null si las tiene o si la serie no esta en la tabla. */
+    private final DesignProfile profile;
+    private final Color lidColor, keyTop, keyBody;
+    private final Color backlight;      // retroiluminacion del teclado segun la serie; null = no se dibuja
+    private final Color seriesAccent;   // color de acento de la serie (fondo de pantalla, barra de luz); null = neutro
     private double hingeZ;
     private double photoLum = 1.0;
     private boolean below;
@@ -114,14 +121,30 @@ public final class LaptopModel {
         this.accent = accent;
         this.tint = tint;
         this.first = first;
-        this.W = nz(laptop.getWidthMm(), 350);
-        this.D = nz(laptop.getDepthMm(), 240);
-        this.T = nz(laptop.getThicknessMm(), 16);
-        this.lt = isZephyr(laptop) ? 5.0 : isObjModel(laptop) ? T - 14.5 : isScar(laptop) ? T - 17.0 : isAlienware(laptop) ? T - 21.0 : isLegion(laptop) ? T - 17.0 : isOmen(laptop) ? T - 18.0 : isMbp(laptop) ? T - 11.8 : isZbook(laptop) ? T - 22.0 : isHelios(laptop) ? T - 22.0 : isHelios16(laptop) ? T - 17.0 : isLoq() ? T - 15.7 : isVictus(laptop) ? T - 18.4 : isDellG16(laptop) ? T - 18.9 : isAorus(laptop) ? T - 16.3 : isBlade18(laptop) ? T - 17.0 : isM18(laptop) ? T - 18.6 : isEon18(laptop) ? T - 22.0 : genLidT(laptop);
+        this.blender = BlenderShell.of(laptop);
+        double[] size = blender != null ? new double[]{blender.width, blender.depth, blender.thickness} : footprint(laptop);
+        this.W = size[0];
+        this.D = size[1];
+        this.T = size[2];
+        // el perfil de la serie solo se aplica a quien no tiene fotografias propias; de quien las tiene solo se
+        // toma el color de acento, para el fondo de pantalla cuando entre sus fotos no hay una de la pantalla
+        DesignProfile series = DesignProfile.of(laptop);
+        this.profile = hasOwnBuilder(laptop) || genPhoto(laptop) != null ? null : series;
+        boolean gamingLook = "Gaming".equalsIgnoreCase(laptop.getCategory());
+        this.keyTop = DesignProfile.color(profile == null ? null : profile.keys(), Color.rgb(30, 33, 40));
+        this.keyBody = keyTop.deriveColor(0, 1, 0.55, 1);
+        this.backlight = profile == null ? null : DesignProfile.color(profile.legend(), null);
+        this.seriesAccent = series == null ? null : DesignProfile.color(series.accent(), null);
+        this.lt = blender != null ? blender.lidThickness : isZephyr(laptop) ? 5.0 : isObjModel(laptop) ? T - 14.5 : isScar(laptop) ? T - 17.0 : isAlienware(laptop) ? T - 21.0 : isLegion(laptop) ? T - 17.0 : isOmen(laptop) ? T - 18.0 : isMbp(laptop) ? T - 11.8 : isZbook(laptop) ? T - 22.0 : isHelios(laptop) ? T - 22.0 : isHelios16(laptop) ? T - 17.0 : isLoq() ? T - 15.7 : isVictus(laptop) ? T - 18.4 : isDellG16(laptop) ? T - 18.9 : isAorus(laptop) ? T - 16.3 : isBlade18(laptop) ? T - 17.0 : isM18(laptop) ? T - 18.6 : isEon18(laptop) ? T - 22.0 : genLidT(laptop);
         this.bodyH = T - lt;
         this.yHinge = T / 2 - bodyH;
-        Color rawDeck = parse(genColor(laptop));
+        // el color escrito en la ficha manda; si no hay, el de la serie; y si tampoco, un gris neutro
+        String ownColor = genColor(laptop);
+        String deckHex = ownColor != null ? ownColor : profile != null ? profile.deck() : gamingLook ? "#2a2b2f" : null;
+        Color rawDeck = parse(deckHex);
         this.deckColor = rawDeck.getBrightness() > 0.74 ? rawDeck.deriveColor(0, 1, 0.74 / rawDeck.getBrightness(), 1) : rawDeck;
+        Color rawLid = ownColor != null || profile == null ? rawDeck : DesignProfile.color(profile.lid(), rawDeck);
+        this.lidColor = rawLid.getBrightness() > 0.74 ? rawLid.deriveColor(0, 1, 0.74 / rawLid.getBrightness(), 1) : rawLid;
         this.hingeZ = D / 2;
         this.lidLen = D;
         this.photoModel = !(!isObjModel(laptop) && !isZephyr(laptop) && !isEon18(laptop) && !isM18(laptop) && !isBlade18(laptop) && !isAorus(laptop)
@@ -165,6 +188,9 @@ public final class LaptopModel {
             build();
         }
         applyInsidePhoto();
+        if (blender != null) {
+            applyBlenderShell();
+        }
         root.getChildren().addAll(innerRoot, shellRoot);
         if (shadow != null) {
             root.getChildren().add(0, shadow);
@@ -177,6 +203,126 @@ public final class LaptopModel {
 
     private static double nz(Double v, double dflt) {
         return v == null || v <= 0 ? dflt : v;
+    }
+
+    /** Verdadero si el laptop tiene un constructor propio, hecho a partir de sus fotografias. */
+    private static boolean hasOwnBuilder(Laptop l) {
+        return isObjModel(l) || isZephyr(l) || isEon18(l) || isM18(l) || isBlade18(l) || isAorus(l) || isDellG16(l)
+                || isVictus(l) || isHelios16(l) || isHelios(l) || isZbook(l) || isMbp(l) || isOmen(l) || isLegion(l)
+                || isAlienware(l) || isScar(l) || assetKey(l).contains("LOQ");
+    }
+
+    /**
+     * Ancho, fondo y grosor con los que se dibuja el equipo, en mm. Si la ficha no trae ancho y fondo se estiman
+     * a partir de la pantalla: el panel (por su diagonal y su proporcion) mas los marcos, con un chasis mas hondo
+     * en los equipos de juego. Asi un modelo sin medidas conserva al menos el tamano real de su pantalla, en vez
+     * de dibujarse todos iguales. Las medidas estimadas solo se usan para dibujar; no se guardan en la ficha.
+     */
+    static double[] footprint(Laptop l) {
+        boolean gaming = "Gaming".equalsIgnoreCase(l.getCategory());
+        double w = nz(l.getWidthMm(), 0), d = nz(l.getDepthMm(), 0);
+        double inches = nz(l.getScreenInches(), 0);
+        if ((w <= 0 || d <= 0) && inches > 0) {
+            double ratio = aspect(l.getResolution());
+            double panelH = inches * 25.4 / Math.sqrt(ratio * ratio + 1), panelW = panelH * ratio;
+            if (w <= 0) {
+                w = panelW + 12;
+            }
+            if (d <= 0) {
+                d = panelH + (gaming ? 50 : 30);
+            }
+        }
+        String cat = String.valueOf(l.getCategory()).toLowerCase(Locale.ROOT);
+        double t = nz(l.getThicknessMm(), gaming ? 23.9 : cat.contains("workstation") ? 24.0 : cat.contains("ultrabook") ? 14.9 : 17.9);
+        return new double[]{w > 0 ? w : 350, d > 0 ? d : 240, t};
+    }
+
+    /** Proporcion ancho/alto de la pantalla a partir de "2560x1600" o "16:10"; 16:10 si no se puede leer. */
+    private static double aspect(String resolution) {
+        if (resolution != null) {
+            java.util.regex.Matcher m = java.util.regex.Pattern.compile("(\\d+)\\s*[x×:]\\s*(\\d+)").matcher(resolution);
+            if (m.find()) {
+                double a = Double.parseDouble(m.group(1)), b = Double.parseDouble(m.group(2));
+                if (a > 0 && b > 0 && a / b > 1.2 && a / b < 2.6) {
+                    return a / b;
+                }
+            }
+        }
+        return 1.6;
+    }
+
+    /** De donde sale el aspecto exterior del modelo 3D de un laptop. */
+    public enum Exterior {
+        /** Modelado en Blender a partir de datos verificados de este equipo. */
+        BLENDER,
+        /** Fotografias del propio equipo. */
+        PHOTOS,
+        /** Fotografias de otro modelo de su misma familia, con el que comparte el constructor. */
+        FAMILY,
+        /** Rasgos de diseno de su serie (colores, rotulo, detalles), sin fotografias: una aproximacion. */
+        SERIES,
+        /** Forma neutra, solo con el tamano y el color de la ficha. */
+        GENERIC
+    }
+
+    /**
+     * {@code estimatedSize} es verdadero cuando el ancho o el fondo se estimaron a partir de la pantalla;
+     * {@code photosOf}, en los de tipo FAMILY, es el modelo del que son las fotos (null en el resto).
+     */
+    public record ExteriorInfo(Exterior kind, boolean estimatedSize, String photosOf) {
+
+        public String label() {
+            return switch (kind) {
+                case BLENDER -> "Modelo Blender";
+                case PHOTOS -> "Fotos reales";
+                case FAMILY -> "Fotos de su familia";
+                case SERIES -> "Diseño de la serie";
+                case GENERIC -> "Genérico";
+            };
+        }
+
+        /** Explicacion de una linea, para una ayuda emergente o la ficha. */
+        public String detail() {
+            String base = switch (kind) {
+                case BLENDER -> "Modelado en Blender con medidas y rasgos verificados en fuentes citadas; lo que no consta no se representa como dato real.";
+                case PHOTOS -> "Modelo 3D hecho con fotografías de este equipo.";
+                case FAMILY -> "Modelo 3D hecho con fotografías " + (photosOf == null ? "de otro modelo" : "del " + photosOf)
+                        + ", de su misma familia; puede diferir en detalles como el color o el teclado.";
+                case SERIES -> "Sin fotografías de este equipo: se dibuja con los colores y rasgos de su serie. Es una aproximación.";
+                case GENERIC -> "Sin fotografías ni rasgos de serie: forma neutra con el tamaño y el color de la ficha.";
+            };
+            return estimatedSize ? base + " Ancho y fondo estimados a partir de la pantalla." : base;
+        }
+    }
+
+    /**
+     * Originales que usan el constructor (y las fotos) de un hermano: las fotos son del Legion Pro 7i Gen 10, del
+     * Blade 18 y del MacBook Pro 16 M5 (ver INFORME_INTERIOR_FASE_D.md), y las comparten Gen 9, Blade 16 y M3 Max.
+     * Clave: fragmento del modelo que las toma prestadas; valor: modelo del que son.
+     */
+    private static final java.util.Map<String, String> FAMILY_PHOTOS = java.util.Map.of(
+            "LEGION PRO 7I GEN 9", "Lenovo Legion Pro 7i Gen 10",
+            "BLADE 16", "Razer Blade 18 (2024)",
+            "MACBOOK PRO 16 (M3", "Apple MacBook Pro 16 (M5 Max)");
+
+    public static ExteriorInfo exteriorInfo(Laptop l) {
+        boolean estimated = nz(l.getWidthMm(), 0) <= 0 || nz(l.getDepthMm(), 0) <= 0;
+        if (BlenderShell.exists(l)) {
+            return new ExteriorInfo(Exterior.BLENDER, false, null);
+        }
+        if (hasOwnBuilder(l) || genPhoto(l) != null) {
+            String sibling = sameChassis(l);
+            if (sibling != null) {
+                return new ExteriorInfo(Exterior.FAMILY, estimated, l.getBrand() + " " + sibling);
+            }
+            for (java.util.Map.Entry<String, String> e : FAMILY_PHOTOS.entrySet()) {
+                if (assetKey(l).contains(e.getKey())) {
+                    return new ExteriorInfo(Exterior.FAMILY, estimated, e.getValue());
+                }
+            }
+            return new ExteriorInfo(Exterior.PHOTOS, estimated, null);
+        }
+        return new ExteriorInfo(DesignProfile.of(l) != null ? Exterior.SERIES : Exterior.GENERIC, estimated, null);
     }
 
     private static Color parse(String hex) {
@@ -472,7 +618,9 @@ public final class LaptopModel {
                 return c;
             }
         }
-        return l.getColorHex();
+        // quien usa las fotos de un original y no trae color propio toma el de la ficha de ese original
+        String sibling = l.getColorHex() == null ? sameChassis(l) : null;
+        return sibling != null ? originalColor(sibling) : l.getColorHex();
     }
 
     private static double genLidT(Laptop l) {
@@ -486,8 +634,8 @@ public final class LaptopModel {
         return Math.max(2.6, Math.min(6.5, t * 0.26));
     }
 
-    private String[] genPhoto() {
-        String m = assetKey(d);
+    private static String[] genPhoto(Laptop l) {
+        String m = assetKey(l);
         for (String[] g : GEN_PHOTO) {
             if (m.contains(g[0].toUpperCase(Locale.ROOT)) && (hasRes(g[1], "deck.jpg") || hasRes(g[1], "screen.jpg")
                     || hasRes(g[1], "lid.jpg") || hasRes(g[1], "left.png") || hasRes(g[1], "right.png"))) {
@@ -505,7 +653,7 @@ public final class LaptopModel {
         double s = W / 354.0;
         double hB = bodyH * 0.30, hD = bodyH * 0.24, hZ = bodyH - hB - hD;
         boolean ghost = tint != null;
-        final String[] gp = genPhoto();
+        final String[] gp = genPhoto(d);
         final boolean gDeck = gp != null && hasRes(gp[1], "deck.jpg");
         final boolean gScreen = gp != null && hasRes(gp[1], "screen.jpg");
         if (gp != null) {
@@ -525,6 +673,11 @@ public final class LaptopModel {
         double wt = 2.2;
         wallR(shellRoot, "base", 0, W, D, hZ, RF, RB, wt, 0, y(hB, hZ), 0, deckColor);
         addWireOutline(shellRoot, 0, W, D, RF, RB, hB + hZ, 0, y(0, hB + hZ), 0);
+        if (profile != null && profile.lightBar() && seriesAccent != null && !ghost) {
+            // barra de luz de la serie en el canto delantero de la base
+            box(shellRoot, "base", 0, false, W * 0.52, Math.max(1.0, hB * 0.45), 1.2, 0, y(hB * 0.30, hB * 0.45), -D / 2 - 0.35,
+                    seriesAccent.interpolate(Color.WHITE, 0.25));
+        }
         boolean flanks = gp != null && (hasRes(gp[1], "left.png") || hasRes(gp[1], "right.png"));
         if (!ghost) {
             double yTopB = T / 2 - bodyH, yBotB = T / 2;
@@ -636,7 +789,7 @@ public final class LaptopModel {
         addWireOutline(shellRoot, 4, W, D, RF, RB, hD, 0, deckY, 0);
         if (!ghost) {
             double yy = T / 2 - bodyH - 0.08;
-            Image kb = Textures.keyboard(W, D, deckColor, accent, down);
+            Image kb = Textures.keyboard(W, D, deckColor, accent, down, keyTop, backlight);
             MeshView mv = quad(kb, flat(-W / 2, D / 2, W / 2, D / 2, W / 2, -D / 2, -W / 2, -D / 2, 0));
             if (gDeck) {
                 Image deckImg = Textures.resource(gp[1], "deck.jpg");
@@ -651,40 +804,63 @@ public final class LaptopModel {
                 keyboardMat = (PhongMaterial) mv.getMaterial();
                 decal(shellRoot, "deck", 4, mv, yy, 0);
                 addKeysGeneric(T / 2 - bodyH);
+                if (profile != null && profile.trackpoint()) {
+                    // puntero rojo entre las teclas G, H y B, a la altura de las teclas
+                    double keyH = Math.max(1.4, Math.min(2.2, bodyH * 0.16));
+                    double tx = -W / 2 + W * 0.11 + W * 0.78 * (6.8 / 14.9), tz = D / 2 - (D * 0.07 + D * 0.47 * 4 / 6);
+                    cylinderY(shellRoot, "deck", 4, Math.max(2.2, W * 0.008), keyH + 0.5, tx, T / 2 - bodyH - (keyH + 0.5) / 2, tz,
+                            Color.rgb(214, 38, 30));
+                }
             }
             if (!flanks) {
                 addPortsGeneric(T / 2 - bodyH, bodyH);
             }
         }
 
-        // tier 5: tapa con pantalla, pivotando sobre la bisagra trasera
+        // tier 5: tapa con pantalla, pivotando sobre la bisagra. En las series con repisa trasera de ventilacion
+        // la bisagra va adelantada y la tapa es mas corta que la base.
+        double shelf = profile == null ? 0 : Math.min(profile.shelf() * W / 360.0, D * 0.14);
+        final double L = D - shelf;
+        hingeZ = D / 2 - shelf;
+        lidLen = L;
+        if (shelf > 1 && !ghost) {
+            // rejilla de la repisa: una franja mas oscura detras de la bisagra
+            box(shellRoot, "base", 0, false, W * 0.82, 0.5, shelf * 0.46, 0, T / 2 - bodyH - 0.2, D / 2 - shelf * 0.5,
+                    deckColor.deriveColor(0, 1, 0.55, 1));
+        }
         lidPivot.getTransforms().add(lidRot);
         lidPivot.setTranslateY(yHinge);
-        lidPivot.setTranslateZ(D / 2);
+        lidPivot.setTranslateZ(hingeZ);
         shellRoot.getChildren().add(lidPivot);
-        slabR(lidPivot, "lid", -1, W, D, lt, RLT, RLB, 0, -lt / 2, -D / 2, deckColor);
-        addWireOutline(lidPivot, -1, W, D, RLT, RLB, lt, 0, -lt / 2, -D / 2);
+        slabR(lidPivot, "lid", -1, W, L, lt, RLT, RLB, 0, -lt / 2, -L / 2, lidColor);
+        addWireOutline(lidPivot, -1, W, L, RLT, RLB, lt, 0, -lt / 2, -L / 2);
         cylinderX(lidPivot, "hinge", -1, false, lt * 0.5, W * 0.72, 0, -lt * 0.5, 0, Color.rgb(40, 42, 46));
         if (!ghost) {
-            double sw = W * 0.97, sd = D * 0.97;
-            Image scr = Textures.screen(d, sw, sd, accent, false, 0);
-            MeshView mv = quad(scr, flat(-sw / 2, -D * 0.985, sw / 2, -D * 0.985, sw / 2, -D * 0.015, -sw / 2, -D * 0.015, 0));
+            double sw = W * 0.97, sd = L * 0.97;
+            Image scr = Textures.screen(d, sw, sd, accent, false, 0, seriesAccent, profile != null && profile.notch());
+            MeshView mv = quad(scr, flat(-sw / 2, -L * 0.985, sw / 2, -L * 0.985, sw / 2, -L * 0.015, -sw / 2, -L * 0.015, 0));
             screenMat = (PhongMaterial) mv.getMaterial();
             if (gScreen) {
-                mv = quad(Textures.resource(gp[1], "screen.jpg"), flat(-W / 2, -D, W / 2, -D, W / 2, 0, -W / 2, 0, 0));
+                mv = quad(Textures.resource(gp[1], "screen.jpg"), flat(-W / 2, -L, W / 2, -L, W / 2, 0, -W / 2, 0, 0));
                 screenMat = null;
                 decal(lidPivot, "display", -1, mv, 0.08, 0);
             } else {
                 decal(lidPivot, "display", -1, mv, 0.08, 0);
             }
-            cylinderY(lidPivot, "lid", -1, 1.6, 0.3, 0, 0.12, -D * 0.99 + 1.2, Color.rgb(30, 30, 34));
-            cylinderY(lidPivot, "lid", -1, 0.85, 0.4, 0, 0.18, -D * 0.99 + 1.2, Color.rgb(6, 8, 16));
+            if (profile == null || !profile.notch()) {
+                cylinderY(lidPivot, "lid", -1, 1.6, 0.3, 0, 0.12, -L * 0.99 + 1.2, Color.rgb(30, 30, 34));
+                cylinderY(lidPivot, "lid", -1, 0.85, 0.4, 0, 0.18, -L * 0.99 + 1.2, Color.rgb(6, 8, 16));
+            }
             if (gp != null && hasRes(gp[1], "lid.jpg")) {
                 decal(lidPivot, "lid", -1, quad(Textures.resource(gp[1], "lid.jpg"),
-                        flat(W / 2, -D, -W / 2, -D, -W / 2, 0, W / 2, 0, 0)), -lt - 0.08, 0);
+                        flat(W / 2, -L, -W / 2, -L, -W / 2, 0, W / 2, 0, 0)), -lt - 0.08, 0);
             } else {
-                Image logo = Textures.logo(String.valueOf(d.getBrand()), deckColor);
-                decal(lidPivot, "lid", -1, quad(logo, flat(W / 2, -D, -W / 2, -D, -W / 2, 0, W / 2, 0, 0)), -lt - 0.08, 0);
+                // sin perfil: el nombre de la marca, centrado y tenue, como hasta ahora
+                Image logo = profile == null
+                        ? Textures.lid(lidColor, String.valueOf(d.getBrand()).toUpperCase(Locale.ROOT), null, false, null, null)
+                        : Textures.lid(lidColor, profile.logo(), DesignProfile.color(profile.logoColor(), null),
+                        "corner".equals(profile.logoPlace()), profile.lidAccent(), seriesAccent);
+                decal(lidPivot, "lid", -1, quad(logo, flat(W / 2, -L, -W / 2, -L, -W / 2, 0, W / 2, 0, 0)), -lt - 0.08, 0);
             }
         }
     }
@@ -707,8 +883,8 @@ public final class LaptopModel {
                 double w = unit * key.weight();
                 double cx = -W / 2 + x + w / 2;
                 double rad = Math.min(2.2, Math.min(w, rowH) * 0.22);
-                partItem(shellRoot, Shapes.keycapBody(w, rowH, keyH, 0.7, rad), "deck", 4, false, Color.rgb(14, 16, 20), null, cx, topY - keyH / 2, z);
-                partItem(shellRoot, Shapes.keycapTop(w, rowH, keyH, 0.7, rad), "deck", 4, false, Color.rgb(30, 33, 40), null, cx, topY - keyH / 2, z);
+                partItem(shellRoot, Shapes.keycapBody(w, rowH, keyH, 0.7, rad), "deck", 4, false, keyBody, null, cx, topY - keyH / 2, z);
+                partItem(shellRoot, Shapes.keycapTop(w, rowH, keyH, 0.7, rad), "deck", 4, false, keyTop, null, cx, topY - keyH / 2, z);
                 keyItems.put(key.code(), items.get(items.size() - 1));
                 x += w + gap;
             }
@@ -4706,6 +4882,164 @@ public final class LaptopModel {
         cylinderY(lidPivot, "lid", -1, 0.4, 0.3, 0, ty + 0.05, topEdgeZ, Color.rgb(70, 90, 70));
     }
 
+    /* ------------------------------------------------------------------ exterior modelado en Blender */
+
+    private static boolean isUnder(Node n, Group ancestor) {
+        for (Node p = n; p != null; p = p.getParent()) {
+            if (p == ancestor) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** Que hay de verificado y de supuesto en el modelo de Blender de un laptop. */
+    public record BlenderInfo(int portsPlaced, java.util.List<String> verified, java.util.List<String> assumed,
+                              java.util.List<String> portsNotPlaced, java.util.List<String> notVerified) {
+    }
+
+    /** Datos del modelo de Blender del laptop, o null si no tiene. */
+    public static BlenderInfo blenderInfo(Laptop l) {
+        com.fasterxml.jackson.databind.JsonNode m = BlenderShell.meta(l);
+        if (m == null) {
+            return null;
+        }
+        java.util.function.Function<String, java.util.List<String>> list = k -> {
+            java.util.List<String> out = new ArrayList<>();
+            m.path(k).forEach(n -> out.add(n.asText()));
+            return out;
+        };
+        return new BlenderInfo(m.path("portsPlaced").size(), list.apply("verifiedFeatures"), list.apply("assumed"),
+                list.apply("portsNotPlaced"), list.apply("notVerified"));
+    }
+
+    /** Materiales del modelo de Blender que forman la superficie visible del equipo. */
+    private static final java.util.Set<String> BLENDER_SURFACES =
+            java.util.Set.of("Chasis", "Cubierta", "Base", "Teclas", "Touchpad", "Reposamanos_vidrio");
+
+    /** Superficies grandes de los modelos sin fotos. */
+    private static final java.util.Set<String> BLENDER_PLAIN =
+            java.util.Set.of("Cubierta", "Base", "Tapa_lisa", "Canto_liso", "Canto_tapa_liso");
+
+    /**
+     * Sustituye el exterior construido por el modelo de Blender y conserva el interior. Las fotografias reales de la
+     * pantalla, la tapa y la base, si este laptop las tiene, se mantienen encima del modelo.
+     */
+    private void applyBlenderShell() {
+        Image screenPhoto = null, lidPhoto = null, bottomPhoto = null;
+        if (!blender.photoTextured && (hasOwnBuilder(d) || genPhoto(d) != null)) {
+            for (Item it : items) {
+                if (!it.decal || it.mat == null || it.mat.getDiffuseMap() == null) {
+                    continue;
+                }
+                Image img = it.mat.getDiffuseMap();
+                if ("display".equals(it.name) && screenPhoto == null) {
+                    screenPhoto = img;
+                } else if ("lid".equals(it.name) && lidPhoto == null && it.baseY < 0) {
+                    lidPhoto = img;
+                } else if ("base".equals(it.name) && bottomPhoto == null && it.baseY > T / 2 - 0.01) {
+                    bottomPhoto = img;
+                }
+            }
+            if (isEon18(d) && tint == null) {
+                // este constructor lleva las fotos como tapas de la pieza, no como calcomanias
+                screenPhoto = Textures.resource("op/photo", "screen.jpg");
+                lidPhoto = Textures.resource("op/photo", "lid.jpg");
+                bottomPhoto = Textures.resource("op/photo", "bottom.jpg");
+            }
+        }
+        items.removeIf(it -> isUnder(it.node, shellRoot));
+        keyItems.clear();
+        keyboardMat = null;
+        screenMat = null;
+        lidPivot.getChildren().clear();
+        shellRoot.getChildren().setAll(lidPivot);
+        // la cuna ya esta en la geometria del modelo: la inclinacion de los constructores anteriores la duplicaria
+        shellRoot.getTransforms().clear();
+        innerRoot.getTransforms().clear();
+        if (!lidPivot.getTransforms().contains(lidRot)) {
+            lidPivot.getTransforms().add(lidRot);
+        }
+        hingeZ = blender.hingeY;
+        lidLen = blender.lidLength;
+        lidPivot.setTranslateY(yHinge);
+        lidPivot.setTranslateZ(hingeZ);
+
+        for (ExternalModel.Part p : blender.body.parts()) {
+            String part = BlenderShell.part(p);
+            boolean deckPart = part.equals("deck") || part.equals("keys") || part.equals("legend");
+            String name = deckPart ? "deck" : part.equals("hinge") ? "hinge" : "base";
+            boolean shell = part.equals("deck") || part.equals("base");
+            addBlenderPart(shellRoot, p, name, deckPart ? 4 : 0, T / 2, shell, false);
+        }
+        for (ExternalModel.Part p : blender.lid.parts()) {
+            String part = BlenderShell.part(p);
+            boolean screen = part.equals("display");
+            addBlenderPart(lidPivot, p, screen || part.equals("bezel") ? "display" : "lid", -1, 0, part.equals("lid"), screen);
+            if (screen && (!blender.photoTextured || blender.generatedScreen)) {
+                // sin foto de este equipo, la pantalla muestra el fondo generado con los datos de su ficha
+                p.phong().setDiffuseMap(screenPhoto != null ? null : Textures.screen(d, blender.width, blender.lidLength, accent, false, 0, seriesAccent, false));
+                p.phong().setDiffuseColor(Color.WHITE);
+            }
+        }
+        if (blender.photoTextured) {
+            // el contorno sigue la silueta real: por debajo de esa altura la base se estrecha y quedaria flotando
+            double from = bodyH * blender.outlineFrom, high = bodyH - from;
+            addWireOutline(shellRoot, 0, W, D, blender.cornerFront, blender.cornerRear, high, 0, T / 2 - from - high / 2, 0);
+            addWireOutline(lidPivot, -1, W, lidLen, blender.cornerLidFree, blender.cornerLidHinge, lt, 0, -lt / 2, -lidLen / 2);
+        } else {
+            addWireOutline(shellRoot, 0, W, D, RF, RB, bodyH, 0, T / 2 - bodyH / 2, 0);
+            addWireOutline(lidPivot, -1, W, lidLen, RLT, RLB, lt, 0, -lt / 2, -lidLen / 2);
+        }
+        if (tint == null) {
+            final double L = lidLen;
+            if (screenPhoto != null) {
+                decal(lidPivot, "display", -1, quad(screenPhoto, flat(-W / 2, -L, W / 2, -L, W / 2, 0, -W / 2, 0, 0)), 0.18, 0);
+            }
+            if (lidPhoto != null) {
+                decal(lidPivot, "lid", -1, quad(lidPhoto, flat(W / 2, -L, -W / 2, -L, -W / 2, 0, W / 2, 0, 0)), -lt - 0.1, 0);
+            }
+            if (bottomPhoto != null) {
+                decal(shellRoot, "base", 0, quad(bottomPhoto, flat(W / 2, D / 2, -W / 2, D / 2, -W / 2, -D / 2, W / 2, -D / 2, 0)), T / 2 + 0.12, 0);
+            }
+        }
+        // el interior se dibujo para un cuerpo de altura constante: debe caber tambien bajo la parte delantera, mas baja
+        javafx.geometry.Bounds inner = innerRoot.getBoundsInLocal();
+        double room = Math.max(1.0, blender.bodyFront - 0.6), innerH = T / 2 - inner.getMinY();
+        double fitY = !inner.isEmpty() && innerH > room ? room / innerH : 1;
+        // en los disenos propios la base puede estrecharse abajo: el interior no debe asomar por ese chaflan
+        innerRoot.getTransforms().add(new javafx.scene.transform.Translate(0, 0, blender.innerOffsetZ));
+        innerRoot.getTransforms().add(new javafx.scene.transform.Scale(blender.innerScaleX, fitY, blender.innerScaleZ, 0, T / 2, 0));
+    }
+
+    /** Brillo maximo de un material: las grandes superficies lisas se limitan mas para que las luces no las quemen. */
+    private double brightLimit(String material) {
+        return blender.described && BLENDER_PLAIN.contains(material) ? 0.62 : 0.74;
+    }
+
+    private void addBlenderPart(Group parent, ExternalModel.Part p, String name, double tier, double y, boolean shell, boolean decal) {
+        MeshView view = p.view();
+        view.setUserData(name);
+        view.setTranslateY(y);
+        parent.getChildren().add(view);
+        // con las luces del visor un color muy claro se quema a blanco puro y pierde el volumen (salvo lo que emite luz)
+        Color c = p.color();
+        if (p.phong().getDiffuseMap() != null) {
+            c = decal ? Color.WHITE : Color.gray(blender.photoGain(p.material()));
+            p.phong().setDiffuseColor(c);
+        } else if (c.getBrightness() > brightLimit(p.material()) && !p.material().startsWith("Luz") && !"Rotulos".equals(p.material())) {
+            c = c.deriveColor(0, 1, brightLimit(p.material()) / c.getBrightness(), 1);
+            p.phong().setDiffuseColor(c);
+        } else if (!blender.described && c.getBrightness() < 0.5 && BLENDER_SURFACES.contains(p.material())) {
+            // y uno muy oscuro se queda en negro: se levanta un poco para que se distingan teclas, cubierta y aristas
+            c = Color.hsb(c.getHue(), c.getSaturation(), 0.09 + 0.91 * c.getBrightness());
+            p.phong().setDiffuseColor(c);
+        }
+        Item item = new Item(view, name, tier, y, shell, decal, c, p.phong(), p.phong().getSpecularColor());
+        item.map = p.phong().getDiffuseMap();
+        items.add(item);
+    }
+
     /* ------------------------------------------------------------------ cubiertas con forma (esquinas redondeadas y biseles) */
 
     private void partItem(Group parent, javafx.scene.shape.MeshView mv, String name, double tier, boolean shell, Color base,
@@ -4820,7 +5154,9 @@ public final class LaptopModel {
     }
 
     public void setLid(double deg) {
-        this.lidDeg = Math.max(0, Math.min(180, deg));
+        // con modelo de Blender se respeta el angulo maximo publicado para ese equipo, si se conoce
+        double max = blender != null && blender.maxLidDeg > 0 ? blender.maxLidDeg : 180;
+        this.lidDeg = Math.max(0, Math.min(max, deg));
         lidRot.setAngle(-lidDeg);
     }
 
@@ -4870,6 +5206,8 @@ public final class LaptopModel {
      */
     /** Marca|modelo (en minusculas) de los laptops del catalogo original, los unicos con fotos e interiores propios. */
     private static volatile java.util.Set<String> originals;
+    /** Color de la ficha de cada original, por modelo en minusculas (se llena junto con {@link #originals}). */
+    private static final java.util.Map<String, String> originalColors = new java.util.concurrent.ConcurrentHashMap<>();
 
     private static java.util.Set<String> originals() {
         java.util.Set<String> set = originals;
@@ -4878,6 +5216,9 @@ public final class LaptopModel {
             try (java.io.InputStream in = LaptopModel.class.getResourceAsStream("/seed/laptops.json")) {
                 for (com.fasterxml.jackson.databind.JsonNode n : new com.fasterxml.jackson.databind.ObjectMapper().readTree(in)) {
                     set.add((n.path("brand").asText() + "|" + n.path("model").asText()).toLowerCase(Locale.ROOT));
+                    if (n.hasNonNull("colorHex")) {
+                        originalColors.put(n.path("model").asText().toLowerCase(Locale.ROOT), n.path("colorHex").asText());
+                    }
                 }
             } catch (java.io.IOException | RuntimeException e) {
                 // sin la lista no se puede saber a que modelo pertenece cada recurso: no se asigna ninguno
@@ -4898,7 +5239,37 @@ public final class LaptopModel {
             return "";
         }
         boolean original = originals().contains((l.getBrand() + "|" + l.getModel()).toLowerCase(Locale.ROOT));
-        return original ? l.getModel().toUpperCase(Locale.ROOT) : "";
+        if (original) {
+            return l.getModel().toUpperCase(Locale.ROOT);
+        }
+        String sibling = sameChassis(l);
+        return sibling == null ? "" : sibling.toUpperCase(Locale.ROOT);
+    }
+
+    /**
+     * Excepciones a la regla anterior, decididas a mano: modelos nuevos que conservan el chasis de un original
+     * (sus fichas dan las mismas medidas) y por eso usan las fotos y el interior de ese original.
+     * Clave: comienzo de "marca|modelo" del modelo nuevo, en minusculas; valor: modelo del original.
+     */
+    private static final java.util.Map<String, String> SAME_CHASSIS = java.util.Map.of(
+            "apple|macbook air 15 (m5)", "MacBook Air 15 (M3)",        // 340,4 x 237,6 x 11,5 mm en ambas fichas
+            "msi|titan 18 hx ai (a2xw)", "Titan 18 HX (A14V)");        // 404 x 307 x 32 mm en ambas fichas
+
+    /** Modelo original cuyas fotos usa este laptop por tener su mismo chasis; null si no es uno de esos casos. */
+    private static String sameChassis(Laptop l) {
+        String key = (l.getBrand() + "|" + l.getModel()).toLowerCase(Locale.ROOT);
+        for (java.util.Map.Entry<String, String> e : SAME_CHASSIS.entrySet()) {
+            if (key.startsWith(e.getKey())) {
+                return e.getValue();
+            }
+        }
+        return null;
+    }
+
+    /** Color de la ficha de un modelo original, o null; lo usa quien toma sus fotos y no trae color propio. */
+    private static String originalColor(String model) {
+        originals();
+        return originalColors.get(model.toLowerCase(Locale.ROOT));
     }
 
     public record InteriorInfo(boolean reconstructed, java.util.Map<String, Integer> counts,
@@ -4937,10 +5308,10 @@ public final class LaptopModel {
         if (changed) {
             Item ki = keyItems.get(code);
             if (ki != null) {
-                ki.base = pressed ? accent : (ki.map != null ? Color.WHITE : Color.rgb(30, 33, 40));
+                ki.base = pressed ? accent : (ki.map != null ? Color.WHITE : keyTop);
                 ki.mat.setDiffuseColor(ki.base);
             } else {
-                keyboardMat.setDiffuseMap(Textures.keyboard(W, D, deckColor, accent, down));
+                keyboardMat.setDiffuseMap(Textures.keyboard(W, D, deckColor, accent, down, keyTop, backlight));
             }
         }
     }
@@ -5000,8 +5371,8 @@ public final class LaptopModel {
 
     private void refreshScreen() {
         if (screenMat != null && tint == null) {
-            double sw = W * 0.97, sd = D * 0.97;
-            screenMat.setDiffuseMap(Textures.screen(d, sw, sd, accent, stress, screenPhase));
+            double sw = W * 0.97, sd = lidLen * 0.97;
+            screenMat.setDiffuseMap(Textures.screen(d, sw, sd, accent, stress, screenPhase, seriesAccent, profile != null && profile.notch()));
         }
     }
 

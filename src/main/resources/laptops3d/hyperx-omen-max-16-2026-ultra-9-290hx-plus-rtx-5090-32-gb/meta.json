@@ -1,0 +1,91 @@
+{
+ "brand": "HyperX",
+ "model": "OMEN MAX 16 (2026) · Ultra 9 290HX Plus, RTX 5090, 32 GB",
+ "widthMm": 356.5,
+ "depthMm": 269.0,
+ "thicknessMm": 28.75,
+ "thicknessFrontMm": 26.15,
+ "bodyRearMm": 22.75,
+ "bodyFrontMm": 20.15,
+ "lidThicknessMm": 6.0,
+ "lidLengthMm": 267.5,
+ "hingeYMm": 133.0,
+ "hingeZMm": 22.75,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9871,
+  "scaleZ": 0.9829,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.2,
+ "cornerFrontMm": 7,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 5,
+ "cornerLidHingeMm": 2,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "rear",
+   "type": "power"
+  },
+  {
+   "side": "rear",
+   "type": "hdmi"
+  },
+  {
+   "side": "rear",
+   "type": "rj45"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "logotipo HyperX",
+  "rótulo O16 de la cubierta",
+  "rejillas laterales"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "sin foto fiable de: base",
+  "lado del segundo USB-A: se deduce porque el izquierdo ya tiene uno",
+  "material",
+  "ángulo de la bisagra"
+ ],
+ "sources": [
+  "https://www.hp.com/us-en/gaming-pc/laptops/2026-hyperx-omen-max16-intel.html",
+  "https://www.hp.com/us-en/shop/pdp/hyperx-omen-max-16-inch-gaming-laptop-pc-16-ah1932nr",
+  "https://www.notebookcheck.net/HP-HyperX-Omen-Max-16-review-The-gaming-laptop-with-a-460-W-AC-adapter.1396262.0.html"
+ ]
+}

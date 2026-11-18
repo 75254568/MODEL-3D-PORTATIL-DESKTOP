@@ -1,0 +1,91 @@
+{
+ "brand": "ASUS",
+ "model": "ROG Zephyrus G16 (GU605MY)",
+ "widthMm": 354.0,
+ "depthMm": 246.0,
+ "thicknessMm": 17.4,
+ "thicknessFrontMm": 14.9,
+ "bodyRearMm": 12.9,
+ "bodyFrontMm": 10.4,
+ "lidThicknessMm": 4.5,
+ "lidLengthMm": 244.5,
+ "hingeYMm": 121.5,
+ "hingeZMm": 12.9,
+ "maxLidDeg": 135,
+ "innerFit": {
+  "scaleX": 0.9864,
+  "scaleZ": 0.9805,
+  "offsetZ": 0.0
+ },
+ "outlineFromFrac": 0.22,
+ "cornerFrontMm": 7.0,
+ "cornerRearMm": 5.0,
+ "cornerLidFreeMm": 7.0,
+ "cornerLidHingeMm": 5.0,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {},
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "power"
+  },
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usba"
+  },
+  {
+   "side": "left",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "sd"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usbc"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "fotos",
+ "verifiedFeatures": [
+  "diseño propio modelado sobre fotos reales del equipo",
+  "teclas colocadas según su foto",
+  "puertos y rejillas laterales proyectados desde sus fotos",
+  "cubierta con zona de teclado rebajada",
+  "Slash en relieve",
+  "placa ROG de la tapa",
+  "teclas superiores y encendido hexagonal",
+  "cuatro bisagras",
+  "barras de goma inferiores"
+ ],
+ "assumed": [
+  "altura exacta de los relieves, estimada",
+  "radios de las esquinas medidos en foto",
+  "grosor de la tapa"
+ ],
+ "notVerified": [
+  "sin foto fiable de: trasera",
+  "lado del conector de audio",
+  "ubicación de altavoces"
+ ],
+ "sources": [
+  "https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024/spec",
+  "https://www.notebookcheck.net/Asus-ROG-Zephyrus-G16-laptop-review-A-slim-gamer-with-an-RTX-4090-and-unfulfilled-potential.862201.0.html"
+ ]
+}

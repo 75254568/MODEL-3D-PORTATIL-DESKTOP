@@ -29,8 +29,8 @@
                 <ToggleButton fx:id="tgRecon" text="Interior 3D reconstruido" styleClass="chip" minWidth="-Infinity"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <HBox alignment="CENTER_LEFT" spacing="0.0" minWidth="-Infinity">
-                    <ToggleButton fx:id="tbTabla" text="Tabla" selected="true" styleClass="seg-first" minWidth="-Infinity"/>
-                    <ToggleButton fx:id="tbTarjetas" text="Tarjetas" styleClass="seg-last" minWidth="-Infinity"/>
+                    <ToggleButton fx:id="tbTarjetas" text="Tarjetas" styleClass="seg-first" minWidth="-Infinity"/>
+                    <ToggleButton fx:id="tbTabla" text="Tabla" styleClass="seg-last" minWidth="-Infinity"/>
                 </HBox>
                 <Button text="Quitar filtros" onAction="#onQuitarFiltros" styleClass="quiet" minWidth="-Infinity"/>
             </HBox>

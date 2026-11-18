@@ -1,0 +1,91 @@
+{
+ "brand": "MSI",
+ "model": "Prestige 14 Flip AI+ (2026) · Ultra X7 358H, 32 GB, 1 TB",
+ "widthMm": 315.6,
+ "depthMm": 221.9,
+ "thicknessMm": 13.9,
+ "thicknessFrontMm": 11.9,
+ "bodyRearMm": 10.100000000000001,
+ "bodyFrontMm": 8.100000000000001,
+ "lidThicknessMm": 3.8,
+ "lidLengthMm": 220.4,
+ "hingeYMm": 109.45,
+ "hingeZMm": 10.100000000000001,
+ "maxLidDeg": null,
+ "innerFit": {
+  "scaleX": 0.9772,
+  "scaleZ": 0.9694,
+  "offsetZ": 0.2
+ },
+ "outlineFromFrac": 0.46,
+ "cornerFrontMm": 7,
+ "cornerRearMm": 4,
+ "cornerLidFreeMm": 6.5,
+ "cornerLidHingeMm": 3,
+ "photoTextured": true,
+ "photoGain": 1.0,
+ "photoGains": {
+  "Foto_cubierta": 1.0,
+  "Foto_tapa": 1.0,
+  "Foto_base": 1.0,
+  "Foto_izquierda": 1.0,
+  "Foto_derecha": 1.0,
+  "Foto_trasera": 1.0,
+  "Foto_frente": 1.0
+ },
+ "panel": {},
+ "portsPlaced": [
+  {
+   "side": "left",
+   "type": "hdmi"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "left",
+   "type": "usbc"
+  },
+  {
+   "side": "right",
+   "type": "audio"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  },
+  {
+   "side": "right",
+   "type": "usba"
+  }
+ ],
+ "portsNotPlaced": [],
+ "generatedScreen": false,
+ "modelBasis": "descripciones",
+ "verifiedFeatures": [
+  "diseño propio modelado a partir de su ficha, reseñas y galerías consultadas, sin fotos proyectadas",
+  "convertible con dos bisagras de 360 grados a la vista",
+  "cantos claros con acabado diamantado",
+  "teclas oscuras y redondeadas",
+  "banda perforada ancha en la base"
+ ],
+ "assumed": [
+  "posición y tamaño de teclado, rejillas y rótulos, estimados a partir de esas fuentes",
+  "radios de las esquinas y grosor de la tapa, estimados",
+  "la pantalla muestra un fondo generado, no el del fabricante",
+  "medidas del touchpad, estimadas",
+  "posición del rótulo msi",
+  "el giro completo de la pantalla no se simula",
+  "texturas calculadas con un render del propio modelo: no son fotografías del equipo"
+ ],
+ "notVerified": [
+  "el proyecto no contiene fotos de este equipo: el modelo no reproduce texturas reales",
+  "bloque numérico (no consta; se dibuja sin él)",
+  "giro convertible: el visor no lo simula"
+ ],
+ "sources": [
+  "https://us.msi.com/Business-Productivity/Prestige-14-Flip-AI-Plus-D3MX/Specification",
+  "https://www.notebookcheck.net/Nearly-20-hours-of-battery-life-with-Panther-Lake-MSI-Prestige-14-Flip-AI-Convertible-review.1243401.0.html"
+ ]
+}
