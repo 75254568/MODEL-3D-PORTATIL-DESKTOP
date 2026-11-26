@@ -6,7 +6,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.laptopstudio.controller.CatalogController">
+            fx:controller="com.laptopexplorer.controller.AMJCatalogController">
 
     <top>
         <VBox>
@@ -17,22 +17,22 @@
             </HBox>
             <HBox styleClass="filter-bar" spacing="8.0" alignment="CENTER_LEFT">
                 <padding><Insets top="9.0" right="16.0" bottom="9.0" left="16.0"/></padding>
-                <HBox fx:id="searchBox" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="260.0" minWidth="160.0">
+                <HBox fx:id="pnlBusqueda" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="260.0" minWidth="160.0">
                     <padding><Insets left="9.0"/></padding>
                     <TextField fx:id="txtBuscar" promptText="Buscar por marca, modelo, CPU o GPU" HBox.hgrow="ALWAYS"/>
                 </HBox>
                 <ComboBox fx:id="cmbMarca" prefWidth="160.0"/>
                 <ComboBox fx:id="cmbCategoria" prefWidth="170.0"/>
-                <ToggleButton fx:id="tg2026" text="2026" styleClass="chip" minWidth="-Infinity"/>
-                <ToggleButton fx:id="tgRtx50" text="GPU RTX 50" styleClass="chip" minWidth="-Infinity"/>
-                <ToggleButton fx:id="tgRtx40" text="GPU RTX 40" styleClass="chip" minWidth="-Infinity"/>
-                <ToggleButton fx:id="tgRecon" text="Interior 3D reconstruido" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tgl2026" text="2026" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tglRtx50" text="GPU RTX 50" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tglRtx40" text="GPU RTX 40" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tglRecon" text="Interior 3D reconstruido" styleClass="chip" minWidth="-Infinity"/>
                 <Region HBox.hgrow="ALWAYS"/>
                 <HBox alignment="CENTER_LEFT" spacing="0.0" minWidth="-Infinity">
-                    <ToggleButton fx:id="tbTarjetas" text="Tarjetas" styleClass="seg-first" minWidth="-Infinity"/>
-                    <ToggleButton fx:id="tbTabla" text="Tabla" styleClass="seg-last" minWidth="-Infinity"/>
+                    <ToggleButton fx:id="tglTarjetas" text="Tarjetas" styleClass="seg-first" minWidth="-Infinity"/>
+                    <ToggleButton fx:id="tglTabla" text="Tabla" styleClass="seg-last" minWidth="-Infinity"/>
                 </HBox>
-                <Button text="Quitar filtros" onAction="#onQuitarFiltros" styleClass="quiet" minWidth="-Infinity"/>
+                <Button text="Quitar filtros" onAction="#amjOnQuitarFiltros" styleClass="quiet" minWidth="-Infinity"/>
             </HBox>
         </VBox>
     </top>
@@ -40,9 +40,9 @@
     <center>
         <StackPane>
             <BorderPane.margin><Insets top="0" right="0" bottom="0" left="14"/></BorderPane.margin>
-            <TableView fx:id="tabla"/>
-            <ScrollPane fx:id="scrollTarjetas" fitToWidth="true" hbarPolicy="NEVER" visible="false" managed="false">
-                <FlowPane fx:id="rejilla" hgap="12.0" vgap="12.0">
+            <TableView fx:id="tblLaptops"/>
+            <ScrollPane fx:id="scrTarjetas" fitToWidth="true" hbarPolicy="NEVER" visible="false" managed="false">
+                <FlowPane fx:id="pnlRejilla" hgap="12.0" vgap="12.0">
                     <padding><Insets top="2.0" right="8.0" bottom="8.0" left="2.0"/></padding>
                 </FlowPane>
             </ScrollPane>
@@ -56,18 +56,18 @@
                 <padding><Insets top="12.0" right="14.0" bottom="12.0" left="14.0"/></padding>
                 <Label fx:id="lblMarca" styleClass="muted small"/>
                 <Label fx:id="lblModelo" styleClass="model-name" wrapText="true"/>
-                <HBox fx:id="boxEstado3d" spacing="6.0" alignment="CENTER_LEFT"/>
-                <Button fx:id="btnModelo3d" text="Modelo 3D…" onAction="#onModelo3d" styleClass="compact" minWidth="-Infinity"/>
+                <HBox fx:id="pnlEstado3d" spacing="6.0" alignment="CENTER_LEFT"/>
+                <Button fx:id="btnModelo3d" text="Modelo 3D…" onAction="#amjOnModelo3d" styleClass="compact" minWidth="-Infinity"/>
             </VBox>
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
-                <VBox fx:id="ficha"/>
+                <VBox fx:id="pnlFicha"/>
             </ScrollPane>
             <HBox styleClass="side-foot" spacing="8.0">
                 <padding><Insets top="10.0" right="14.0" bottom="10.0" left="14.0"/></padding>
-                <Button fx:id="btnGuardar" minWidth="-Infinity" text="Guardar cambios" onAction="#onGuardar" styleClass="primary"/>
-                <Button fx:id="btnDescartar" minWidth="-Infinity" text="Descartar" onAction="#onDescartar"/>
+                <Button fx:id="btnGuardar" minWidth="-Infinity" text="Guardar cambios" onAction="#amjOnGuardar" styleClass="primary"/>
+                <Button fx:id="btnDescartar" minWidth="-Infinity" text="Descartar" onAction="#amjOnDescartar"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Button fx:id="btnEliminar" minWidth="-Infinity" text="Eliminar" onAction="#onEliminar" styleClass="danger"/>
+                <Button fx:id="btnEliminar" minWidth="-Infinity" text="Eliminar" onAction="#amjOnEliminar" styleClass="danger"/>
             </HBox>
         </VBox>
     </right>
@@ -77,8 +77,8 @@
             <padding><Insets top="6.0" right="16.0" bottom="6.0" left="16.0"/></padding>
             <Label fx:id="lblSeleccion" styleClass="muted"/>
             <Region HBox.hgrow="ALWAYS"/>
-            <Button fx:id="btnVisor" text="Abrir en visor 3D" onAction="#onVisor"/>
-            <Button fx:id="btnComparar" text="Comparar" onAction="#onComparar" styleClass="primary"/>
+            <Button fx:id="btnVisor" text="Abrir en visor 3D" onAction="#amjOnVisor"/>
+            <Button fx:id="btnComparar" text="Comparar" onAction="#amjOnComparar" styleClass="primary"/>
         </HBox>
     </bottom>
 </BorderPane>

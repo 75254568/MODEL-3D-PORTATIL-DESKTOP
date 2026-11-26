@@ -1,8 +1,8 @@
 """
-Catalogo de disenos unicos: cada chasis declara sus fotos, medidas y piezas propias sobre photo_designs.
+Catálogo de diseños únicos: cada chasis declara sus fotos, medidas y piezas propias sobre photo_designs.
 
-Lo que se puede medir solo en las fotos (perfil de los laterales, extremos de la trasera y posicion de las teclas)
-se calcula aqui; las piezas caracteristicas de cada equipo se declaran a mano, en pixeles de su foto.
+Lo que se puede medir solo en las fotos (perfil de los laterales, extremos de la trasera y posición de las teclas)
+se calcula aquí; las piezas características de cada equipo se declaran a mano, en píxeles de su foto.
 """
 import csv
 import json
@@ -16,22 +16,22 @@ import build_laptops as core
 import photo_designs as pd
 
 
-# ------------------------------------------------------------------ analisis de imagen
+# ------------------------------------------------------------------ análisis de imagen
 
-def load_rgba(photo):
+def amj_load_rgba(photo):
     w, h = photo.w, photo.h
     return np.array(photo.img.pixels[:], dtype=np.float32).reshape(h, w, 4)[::-1]
 
 
-def silhouette_mask(px):
+def amj_silhouette_mask(px):
     if px[..., 3].min() < 0.9:
         return px[..., 3] > 0.5
     return px[..., :3].min(axis=2) < 0.93
 
 
-def side_map(photo, rear_first):
+def amj_side_map(photo, rear_first):
     """Perfil de un lateral: filas superior e inferior del cuerpo, ajustadas a una recta a lo largo de la foto."""
-    mask = silhouette_mask(load_rgba(photo))
+    mask = amj_silhouette_mask(amj_load_rgba(photo))
     w = photo.w
     cols = np.where(mask.any(axis=0))[0]
     c0, c1 = int(cols.min()), int(cols.max())
@@ -53,21 +53,21 @@ def side_map(photo, rear_first):
     return {"rearPx": c1, "frontPx": c0, "topRear": t1, "topFront": t0, "botRear": b1, "botFront": b0}
 
 
-def rear_map(photo):
-    mask = silhouette_mask(load_rgba(photo))
+def amj_rear_map(photo):
+    mask = amj_silhouette_mask(amj_load_rgba(photo))
     cols = np.where(mask.mean(axis=0) > 0.25)[0]
     rows = np.where(mask[:, int(cols.min()):int(cols.max())].mean(axis=1) > 0.6)[0]
     return {"top": int(rows.min()), "bot": int(rows.max()), "cols": (int(cols.min()) + 6, int(cols.max()) - 6)}
 
 
-def box_blur(a, r):
+def amj_box_blur(a, r):
     s = np.cumsum(np.cumsum(np.pad(a, ((r + 1, r), (r + 1, r)), mode="edge"), axis=0), axis=1)
     k = 2 * r + 1
     return (s[k:, k:] - s[:-k, k:] - s[k:, :-k] + s[:-k, :-k]) / (k * k)
 
 
-def label_runs(mask):
-    """Componentes conexas por tramos de fila; devuelve cajas (x0, y0, x1, y1, area)."""
+def amj_label_runs(mask):
+    """Componentes conexas por tramos de fila; devuelve cajas (x0, y0, x1, y1, área)."""
     parent = []
 
     def find(i):
@@ -106,19 +106,19 @@ def label_runs(mask):
     return out
 
 
-def detect_keys(photo, width_mm):
+def amj_detect_keys(photo, width_mm):
     """Busca las teclas en la foto de la cubierta. Devuelve filas (cx, cy, w, h) como las de keys.csv."""
-    px = load_rgba(photo)[::2, ::2]
+    px = amj_load_rgba(photo)[::2, ::2]
     g = (px[..., :3] * [0.299, 0.587, 0.114]).sum(axis=2).astype(np.float32)
     h, w = g.shape
     pitch = 19.05 * w / width_mm
     keys = []
     for gain in (0.92, 0.97, 1.0):
-        m = g > box_blur(g, int(pitch * 0.42)) * gain
+        m = g > amj_box_blur(g, int(pitch * 0.42)) * gain
         m[:, 1:-1] &= m[:, :-2] & m[:, 2:]
         m[1:-1] &= m[:-2] & m[2:]
         found = []
-        for x0, y0, x1, y1, area in label_runs(m):
+        for x0, y0, x1, y1, area in amj_label_runs(m):
             bw, bh = x1 - x0, y1 - y0
             if 0.52 * pitch <= bh <= 1.08 * pitch and 0.6 * pitch <= bw <= 7.2 * pitch and area / (bw * bh) > 0.7:
                 found.append((x0, y0, x1, y1))
@@ -137,7 +137,7 @@ def detect_keys(photo, width_mm):
 
 # ------------------------------------------------------------------ piezas declaradas
 
-def apply_features(v):
+def amj_apply_features(v):
     """Piezas propias. Todas las posiciones son fracciones (0..1) de la foto correspondiente."""
     dw, dh = v.deckP.w, v.deckP.h
     lp = v.ph.get("lid", v.deckP)
@@ -148,42 +148,42 @@ def apply_features(v):
         h = f.get("h", 0.12)
         if t == "deckRect":
             a, b, c, d = f["r"]
-            v.deck_rect(f.get("part", "deck"), a * dw, b * dh, c * dw, d * dh, h, f.get("radius", 1.5), f.get("inset", 0.08))
+            v.amj_deck_rect(f.get("part", "deck"), a * dw, b * dh, c * dw, d * dh, h, f.get("radius", 1.5), f.get("inset", 0.08))
         elif t == "deckEllipse":
             c, r, a, b = f["e"]
-            v.on_deck(f.get("part", "deck"), [v.px(x, y) for x, y in reversed(pd.ellipse_px(c * dw, r * dh, a * dw, b * dh, egg=f.get("egg", 0.0)))], h, f.get("inset", 0.08))
+            v.amj_on_deck(f.get("part", "deck"), [v.amj_px(x, y) for x, y in reversed(pd.amj_ellipse_px(c * dw, r * dh, a * dw, b * dh, egg=f.get("egg", 0.0)))], h, f.get("inset", 0.08))
         elif t == "deckPoly":
-            v.on_deck(f.get("part", "deck"), [v.px(*D(x, y)) for x, y in f["p"]], h, f.get("inset", 0.08))
+            v.amj_on_deck(f.get("part", "deck"), [v.amj_px(*D(x, y)) for x, y in f["p"]], h, f.get("inset", 0.08))
         elif t == "lidRect":
             a, b, c, d = f["r"]
-            v.lid_prism([L(a, d), L(c, d), L(c, b), L(a, b)], h, inset=f.get("inset", 0.05))
+            v.amj_lid_prism([L(a, d), L(c, d), L(c, b), L(a, b)], h, inset=f.get("inset", 0.05))
         elif t == "lidEllipse":
             c, r, a, b = f["e"]
-            v.lid_prism(pd.ellipse_px(c * lp.w, r * lp.h, a * lp.w, b * lp.h, egg=f.get("egg", 0.0)), h)
+            v.amj_lid_prism(pd.amj_ellipse_px(c * lp.w, r * lp.h, a * lp.w, b * lp.h, egg=f.get("egg", 0.0)), h)
         elif t == "lidPoly":
-            v.lid_prism([L(x, y) for x, y in f["p"]], h, inset=f.get("inset", 0.05))
+            v.amj_lid_prism([L(x, y) for x, y in f["p"]], h, inset=f.get("inset", 0.05))
         elif t == "hinge":
             for c0, c1 in f["cols"]:
                 x0, x1 = (c0 - 0.5) * v.W, (c1 - 0.5) * v.W
-                v.cylinder(v.body, "hinge", v.m["hinge"], (x0 + x1) / 2, v.hinge_y(), v.hR - f.get("drop", 0.15), f.get("radius", 2.4), abs(x1 - x0), 16)
+                v.amj_cylinder(v.body, "hinge", v.m["hinge"], (x0 + x1) / 2, v.amj_hinge_y(), v.hR - f.get("drop", 0.15), f.get("radius", 2.4), abs(x1 - x0), 16)
         elif t == "rearPanel":
-            rear_panel(v, f)
+            amj_rear_panel(v, f)
         elif t == "foot":
-            foot(v, f)
+            amj_foot(v, f)
         elif t == "keyGrid":
-            key_grid(v, f)
+            amj_key_grid(v, f)
         elif t == "rearBlock":
-            rear_block(v, f)
+            amj_rear_block(v, f)
         else:
             raise ValueError(t)
     missing = {k: n for k, n in v.c.get("entryPorts", {}).items() if n and not (k in v.ph and k in v.m)}
     if missing:
-        draw_ports(v, missing)
+        amj_draw_ports(v, missing)
 
 
-def draw_ports(v, ports):
-    """Puertos dibujados cuando no hay foto de ese lado: posicion aproximada, lado y orden segun la ficha."""
-    port, tongue = v.k.solid("Puerto", "#050506", 0.8, 0.05), v.k.solid("Lengueta", "#3a3d42", 0.4, 0.3)
+def amj_draw_ports(v, ports):
+    """Puertos dibujados cuando no hay foto de ese lado: posición aproximada, lado y orden según la ficha."""
+    port, tongue = v.k.amj_solid("Puerto", "#050506", 0.8, 0.05), v.k.amj_solid("Lengueta", "#3a3d42", 0.4, 0.3)
     M = v.body
     for side, names in ports.items():
         names = [n for n in names if n in core.PORT_SIZE]
@@ -196,7 +196,7 @@ def draw_ports(v, ports):
                 cx = at - w / 2
                 y = v.D / 2 + 0.05
                 zc, hz = v.hR * 0.5, min(h / 2, v.hR * 0.36)
-                M.poly("base", port, [(cx + w / 2, y, zc - hz), (cx - w / 2, y, zc - hz), (cx - w / 2, y, zc + hz), (cx + w / 2, y, zc + hz)])
+                M.amj_poly("base", port, [(cx + w / 2, y, zc - hz), (cx - w / 2, y, zc - hz), (cx - w / 2, y, zc + hz), (cx + w / 2, y, zc + hz)])
                 at -= w + gap
             continue
         sign = -1 if side == "left" else 1
@@ -206,30 +206,30 @@ def draw_ports(v, ports):
         for n in order:
             w, h = core.PORT_SIZE[n]
             cy = y - w / 2
-            zc, hz = v.h(cy) * 0.5, min(h / 2, v.h(cy) * 0.36)
+            zc, hz = v.amj_h(cy) * 0.5, min(h / 2, v.amj_h(cy) * 0.36)
             q = [(x, cy - w / 2, zc - hz), (x, cy + w / 2, zc - hz), (x, cy + w / 2, zc + hz), (x, cy - w / 2, zc + hz)]
-            M.poly("base", port, q if sign > 0 else q[::-1])
+            M.amj_poly("base", port, q if sign > 0 else q[::-1])
             y -= w + gap
 
 
-def key_grid(v, f):
-    """Teclado construido cuando la foto no muestra las teclas: distribucion estandar dentro del rectangulo medido."""
+def amj_key_grid(v, f):
+    """Teclado construido cuando la foto no muestra las teclas: distribución estandar dentro del rectángulo medido."""
     a, b, c, d = f["r"]
-    x0, y1 = v.px(a * v.deckP.w, b * v.deckP.h)
-    x1, y0 = v.px(c * v.deckP.w, d * v.deckP.h)
+    x0, y1 = v.amj_px(a * v.deckP.w, b * v.deckP.h)
+    x1, y0 = v.amj_px(c * v.deckP.w, d * v.deckP.h)
     numpad = f.get("numpad", False)
     units = 15.0 + (4.35 if numpad else 0.0)
     pw, ph = (x1 - x0) / units, (y1 - y0) / 5.62
-    key = v.k.solid("Tecla", f.get("color", "#17181b"), 0.55, 0.15)
-    leg = v.k.solid("Rotulos", f.get("legend", "#e8eaed"), 0.5, 0.1)
-    b_txt = core.Builder("t")
+    key = v.k.amj_solid("Tecla", f.get("color", "#17181b"), 0.55, 0.15)
+    leg = v.k.amj_solid("Rotulos", f.get("legend", "#e8eaed"), 0.5, 0.1)
+    b_txt = core.AMJBuilder("t")
 
     def place(cx, cy, w, h, label):
-        v.prism(v.body, "keys", key, v.m["keySide"], pd.rounded_rect(cx, cy, w - 1.0, h - 1.0, 1.0), v.deck_z, 0.8, lambda *_: (0, 0), 0.2)
+        v.amj_prism(v.body, "keys", key, v.m["keySide"], pd.amj_rounded_rect(cx, cy, w - 1.0, h - 1.0, 1.0), v.amj_deck_z, 0.8, lambda *_: (0, 0), 0.2)
         if label:
-            ob = b_txt.text("legend", leg, label, cx, cy, v.deck_z(cx, cy) + 0.83, min(pw, ph) * (0.36 if len(label) == 1 else 0.2))
+            ob = b_txt.amj_text("legend", leg, label, cx, cy, v.amj_deck_z(cx, cy) + 0.83, min(pw, ph) * (0.36 if len(label) == 1 else 0.2))
             for poly in ob.data.polygons:
-                v.body.poly("legend", leg, [tuple(ob.data.vertices[i].co) for i in poly.vertices])
+                v.body.amj_poly("legend", leg, [tuple(ob.data.vertices[i].co) for i in poly.vertices])
             me = ob.data
             bpy.data.objects.remove(ob)
             bpy.data.meshes.remove(me)
@@ -250,7 +250,7 @@ def key_grid(v, f):
                 place(x0 + 15.35 * pw + i * pw + pw / 2, y, pw, ph, label)
 
 
-def rear_panel(v, f):
+def amj_rear_panel(v, f):
     p, s = v.ph["rear"], v.c["rearMap"]
     c0, c1 = s.get("cols", (0, p.w))
     x_of = lambda c: (0.5 - (c - c0) / (c1 - c0)) * v.W
@@ -263,44 +263,44 @@ def rear_panel(v, f):
     uv = lambda x, z: ((c0 + (0.5 - x / v.W) * (c1 - c0)) / p.w, 1 - (s["bot"] - (z / v.hR - f0) / (1 - f0) * (s["bot"] - s["top"])) / p.h)
     q = [(x0, y2, z0), (x1, y2, z0), (x1, y2, z1), (x0, y2, z1)]
     M = v.body
-    M.poly("base", v.m["rear"], q[::-1], [uv(q_[0], q_[2]) for q_ in q[::-1]])
+    M.amj_poly("base", v.m["rear"], q[::-1], [uv(q_[0], q_[2]) for q_ in q[::-1]])
     for i in range(4):
         A, B = q[i], q[(i + 1) % 4]
-        M.poly("base", v.m["wall"], [A, B, (B[0], y, B[2]), (A[0], y, A[2])])
+        M.amj_poly("base", v.m["wall"], [A, B, (B[0], y, B[2]), (A[0], y, A[2])])
 
 
-def rear_block(v, f):
-    """Modulo que sobresale por detras de la bisagra."""
+def amj_rear_block(v, f):
+    """Módulo que sobresale por detrás de la bisagra."""
     hw, y0, y1, z0, z1 = v.W * f.get("w", 0.96) / 2, v.D / 2 - 0.2, v.D / 2 + f["d"], f["z0"], f["z1"]
-    mat = v.k.solid("Modulo_trasero", f.get("color", "#141518"), 0.6, 0.15)
+    mat = v.k.amj_solid("Modulo_trasero", f.get("color", "#141518"), 0.6, 0.15)
     box = [(-hw, y0), (hw, y0), (hw, y1), (-hw, y1)]
     M = v.body
-    M.poly("base", mat, [(x, y, z1) for x, y in box])
-    M.poly("base", mat, [(x, y, z0) for x, y in reversed(box)])
+    M.amj_poly("base", mat, [(x, y, z1) for x, y in box])
+    M.amj_poly("base", mat, [(x, y, z0) for x, y in reversed(box)])
     for i in range(4):
         a, b = box[i], box[(i + 1) % 4]
-        M.poly("base", mat, [(*a, z0), (*b, z0), (*b, z1), (*a, z1)])
+        M.amj_poly("base", mat, [(*a, z0), (*b, z0), (*b, z1), (*a, z1)])
 
 
-def foot(v, f):
-    """Pie de goma medido en la foto de la base (rectangulo en pixeles)."""
+def amj_foot(v, f):
+    """Pie de goma medido en la foto de la base (rectángulo en píxeles)."""
     c0, r0, c1, r1 = f["r"]
     xa, xb = (0.5 - c0) * v.W, (0.5 - c1) * v.W
     ya, yb = (0.5 - r0) * v.D, (0.5 - r1) * v.D
-    poly = pd.rounded_rect((xa + xb) / 2, (ya + yb) / 2, abs(xb - xa), abs(yb - ya), min(abs(xb - xa), abs(yb - ya)) * 0.45, 4)
+    poly = pd.amj_rounded_rect((xa + xb) / 2, (ya + yb) / 2, abs(xb - xa), abs(yb - ya), min(abs(xb - xa), abs(yb - ya)) * 0.45, 4)
     M, drop = v.body, f.get("h", 0.8)
-    M.poly("base", v.m["foot"], [(x, y, -drop) for x, y in reversed(poly)])
+    M.amj_poly("base", v.m["foot"], [(x, y, -drop) for x, y in reversed(poly)])
     for i in range(len(poly)):
         j = (i + 1) % len(poly)
-        M.poly("base", v.m["foot"], [(poly[i][0], poly[i][1], -drop), (poly[j][0], poly[j][1], -drop), (poly[j][0], poly[j][1], 0.02), (poly[i][0], poly[i][1], 0.02)])
+        M.amj_poly("base", v.m["foot"], [(poly[i][0], poly[i][1], -drop), (poly[j][0], poly[j][1], -drop), (poly[j][0], poly[j][1], 0.02), (poly[i][0], poly[i][1], 0.02)])
 
 
-# ------------------------------------------------------------------ configuracion de un chasis
+# ------------------------------------------------------------------ configuración de un chasis
 
 GENERIC_RINGS = [(1.3, 1.3, 1.3, 0.0), (0.35, 0.35, 0.35, 0.09), (0.0, 0.0, 0.0, 0.2), (0.0, 0.0, 0.0, 0.93), (0.1, 0.1, 0.1, 0.975), (0.35, 0.35, 0.35, 1.0)]
 
 
-def specs_of(i):
+def amj_specs_of(i):
     import glob
     for path in glob.glob(os.path.join(core.SPECS, "*.json")):
         with open(path, encoding="utf-8") as f:
@@ -310,16 +310,16 @@ def specs_of(i):
     raise KeyError(i)
 
 
-def band(m, photo, frac):
+def amj_band(m, photo, frac):
     t, b = frac
     return {**m, "topRear": t * photo.h, "topFront": t * photo.h, "botRear": b * photo.h, "botFront": b * photo.h}
 
 
-def chassis(folder, spec_id, **o):
-    """Crea la configuracion de un chasis a partir de sus fotos y su ficha; las opciones sustituyen lo calculado."""
+def amj_chassis(folder, spec_id, **o):
+    """Crea la configuración de un chasis a partir de sus fotos y su ficha; las opciones sustituyen lo calculado."""
 
     def make():
-        e = specs_of(spec_id)
+        e = amj_specs_of(spec_id)
         sp, de = e["specs"], e.get("design", {})
         W, D = o.get("W", sp["widthMm"]), o.get("D", sp["depthMm"])
         T = o.get("T", de.get("thicknessMaxMm") or sp["thicknessMm"])
@@ -334,7 +334,7 @@ def chassis(folder, spec_id, **o):
                 if os.path.isfile(os.path.join(base, stem + ext)):
                     found[key] = f"{folder}/{stem}{ext}"
                     break
-        # algunas imagenes de trasera y base eran reconstrucciones sin valor de referencia: no se proyectan
+        # algunas imágenes de trasera y base eran reconstrucciones sin valor de referencia: no se proyectan
         for key in o.get("skip", ()):
             found.pop(key, None)
         for key, rel in o.get("borrow", {}).items():
@@ -345,34 +345,34 @@ def chassis(folder, spec_id, **o):
              "rFront": o.get("rFront", 6.0), "rRear": o.get("rRear", 3.0), "rLidFree": o.get("rLidFree", 5.0), "rLidHinge": o.get("rLidHinge", 1.5),
              "rings": o.get("rings", GENERIC_RINGS), "photos": dict(found),
              "keySide": o.get("keySide", "#101114"), "wall": o["wall"], "under": o.get("under", o["wall"]), "hinge": o.get("hinge", "#17181b"),
-             "lidEdge": o.get("lidEdge", o["wall"]), "extras": apply_features, "features": o.get("features", [])}
+             "lidEdge": o.get("lidEdge", o["wall"]), "extras": amj_apply_features, "features": o.get("features", [])}
         for k in ("deckSteps", "lidCols", "lidEdgePx", "lidBump", "photoGain", "photoGains", "sideMinFrac", "hingeInset"):
             if k in o:
                 c[k] = o[k]
         for key, first in (("left", o.get("leftRearFirst", True)), ("right", o.get("rightRearFirst", False))):
             if key in found:
-                ph = pd.Photo(found[key])
-                m = side_map(ph, first)
+                ph = pd.AMJPhoto(found[key])
+                m = amj_side_map(ph, first)
                 if key + "Band" in o:
-                    m = band(m, ph, o[key + "Band"])
+                    m = amj_band(m, ph, o[key + "Band"])
                 c[key] = {**m, **o.get(key + "Map", {})}
         if "rear" in found:
-            ph = pd.Photo(found["rear"])
-            m = rear_map(ph)
+            ph = pd.AMJPhoto(found["rear"])
+            m = amj_rear_map(ph)
             if "rearBand" in o:
                 m.update(top=o["rearBand"][0] * ph.h, bot=o["rearBand"][1] * ph.h)
             c["rearMap"] = {**m, **o.get("rearMap", {})}
         if "steps" in o:
-            c["deckSteps"] = [(v * pd.Photo(found["deck"]).h, dz) for v, dz in o["steps"]]
+            c["deckSteps"] = [(v * pd.AMJPhoto(found["deck"]).h, dz) for v, dz in o["steps"]]
         if "rearCols" in o and "rearMap" in c:
-            w = pd.Photo(found["rear"]).w
+            w = pd.AMJPhoto(found["rear"]).w
             c["rearMap"]["cols"] = (o["rearCols"][0] * w, o["rearCols"][1] * w)
         keys = os.path.join(base, "keys.csv")
         if o.get("keys", True):
             if os.path.isfile(keys):
                 c["keys"] = {"csv": f"{folder}/keys.csv", **o.get("keyOpts", {})}
             else:
-                rows = detect_keys(pd.Photo(found["deck"]), W)
+                rows = amj_detect_keys(pd.AMJPhoto(found["deck"]), W)
                 if rows:
                     c["keys"] = {"rows": rows, **o.get("keyOpts", {})}
         return c
@@ -380,11 +380,11 @@ def chassis(folder, spec_id, **o):
     return make
 
 
-# Los disenos se anaden aqui por marca a medida que se modelan.
+# Los diseños se añaden aquí por marca a medida que se modelan.
 CATALOG = {}
 
 
-def register(ids, cfg, features, ports=None):
+def amj_register(ids, cfg, features, ports=None):
     for i in ids:
         CATALOG[i] = {"cfg": cfg, "ports": ports, "features": features}
     pd.DESIGNS.update(CATALOG)

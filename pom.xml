@@ -12,8 +12,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.laptopstudio</groupId>
-    <artifactId>laptop-studio-3d</artifactId>
+    <groupId>com.laptopexplorer</groupId>
+    <artifactId>laptop-explorer</artifactId>
     <version>1.0.0</version>
     <name>Laptop Explorer</name>
 
@@ -95,7 +95,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.laptopstudio.Launcher</mainClass>
+                    <mainClass>com.laptopexplorer.AMJLauncher</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -116,7 +116,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.laptopstudio.Launcher</mainClass>
+                    <mainClass>com.laptopexplorer.AMJLauncher</mainClass>
                 </configuration>
             </plugin>
         </plugins>

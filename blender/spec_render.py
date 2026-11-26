@@ -1,10 +1,10 @@
 """
 Texturas de los modelos sin fotos, obtenidas del propio modelo.
 
-JavaFX no calcula sombras ni oclusion, asi que un modelo de colores planos parece una maqueta. Aqui cada pieza se renderiza
-con Cycles en vistas ortograficas (cubierta, tapa, base y cuatro lados) con oclusion ambiental y aristas resaltadas, y esas
-imagenes se proyectan de vuelta sobre su geometria. Tambien se genera, por procedimiento, la pantalla de cada equipo: panel
-con su tamano real, marcos y un fondo original. Ninguna imagen procede de fotografias.
+JavaFX no calcula sombras ni oclusión, así que un modelo de colores planos parece una maqueta. Aquí cada pieza se renderiza
+con Cycles en vistas ortograficas (cubierta, tapa, base y cuatro lados) con oclusión ambiental y aristas resaltadas, y esas
+imágenes se proyectan de vuelta sobre su geometría. También se genera, por procedimiento, la pantalla de cada equipo: panel
+con su tamaño real, marcos y un fondo original. Ninguna imagen procede de fotografías.
 """
 import math
 import os
@@ -23,13 +23,13 @@ SOLID = {"Goma", "Aro_pie", "Bisagra", "Barra_camara", "Barra_lado", "TrackPoint
 BRUSHED = {"Cubierta", "Tapa_lisa", "Canto_liso", "Canto_tapa_liso", "Base", "Bloque_trasero"}
 
 
-def linear(c):
+def amj_linear(c):
     return tuple(max(0.0, v) ** 2.2 for v in c[:3])
 
 
 # ------------------------------------------------------------------ dispositivo y escena
 
-def setup_device(scene):
+def amj_setup_device(scene):
     scene.render.engine = "CYCLES"
     prefs = bpy.context.preferences.addons["cycles"].preferences
     for kind in ("OPTIX", "CUDA"):
@@ -48,9 +48,9 @@ def setup_device(scene):
     return "CPU"
 
 
-def make_scene():
+def amj_make_scene():
     sc = bpy.data.scenes.new("hornear")
-    kind = setup_device(sc)
+    kind = amj_setup_device(sc)
     c = sc.cycles
     c.samples = 48
     c.use_adaptive_sampling = False
@@ -76,10 +76,10 @@ def make_scene():
     return sc, kind
 
 
-def bake_material(src, finish):
-    """Emision con el color del material, oscurecida en los huecos y aclarada en las aristas."""
+def amj_bake_material(src, finish):
+    """Emisión con el color del material, oscurecida en los huecos y aclarada en las aristas."""
     name = src.name
-    rgb = linear(src.diffuse_color)
+    rgb = amj_linear(src.diffuse_color)
     m = bpy.data.materials.new("R_" + name)
     m.use_nodes = True
     t = m.node_tree
@@ -166,10 +166,10 @@ def bake_material(src, finish):
 
 # ------------------------------------------------------------------ vistas
 
-class Baker:
+class AMJBaker:
     def __init__(self, design, folder):
         self.v, self.folder = design, folder
-        self.scene, self.kind = make_scene()
+        self.scene, self.kind = amj_make_scene()
         self.cam = bpy.data.objects.new("cam", bpy.data.cameras.new("cam"))
         self.cam.data.type = "ORTHO"
         self.cam.data.clip_start = 0.5
@@ -182,14 +182,14 @@ class Baker:
         for key, mesher in (("body", design.body), ("lid", design.lid)):
             coll = bpy.data.collections.new("h_" + key)
             self.scene.collection.children.link(coll)
-            for ob in mesher.objects(coll):
+            for ob in mesher.amj_objects(coll):
                 src = ob.data.materials[0]
-                ob.data.materials[0] = self.mats.setdefault(src.name, bake_material(src, finish))
+                ob.data.materials[0] = self.mats.setdefault(src.name, amj_bake_material(src, finish))
                 if ob.name.startswith("display"):
                     ob.hide_render = True
             self.groups[key] = coll
 
-    def shot(self, name, show, loc, rot, fw, fh, ppm):
+    def amj_shot(self, name, show, loc, rot, fw, fh, ppm):
         for key, coll in self.groups.items():
             coll.hide_render = key != show
         r = self.scene.render
@@ -205,7 +205,7 @@ class Baker:
         bpy.ops.render.render(write_still=True, scene=self.scene.name)
         return path
 
-    def close(self):
+    def amj_close(self):
         for coll in self.groups.values():
             for ob in list(coll.objects):
                 me = ob.data
@@ -222,7 +222,7 @@ class Baker:
             bpy.data.materials.remove(m)
 
 
-def newell(P):
+def amj_newell(P):
     nx = ny = nz = 0.0
     for i in range(len(P)):
         x0, y0, z0 = P[i]
@@ -234,24 +234,24 @@ def newell(P):
     return nx / n, ny / n, nz / n
 
 
-def bake_design(v, kit, folder):
+def amj_bake_design(v, kit, folder):
     W, D, L = v.W, v.D, v.L
     top = v.hR + v.c["lidT"] + 1.0
-    b = Baker(v, folder)
+    b = AMJBaker(v, folder)
     pi = math.pi
     deck_ppm = 2400 / W
     zc, zh = (top - 2.0) / 2, top + 2.0
     lid_y0, lid_y1 = -L - 4.0, 1.0
     paths = {
-        "deck": b.shot("deck", "body", (0, 0, 400), (0, 0, 0), W, D, deck_ppm),
-        "lid": b.shot("lid", "lid", (0, (lid_y0 + lid_y1) / 2, 400), (0, 0, 0), W, lid_y1 - lid_y0, 1800 / W),
-        "bottom": b.shot("bottom", "body", (0, 0, -400), (pi, 0, 0), W, D, 1800 / W),
-        "left": b.shot("left", "body", (-600, 0, zc), (pi / 2, 0, -pi / 2), D, zh, 6.0),
-        "right": b.shot("right", "body", (600, 0, zc), (pi / 2, 0, pi / 2), D, zh, 6.0),
-        "rear": b.shot("rear", "body", (0, 600, zc), (pi / 2, 0, pi), W, zh, 6.0),
-        "front": b.shot("front", "body", (0, -600, zc), (pi / 2, 0, 0), W, zh, 6.0),
+        "deck": b.amj_shot("deck", "body", (0, 0, 400), (0, 0, 0), W, D, deck_ppm),
+        "lid": b.amj_shot("lid", "lid", (0, (lid_y0 + lid_y1) / 2, 400), (0, 0, 0), W, lid_y1 - lid_y0, 1800 / W),
+        "bottom": b.amj_shot("bottom", "body", (0, 0, -400), (pi, 0, 0), W, D, 1800 / W),
+        "left": b.amj_shot("left", "body", (-600, 0, zc), (pi / 2, 0, -pi / 2), D, zh, 6.0),
+        "right": b.amj_shot("right", "body", (600, 0, zc), (pi / 2, 0, pi / 2), D, zh, 6.0),
+        "rear": b.amj_shot("rear", "body", (0, 600, zc), (pi / 2, 0, pi), W, zh, 6.0),
+        "front": b.amj_shot("front", "body", (0, -600, zc), (pi / 2, 0, 0), W, zh, 6.0),
     }
-    b.close()
+    b.amj_close()
     z0 = zc - zh / 2
     def cl(u):
         return min(0.999, max(0.001, u))
@@ -270,23 +270,23 @@ def bake_design(v, kit, folder):
     mats = {}
     for key, path in paths.items():
         base = os.path.basename(path)
-        v.ph[key] = pd.Photo(base, path, base)
-        mats[key] = kit.photo(names[key], v.ph[key], rough, spec)
+        v.ph[key] = pd.AMJPhoto(base, path, base)
+        mats[key] = kit.amj_photo(names[key], v.ph[key], rough, spec)
     # las luces del visor se suman a la textura: las superficies claras se atenuan para que conserven su detalle
-    bright = max(core.hex_rgb(v.c["deck"]))
+    bright = max(core.amj_hex_rgb(v.c["deck"]))
     gain = min(1.0, 0.55 / max(bright, 0.01))
     v.c["photoGains"] = {n: gain for n in names.values()}
 
-    body = pd.Mesher()
+    body = pd.AMJMesher()
     for (part, name), (mat, verts, faces, _) in v.body.groups.items():
         if part == "legend" or name in DROP or name.startswith(DROP_PREFIX):
             continue
         for f in faces:
             P = [verts[i] for i in f]
             if part == "hinge" or name in SOLID:
-                body.poly(part, mat, P)
+                body.amj_poly(part, mat, P)
                 continue
-            nx, ny, nz = newell(P)
+            nx, ny, nz = amj_newell(P)
             view = "deck"
             if part == "base" or name == "Bloque_trasero":
                 if nz < -0.6:
@@ -298,31 +298,31 @@ def bake_design(v, kit, folder):
                         view = "rear"
                     elif name != "Bloque_trasero":
                         view = "front"
-            body.poly(part, mats[view], P, [uv[view](p) for p in P])
+            body.amj_poly(part, mats[view], P, [uv[view](p) for p in P])
     v.body = body
 
-    lid = pd.Mesher()
+    lid = pd.AMJMesher()
     for (part, name), (mat, verts, faces, _) in v.lid.groups.items():
         if name.startswith(DROP_PREFIX) or name in DROP:
             continue
         for f in faces:
             P = [verts[i] for i in f]
             if part != "lid" or name in SOLID or name == "Canto_tapa_liso":
-                lid.poly(part, mat, P)
+                lid.amj_poly(part, mat, P)
             else:
-                lid.poly(part, mats["lid"], P, [uv["lid"](p) for p in P])
+                lid.amj_poly(part, mats["lid"], P, [uv["lid"](p) for p in P])
     v.lid = lid
     v.notes.append("texturas calculadas con un render del propio modelo: no son fotografías del equipo")
 
 
 # ------------------------------------------------------------------ pantalla
 
-def rgb_of(h):
-    return np.array(core.hex_rgb(h), dtype=np.float32)
+def amj_rgb_of(h):
+    return np.array(core.amj_hex_rgb(h), dtype=np.float32)
 
 
-def ramp(t, colors):
-    pts = np.stack([rgb_of(c) for c in colors])
+def amj_ramp(t, colors):
+    pts = np.stack([amj_rgb_of(c) for c in colors])
     x = np.clip(t, 0, 1) * (len(pts) - 1)
     i = np.minimum(x.astype(int), len(pts) - 2)
     f = (x - i)[..., None]
@@ -330,7 +330,7 @@ def ramp(t, colors):
     return pts[i] * (1 - f) + pts[i + 1] * f
 
 
-def fbm(u, v, rng, octaves=5, base=2.0):
+def amj_fbm(u, v, rng, octaves=5, base=2.0):
     out = np.zeros_like(u)
     amp, freq, total = 1.0, base, 0.0
     for _ in range(octaves):
@@ -344,82 +344,82 @@ def fbm(u, v, rng, octaves=5, base=2.0):
     return out / total
 
 
-def wallpaper(w, h, theme, seed):
+def amj_wallpaper(w, h, theme, seed):
     rng = np.random.default_rng(seed)
     y, x = np.mgrid[0:h, 0:w].astype(np.float32)
     aspect = w / h
     u, v = x / w * aspect, y / h
     style, c = theme["style"], theme["colors"]
-    warp = fbm(u, v, rng, 4, 0.9)
+    warp = amj_fbm(u, v, rng, 4, 0.9)
     if style == "ribbons":
-        img = ramp(v * 0.75 + 0.12 * warp + 0.1, c[:3])
+        img = amj_ramp(v * 0.75 + 0.12 * warp + 0.1, c[:3])
         for i in range(8):
             f, p = rng.uniform(0.5, 1.2), rng.uniform(0, 6.28)
             yc = 0.2 + i * 0.085 + 0.12 * np.sin(u * f * 6.28 + p) + 0.06 * warp
             s = rng.uniform(0.02, 0.07)
             d = (v - yc) / s
             band = np.exp(-d * d) * (0.65 + 0.35 * np.tanh(d * 2.0))
-            img = img + rgb_of(c[3 + i % (len(c) - 3)]) * band[..., None] * 0.62
+            img = img + amj_rgb_of(c[3 + i % (len(c) - 3)]) * band[..., None] * 0.62
     elif style == "bloom":
         cx, cy = aspect * rng.uniform(0.45, 0.6), rng.uniform(0.55, 0.68)
         dx, dy = u - cx, v - cy
         r, a = np.hypot(dx, dy), np.arctan2(dy, dx)
-        img = ramp(np.clip(r * 1.1 + 0.08 * warp, 0, 1), c[:3])
+        img = amj_ramp(np.clip(r * 1.1 + 0.08 * warp, 0, 1), c[:3])
         core_fade = np.clip((r - 0.05) / 0.2, 0, 1)
         core_fade = core_fade * core_fade * (3 - 2 * core_fade)
         for k, n in enumerate((3, 4, 5)):
             petal = np.cos(n * a + 4.5 * r + k * 1.7 + 1.2 * warp)
             mask = np.clip(petal, 0, 1) ** (3 + k) * np.exp(-(r / (0.8 - k * 0.14)) ** 2) * core_fade
-            img = img + rgb_of(c[3 + k % (len(c) - 3)]) * mask[..., None] * 0.72
-        img = img + rgb_of(c[3]) * np.exp(-(r / 0.16) ** 2)[..., None] * 0.42
+            img = img + amj_rgb_of(c[3 + k % (len(c) - 3)]) * mask[..., None] * 0.72
+        img = img + amj_rgb_of(c[3]) * np.exp(-(r / 0.16) ** 2)[..., None] * 0.42
     elif style == "rings":
         cx, cy = aspect * 0.5, 0.5
         r = np.hypot(u - cx, v - cy) + 0.03 * warp
-        img = ramp(np.clip(r * 1.3, 0, 1), c[:2])
+        img = amj_ramp(np.clip(r * 1.3, 0, 1), c[:2])
         rings = np.sin(r * 46 + 3 * warp) ** 12 * np.exp(-r * 1.9)
         halo = np.exp(-((r - 0.24) / 0.06) ** 2)
-        img = img + rgb_of(c[2]) * (rings * 0.8 + halo * 0.55)[..., None] + rgb_of(c[3]) * (np.exp(-((r - 0.42) / 0.03) ** 2) * 0.35)[..., None]
+        img = img + amj_rgb_of(c[2]) * (rings * 0.8 + halo * 0.55)[..., None] + amj_rgb_of(c[3]) * (np.exp(-((r - 0.42) / 0.03) ** 2) * 0.35)[..., None]
     elif style == "nebula":
-        t = 0.5 + 0.5 * fbm(u, v, rng, 6, 1.1)
-        t2 = 0.5 + 0.5 * fbm(u + 0.3 * warp, v, rng, 6, 1.7)
-        img = ramp(t ** 1.6, c[:3]) + rgb_of(c[3]) * (t2 ** 5)[..., None] * 1.15
+        t = 0.5 + 0.5 * amj_fbm(u, v, rng, 6, 1.1)
+        t2 = 0.5 + 0.5 * amj_fbm(u + 0.3 * warp, v, rng, 6, 1.7)
+        img = amj_ramp(t ** 1.6, c[:3]) + amj_rgb_of(c[3]) * (t2 ** 5)[..., None] * 1.15
         n = int(w * h / 1400)
         px, py = rng.integers(0, w, n), rng.integers(0, h, n)
         img[py, px] += rng.uniform(0.25, 0.9, (n, 1))
     elif style == "hills":
-        img = ramp(v * 1.25 + 0.04 * warp, c[:3])
+        img = amj_ramp(v * 1.25 + 0.04 * warp, c[:3])
         sx, sy = aspect * rng.uniform(0.3, 0.7), 0.42
-        img = img + rgb_of(c[2]) * np.exp(-(((u - sx) ** 2 + (v - sy) ** 2) / 0.05))[..., None] * 0.55
+        img = img + amj_rgb_of(c[2]) * np.exp(-(((u - sx) ** 2 + (v - sy) ** 2) / 0.05))[..., None] * 0.55
         for i in range(5):
             p, f = rng.uniform(0, 6.28), rng.uniform(0.7, 1.5)
-            ridge = 0.5 + i * 0.1 + 0.05 * np.sin(u * f * 6.28 + p) + 0.022 * fbm(u + i, v * 0, rng, 4, 2.5)
+            ridge = 0.5 + i * 0.1 + 0.05 * np.sin(u * f * 6.28 + p) + 0.022 * amj_fbm(u + i, v * 0, rng, 4, 2.5)
             m = np.clip((v - ridge) * h / 2.0, 0, 1)[..., None]
-            col = ramp(np.full_like(v, i / 4.0), c[3:]) * (1.0 + 0.3 * np.clip(ridge + 0.1 - v, -0.3, 0)[..., None])
+            col = amj_ramp(np.full_like(v, i / 4.0), c[3:]) * (1.0 + 0.3 * np.clip(ridge + 0.1 - v, -0.3, 0)[..., None])
             img = img * (1 - m) + col * m
     elif style == "slash":
         s = (u * 0.72 + v * 0.69)
-        img = ramp(np.clip(v * 0.8 + 0.1 * warp, 0, 1), c[:2])
+        img = amj_ramp(np.clip(v * 0.8 + 0.1 * warp, 0, 1), c[:2])
         for i in range(9):
             p, wd = rng.uniform(0.15, 1.75), rng.uniform(0.006, 0.05)
             band = np.exp(-((s - p + 0.02 * warp) / wd) ** 2) * (0.45 + 0.55 * np.sin(u * 2.5 + i) ** 2)
-            img = img + rgb_of(c[2 + i % (len(c) - 2)]) * band[..., None] * 0.85
+            img = img + amj_rgb_of(c[2 + i % (len(c) - 2)]) * band[..., None] * 0.85
     elif style == "folds":
         t = np.sin(5.0 * (u + 0.22 * np.sin(3.1 * v + warp)) + 2.2 * np.sin(3.6 * v + 1.4 * u))
         dt = np.gradient(t, axis=1) * w / 18
-        img = ramp(0.5 + 0.5 * t, c[:4]) * (1.0 + np.clip(dt, -0.45, 0.45))[..., None]
+        img = amj_ramp(0.5 + 0.5 * t, c[:4]) * (1.0 + np.clip(dt, -0.45, 0.45))[..., None]
     else:  # aurora
-        img = ramp(v * 0.9, c[:2])
+        img = amj_ramp(v * 0.9, c[:2])
         for i in range(3):
-            yc = 0.32 + i * 0.12 + 0.13 * fbm(u, v * 0, rng, 3, 0.7)
-            cur = np.exp(-(((v - yc) / (0.11 + 0.03 * i)) ** 2)) * (0.45 + 0.55 * np.sin(u * 42 + 7 * fbm(u, v * 0.2, rng, 3, 1.2)) ** 2)
+            yc = 0.32 + i * 0.12 + 0.13 * amj_fbm(u, v * 0, rng, 3, 0.7)
+            cur = np.exp(-(((v - yc) / (0.11 + 0.03 * i)) ** 2)) * (0.45 + 0.55 * np.sin(u * 42 + 7 * amj_fbm(u, v * 0.2, rng, 3, 1.2)) ** 2)
             cur = cur * np.clip((yc + 0.1 - v) * 7 + 0.25, 0, 1)
-            img = img + rgb_of(c[2 + i % (len(c) - 2)]) * cur[..., None] * 0.9
+            img = img + amj_rgb_of(c[2 + i % (len(c) - 2)]) * cur[..., None] * 0.9
     vignette = 1 - 0.28 * (((x / w - 0.5) * 2) ** 2 + ((y / h - 0.5) * 2) ** 2)[..., None] / 2
     return np.clip(img * vignette, 0, 1)
 
 
-def text_mask(s, size, w, h, cx, cy, align="CENTER"):
-    """Cobertura (0..1) de un texto convertido a triangulos."""
+def amj_text_mask(s, size, w, h, cx, cy, align="CENTER"):
+    """Cobertura (0..1) de un texto convertido a triángulos."""
     curve = bpy.data.curves.new("t", "FONT")
     curve.body = s
     curve.size = 1.0
@@ -452,7 +452,7 @@ def text_mask(s, size, w, h, cx, cy, align="CENTER"):
             continue
         l0 = ((c[1] - e[1]) * (xs - e[0]) + (e[0] - c[0]) * (ys - e[1])) / d
         l1 = ((e[1] - a[1]) * (xs - e[0]) + (a[0] - e[0]) * (ys - e[1])) / d
-        # margen pequeno: sin el, entre triangulos vecinos quedan lineas sin cubrir
+        # margen pequeño: sin el, entre triángulos vecinos quedan líneas sin cubrir
         e_ = 0.6 / max(1.0, math.sqrt(abs(d)))
         ins = (l0 >= -e_) & (l1 >= -e_) & (l0 + l1 <= 1 + e_)
         cov = ins.reshape((y1 - y0 + 1), ss, (x1 - x0 + 1), ss).mean(axis=(1, 3))
@@ -460,12 +460,12 @@ def text_mask(s, size, w, h, cx, cy, align="CENTER"):
     return mask
 
 
-def over(img, mask, color, alpha=1.0):
+def amj_over(img, mask, color, alpha=1.0):
     m = (mask * alpha)[..., None]
-    return img * (1 - m) + rgb_of(color) * m
+    return img * (1 - m) + amj_rgb_of(color) * m
 
 
-def round_box(w, h, x0, y0, x1, y1, r):
+def amj_round_box(w, h, x0, y0, x1, y1, r):
     y, x = np.mgrid[0:h, 0:w].astype(np.float32)
     cx, cy, hx, hy = (x0 + x1) / 2, (y0 + y1) / 2, (x1 - x0) / 2, (y1 - y0) / 2
     qx, qy = np.abs(x - cx) - hx + r, np.abs(y - cy) - hy + r
@@ -479,7 +479,7 @@ BRAND_THEME = {
 DEFAULT_THEME = {"style": "ribbons", "colors": ["#0b1324", "#142a4a", "#23406b", "#5aa7ff", "#9b7bff", "#3fd0e0"], "os": "win"}
 
 
-def add_screen(v, kit, entry, folder):
+def amj_add_screen(v, kit, entry, folder):
     sp = entry["specs"]
     theme = v.c.get("screen") or BRAND_THEME.get(entry["brand"]) or DEFAULT_THEME
     W, L = v.W, v.L
@@ -500,40 +500,40 @@ def add_screen(v, kit, entry, folder):
     x0, x1 = (W - pw) / 2 * k, (W + pw) / 2 * k
     y0, y1 = top * k, (top + ph) * k
     img = np.empty((px_h, px_w, 3), dtype=np.float32)
-    img[:] = rgb_of(theme.get("bezel", "#050608"))
+    img[:] = amj_rgb_of(theme.get("bezel", "#050608"))
     ix0, iy0, ix1, iy1 = int(x0), int(y0), int(math.ceil(x1)), min(px_h, int(math.ceil(y1)))
     seed = zlib.crc32(f"{entry['brand']} {entry['model']}".split("·")[0].split("—")[0].encode("utf-8")) & 0xffff
-    wall = wallpaper(ix1 - ix0, iy1 - iy0, theme, seed)
+    wall = amj_wallpaper(ix1 - ix0, iy1 - iy0, theme, seed)
     # pantalla de bloqueo con el reloj, como la que se ve al abrir un equipo
     pw_px, ph_px = ix1 - ix0, iy1 - iy0
     mac = theme.get("os") == "mac"
     cx = pw_px / 2
-    # velo oscuro detras del reloj: debe leerse tambien sobre fondos claros
+    # velo oscuro detrás del reloj: debe leerse también sobre fondos claros
     rows = np.linspace(0, 1, ph_px, dtype=np.float32)[:, None, None]
     wall = wall * (1 - 0.58 * np.exp(-((rows - 0.14) / 0.2) ** 2))
-    clock = text_mask("10:28", ph_px * (0.15 if not mac else 0.13), pw_px, ph_px, cx, ph_px * (0.2 if not mac else 0.17))
-    date = text_mask("martes, 18 de noviembre", ph_px * 0.03, pw_px, ph_px, cx, ph_px * (0.105 if not mac else 0.085))
+    clock = amj_text_mask("10:28", ph_px * (0.15 if not mac else 0.13), pw_px, ph_px, cx, ph_px * (0.2 if not mac else 0.17))
+    date = amj_text_mask("martes, 18 de noviembre", ph_px * 0.03, pw_px, ph_px, cx, ph_px * (0.105 if not mac else 0.085))
     shadow = np.clip(np.roll(clock, (3, 2), axis=(0, 1)) * 0.3, 0, 1)
-    wall = over(wall, shadow, "#000000", 0.6)
-    wall = over(wall, clock, "#ffffff", 0.94)
-    wall = over(wall, date, "#ffffff", 0.9)
+    wall = amj_over(wall, shadow, "#000000", 0.6)
+    wall = amj_over(wall, clock, "#ffffff", 0.94)
+    wall = amj_over(wall, date, "#ffffff", 0.9)
     if mac:
-        pill = round_box(pw_px, ph_px, cx - ph_px * 0.09, ph_px * 0.86, cx + ph_px * 0.09, ph_px * 0.905, ph_px * 0.022)
-        wall = over(wall, pill, "#ffffff", 0.22)
+        pill = amj_round_box(pw_px, ph_px, cx - ph_px * 0.09, ph_px * 0.86, cx + ph_px * 0.09, ph_px * 0.905, ph_px * 0.022)
+        wall = amj_over(wall, pill, "#ffffff", 0.22)
     else:
         for i, dx in enumerate((-0.03, 0, 0.03)):
-            dot = round_box(pw_px, ph_px, pw_px * (0.955 + dx) - 7, ph_px * 0.94 - 7, pw_px * (0.955 + dx) + 7, ph_px * 0.94 + 7, 4)
-            wall = over(wall, dot, "#ffffff", 0.75)
-    panel = round_box(px_w, px_h, x0, y0, x1, y1, theme.get("corner", 1.0) * k)[iy0:iy1, ix0:ix1][..., None]
+            dot = amj_round_box(pw_px, ph_px, pw_px * (0.955 + dx) - 7, ph_px * 0.94 - 7, pw_px * (0.955 + dx) + 7, ph_px * 0.94 + 7, 4)
+            wall = amj_over(wall, dot, "#ffffff", 0.75)
+    panel = amj_round_box(px_w, px_h, x0, y0, x1, y1, theme.get("corner", 1.0) * k)[iy0:iy1, ix0:ix1][..., None]
     img[iy0:iy1, ix0:ix1] = img[iy0:iy1, ix0:ix1] * (1 - panel) + wall * panel
-    cam = round_box(px_w, px_h, px_w / 2 - 0.9 * k, top / 2 * k - 0.9 * k, px_w / 2 + 0.9 * k, top / 2 * k + 0.9 * k, 0.9 * k)
-    img = over(img, cam, "#171a20")
-    lens = round_box(px_w, px_h, px_w / 2 - 0.4 * k, top / 2 * k - 0.4 * k, px_w / 2 + 0.4 * k, top / 2 * k + 0.4 * k, 0.4 * k)
-    img = over(img, lens, "#2a3a55")
+    cam = amj_round_box(px_w, px_h, px_w / 2 - 0.9 * k, top / 2 * k - 0.9 * k, px_w / 2 + 0.9 * k, top / 2 * k + 0.9 * k, 0.9 * k)
+    img = amj_over(img, cam, "#171a20")
+    lens = amj_round_box(px_w, px_h, px_w / 2 - 0.4 * k, top / 2 * k - 0.4 * k, px_w / 2 + 0.4 * k, top / 2 * k + 0.4 * k, 0.4 * k)
+    img = amj_over(img, lens, "#2a3a55")
     chin = theme.get("chin")
     if chin and px_h - y1 > 3 * k:
-        mask = text_mask(chin, 4.0 * k, px_w, px_h, px_w / 2, (y1 + px_h) / 2)
-        img = over(img, mask, "#a9adb5")
+        mask = amj_text_mask(chin, 4.0 * k, px_w, px_h, px_w / 2, (y1 + px_h) / 2)
+        img = amj_over(img, mask, "#a9adb5")
     path = os.path.join(folder, "screen.jpg")
     im = bpy.data.images.new("pantalla_tmp", px_w, px_h)
     rgba = np.concatenate([img[::-1], np.ones((px_h, px_w, 1), dtype=np.float32)], axis=2)
@@ -542,15 +542,15 @@ def add_screen(v, kit, entry, folder):
     im.file_format = "JPEG"
     im.save(quality=90)
     bpy.data.images.remove(im)
-    v.ph["screen"] = pd.Photo("screen.jpg", path, "screen.jpg")
+    v.ph["screen"] = pd.AMJPhoto("screen.jpg", path, "screen.jpg")
     v.syntheticScreen = True
-    mat = kit.photo("Foto_pantalla", v.ph["screen"], 0.3, 0.12)
-    lid = pd.Mesher()
+    mat = kit.amj_photo("Foto_pantalla", v.ph["screen"], 0.3, 0.12)
+    lid = pd.AMJMesher()
     for (part, name), (old, verts, faces, uvs) in v.lid.groups.items():
         for f in faces:
             P = [verts[i] for i in f]
             if part == "display":
-                lid.poly(part, mat, P, [(min(0.999, max(0.001, p[0] / W + 0.5)), min(0.999, max(0.001, -p[1] / L))) for p in P])
+                lid.amj_poly(part, mat, P, [(min(0.999, max(0.001, p[0] / W + 0.5)), min(0.999, max(0.001, -p[1] / L))) for p in P])
             else:
-                lid.poly(part, old, P, [uvs[i] for i in f])
+                lid.amj_poly(part, old, P, [uvs[i] for i in f])
     v.lid = lid

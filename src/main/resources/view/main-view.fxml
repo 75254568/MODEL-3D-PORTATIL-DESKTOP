@@ -7,26 +7,26 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.laptopstudio.controller.MainController"
+            fx:controller="com.laptopexplorer.controller.AMJMainController"
             styleClass="root-pane">
 
     <left>
-        <VBox fx:id="rail" styleClass="rail" spacing="3.0" prefWidth="212.0" minWidth="212.0" maxWidth="212.0">
+        <VBox fx:id="pnlRiel" styleClass="rail" spacing="3.0" prefWidth="212.0" minWidth="212.0" maxWidth="212.0">
             <BorderPane.margin><Insets right="14.0"/></BorderPane.margin>
             <padding><Insets top="14.0" right="10.0" bottom="12.0" left="10.0"/></padding>
             <StackPane alignment="CENTER">
                 <padding><Insets top="10.0" bottom="10.0"/></padding>
-                <ImageView fx:id="logo" fitWidth="156.0" preserveRatio="true" smooth="true"/>
+                <ImageView fx:id="imgLogo" fitWidth="156.0" preserveRatio="true" smooth="true"/>
             </StackPane>
             <Label text="EXPLORAR" styleClass="rail-section"/>
-            <ToggleButton fx:id="btnBuscar" text="Buscar" onAction="#onBuscar" maxWidth="Infinity" styleClass="rail-btn"/>
-            <ToggleButton fx:id="btnCatalogo" text="Catálogo" onAction="#onCatalogo" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="tglBuscar" text="Buscar" onAction="#amjOnBuscar" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="tglCatalogo" text="Catálogo" onAction="#amjOnCatalogo" maxWidth="Infinity" styleClass="rail-btn"/>
             <Label text="ANALIZAR" styleClass="rail-section"/>
-            <ToggleButton fx:id="btnComparar" text="Comparar" onAction="#onComparar" maxWidth="Infinity" styleClass="rail-btn"/>
-            <ToggleButton fx:id="btnVisor" text="Visor 3D" onAction="#onVisor" maxWidth="Infinity" styleClass="rail-btn"/>
-            <ToggleButton fx:id="btnComponentes" text="Componentes 3D" onAction="#onComponentes" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="tglComparar" text="Comparar" onAction="#amjOnComparar" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="tglVisor" text="Visor 3D" onAction="#amjOnVisor" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="tglComponentes" text="Componentes 3D" onAction="#amjOnComponentes" maxWidth="Infinity" styleClass="rail-btn"/>
             <Label text="SISTEMA" styleClass="rail-section"/>
-            <ToggleButton fx:id="btnAjustes" text="Ajustes" onAction="#onAjustes" maxWidth="Infinity" styleClass="rail-btn"/>
+            <ToggleButton fx:id="tglAjustes" text="Ajustes" onAction="#amjOnAjustes" maxWidth="Infinity" styleClass="rail-btn"/>
             <Region VBox.vgrow="ALWAYS"/>
             <VBox styleClass="rail-foot" spacing="2.0">
                 <Label fx:id="lblDb" wrapText="true"/>
@@ -36,19 +36,19 @@
 
     <center>
         <VBox spacing="12.0">
-            <HBox fx:id="topbar" styleClass="statusbar" spacing="10.0" alignment="CENTER_LEFT">
-                <HBox fx:id="topSearch" styleClass="topbar-search" alignment="CENTER_LEFT" spacing="8.0" HBox.hgrow="ALWAYS" maxWidth="620.0">
-                    <TextField fx:id="txtGlobal" promptText="Buscar laptops por marca, modelo, procesador o gráficos" onAction="#onBuscarGlobal" HBox.hgrow="ALWAYS"/>
+            <HBox fx:id="pnlBarraSuperior" styleClass="statusbar" spacing="10.0" alignment="CENTER_LEFT">
+                <HBox fx:id="pnlBusquedaGlobal" styleClass="topbar-search" alignment="CENTER_LEFT" spacing="8.0" HBox.hgrow="ALWAYS" maxWidth="620.0">
+                    <TextField fx:id="txtGlobal" promptText="Buscar laptops por marca, modelo, procesador o gráficos" onAction="#amjOnBuscarGlobal" HBox.hgrow="ALWAYS"/>
                 </HBox>
                 <Region HBox.hgrow="ALWAYS"/>
                 <HBox alignment="CENTER_LEFT" spacing="0.0">
-                    <ToggleButton fx:id="tbUsd" text="USD" selected="true" styleClass="seg-first, topbar-seg"/>
-                    <ToggleButton fx:id="tbPen" text="PEN" styleClass="seg-last, topbar-seg"/>
+                    <ToggleButton fx:id="tglUsd" text="USD" selected="true" styleClass="seg-first, topbar-seg"/>
+                    <ToggleButton fx:id="tglPen" text="PEN" styleClass="seg-last, topbar-seg"/>
                 </HBox>
                 <Label fx:id="lblSel" styleClass="topbar-pill"/>
                 <Label fx:id="lblMsg" styleClass="topbar-pill, status-message"/>
             </HBox>
-            <StackPane fx:id="content" styleClass="content-pane" VBox.vgrow="ALWAYS"/>
+            <StackPane fx:id="pnlContenido" styleClass="content-pane" VBox.vgrow="ALWAYS"/>
         </VBox>
     </center>
 </BorderPane>

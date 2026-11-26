@@ -27,11 +27,11 @@ PORTS = {"usba": "USB-A", "usbc": "USB-C", "hdmi": "HDMI", "minidp": "Mini Displ
 SIDES = {"left": "izquierda", "right": "derecha", "rear": "trasera"}
 
 
-def listing(items):
+def amj_listing(items):
     return ", ".join(items) if items else "ninguno"
 
 
-def main():
+def amj_main():
     index = {(e["brand"], e["model"]): e["folder"] for e in json.load(open(os.path.join(MODELS, "index.json"), encoding="utf-8"))}
     entries = []
     for path in sorted(glob.glob(os.path.join(SPECS, "*.json"))):
@@ -58,16 +58,16 @@ def main():
         for p in placed:
             by_side.setdefault(p["side"], []).append(PORTS.get(p["type"], p["type"]))
         lines = [f"### {name}", "", f"- **Configuración:** {e.get('config', '')}",
-                 "- **Datos verificados:** " + listing([LABELS.get(k, k) for k in e["specs"]]),
-                 "- **Sin confirmar:** " + listing([LABELS.get(k, k) for k in e.get("notVerified", [])])]
+                 "- **Datos verificados:** " + amj_listing([LABELS.get(k, k) for k in e["specs"]]),
+                 "- **Sin confirmar:** " + amj_listing([LABELS.get(k, k) for k in e.get("notVerified", [])])]
         for c in e.get("conflicts", []):
             lines.append(f"- **Discrepancia:** {c}")
         lines.append("- **Puertos en el modelo:** " + (("; ".join(f"{SIDES[s]}: {', '.join(v)}" for s, v in by_side.items())) or "ninguno"))
         if missing:
-            lines.append("- **Puertos sin lado confirmado (no se dibujan):** " + listing([PORTS.get(p, p) for p in missing]))
-        lines.append("- **Rasgos confirmados en 3D:** " + listing(meta.get("verifiedFeatures", [])))
-        lines.append("- **Valores supuestos en 3D:** " + listing(meta.get("assumed", [])))
-        lines.append("- **Sin información:** " + listing(meta.get("notVerified", [])))
+            lines.append("- **Puertos sin lado confirmado (no se dibujan):** " + amj_listing([PORTS.get(p, p) for p in missing]))
+        lines.append("- **Rasgos confirmados en 3D:** " + amj_listing(meta.get("verifiedFeatures", [])))
+        lines.append("- **Valores supuestos en 3D:** " + amj_listing(meta.get("assumed", [])))
+        lines.append("- **Sin información:** " + amj_listing(meta.get("notVerified", [])))
         lines.append("- **Fuentes:**")
         lines += [f"  - {s}" for s in e.get("sources", [])]
         blocks.append("\n".join(lines))
@@ -86,4 +86,4 @@ def main():
     print("laptops", len(entries), "modelos", len(index), "puertos completos", complete, "parciales", partial, "sin colocar", none)
 
 
-main()
+amj_main()

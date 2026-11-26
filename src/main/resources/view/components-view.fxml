@@ -6,7 +6,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.laptopstudio.controller.ComponentsController">
+            fx:controller="com.laptopexplorer.controller.AMJComponentsController">
 
     <top>
         <VBox>
@@ -15,15 +15,15 @@
                 <Label text="Componentes 3D" styleClass="page-title" minWidth="-Infinity"/>
                 <Label fx:id="lblCount" styleClass="muted" minWidth="-Infinity"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <ToggleButton fx:id="tbFicha" text="Ficha técnica" selected="true" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tglFicha" text="Ficha técnica" selected="true" styleClass="chip" minWidth="-Infinity"/>
             </HBox>
             <HBox styleClass="filter-bar" spacing="10.0" alignment="CENTER_LEFT">
                 <padding><Insets top="8.0" right="16.0" bottom="8.0" left="16.0"/></padding>
-                <HBox fx:id="searchBox" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="250.0" minWidth="150.0">
+                <HBox fx:id="pnlBusqueda" styleClass="search-box" alignment="CENTER_LEFT" spacing="6.0" prefWidth="250.0" minWidth="150.0">
                     <padding><Insets left="9.0"/></padding>
                     <TextField fx:id="txtBuscar" promptText="Buscar componente" HBox.hgrow="ALWAYS"/>
                 </HBox>
-                <HBox fx:id="boxCategorias" alignment="CENTER_LEFT" spacing="0.0" minWidth="-Infinity"/>
+                <HBox fx:id="pnlCategorias" alignment="CENTER_LEFT" spacing="0.0" minWidth="-Infinity"/>
             </HBox>
         </VBox>
     </top>
@@ -44,35 +44,35 @@
             <HBox styleClass="viewer-head" alignment="CENTER_LEFT" spacing="8.0">
                 <padding><Insets top="6.0" right="10.0" bottom="4.0" left="10.0"/></padding>
                 <Label fx:id="lblNombre" styleClass="model-name" minWidth="0.0"/>
-                <HBox fx:id="boxEtiquetas" alignment="CENTER_LEFT" spacing="6.0" minWidth="-Infinity"/>
+                <HBox fx:id="pnlEtiquetas" alignment="CENTER_LEFT" spacing="6.0" minWidth="-Infinity"/>
             </HBox>
             <FlowPane hgap="10.0" vgap="6.0" alignment="CENTER_LEFT" rowValignment="CENTER">
                 <padding><Insets top="2.0" right="10.0" bottom="8.0" left="10.0"/></padding>
-                <HBox fx:id="boxCam" alignment="CENTER_LEFT" spacing="0.0"/>
-                <ToggleButton fx:id="tbCotas" text="Cotas" selected="true" styleClass="chip" minWidth="-Infinity"/>
-                <ToggleButton fx:id="tbGirar" text="Girar" styleClass="chip" minWidth="-Infinity"/>
-                <ToggleButton fx:id="tbVentiladores" text="Ventiladores" styleClass="chip" minWidth="-Infinity"/>
+                <HBox fx:id="pnlCam" alignment="CENTER_LEFT" spacing="0.0"/>
+                <ToggleButton fx:id="tglCotas" text="Cotas" selected="true" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tglGirar" text="Girar" styleClass="chip" minWidth="-Infinity"/>
+                <ToggleButton fx:id="tglVentiladores" text="Ventiladores" styleClass="chip" minWidth="-Infinity"/>
                 <HBox alignment="CENTER_LEFT" spacing="8.0">
                     <Label text="DESPIECE" styleClass="tool-label" minWidth="-Infinity"/>
-                    <Slider fx:id="slExplode" min="0" max="100" value="0" prefWidth="130.0" styleClass="component-explode"/>
+                    <Slider fx:id="sldExplode" min="0" max="100" value="0" prefWidth="130.0" styleClass="component-explode"/>
                     <Label fx:id="lblExplode" styleClass="muted" minWidth="38.0"/>
                 </HBox>
             </FlowPane>
-            <StackPane fx:id="holder" VBox.vgrow="ALWAYS" minWidth="0.0" minHeight="0.0"/>
+            <StackPane fx:id="pnlVisor" VBox.vgrow="ALWAYS" minWidth="0.0" minHeight="0.0"/>
         </VBox>
     </center>
 
     <right>
-        <VBox fx:id="panelFicha" styleClass="inspect-panel" prefWidth="348.0" minWidth="348.0" maxWidth="348.0">
+        <VBox fx:id="pnlInspector" styleClass="inspect-panel" prefWidth="348.0" minWidth="348.0" maxWidth="348.0">
             <BorderPane.margin><Insets top="8" right="14" bottom="0" left="0"/></BorderPane.margin>
             <VBox spacing="5.0" styleClass="side-head">
                 <padding><Insets top="12.0" right="12.0" bottom="12.0" left="14.0"/></padding>
                 <Label fx:id="lblCategoria" styleClass="section-label"/>
                 <Label fx:id="lblTitulo" styleClass="model-name" wrapText="true"/>
-                <FlowPane fx:id="boxDestacados" hgap="5.0" vgap="5.0"/>
+                <FlowPane fx:id="pnlDestacados" hgap="5.0" vgap="5.0"/>
             </VBox>
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" styleClass="component-sheet">
-                <VBox fx:id="boxFicha"/>
+                <VBox fx:id="pnlFicha"/>
             </ScrollPane>
         </VBox>
     </right>

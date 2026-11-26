@@ -6,7 +6,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.laptopstudio.controller.SearchController">
+            fx:controller="com.laptopexplorer.controller.AMJSearchController">
 
     <top>
         <HBox styleClass="page-head" spacing="12.0" alignment="CENTER_LEFT">
@@ -52,12 +52,12 @@
 
                 <HBox spacing="8.0">
                     <padding><Insets top="6.0"/></padding>
-                    <Button text="Buscar" onAction="#onBuscar" defaultButton="true" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
-                    <Button text="Limpiar" onAction="#onLimpiar"/>
+                    <Button text="Buscar" onAction="#amjOnBuscar" defaultButton="true" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Button text="Limpiar" onAction="#amjOnLimpiar"/>
                 </HBox>
                 <Label fx:id="lblError" styleClass="muted" wrapText="true"/>
                 <Label text="¿NO ESTÁ EN EL CATÁLOGO?" styleClass="section-label"/>
-                <Button text="Buscar en internet" onAction="#onInternet" maxWidth="Infinity"/>
+                <Button text="Buscar en internet" onAction="#amjOnInternet" maxWidth="Infinity"/>
                 <Label text="Única función que usa conexión. Consulta la web y te deja revisar los datos antes de guardarlos." styleClass="muted small" wrapText="true"/>
             </VBox>
         </ScrollPane>
@@ -65,7 +65,7 @@
 
     <center>
         <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
-            <VBox fx:id="boxResultados" spacing="8.0">
+            <VBox fx:id="pnlResultados" spacing="8.0">
                 <padding><Insets top="12.0" right="16.0" bottom="16.0" left="16.0"/></padding>
             </VBox>
         </ScrollPane>

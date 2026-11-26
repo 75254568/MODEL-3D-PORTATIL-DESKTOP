@@ -6,7 +6,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.laptopstudio.controller.SettingsController">
+            fx:controller="com.laptopexplorer.controller.AMJSettingsController">
     <top>
         <HBox styleClass="page-head" alignment="CENTER_LEFT">
             <padding><Insets top="12.0" right="16.0" bottom="10.0" left="16.0"/></padding>
@@ -32,8 +32,8 @@
                         <TextField fx:id="txtRateNote" prefWidth="270.0" promptText="Ej.: SBS, venta, 12 nov 2026" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
                     </GridPane>
                     <HBox spacing="8.0" alignment="CENTER_LEFT">
-                        <Button text="Guardar tipo de cambio" onAction="#onGuardarCambio" styleClass="primary"/>
-                        <Button text="Restablecer" onAction="#onRestablecerCambio"/>
+                        <Button text="Guardar tipo de cambio" onAction="#amjOnGuardarCambio" styleClass="primary"/>
+                        <Button text="Restablecer" onAction="#amjOnRestablecerCambio"/>
                     </HBox>
                     <Label fx:id="lblRateMsg" styleClass="muted small" wrapText="true"/>
                 </VBox>
@@ -44,8 +44,8 @@
                     <Label text="Única función que usa conexión. Para buscar laptops que no están en el catálogo se usa la API de Claude con búsqueda web, que requiere una clave de API de Anthropic (de pago por uso)." styleClass="muted small" wrapText="true"/>
                     <PasswordField fx:id="txtKey" promptText="Clave de API (sk-ant-...)"/>
                     <HBox spacing="8.0" alignment="CENTER_LEFT">
-                        <Button text="Guardar clave" onAction="#onGuardarClave" styleClass="primary"/>
-                        <Button text="Quitar clave" onAction="#onQuitarClave"/>
+                        <Button text="Guardar clave" onAction="#amjOnGuardarClave" styleClass="primary"/>
+                        <Button text="Quitar clave" onAction="#amjOnQuitarClave"/>
                     </HBox>
                     <Label fx:id="lblKeyMsg" styleClass="muted small" wrapText="true"/>
                 </VBox>

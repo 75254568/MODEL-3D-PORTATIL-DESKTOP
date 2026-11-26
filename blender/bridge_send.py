@@ -4,7 +4,7 @@ import socket
 import sys
 
 
-def main():
+def amj_main():
     token_file, script = sys.argv[1], sys.argv[2]
     with open(token_file, encoding="utf-8") as f:
         token = f.read().strip()
@@ -24,4 +24,4 @@ def main():
     sys.exit(0 if reply["ok"] else 1)
 
 
-main()
+amj_main()

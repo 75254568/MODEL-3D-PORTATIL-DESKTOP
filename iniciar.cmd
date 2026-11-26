@@ -1,11 +1,11 @@
 @echo off
-rem Inicia Laptop Explorer con doble clic. Usa el JDK 25 de este equipo (el proyecto pide 21, pero no esta instalado).
-rem Si instalas un JDK 21, puedes quitar JAVA_HOME, las dos opciones -D y usar solo: mvn spring-boot:run
+rem Compila y abre Laptop Explorer con Maven.
+rem Requiere las variables de entorno JAVA_HOME y MAVEN_HOME (ver mvn.cmd).
 cd /d "%~dp0"
-set JAVA_HOME=C:\Users\julio\.jdks\openjdk-25.0.1
-set PATH=%JAVA_HOME%\bin;%PATH%
-rem Ruta completa: el mvn.cmd de esta carpeta apunta a otra maquina y taparia al Maven real
-call "C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.14\bin\mvn.cmd" -Dlombok.version=1.18.42 -Dmaven.compiler.proc=full spring-boot:run
+rem Consola en UTF-8 para que los mensajes con tildes se lean bien
+chcp 65001 >nul
+
+call "%~dp0mvn.cmd" spring-boot:run
 if errorlevel 1 (
   echo.
   echo No se pudo iniciar la aplicacion. Revisa el mensaje de arriba.

@@ -4,7 +4,7 @@ Puente local para trabajar sobre una ventana de Blender abierta.
 Se arranca con:
   blender --python blender/bridge_server.py -- --token-file <archivo>
 
-Solo escucha en 127.0.0.1 y exige el token aleatorio guardado en ese archivo. El codigo recibido se ejecuta en el hilo
+Solo escucha en 127.0.0.1 y exige el token aleatorio guardado en ese archivo. El código recibido se ejecuta en el hilo
 principal de Blender, de uno en uno, y la salida se devuelve al cliente (blender/bridge_send.py).
 """
 import contextlib
@@ -20,13 +20,13 @@ import bpy
 PORT = 9876
 
 
-def option(name):
+def amj_option(name):
     argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
     return argv[argv.index(name) + 1] if name in argv else None
 
 
 TOKEN = secrets.token_hex(24)
-with open(option("--token-file"), "w", encoding="utf-8") as f:
+with open(amj_option("--token-file"), "w", encoding="utf-8") as f:
     f.write(TOKEN)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -37,7 +37,7 @@ server.setblocking(False)
 namespace = {"bpy": bpy}
 
 
-def serve(conn):
+def amj_serve(conn):
     conn.settimeout(30)
     data = b""
     while not data.endswith(b"\n"):
@@ -60,18 +60,18 @@ def serve(conn):
     conn.sendall((json.dumps({"ok": ok, "output": out.getvalue()}) + "\n").encode("utf-8"))
 
 
-def poll():
+def amj_poll():
     try:
         conn, _ = server.accept()
     except (BlockingIOError, OSError):
         return 0.15
     with conn:
         try:
-            serve(conn)
+            amj_serve(conn)
         except Exception:
             traceback.print_exc()
     return 0.05
 
 
-bpy.app.timers.register(poll, first_interval=0.5, persistent=True)
+bpy.app.timers.register(amj_poll, first_interval=0.5, persistent=True)
 print("Puente de Blender activo en 127.0.0.1:%d" % PORT)
